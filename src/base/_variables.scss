@@ -1,0 +1,87 @@
+// 1. Root-level CSS Variables (Global Design Tokens)
+// Define base font size as a Sass variable first
+$hikma-base-font-size: 1rem; // এটি একটি Sass ভেরিয়েবল
+
+:root {
+	--hikma-font-size-base: #{$hikma-base-font-size};
+	--hikma-font-size-sm: #{$hikma-base-font-size * 0.875}; // উদাহরণ ছোট ফন্ট
+	--hikma-font-size-lg: #{$hikma-base-font-size * 1.25}; // এখানে গণনা করা হয়েছে
+	--hikma-font-size-xl: #{$hikma-base-font-size * 1.5}; // উদাহরণ বড় ফন্ট
+
+	// Colors
+	--hikma-color-primary: #007bff;
+	--hikma-color-primary-hover: #0056b3;
+	--hikma-color-secondary: #6c757d;
+	--hikma-color-secondary-hover: #545b62;
+	--hikma-color-success: #28a745;
+	--hikma-color-danger: #dc3545;
+	--hikma-color-warning: #ffc107;
+	--hikma-color-info: #17a2b8;
+	--hikma-color-light: #f8f9fa;
+	--hikma-color-dark: #343a40;
+	
+
+	// Text Colors
+	--hikma-text-color-base: #212529;
+	--hikma-text-color-light: #6c757d;
+	--hikma-text-color-muted: #6c757d;
+	--hikma-text-color-white: #ffffff;
+
+	// Background Colors
+	--hikma-bg-color-body: #ffffff;
+	--hikma-bg-color-dark: #343a40;
+	--hikma-bg-color-light: #f8f9fa;
+
+	// Spacing (using a consistent scale)
+	--hikma-spacing-unit: 0.25rem; // Base unit
+	--hikma-spacing-xs: calc(var(--hikma-spacing-unit) * 0.5); // 0.125rem
+	--hikma-spacing-sm: calc(var(--hikma-spacing-unit) * 1); // 0.25rem
+	--hikma-spacing-md: calc(var(--hikma-spacing-unit) * 2); // 0.5rem
+	--hikma-spacing-lg: calc(var(--hikma-spacing-unit) * 4); // 1rem
+	--hikma-spacing-xl: calc(var(--hikma-spacing-unit) * 8); // 2rem
+
+	// Typography
+	--hikma-font-family-base: 'Arial', sans-serif;
+	--hikma-font-size-base: 1rem; // 16px
+	--hikma-line-height-base: 1.5;
+
+	// Border Radius
+	--hikma-border-radius: 0.25rem;
+
+	// Transitions
+	--hikma-transition-ease: all 0.15s ease-in-out;
+}
+
+// 2. Sass Variables (for calculations, loops, etc. if needed)
+// These are compiled away, unlike CSS variables which are runtime.
+$hikma-breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+// Define minimum width for each breakpoint
+// This map will be used by our mixins
+$hikma-breakpoint-up: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+// Define maximum width for each breakpoint (useful for ranges, e.g., md-only)
+// Subtracting 0.02px ensures no overlap between breakpoint ranges
+$hikma-breakpoint-down: (
+	xs: 575.98px,
+	// Represents anything *smaller* than sm
+	sm: 767.98px,
+	// Represents anything *smaller* than md
+	md: 991.98px,
+	// Represents anything *smaller* than lg
+	lg: 1199.98px,
+	// Represents anything *smaller* than xl
+	xl: 1399.98px // Represents anything *smaller* than xxl,
+);

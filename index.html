@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hikma UI - Demo</title>
+		<link rel="stylesheet" href="./dist/hikma-ui.css" />
+		<script src="./dist/hikma-ui.js"></script>
+	</head>
+	<body>
+		<h1>Welcome to Hikma UI</h1>
+		<p>This is a demonstration of the custom CSS framework.</p>
+
+		<h2>Buttons</h2>
+		<button class="btn btn--primary">Primary Button</button>
+		<button class="btn btn--secondary">Secondary Button</button>
+
+		---
+
+		<h2>Contrast Sections (will be adjusted by JS)</h2>
+		<div
+			class="section section-primary js-auto-contrast"
+			data-bg-color="#007bff"
+		>
+			<h3>Primary Section</h3>
+			<p>
+				This text color should be adjusted for optimal contrast against the
+				primary background. This is a normal paragraph to test readability.
+			</p>
+		</div>
+
+		<div
+			class="section section-secondary js-auto-contrast"
+			data-bg-color="#6c757d"
+		>
+			<h3>Secondary Section</h3>
+			<p>
+				This text color should also be adjusted for contrast. It will likely
+				become white.
+			</p>
+		</div>
+
+		<div class="section section-dark js-auto-contrast" data-bg-color="#343a40">
+			<h3>Dark Section</h3>
+			<p>Ensure this text is highly readable on a dark background.</p>
+		</div>
+
+		<div class="section section-light js-auto-contrast" data-bg-color="#f8f9fa">
+			<h3>Light Section</h3>
+			<p>
+				This text should be dark for contrast on a light background. This
+				demonstrates how it might switch from an assumed light text color if
+				needed.
+			</p>
+		</div>
+
+		<!-- Load scripts at the end of body -->
+		<script src="/dist/hikma-ui-js.js"></script>
+		<script>
+			// Add a small delay to ensure HikmaUI is loaded
+			setTimeout(() => {
+				if (window.HikmaUI && window.HikmaUI.adjustTextColorForContrast) {
+					const elementsToAdjust =
+						document.querySelectorAll('.js-auto-contrast');
+
+					elementsToAdjust.forEach((element) => {
+						const bgColor = element.dataset.bgColor;
+						if (bgColor) {
+							element.style.color = window.HikmaUI.adjustTextColorForContrast(
+								bgColor,
+								'#ffffff',
+							);
+						}
+					});
+				} else {
+					console.error('HikmaUI not properly loaded');
+				}
+			}, 100);
+		</script>
+	</body>
+</html>

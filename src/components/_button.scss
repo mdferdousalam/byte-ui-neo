@@ -1,0 +1,55 @@
+@use '../base/variables' as *; // Ensure variables are imported if needed
+@use '../utilities/responsive'; // Import the responsive mixins
+
+.btn {
+  display: inline-block;
+  padding: var(--hikma-spacing-sm) var(--hikma-spacing-md);
+  font-size: var(--hikma-font-size-base);
+  line-height: var(--hikma-line-height-base);
+  border-radius: var(--hikma-border-radius);
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+
+  // Mobile-first default styles (apply to all screen sizes unless overridden)
+  width: 100%; // Buttons full width on small screens
+
+  // Styles from medium breakpoint and up
+  @include responsive.media-up(md) {
+    width: auto; // Buttons auto width on medium screens and larger
+    padding: var(--hikma-spacing-md) var(--hikma-spacing-lg); // Larger padding
+  }
+
+  // Styles only for large screens
+  @include responsive.media-up(lg) {
+    font-size: var(--hikma-font-size-lg);
+  }
+
+  // Styles only for screens up to small (e.g., mobile portrait)
+  @include responsive.media-down(sm) {
+    font-size: var(--hikma-font-size-sm);
+  }
+
+  &--primary {
+    color: var(--hikma-text-color-white);
+    background-color: var(--hikma-color-primary);
+    border: var(--hikma-border-width) solid var(--hikma-color-primary);
+
+    &:hover {
+      background-color: var(--hikma-color-primary-hover);
+      border-color: var(--hikma-color-primary-hover);
+    }
+  }
+
+  &--secondary {
+    color: var(--hikma-text-color-white);
+    background-color: var(--hikma-color-secondary);
+    border: var(--hikma-border-width) solid var(--hikma-color-secondary);
+
+    &:hover {
+      background-color: var(--hikma-color-secondary-hover);
+      border-color: var(--hikma-color-secondary-hover);
+    }
+  }
+}

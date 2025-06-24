@@ -1,0 +1,53 @@
+@use 'sass:map';
+@use '../base/variables' as *;
+
+// Mixin for "min-width" (up from a breakpoint)
+// Usage:
+// @include media-up(md) {
+//   .my-element {
+//     font-size: 1.2rem;
+//   }
+// }
+@mixin media-up($breakpoint) {
+  @if map.has-key($hikma-breakpoint-up, $breakpoint) {
+    @media (min-width: map.get($hikma-breakpoint-up, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in $hikma-breakpoint-up map.";
+  }
+}
+
+// Mixin for "max-width" (down to a breakpoint)
+// Usage:
+// @include media-down(md) { // Applies to screens up to md (i.e., less than lg)
+//   .my-element {
+//     display: block;
+//   }
+// }
+@mixin media-down($breakpoint) {
+  @if map.has-key($hikma-breakpoint-down, $breakpoint) {
+    @media (max-width: map.get($hikma-breakpoint-down, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in $hikma-breakpoint-down map.";
+  }
+}
+
+// Mixin for a specific range (between two breakpoints)
+// Usage:
+// @include media-between(sm, lg) {
+//   .my-element {
+//     padding: 1rem;
+//   }
+// }
+@mixin media-between($lower, $upper) {
+  @if map.has-key($hikma-breakpoint-up, $lower) and map.has-key($hikma-breakpoint-down, $upper) {
+    @media (min-width: map.get($hikma-breakpoint-up, $lower)) and (max-width: map.get($hikma-breakpoint-down, $upper)) {
+      @content;
+    }
+  } @else {
+    @warn "One or both breakpoints '#{$lower}' and '#{$upper}' not found in breakpoint maps.";
+  }
+}

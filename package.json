@@ -1,0 +1,44 @@
+{
+	"name": "hikma-ui",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "webpack serve --mode development",
+		"build": "webpack --mode production",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"css",
+		"framework",
+		"components",
+		"accessibility",
+		"purgecss"
+	],
+	"author": "Md Ferdous Alam",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.27.4",
+		"@babel/preset-env": "^7.27.2",
+		"@fullhuman/postcss-purgecss": "^7.0.2",
+		"autoprefixer": "^10.4.21",
+		"babel-loader": "10.0.0",
+		"css-loader": "^7.1.2",
+		"css-minimizer-webpack-plugin": "^7.0.2",
+		"glob": "^11.0.3",
+		"mini-css-extract-plugin": "^2.9.2",
+		"postcss-loader": "^8.1.1",
+		"purgecss-webpack-plugin": "^7.0.2",
+		"sass": "^1.89.2",
+		"sass-loader": "^16.0.5",
+		"style-loader": "^4.0.0",
+		"webpack": "^5.99.9",
+		"webpack-cli": "^6.0.1",
+		"webpack-dev-server": "^5.2.2"
+	},
+	"packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+	"dependencies": {
+		"@babel/core": "^7.27.4",
+		"@babel/preset-env": "^7.27.2"
+	}
+}

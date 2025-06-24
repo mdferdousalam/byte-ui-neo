@@ -1,0 +1,22 @@
+.section {
+    padding: var(--hikma-spacing-xl); // নিশ্চিত করুন _variables.scss এ --hikma-spacing-xl আছে
+    margin-bottom: var(--hikma-spacing-xl);
+    border-radius: var(--hikma-border-radius); // নিশ্চিত করুন _variables.scss এ --hikma-border-radius আছে
+    // Note: text color will be dynamically set by JS using .js-auto-contrast
+  }
+
+  .section-primary {
+    background-color: var(--hikma-color-primary); // _variables.scss থেকে
+  }
+
+  .section-secondary {
+    background-color: var(--hikma-color-secondary); // _variables.scss থেকে
+  }
+
+  .section-dark {
+    background-color: var(--hikma-color-dark); // _variables.scss এ এই ভেরিয়েবলটি যোগ করুন
+  }
+
+  .section-light {
+    background-color: var(--hikma-color-light); // _variables.scss এ এই ভেরিয়েবলটি যোগ করুন
+  }
