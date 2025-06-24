@@ -1,22 +1,37 @@
-@use 'base/reset';
-@use 'base/variables' as *;
-@use 'base/typography';
+// Hikma UI Framework - Main SCSS Entry Point
+// This file imports all the necessary modules in a logical order.
 
+// 1. Core & Configuration
+// These files contain global variables, mixins, and base styles.
+// They should be imported first so their definitions are available everywhere.
+@use 'core/variables';
+@use 'core/mixins';
+@use 'core/base'; // Base includes reset, html, body, and heading styles
 
-// Components
-@use 'components/button';
-// Add more components here as you create them
-
-// Layout
-@use 'layout/sections';
-@use 'layout/grid';
+// 2. Layout Modules
+// Define the structural components of the page.
 @use 'layout/container';
+@use 'layout/grid';
+@use 'layout/sections'; // Your custom section styles
 
-// Utilities
-@use 'utilities/responsive';
+// 3. Component Styles
+// Specific UI components. They rely on variables and mixins from core.
+@use 'components/button';
+// @use 'components/forms'; // Add other components as you create them
+// @use 'components/cards';
+
+// 4. Utility Classes
+// Single-purpose, reusable classes that often override component styles with `!important`.
+// They should come after components to ensure they can override.
+@use 'utilities/responsive'; // General responsive helpers
 @use 'utilities/spacing';
 @use 'utilities/flex';
 @use 'utilities/text';
 
-// Theme (e.g., dark mode)
+// 5. Theme Styles / Overrides
+// Specific themes (like dark mode) or any global overrides that change existing styles.
+// These should generally be imported last to easily override previous styles.
 @use 'theme/dark-mode';
+
+// add custom styles here if needed, or create a separate file for project-specific styles
+// @use 'custom-styles';

@@ -1,0 +1,78 @@
+// Core - Mixins
+// This file contains reusable Sass mixins for common CSS patterns and responsive behavior.
+
+// Mixin for responsive font sizing (Example)
+// Usage: @include font-size(2rem, 1.5rem, 1rem); (desktop, tablet, mobile)
+@mixin font-size($desktop, $tablet: null, $mobile: null) {
+    font-size: $desktop;
+
+    @if $tablet {
+        @media (max-width: 991.98px) { // tablet breakpoint or smaller (e.g., md and down)
+            font-size: $tablet;
+        }
+    }
+    @if $mobile {
+        @media (max-width: 767.98px) { // mobile breakpoint or smaller (e.g., sm and down)
+            font-size: $mobile;
+        }
+    }
+}
+
+// Mixin for creating responsive breakpoints
+// Usage: @include media-breakpoint-up(md) { ... }
+// Usage: @include media-breakpoint-down(lg) { ... }
+@mixin media-breakpoint-up($name) {
+    @if map-has-key($grid-breakpoints, $name) {
+        @media (min-width: map-get($grid-breakpoints, $name)) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown breakpoint `#{$name}` in media-breakpoint-up mixin.";
+    }
+}
+
+@mixin media-breakpoint-down($name) {
+    @if map-has-key($grid-breakpoints, $name) {
+        // Subtract a tiny amount to target _before_ the next breakpoint starts
+        $breakpoint-value: map-get($grid-breakpoints, $name) - 0.02px;
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    } @else {
+        @warn "Unknown breakpoint `#{$name}` in media-breakpoint-down mixin.";
+    }
+}
+
+// Mixin for visually hidden elements (for accessibility)
+@mixin visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Mixin for clearing floats (if you use floats)
+@mixin clearfix {
+    &::after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+// Mixin for creating custom button styles (can be integrated with existing button.scss)
+// @mixin btn-variant($background, $color) {
+//     background-color: $background;
+//     color: $color;
+//     border-color: $background;
+
+//     &:hover {
+//         background-color: darken($background, 10%);
+//         border-color: darken($background, 10%);
+//     }
+// }

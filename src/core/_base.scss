@@ -1,0 +1,94 @@
+// Core - Base Styles
+// This file contains global reset/normalize styles and basic element styling.
+
+// A simple reset for common elements
+*,
+*::before,
+*::after {
+	box-sizing: border-box; // Ensure consistent box model
+}
+
+html {
+	line-height: var(--hikma-line-height-base);
+	// Optionally set root font-size if not relying on browser default 16px
+	// font-size: 16px; // Or 62.5% for 10px base rem (but better to keep 16px base for accessibility)
+}
+
+body {
+	margin: 0; // Remove default body margin
+	font-family: var(--hikma-font-family-base);
+	font-size: var(--hikma-font-size-base);
+	line-height: var(--hikma-line-height-base);
+	color: var(--hikma-text-color-base);
+	background-color: var(--hikma-background-color-base);
+	-webkit-font-smoothing: antialiased; // Improves text rendering on macOS/iOS
+	-moz-osx-font-smoothing: grayscale; // Improves text rendering on macOS
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	margin-bottom: var(--hikma-spacing-md); // Consistent spacing below headings
+	line-height: 1.2; // Tighter line-height for headings
+	color: var(--hikma-text-color-base); // Ensure headings use base text color
+}
+
+h1 {
+	font-size: var(--hikma-h1-font-size);
+}
+h2 {
+	font-size: var(--hikma-h2-font-size);
+}
+h3 {
+	font-size: var(--hikma-h3-font-size);
+}
+h4 {
+	font-size: var(--hikma-h4-font-size);
+}
+h5 {
+	font-size: var(--hikma-h5-font-size);
+}
+h6 {
+	font-size: var(--hikma-h6-font-size);
+}
+
+// Paragraphs
+p {
+	margin-top: 0;
+	margin-bottom: var(--hikma-spacing-lg); // Consistent spacing below paragraphs
+}
+
+// Links
+a {
+	color: var(--hikma-color-primary); // Default link color
+	text-decoration: none; // Remove default underline
+
+	&:hover {
+		color: var(--hikma-color-primary-dark);
+		text-decoration: underline; // Add underline on hover
+	}
+}
+
+// Images
+img {
+	max-width: 100%; // Ensure images are responsive
+	height: auto;
+	vertical-align: middle; // Prevents extra space below images
+}
+
+// List styles
+ul,
+ol {
+	padding-left: var(--hikma-spacing-xl); // Default padding for lists
+	margin-top: 0;
+	margin-bottom: var(--hikma-spacing-lg);
+}
+ul ul,
+ol ol {
+	margin-bottom: 0; // Nested lists have less bottom margin
+}
