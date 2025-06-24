@@ -1,0 +1,43 @@
+// Utilities - Text
+// This file defines utility classes for text alignment and transformation.
+
+// Text alignment
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.text-justify { text-align: justify !important; }
+
+// Text transformation
+.text-lowercase { text-transform: lowercase !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+// Font weight
+.fw-light { font-weight: 300 !important; }
+.fw-normal { font-weight: normal !important; }
+.fw-medium { font-weight: 500 !important; }
+.fw-bold { font-weight: bold !important; }
+
+// Text decoration
+.text-decoration-none { text-decoration: none !important; }
+
+// White space
+.text-nowrap { white-space: nowrap !important; }
+
+// Responsive text alignment
+$grid-breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+@each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+    @media (min-width: #{$breakpoint-value}) {
+        .text-#{$breakpoint-name}-left { text-align: left !important; }
+        .text-#{$breakpoint-name}-center { text-align: center !important; }
+        .text-#{$breakpoint-name}-right { text-align: right !important; }
+        .text-#{$breakpoint-name}-justify { text-align: justify !important; }
+    }
+}

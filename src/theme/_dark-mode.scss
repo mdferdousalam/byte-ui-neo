@@ -1,0 +1,42 @@
+// Theme - Dark Mode
+// This file defines styles and color variables for a dark theme.
+
+// Default (light) theme variables - defined in :root somewhere else,
+// but included here for clarity if you choose to override them specifically for dark mode.
+// For now, assume your light theme colors are defined in a _variables.scss or similar in core.
+
+// Dark theme variables
+// These variables will override the default light theme variables when the 'dark-mode' class is active.
+:root {
+    // Default light theme variables (example, adjust based on your _variables.scss)
+    // --hikma-color-primary: #007bff;
+    // --hikma-color-secondary: #6c757d;
+    // --hikma-text-color-base: #212529; // Dark text
+    // --hikma-background-color-base: #ffffff; // Light background
+    // --hikma-border-color-base: #dee2e6;
+}
+
+.dark-mode {
+    // Override colors for dark mode
+    --hikma-color-primary: #6ab04c; // A different primary color for dark mode
+    --hikma-color-secondary: #57606f; // A different secondary color
+    --hikma-text-color-base: #e0e0e0; // Light text for dark backgrounds
+    --hikma-background-color-base: #2c2c2c; // Dark background
+    --hikma-border-color-base: #495057;
+
+    // Adjust specific component colors if needed
+    // Example for buttons (if button component uses these specific vars)
+    --hikma-btn-primary-bg: var(--hikma-color-primary);
+    --hikma-btn-primary-text: var(--hikma-text-color-base);
+
+    // Section colors (example)
+    --hikma-section-primary-bg: #343a40; // Darker primary section
+    --hikma-section-primary-text: var(--hikma-text-color-base);
+}
+
+// Optional: Add a smooth transition for color changes
+body,
+.section,
+.btn {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

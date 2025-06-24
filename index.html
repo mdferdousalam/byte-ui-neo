@@ -178,28 +178,177 @@
 			</div>
 		</div>
 
-		<!-- Load scripts at the end of body -->
+		<hr />
+		<h2>Utility Classes - Spacing, Flex, Text</h2>
+
+		<div
+			class="container"
+			style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem"
+		>
+			<h3>Spacing Utilities</h3>
+			<p class="mt-lg">This paragraph has a top margin of `lg` (1rem).</p>
+			<button class="btn btn--primary mb-xl">
+				Button with bottom margin `xl` (2rem).
+			</button>
+			<div
+				class="py-md"
+				style="background-color: #f8f8f8; border: 1px solid #eee"
+			>
+				<p>This div has vertical padding `md` (0.5rem).</p>
+			</div>
+			<p
+				class="px-sm mt-md"
+				style="background-color: #e8e8e8; border: 1px solid #ddd"
+			>
+				This paragraph has horizontal padding `sm` (0.25rem) and top margin
+				`md`.
+			</p>
+		</div>
+
+		<div
+			class="container"
+			style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem"
+		>
+			<h3>Flex Utilities</h3>
+			<h4>Basic Flex Container</h4>
+			<div
+				class="d-flex justify-content-center align-items-center"
+				style="height: 100px; background-color: #f0f0f0; border: 1px solid #ccc"
+			>
+				<p>Centered Content</p>
+			</div>
+
+			<h4 class="mt-lg">Flex Direction & Wrap</h4>
+			<div
+				class="d-flex flex-column flex-md-row flex-wrap"
+				style="background-color: #f0f0f0; border: 1px solid #ccc; padding: 1rem"
+			>
+				<div class="p-sm m-sm" style="background-color: lightblue">Item 1</div>
+				<div class="p-sm m-sm" style="background-color: lightcoral">Item 2</div>
+				<div class="p-sm m-sm" style="background-color: lightgreen">Item 3</div>
+				<div class="p-sm m-sm" style="background-color: lightgoldenrodyellow">
+					Item 4
+				</div>
+			</div>
+
+			<h4 class="mt-lg">Align Self & Order</h4>
+			<div
+				class="d-flex align-items-start"
+				style="
+					height: 120px;
+					background-color: #f0f0f0;
+					border: 1px solid #ccc;
+					padding: 1rem;
+				"
+			>
+				<div
+					class="p-sm m-sm align-self-end"
+					style="background-color: lightblue"
+				>
+					End
+				</div>
+				<div class="p-sm m-sm order-first" style="background-color: lightcoral">
+					First
+				</div>
+				<div class="p-sm m-sm" style="background-color: lightgreen">Normal</div>
+			</div>
+		</div>
+
+		<div
+			class="container"
+			style="
+				border: 1px dashed #ccc;
+				padding: 1rem;
+				margin-top: 2rem;
+				margin-bottom: 3rem;
+			"
+		>
+			<h3>Text Utilities</h3>
+			<p class="text-center">This text is centered.</p>
+			<p class="text-right">This text is right-aligned.</p>
+			<p class="text-lowercase">THIS TEXT IS LOWERCASE.</p>
+			<p class="text-uppercase">this text is uppercase.</p>
+			<p class="text-capitalize">this text is capitalized.</p>
+			<p class="fw-bold">This text is bold.</p>
+			<p class="text-decoration-none"><a>This link has no underline.</a></p>
+			<p class="text-md-center text-xl-right">
+				This text is centered on medium screens and right-aligned on extra large
+				screens.
+			</p>
+		</div>
+
+		<hr />
+		<h2>Theme - Dark Mode</h2>
+
+		<div
+			class="container"
+			style="
+				border: 1px dashed #ccc;
+				padding: 1rem;
+				margin-top: 2rem;
+				margin-bottom: 3rem;
+			"
+		>
+			<p>Toggle dark mode to see the theme change:</p>
+			<button id="darkModeToggle" class="btn btn--secondary">
+				Toggle Dark Mode
+			</button>
+
+			<div class="section section-primary mt-lg">
+				<h3>Primary Section in Theme</h3>
+				<p>
+					This section's background and text color should change with dark mode.
+				</p>
+				<button class="btn btn--primary">Primary Button</button>
+			</div>
+			<div class="section section-secondary mt-md">
+				<h3>Secondary Section in Theme</h3>
+				<p>This section also adapts to the theme.</p>
+				<button class="btn btn--secondary">Secondary Button</button>
+			</div>
+		</div>
+
 		<script src="/dist/hikma-ui-js.js"></script>
 		<script>
-			// Add a small delay to ensure HikmaUI is loaded
-			setTimeout(() => {
-				if (window.HikmaUI && window.HikmaUI.adjustTextColorForContrast) {
-					const elementsToAdjust =
-						document.querySelectorAll('.js-auto-contrast');
+			document.addEventListener('DOMContentLoaded', () => {
+				// Existing Contrast Checker Logic
+				const elementsToAdjust = document.querySelectorAll('.js-auto-contrast');
 
-					elementsToAdjust.forEach((element) => {
-						const bgColor = element.dataset.bgColor;
-						if (bgColor) {
-							element.style.color = window.HikmaUI.adjustTextColorForContrast(
-								bgColor,
-								'#ffffff',
-							);
-						}
-					});
+				elementsToAdjust.forEach((element) => {
+					const bgColor = element.dataset.bgColor;
+
+					if (bgColor && window.HikmaUI) {
+						const adjustedColor = window.HikmaUI.adjustTextColorForContrast(
+							bgColor,
+							'#ffffff',
+						);
+						element.style.color = adjustedColor;
+					}
+				});
+
+				// --- Dark Mode Logic ---
+				const darkModeToggle = document.getElementById('darkModeToggle');
+				const body = document.body;
+
+				// Check for saved theme preference in localStorage
+				const savedTheme = localStorage.getItem('theme');
+				if (savedTheme) {
+					body.classList.add(savedTheme); // Apply saved theme
 				} else {
-					console.error('HikmaUI not properly loaded');
+					// Default to light mode if no preference saved
+					body.classList.remove('dark-mode');
 				}
-			}, 100);
+
+				darkModeToggle.addEventListener('click', () => {
+					if (body.classList.contains('dark-mode')) {
+						body.classList.remove('dark-mode');
+						localStorage.setItem('theme', 'light-mode'); // Save preference
+					} else {
+						body.classList.add('dark-mode');
+						localStorage.setItem('theme', 'dark-mode'); // Save preference
+					}
+				});
+			});
 		</script>
 	</body>
 </html>

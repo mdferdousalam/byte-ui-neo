@@ -1,0 +1,92 @@
+// Utilities - Spacing
+// This file generates responsive margin and padding utility classes.
+
+@use 'sass:meta'; // <--- এই লাইনটি যোগ করুন
+
+// Define the spacing scale using your root variables
+$spacing-scale: (
+	0: 0,
+	xs: var(--hikma-spacing-xs),
+	// 0.125rem
+	sm: var(--hikma-spacing-sm),
+	// 0.25rem
+	md: var(--hikma-spacing-md),
+	// 0.5rem
+	lg: var(--hikma-spacing-lg),
+	// 1rem
+	xl: var(--hikma-spacing-xl) // 2rem,,
+);
+
+// Define directions for margin and padding
+$directions: (
+	t: top,
+	b: bottom,
+	l: left,
+	r: right,
+	x: (
+		left,
+		right,
+	),
+	// Horizontal
+	y:
+		(
+			top,
+			bottom,
+		),
+	// Vertical
+	a:
+		(
+			top,
+			bottom,
+			left,
+			right,
+		)
+		// All sides,,
+);
+
+// Generate spacing classes (margin: m-, padding: p-)
+@each $prop-abbr, $prop-full in (m: margin, p: padding) {
+	@each $dir-abbr, $dir-full in $directions {
+		@each $size-abbr, $size-value in $spacing-scale {
+			.#{$prop-abbr}#{$dir-abbr}-#{$size-abbr} {
+				@if meta.type-of($dir-full) == list {
+					@each $d in $dir-full {
+						#{$prop-full}-#{$d}: #{$size-value} !important;
+					}
+				} @else {
+					#{$prop-full}-#{$dir-full}: #{$size-value} !important;
+				}
+			}
+		}
+	}
+}
+
+// Responsive spacing classes (e.g., .mt-md-lg)
+$grid-breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+@each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+	@media (min-width: #{$breakpoint-value}) {
+		@each $prop-abbr, $prop-full in (m: margin, p: padding) {
+			@each $dir-abbr, $dir-full in $directions {
+				@each $size-abbr, $size-value in $spacing-scale {
+					.#{$prop-abbr}#{$dir-abbr}-#{$breakpoint-name}-#{$size-abbr} {
+						@if meta.type-of($dir-full) == list {
+							
+							@each $d in $dir-full {
+								#{$prop-full}-#{$d}: #{$size-value} !important;
+							}
+						} @else {
+							#{$prop-full}-#{$dir-full}: #{$size-value} !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -14,9 +14,9 @@
 
 // Utilities
 @use 'utilities/responsive';
-// @use 'utilities/spacing';
-// @use 'utilities/flex';
-// @use 'utilities/text';
+@use 'utilities/spacing';
+@use 'utilities/flex';
+@use 'utilities/text';
 
 // Theme (e.g., dark mode)
-// @use 'theme/dark-mode';
+@use 'theme/dark-mode';
