@@ -9,9 +9,8 @@
 
 // Layout
 @use 'layout/sections';
-
-// @use 'layout/grid';
-// @use 'layout/container';
+@use 'layout/grid';
+@use 'layout/container';
 
 // Utilities
 @use 'utilities/responsive';

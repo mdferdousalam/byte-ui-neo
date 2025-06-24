@@ -1,0 +1,55 @@
+// Layout - Grid System
+// This file defines a basic 12-column responsive grid system.
+
+.row {
+	display: flex;
+	flex-wrap: wrap; // Allows columns to wrap to the next line
+	margin-right: calc(
+		var(--hikma-spacing-md) * -1
+	); // Negative margin to offset column padding
+	margin-left: calc(
+		var(--hikma-spacing-md) * -1
+	); // Negative margin to offset column padding
+}
+
+// Generate column classes for 1 to 12 columns
+// We'll generate classes for all breakpoints (sm, md, lg, xl, xxl)
+@for $i from 1 through 12 {
+	.col-#{$i} {
+		flex: 0 0 auto;
+		width: calc(100% / 12 * #{$i});
+		padding-right: var(--hikma-spacing-md);
+		padding-left: var(--hikma-spacing-md);
+	}
+}
+
+// Responsive column classes (e.g., .col-md-6)
+// Define breakpoints as a Sass map for easier iteration
+$grid-breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+	@media (min-width: #{$breakpoint}) {
+		@for $i from 1 through 12 {
+			.col-#{$name}-#{$i} {
+				flex: 0 0 auto;
+				width: calc(100% / 12 * #{$i});
+				padding-right: var(--hikma-spacing-md);
+				padding-left: var(--hikma-spacing-md);
+			}
+			.offset-#{$name}-#{$i} {
+				margin-left: calc(100% / 12 * #{$i});
+			}
+		}
+		.col-#{$name}-auto {
+			flex: 0 0 auto;
+			width: auto;
+			max-width: 100%;
+		}
+	}
+}

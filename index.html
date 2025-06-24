@@ -54,6 +54,130 @@
 			</p>
 		</div>
 
+		<hr />
+		<h2>Layout - Container & Grid</h2>
+
+		<div class="container" style="border: 1px dashed #ccc; padding: 1rem">
+			<h3>Basic Container</h3>
+			<p>
+				This content is inside a basic container, centered and with padding.
+			</p>
+		</div>
+
+		<div class="container" style="margin-top: 2rem">
+			<h3>Responsive Grid Example</h3>
+			<div class="row" style="background-color: #f0f0f0; padding: 1rem">
+				<div
+					class="col-md-6"
+					style="
+						background-color: #e6e6e6;
+						border: 1px solid #d0d0d0;
+						padding: 1rem;
+					"
+				>
+					<p>Column 1 (md-6)</p>
+				</div>
+				<div
+					class="col-md-6"
+					style="
+						background-color: #d6d6d6;
+						border: 1px solid #c0c0c0;
+						padding: 1rem;
+					"
+				>
+					<p>Column 2 (md-6)</p>
+				</div>
+			</div>
+
+			<div
+				class="row"
+				style="margin-top: 1rem; background-color: #f0f0f0; padding: 1rem"
+			>
+				<div
+					class="col-sm-12 col-md-4"
+					style="
+						background-color: #e6e6e6;
+						border: 1px solid #d0d0d0;
+						padding: 1rem;
+					"
+				>
+					<p>Column 1 (sm-12, md-4)</p>
+				</div>
+				<div
+					class="col-sm-12 col-md-4"
+					style="
+						background-color: #d6d6d6;
+						border: 1px solid #c0c0c0;
+						padding: 1rem;
+					"
+				>
+					<p>Column 2 (sm-12, md-4)</p>
+				</div>
+				<div
+					class="col-sm-12 col-md-4"
+					style="
+						background-color: #c6c6c6;
+						border: 1px solid #b0b0b0;
+						padding: 1rem;
+					"
+				>
+					<p>Column 3 (sm-12, md-4)</p>
+				</div>
+			</div>
+
+			<div
+				class="row"
+				style="margin-top: 1rem; background-color: #f0f0f0; padding: 1rem"
+			>
+				<div
+					class="col-6"
+					style="
+						background-color: #e6e6e6;
+						border: 1px solid #d0d0d0;
+						padding: 1rem;
+					"
+				>
+					<p>Column 1 (col-6 - always 50%)</p>
+				</div>
+				<div
+					class="col-6"
+					style="
+						background-color: #d6d6d6;
+						border: 1px solid #c0c0c0;
+						padding: 1rem;
+					"
+				>
+					<p>Column 2 (col-6 - always 50%)</p>
+				</div>
+			</div>
+
+			<div
+				class="row"
+				style="margin-top: 1rem; background-color: #f0f0f0; padding: 1rem"
+			>
+				<div
+					class="col-md-4"
+					style="
+						background-color: #e6e6e6;
+						border: 1px solid #d0d0d0;
+						padding: 1rem;
+					"
+				>
+					<p>Column with offset (md-4, offset-md-4)</p>
+				</div>
+				<div
+					class="col-md-4 offset-md-4"
+					style="
+						background-color: #d6d6d6;
+						border: 1px solid #c0c0c0;
+						padding: 1rem;
+					"
+				>
+					<p>Column with offset (md-4, offset-md-4)</p>
+				</div>
+			</div>
+		</div>
+
 		<!-- Load scripts at the end of body -->
 		<script src="/dist/hikma-ui-js.js"></script>
 		<script>

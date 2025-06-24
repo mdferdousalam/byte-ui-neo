@@ -1,0 +1,27 @@
+// Layout - Container
+// This file defines the basic container for responsive layouts.
+
+.container {
+    width: 100%; // Default to full width
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--hikma-spacing-md); // Default padding on sides
+    padding-left: var(--hikma-spacing-md); // Default padding on sides
+
+    // Responsive breakpoints for max-width
+    @media (min-width: 576px) { // Small devices (sm)
+        max-width: 540px;
+    }
+    @media (min-width: 768px) { // Medium devices (md)
+        max-width: 720px;
+    }
+    @media (min-width: 992px) { // Large devices (lg)
+        max-width: 960px;
+    }
+    @media (min-width: 1200px) { // Extra large devices (xl)
+        max-width: 1140px;
+    }
+    @media (min-width: 1400px) { // Extra extra large devices (xxl - optional)
+        max-width: 1320px;
+    }
+}
