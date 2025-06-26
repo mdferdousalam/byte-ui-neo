@@ -1,0 +1,128 @@
+// Components - Card
+// This file defines styles for a versatile content container known as a card.
+
+:root {
+    // Card specific variables
+    --hikma-card-spacer-x: 1.25rem;
+    --hikma-card-spacer-y: 0.75rem;
+    --hikma-card-border-width: var(--hikma-border-width);
+    --hikma-card-border-color: var(--hikma-border-color-base);
+    --hikma-card-border-radius: var(--hikma-border-radius);
+    --hikma-card-bg: var(--hikma-background-color-base);
+    --hikma-card-box-shadow: var(--hikma-box-shadow); // Using default shadow utility
+    --hikma-card-cap-bg: var(--hikma-background-color-light); // Header/Footer background
+    --hikma-card-cap-color: var(--hikma-text-color-base);
+    --hikma-card-title-mb: 0.75rem; // Margin bottom for card title
+    --hikma-card-text-mb: 1rem; // Margin bottom for card text
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0; // Allows the card to shrink smaller than its content
+    word-wrap: break-word; // Ensures long words break
+    background-color: var(--hikma-card-bg);
+    background-clip: border-box;
+    border: var(--hikma-card-border-width) solid var(--hikma-card-border-color);
+    border-radius: var(--hikma-card-border-radius);
+    box-shadow: var(--hikma-card-box-shadow);
+
+    > hr { // Separator within card
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    > .list-group { // If using list groups inside cards
+        border-top: inherit;
+        border-bottom: inherit;
+
+        &:first-child {
+            border-top-left-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
+            border-top-right-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
+        }
+
+        &:last-child {
+            border-bottom-left-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
+            border-bottom-right-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
+        }
+    }
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: var(--hikma-card-spacer-y) var(--hikma-card-spacer-x);
+    color: var(--hikma-text-color-base);
+}
+
+.card-title {
+    margin-bottom: var(--hikma-card-title-mb);
+    font-size: 1.25rem; // Example size
+    font-weight: 500;
+}
+
+.card-subtitle {
+    margin-top: calc(var(--hikma-card-title-mb) * -0.5); // Adjust spacing relative to title
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    color: var(--hikma-text-color-muted);
+}
+
+.card-text {
+    &:last-child {
+        margin-bottom: 0; // Remove margin from last paragraph
+    }
+}
+
+.card-link {
+    &:hover {
+        text-decoration: none;
+    }
+
+    + .card-link { // Spacing between multiple links
+        margin-left: var(--hikma-card-spacer-x);
+    }
+}
+
+.card-header,
+.card-footer {
+    padding: var(--hikma-card-spacer-y) var(--hikma-card-spacer-x);
+    margin-bottom: 0;
+    background-color: var(--hikma-card-cap-bg);
+    border-bottom: var(--hikma-card-border-width) solid var(--hikma-card-border-color);
+    color: var(--hikma-card-cap-color);
+
+    &:first-child {
+        border-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width)) calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width)) 0 0;
+    }
+
+    &:last-child {
+        border-top: var(--hikma-card-border-width) solid var(--hikma-card-border-color); // Border for footer
+        border-bottom-right-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+        border-bottom-left-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+    }
+}
+
+.card-header {
+    border-bottom: var(--hikma-card-border-width) solid var(--hikma-card-border-color);
+}
+
+.card-footer {
+    border-top: var(--hikma-card-border-width) solid var(--hikma-card-border-color);
+}
+
+.card-img,
+.card-img-top,
+.card-img-bottom {
+    width: 100%;
+}
+
+.card-img-top {
+    border-top-left-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+    border-top-right-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+}
+
+.card-img-bottom {
+    border-bottom-left-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+    border-bottom-right-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+}

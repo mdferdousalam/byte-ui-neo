@@ -1,0 +1,145 @@
+// Components - Forms
+// This file defines basic styles for form elements like inputs, textareas, and selects.
+
+:root {
+    // Form specific variables (can be overridden in theme/_variables.scss)
+    --hikma-form-control-height: 2.25rem;
+    --hikma-form-control-padding-x: 0.75rem;
+    --hikma-form-control-padding-y: 0.375rem;
+    --hikma-form-control-font-size: var(--hikma-font-size-base);
+    --hikma-form-control-line-height: var(--hikma-line-height-base);
+    --hikma-form-control-color: var(--hikma-text-color-base);
+    --hikma-form-control-bg: var(--hikma-background-color-light);
+    --hikma-form-control-border-color: var(--hikma-border-color-base);
+    --hikma-form-control-border-width: var(--hikma-border-width);
+    --hikma-form-control-border-radius: var(--hikma-border-radius);
+    --hikma-form-control-focus-border-color: var(--hikma-color-primary-light);
+    --hikma-form-control-focus-box-shadow: 0 0 0 0.25rem var(--hikma-color-primary-lighter);
+    --hikma-form-control-placeholder-color: var(--hikma-text-color-muted);
+    --hikma-form-control-disabled-bg: var(--hikma-background-color-muted);
+    --hikma-form-check-input-width: 1.25em;
+    --hikma-form-check-input-margin-start: 0.5rem;
+    --hikma-form-check-label-margin-start: 0.375rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: var(--hikma-form-control-height);
+    padding: var(--hikma-form-control-padding-y) var(--hikma-form-control-padding-x);
+    font-family: var(--hikma-font-family-base);
+    font-size: var(--hikma-form-control-font-size);
+    font-weight: 400;
+    line-height: var(--hikma-form-control-line-height);
+    color: var(--hikma-form-control-color);
+    background-color: var(--hikma-form-control-bg);
+    background-clip: padding-box;
+    border: var(--hikma-form-control-border-width) solid var(--hikma-form-control-border-color);
+    appearance: none;
+    border-radius: var(--hikma-form-control-border-radius);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:focus {
+        color: var(--hikma-form-control-color);
+        background-color: var(--hikma-form-control-bg);
+        border-color: var(--hikma-form-control-focus-border-color);
+        outline: 0;
+        box-shadow: var(--hikma-form-control-focus-box-shadow);
+    }
+
+    &::placeholder {
+        color: var(--hikma-form-control-placeholder-color);
+        opacity: 1;
+    }
+
+    &:disabled,
+    &[readonly] {
+        background-color: var(--hikma-form-control-disabled-bg);
+        opacity: 1;
+    }
+}
+
+// Select specific styles
+select.form-control {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right var(--hikma-form-control-padding-x) center;
+    background-size: 1rem 0.75rem;
+}
+
+// Checkboxes and Radios (form-check)
+.form-check {
+    display: block;
+    min-height: var(--hikma-form-check-input-width);
+    padding-left: calc(var(--hikma-form-check-input-width) + var(--hikma-form-check-input-margin-start));
+    margin-bottom: 0.125rem;
+}
+
+.form-check-input {
+    width: var(--hikma-form-check-input-width);
+    height: var(--hikma-form-check-input-width);
+    margin-top: calc((var(--hikma-form-control-line-height) * 0.5) - (var(--hikma-form-check-input-width) * 0.5));
+    margin-left: calc(var(--hikma-form-check-input-width) * -1 - var(--hikma-form-check-input-margin-start));
+    vertical-align: top;
+    background-color: var(--hikma-form-control-bg);
+    border: var(--hikma-form-control-border-width) solid var(--hikma-form-control-border-color);
+    appearance: none;
+    -webkit-print-color-adjust: exact; // Chrome, Edge, Opera
+    print-color-adjust: exact; // Standard property
+
+    &:checked {
+        background-color: var(--hikma-color-primary);
+        border-color: var(--hikma-color-primary);
+    }
+
+    &:focus {
+        border-color: var(--hikma-form-control-focus-border-color);
+        outline: 0;
+        box-shadow: var(--hikma-form-control-focus-box-shadow);
+    }
+
+    &:disabled {
+        filter: none;
+        opacity: 0.65;
+    }
+}
+
+.form-check-label {
+    margin-bottom: 0;
+    margin-left: var(--hikma-form-check-label-margin-start);
+}
+
+// Radio button specific
+.form-check-input[type="radio"] {
+    border-radius: 50%;
+}
+
+.form-check-input[type="radio"]:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+    background-size: 0.625em;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+// Checkbox specific
+.form-check-input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+    background-size: 1em;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+// Form Validation
+.is-valid {
+    border-color: var(--hikma-color-success) !important;
+}
+.is-invalid {
+    border-color: var(--hikma-color-danger) !important;
+}
+
+// Form Text
+.form-text {
+    font-size: 0.875em;
+    color: var(--hikma-text-color-muted);
+    margin-top: 0.25rem;
+}

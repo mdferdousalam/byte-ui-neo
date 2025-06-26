@@ -17,8 +17,8 @@
 // 3. Component Styles
 // Specific UI components. They rely on variables and mixins from core.
 @use 'components/button';
-// @use 'components/forms'; // Add other components as you create them
-// @use 'components/cards';
+@use 'components/form'; // Add other components
+@use 'components/card';
 
 // 4. Utility Classes
 // Single-purpose, reusable classes that often override component styles with `!important`.
