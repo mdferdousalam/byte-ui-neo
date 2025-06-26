@@ -308,6 +308,63 @@
 			</div>
 		</div>
 
+		<hr />
+		<h2>Advanced Utility Classes</h2>
+
+		<div
+			class="container"
+			style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem"
+		>
+			<h3>Display Utilities</h3>
+			<div class="d-flex bg-gray-200 p-sm mb-md">
+				<div class="p-sm border">Flex Item 1</div>
+				<div class="p-sm border d-none d-md-block">
+					Hidden on small, block on medium+
+				</div>
+				<div class="p-sm border">Flex Item 3</div>
+			</div>
+			<p class="d-inline-block border p-xs">Inline-Block Paragraph</p>
+		</div>
+
+		<div
+			class="container"
+			style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem"
+		>
+			<h3>Sizing Utilities</h3>
+			<div class="w-50 bg-gray-200 p-sm mb-md">Width 50%</div>
+			<div class="h-100 bg-gray-200 d-inline-block p-sm" style="height: 80px">
+				Height 100% (of parent 80px)
+			</div>
+			<div
+				class="vh-100 bg-gray-300 d-flex justify-content-center align-items-center"
+			>
+				<p>Full Viewport Height (100vh)</p>
+			</div>
+		</div>
+
+		<div
+			class="container"
+			style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem"
+		>
+			<h3>Border & Shadows Utilities</h3>
+			<div class="p-lg border border-primary rounded mb-md shadow-sm">
+				Box with Primary Border, Rounded, Small Shadow
+			</div>
+			<div
+				class="p-lg border border-danger rounded-circle d-inline-block mb-md shadow-lg"
+			>
+				Circle with Danger Border, Large Shadow
+			</div>
+			<div
+				class="p-lg border-top border-end border-dark rounded-pill d-inline-block shadow"
+			>
+				Custom Borders, Pill Shape, Default Shadow
+			</div>
+			<div class="p-md mt-md border border-0 shadow-none">
+				No Border, No Shadow (Demonstrating removal)
+			</div>
+		</div>
+
 		<script src="/dist/hikma-ui-js.js"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {

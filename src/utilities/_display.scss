@@ -1,0 +1,36 @@
+// Utilities - Display
+// This file defines utility classes for controlling the display property and its responsive variants.
+
+// Base display properties
+.d-none { display: none !important; }
+.d-inline { display: inline !important; }
+.d-inline-block { display: inline-block !important; }
+.d-block { display: block !important; }
+.d-table { display: table !important; }
+.d-table-row { display: table-row !important; }
+.d-table-cell { display: table-cell !important; }
+// d-flex and d-inline-flex are already defined in _flex.scss, avoid re-defining here.
+// You might choose to move d-flex/d-inline-flex from _flex.scss to here for pure display utilities,
+// but keeping them in _flex.scss alongside other flex properties is also a common pattern.
+
+// Responsive display properties
+$grid-breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+@each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+    @media (min-width: #{$breakpoint-value}) {
+        .d-#{$breakpoint-name}-none { display: none !important; }
+        .d-#{$breakpoint-name}-inline { display: inline !important; }
+        .d-#{$breakpoint-name}-inline-block { display: inline-block !important; }
+        .d-#{$breakpoint-name}-block { display: block !important; }
+        .d-#{$breakpoint-name}-table { display: table !important; }
+        .d-#{$breakpoint-name}-table-row { display: table-row !important; }
+        .d-#{$breakpoint-name}-table-cell { display: table-cell !important; }
+        // d-flex and d-inline-flex responsive are in _flex.scss already.
+    }
+}

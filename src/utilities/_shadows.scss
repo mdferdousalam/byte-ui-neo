@@ -1,0 +1,7 @@
+// Utilities - Shadows
+// This file defines utility classes for box-shadow.
+
+.shadow-sm { box-shadow: var(--hikma-box-shadow-sm) !important; }
+.shadow { box-shadow: var(--hikma-box-shadow) !important; } // Default shadow
+.shadow-lg { box-shadow: var(--hikma-box-shadow-lg) !important; }
+.shadow-none { box-shadow: none !important; }
