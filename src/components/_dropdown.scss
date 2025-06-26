@@ -1,0 +1,121 @@
+// Components - Dropdown
+// This file defines styles for dropdown menus.
+// Requires JavaScript to toggle display.
+
+:root {
+    --hikma-dropdown-min-width: 10rem; // Default width
+    --hikma-dropdown-padding-x: 0;
+    --hikma-dropdown-padding-y: 0.5rem;
+    --hikma-dropdown-spacer: 0.125rem; // Space between dropdown and toggler
+    --hikma-dropdown-bg: var(--hikma-background-color-base);
+    --hikma-dropdown-border-color: var(--hikma-border-color-base);
+    --hikma-dropdown-border-radius: var(--hikma-border-radius);
+    --hikma-dropdown-box-shadow: var(--hikma-box-shadow);
+    --hikma-dropdown-link-color: var(--hikma-text-color-base);
+    --hikma-dropdown-link-hover-color: var(--hikma-color-primary);
+    --hikma-dropdown-link-hover-bg: var(--hikma-background-color-light);
+    --hikma-dropdown-link-active-color: var(--hikma-color-white);
+    --hikma-dropdown-link-active-bg: var(--hikma-color-primary);
+    --hikma-dropdown-link-disabled-color: var(--hikma-text-color-muted);
+    --hikma-dropdown-item-padding-x: 1rem;
+    --hikma-dropdown-item-padding-y: 0.25rem;
+    --hikma-dropdown-header-color: var(--hikma-text-color-muted);
+    --hikma-dropdown-header-padding-x: 1rem;
+    --hikma-dropdown-header-padding-y: 0.5rem;
+    --hikma-dropdown-divider-bg: var(--hikma-border-color-base);
+    --hikma-dropdown-divider-margin-y: 0.5rem;
+}
+
+.dropdown {
+    position: relative;
+    // For position absolute of dropdown-menu
+}
+
+.dropdown-toggle {
+    // Add custom arrow with data:image/svg+xml if desired, similar to select
+    // For now, let's keep it simple
+    &::after {
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        border-left: 0.3em solid transparent;
+    }
+    // Remove arrow when a button is used as a toggle
+    &.hide-arrow::after {
+        display: none;
+    }
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1000; // Above general content, below modal
+    display: none; // Hidden by default
+    min-width: var(--hikma-dropdown-min-width);
+    padding: var(--hikma-dropdown-padding-y) var(--hikma-dropdown-padding-x);
+    margin: var(--hikma-dropdown-spacer) 0 0; // Space from toggle
+    font-size: var(--hikma-font-size-base);
+    color: var(--hikma-text-color-base);
+    text-align: left;
+    list-style: none;
+    background-color: var(--hikma-dropdown-bg);
+    background-clip: padding-box;
+    border: 1px solid var(--hikma-dropdown-border-color);
+    border-radius: var(--hikma-dropdown-border-radius);
+    box-shadow: var(--hikma-dropdown-box-shadow);
+
+    &.show { // Managed by JS
+        display: block;
+    }
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%; // Ensure fills parent
+    padding: var(--hikma-dropdown-item-padding-y) var(--hikma-dropdown-item-padding-x);
+    clear: both; // Clear any floats
+    font-weight: 400;
+    color: var(--hikma-dropdown-link-color);
+    text-align: inherit; // Inherit text alignment
+    text-decoration: none;
+    white-space: nowrap; // Prevent wrapping
+    background-color: transparent;
+    border: 0;
+
+    &:hover,
+    &:focus {
+        color: var(--hikma-dropdown-link-hover-color);
+        background-color: var(--hikma-dropdown-link-hover-bg);
+    }
+
+    &.active {
+        color: var(--hikma-dropdown-link-active-color);
+        background-color: var(--hikma-dropdown-link-active-bg);
+        text-decoration: none;
+    }
+
+    &.disabled,
+    &:disabled {
+        color: var(--hikma-dropdown-link-disabled-color);
+        pointer-events: none; // Disable click
+        background-color: transparent;
+    }
+}
+
+.dropdown-header {
+    padding: var(--hikma-dropdown-header-padding-y) var(--hikma-dropdown-header-padding-x);
+    margin-bottom: 0; // Remove default margin
+    font-size: 0.875em;
+    color: var(--hikma-dropdown-header-color);
+    white-space: nowrap;
+}
+
+.dropdown-divider {
+    height: 0;
+    margin: var(--hikma-dropdown-divider-margin-y) 0;
+    overflow: hidden;
+    border-top: 1px solid var(--hikma-dropdown-divider-bg);
+}

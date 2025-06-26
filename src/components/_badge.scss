@@ -1,0 +1,59 @@
+// Components - Badge
+// This file defines styles for small, contextual, numerical, or status indicators.
+
+:root {
+    --hikma-badge-padding-x: 0.65em;
+    --hikma-badge-padding-y: 0.35em;
+    --hikma-badge-font-size: 0.75em;
+    --hikma-badge-font-weight: 700;
+    --hikma-badge-color: var(--hikma-color-white);
+    --hikma-badge-border-radius: var(--hikma-border-radius); // Default rounded corners
+    --hikma-badge-pill-border-radius: 9999px; // For pill shape
+}
+
+.badge {
+    display: inline-block;
+    padding: var(--hikma-badge-padding-y) var(--hikma-badge-padding-x);
+    font-size: var(--hikma-badge-font-size);
+    font-weight: var(--hikma-badge-font-weight);
+    line-height: 1;
+    color: var(--hikma-badge-color);
+    text-align: center;
+    white-space: nowrap; // Prevent text from wrapping
+    vertical-align: baseline;
+    border-radius: var(--hikma-badge-border-radius);
+    // You might need a background color set for each variant
+}
+
+// Badge color variants
+.badge-primary {
+    background-color: var(--hikma-color-primary) !important;
+}
+.badge-secondary {
+    background-color: var(--hikma-color-secondary) !important;
+}
+.badge-success {
+    background-color: var(--hikma-color-success) !important;
+}
+.badge-info {
+    background-color: var(--hikma-color-info) !important;
+}
+.badge-warning {
+    background-color: var(--hikma-color-warning) !important;
+    color: var(--hikma-text-color-dark); // Darker text for better contrast on light warning
+}
+.badge-danger {
+    background-color: var(--hikma-color-danger) !important;
+}
+.badge-light {
+    background-color: var(--hikma-color-light) !important;
+    color: var(--hikma-text-color-dark) !important; // Dark text on light badge
+}
+.badge-dark {
+    background-color: var(--hikma-color-dark) !important;
+}
+
+// Pill badge for rounded corners
+.rounded-pill {
+    border-radius: var(--hikma-badge-pill-border-radius) !important;
+}

@@ -1,0 +1,101 @@
+// Components - Alert
+// This file defines styles for contextual alert messages.
+
+:root {
+    --hikma-alert-padding-x: 1rem;
+    --hikma-alert-padding-y: 1rem;
+    --hikma-alert-margin-bottom: 1rem;
+    --hikma-alert-border-radius: var(--hikma-border-radius);
+    --hikma-alert-border-width: var(--hikma-border-width);
+    --hikma-alert-font-size: var(--hikma-font-size-base);
+    --hikma-alert-lightness-factor: 8%; // For variations
+}
+
+.alert {
+    position: relative;
+    padding: var(--hikma-alert-padding-y) var(--hikma-alert-padding-x);
+    margin-bottom: var(--hikma-alert-margin-bottom);
+    border: var(--hikma-alert-border-width) solid transparent;
+    border-radius: var(--hikma-alert-border-radius);
+    font-size: var(--hikma-alert-font-size);
+}
+
+// Alert variants based on colors
+.alert-primary {
+    color: var(--hikma-color-primary-darker);
+    background-color: var(--hikma-color-primary-lighter);
+    border-color: var(--hikma-color-primary-light);
+}
+
+.alert-secondary {
+    color: var(--hikma-color-secondary-darker);
+    background-color: var(--hikma-color-secondary-lighter);
+    border-color: var(--hikma-color-secondary-light);
+}
+
+.alert-success {
+    color: var(--hikma-color-success-darker);
+    background-color: var(--hikma-color-success-lighter);
+    border-color: var(--hikma-color-success-light);
+}
+
+.alert-info {
+    color: var(--hikma-color-info-darker);
+    background-color: var(--hikma-color-info-lighter);
+    border-color: var(--hikma-color-info-light);
+}
+
+.alert-warning {
+    color: var(--hikma-color-warning-darker);
+    background-color: var(--hikma-color-warning-lighter);
+    border-color: var(--hikma-color-warning-light);
+}
+
+.alert-danger {
+    color: var(--hikma-color-danger-darker);
+    background-color: var(--hikma-color-danger-lighter);
+    border-color: var(--hikma-color-danger-light);
+}
+
+.alert-light {
+    color: var(--hikma-color-darker); // Dark text on light background
+    background-color: var(--hikma-color-light);
+    border-color: var(--hikma-color-muted);
+}
+
+.alert-dark {
+    color: var(--hikma-color-lighter); // Light text on dark background
+    background-color: var(--hikma-color-dark);
+    border-color: var(--hikma-color-darker);
+}
+
+// Add a close button (requires JS for functionality)
+.alert-dismissible {
+    padding-right: calc(var(--hikma-alert-padding-x) + 2rem); // Make space for close button
+
+    .btn-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        padding: var(--hikma-alert-padding-y) var(--hikma-alert-padding-x);
+        border: 0;
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+        background-size: 1em;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.5;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.75;
+        }
+
+        &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem rgba(var(--hikma-color-primary-rgb), 0.25); // Focus ring
+            opacity: 1;
+        }
+    }
+}

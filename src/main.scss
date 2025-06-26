@@ -19,6 +19,14 @@
 @use 'components/button';
 @use 'components/form'; // Add other components
 @use 'components/card';
+@use 'components/navbar';
+@use 'components/breadcrumb';
+@use 'components/pagination';
+@use 'components/alert';
+@use 'components/badge';
+@use 'components/modal';
+@use 'components/dropdown';
+@use 'components/navs';      // (for Tabs/Pills)
 
 // 4. Utility Classes
 // Single-purpose, reusable classes that often override component styles with `!important`.

@@ -1,0 +1,94 @@
+// Components - Navs (Tabs & Pills)
+// This file defines styles for navigation components like tabs and pills.
+// Requires JavaScript to toggle active states if used for dynamic content.
+
+:root {
+    --hikma-nav-link-padding-x: 1rem;
+    --hikma-nav-link-padding-y: 0.5rem;
+    --hikma-nav-link-font-size: var(--hikma-font-size-base);
+    --hikma-nav-link-color: var(--hikma-text-color-base);
+    --hikma-nav-link-hover-color: var(--hikma-link-hover-color);
+    --hikma-nav-link-disabled-color: var(--hikma-text-color-muted);
+
+    // Tabs specific
+    --hikma-nav-tabs-border-color: var(--hikma-border-color-base);
+    --hikma-nav-tabs-border-width: var(--hikma-border-width);
+    --hikma-nav-tabs-link-hover-border-color: var(--hikma-border-color-hover);
+    --hikma-nav-tabs-link-active-color: var(--hikma-color-primary);
+    --hikma-nav-tabs-link-active-bg: var(--hikma-background-color-base);
+    --hikma-nav-tabs-link-active-border-color: var(--hikma-color-primary) var(--hikma-color-primary) var(--hikma-background-color-base);
+
+    // Pills specific
+    --hikma-nav-pills-link-active-color: var(--hikma-color-white);
+    --hikma-nav-pills-link-active-bg: var(--hikma-color-primary);
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap; // Allows items to wrap
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-link {
+    display: block; // For full click area
+    padding: var(--hikma-nav-link-padding-y) var(--hikma-nav-link-padding-x);
+    font-size: var(--hikma-nav-link-font-size);
+    font-weight: 400;
+    color: var(--hikma-nav-link-color);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: var(--hikma-nav-link-hover-color);
+        text-decoration: none;
+    }
+
+    &.disabled {
+        color: var(--hikma-nav-link-disabled-color);
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+// Nav Tabs
+.nav-tabs {
+    border-bottom: var(--hikma-nav-tabs-border-width) solid var(--hikma-nav-tabs-border-color);
+
+    .nav-item {
+        margin-bottom: calc(var(--hikma-nav-tabs-border-width) * -1); // Overlap border
+    }
+
+    .nav-link {
+        border: var(--hikma-nav-tabs-border-width) solid transparent;
+        border-top-left-radius: var(--hikma-border-radius);
+        border-top-right-radius: var(--hikma-border-radius);
+
+        &:hover,
+        &:focus {
+            border-color: var(--hikma-nav-tabs-link-hover-border-color);
+            // border-color: var(--hikma-nav-tabs-link-hover-border-color) var(--hikma-nav-tabs-link-hover-border-color) var(--hikma-nav-tabs-border-color);
+            isolation: isolate; // To fix border overlap issues
+        }
+
+        &.active {
+            color: var(--hikma-nav-tabs-link-active-color);
+            background-color: var(--hikma-nav-tabs-link-active-bg);
+            border-color: var(--hikma-nav-tabs-link-active-border-color);
+        }
+    }
+}
+
+// Nav Pills
+.nav-pills {
+    .nav-link {
+        border-radius: var(--hikma-border-radius); // Default button-like shape
+
+        &.active {
+            color: var(--hikma-nav-pills-link-active-color);
+            background-color: var(--hikma-nav-pills-link-active-bg);
+        }
+    }
+}

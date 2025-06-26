@@ -30,6 +30,39 @@
 	--hikma-color-warning: #ffc107;
 	--hikma-color-danger: #dc3545;
 
+	// If you need lighter/darker shades for alerts, add them like so:
+	// (You'll need to decide the actual color values based on your palette)
+
+	// Example for primary shades
+	--hikma-color-primary-lighter: #cce5ff; // Very light blue
+	--hikma-color-primary-light: #b8daff; // Light blue
+	--hikma-color-primary-darker: #004085; // Dark blue text for light blue background
+	--hikma-color-primary-rgb: 0, 123, 255; // For box-shadow rgba
+
+	// Example for success shades
+	--hikma-color-success-lighter: #d4edda;
+	--hikma-color-success-light: #c3e6cb;
+	--hikma-color-success-darker: #155724;
+	--hikma-color-success-rgb: 40, 167, 69;
+
+	// Add similar for secondary, info, warning, danger, light, dark.
+	// For warning, you might want a darker text color on a lighter background
+	--hikma-color-warning-lighter: #ffeeba;
+	--hikma-color-warning-light: #ffeccc;
+	--hikma-color-warning-darker: #856404;
+	--hikma-color-warning-rgb: 255, 193, 7;
+
+	// Also ensure you have a muted text color and default border color if not already present
+	--hikma-text-color-muted: var(--hikma-color-gray-600); // Or specific hex/rgb
+	--hikma-border-color-base: var(--hikma-color-gray-300); // Or specific hex/rgb
+	--hikma-border-color-hover: var(
+		--hikma-color-gray-400
+	); // For pagination hover
+
+	// And general lighter/darker for text on light/dark backgrounds
+	--hikma-color-lighter: #f8f9fa; // Used for text on dark backgrounds in alerts
+	--hikma-color-darker: #343a40; // Used for text on light backgrounds in alerts
+
 	// Text & Background Colors (Base)
 	--hikma-text-color-base: var(--hikma-color-gray-900); // Default text color
 	--hikma-background-color-base: var(
