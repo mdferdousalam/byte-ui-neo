@@ -1,0 +1,179 @@
+// Components - Carousel
+// This file defines styles for image/content carousels (slideshows).
+// Requires JavaScript for functionality.
+
+:root {
+    --hikma-carousel-transition-duration: 0.6s;
+    --hikma-carousel-control-color: var(--hikma-color-white);
+    --hikma-carousel-control-width: 15%;
+    --hikma-carousel-control-opacity: 0.5;
+    --hikma-carousel-control-hover-opacity: 0.9;
+    --hikma-carousel-indicator-width: 30px;
+    --hikma-carousel-indicator-height: 3px;
+    --hikma-carousel-indicator-spacer: 3px;
+    --hikma-carousel-indicator-opacity: 0.5;
+    --hikma-carousel-indicator-active-opacity: 0.9;
+}
+
+.carousel {
+    position: relative;
+    box-shadow: var(--hikma-box-shadow); // Optional shadow for visual appeal
+    border-radius: var(--hikma-border-radius-lg); // Optional rounded corners
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden; // Hide overflow content
+    border-radius: inherit; // Inherit from .carousel
+}
+
+.carousel-item {
+    position: relative;
+    display: none; // Hidden by default
+    float: left; // For initial positioning
+    width: 100%;
+    margin-right: -100%; // Overlap for sliding
+    backface-visibility: hidden; // Prevent flickering
+    transition: transform var(--hikma-carousel-transition-duration) ease-in-out;
+
+    // Active state (managed by JS)
+    &.active {
+        display: block; // Show active item
+    }
+
+    // Slide animation (managed by JS)
+    &.carousel-item-next,
+    &.carousel-item-prev {
+        display: block; // Show next/prev during animation
+    }
+
+    &.carousel-item-next:not(.carousel-item-start),
+    &.carousel-item-prev:not(.carousel-item-end) {
+        transition: transform var(--hikma-carousel-transition-duration) ease-in-out;
+    }
+}
+
+// Directional slide
+.carousel-item-start { transform: translateX(100%); }
+.carousel-item-end { transform: translateX(-100%); }
+
+.carousel-item-prev.carousel-item-end { transform: translateX(0); }
+.carousel-item-next.carousel-item-start { transform: translateX(0); }
+
+
+.carousel-fade {
+    .carousel-item {
+        opacity: 0;
+        transition-property: opacity;
+        transform: none; // No slide for fade
+
+        &.active {
+            opacity: 1;
+        }
+
+        &.carousel-item-next.carousel-item-start,
+        &.carousel-item-prev.carousel-item-end {
+            opacity: 1;
+        }
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1; // Above carousel content
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--hikma-carousel-control-width);
+    color: var(--hikma-carousel-control-color);
+    text-align: center;
+    opacity: var(--hikma-carousel-control-opacity);
+    transition: opacity 0.15s ease;
+
+    &:hover,
+    &:focus {
+        color: var(--hikma-carousel-control-color);
+        opacity: var(--hikma-carousel-control-hover-opacity);
+        text-decoration: none;
+        outline: 0;
+    }
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: inline-block;
+    width: 2rem; // Size of arrow icons
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2; // Above controls
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: var(--hikma-carousel-indicator-spacer);
+    margin-bottom: 1rem;
+    margin-left: var(--hikma-carousel-indicator-spacer);
+    list-style: none;
+
+    li {
+        box-sizing: content-box;
+        flex: 0 1 auto;
+        width: var(--hikma-carousel-indicator-width);
+        height: var(--hikma-carousel-indicator-height);
+        padding: 0;
+        margin-right: var(--hikma-carousel-indicator-spacer);
+        margin-left: var(--hikma-carousel-indicator-spacer);
+        text-indent: -999px; // Hide text
+        cursor: pointer;
+        background-color: var(--hikma-carousel-control-color);
+        background-clip: padding-box; // Ensure background covers padding
+        border: 0;
+        border-top: 10px solid transparent; // Clickable area
+        border-bottom: 10px solid transparent; // Clickable area
+        opacity: var(--hikma-carousel-indicator-opacity);
+        transition: opacity 0.6s ease;
+
+        &.active {
+            opacity: var(--hikma-carousel-indicator-active-opacity);
+        }
+    }
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: var(--hikma-carousel-control-color);
+    text-align: center;
+}
