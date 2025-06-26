@@ -1,0 +1,249 @@
+// Utilities
+// This file contains a collection of helper classes for common styling needs.
+
+// 1. Spacing Utilities (Margin & Padding)
+// Classes: m-*, p-*, mt-*, mb-*, ms-*, me-*, mx-*, my-*, pt-*, pb-*, ps-*, pe-*, px-*, py-*
+// Values: 0, xs, sm, md, lg, xl, auto (for margin only)
+// Based on --hikma-spacing- variables
+
+:root {
+    --hikma-spacing-none: 0;
+    --hikma-spacing-xs: 0.25rem;  // 4px
+    --hikma-spacing-sm: 0.5rem;   // 8px
+    --hikma-spacing-md: 1rem;     // 16px (base)
+    --hikma-spacing-lg: 1.5rem;   // 24px
+    --hikma-spacing-xl: 3rem;     // 48px
+}
+
+$spacers: (
+    0: var(--hikma-spacing-none),
+    xs: var(--hikma-spacing-xs),
+    sm: var(--hikma-spacing-sm),
+    md: var(--hikma-spacing-md),
+    lg: var(--hikma-spacing-lg),
+    xl: var(--hikma-spacing-xl)
+);
+
+// Margin & Padding Mixin
+@mixin generate-spacing-classes($property-shorthand, $property-full) {
+    @each $key, $value in $spacers {
+        // All sides
+        .#{$property-shorthand}-#{$key} { #{$property-full}: #{$value} !important; }
+        // Top & Bottom
+        .#{$property-shorthand}y-#{$key} {
+            #{$property-full}-top: #{$value} !important;
+            #{$property-full}-bottom: #{$value} !important;
+        }
+        // Left & Right (Start & End for logical properties)
+        .#{$property-shorthand}x-#{$key} {
+            #{$property-full}-left: #{$value} !important;
+            #{$property-full}-right: #{$value} !important;
+        }
+        // Top
+        .#{$property-shorthand}t-#{$key} { #{$property-full}-top: #{$value} !important; }
+        // Bottom
+        .#{$property-shorthand}b-#{$key} { #{$property-full}-bottom: #{$value} !important; }
+        // Start (Left)
+        .#{$property-shorthand}s-#{$key} { #{$property-full}-left: #{$value} !important; }
+        // End (Right)
+        .#{$property-shorthand}e-#{$key} { #{$property-full}-right: #{$value} !important; }
+    }
+}
+
+@include generate-spacing-classes(m, margin);
+@include generate-spacing-classes(p, padding);
+
+// Auto margin (only for margin-x)
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+// 2. Display Utilities
+// Classes: d-none, d-inline, d-inline-block, d-block, d-flex, d-grid
+// Responsive: d-{breakpoint}-*
+$displays: (
+    none: none,
+    inline: inline,
+    inline-block: inline-block,
+    block: block,
+    flex: flex,
+    grid: grid,
+);
+
+@each $name, $value in $displays {
+    .d-#{$name} { display: $value !important; }
+}
+
+// Responsive display utilities
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+@each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+        @each $name, $value in $displays {
+            .d-#{$breakpoint}-#{$name} { display: $value !important; }
+        }
+    }
+}
+
+
+// 3. Flexbox Utilities
+// Classes: d-flex, flex-row, flex-column, flex-row-reverse, flex-column-reverse,
+//          justify-content-start/end/center/between/around,
+//          align-items-start/end/center/baseline/stretch,
+//          flex-wrap, flex-nowrap, flex-wrap-reverse,
+//          align-self-start/end/center/baseline/stretch,
+//          order-*, flex-grow-0/1, flex-shrink-0/1
+// Responsive: flex-{breakpoint}-*
+
+.d-flex { display: flex !important; }
+
+.flex-row { flex-direction: row !important; }
+.flex-column { flex-direction: column !important; }
+.flex-row-reverse { flex-direction: row-reverse !important; }
+.flex-column-reverse { flex-direction: column-reverse !important; }
+
+.flex-wrap { flex-wrap: wrap !important; }
+.flex-nowrap { flex-wrap: nowrap !important; }
+.flex-wrap-reverse { flex-wrap: wrap-reverse !important; }
+
+// Justify Content
+$justify-content: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly // Added space-evenly
+);
+@each $name, $value in $justify-content {
+    .justify-content-#{$name} { justify-content: $value !important; }
+}
+
+// Align Items
+$align-items: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch
+);
+@each $name, $value in $align-items {
+    .align-items-#{$name} { align-items: $value !important; }
+}
+
+// Align Self
+$align-self: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch,
+    auto: auto
+);
+@each $name, $value in $align-self {
+    .align-self-#{$name} { align-self: $value !important; }
+}
+
+// Flex Grow/Shrink
+.flex-grow-0 { flex-grow: 0 !important; }
+.flex-grow-1 { flex-grow: 1 !important; }
+.flex-shrink-0 { flex-shrink: 0 !important; }
+.flex-shrink-1 { flex-shrink: 1 !important; }
+
+// Order (e.g., order-1, order-last)
+$orders: (
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    first: -1,
+    last: 6 // A large number to ensure it's last
+);
+@each $name, $value in $orders {
+    .order-#{$name} { order: $value !important; }
+}
+
+
+// Responsive flexbox utilities (example for flex-direction)
+@each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+        .flex-#{$breakpoint}-row { flex-direction: row !important; }
+        .flex-#{$breakpoint}-column { flex-direction: column !important; }
+        // Add more responsive flexbox properties as needed (justify-content, align-items etc.)
+        @each $name, $value in $justify-content {
+            .justify-content-#{$breakpoint}-#{$name} { justify-content: $value !important; }
+        }
+        @each $name, $value in $align-items {
+            .align-items-#{$breakpoint}-#{$name} { align-items: $value !important; }
+        }
+        @each $name, $value in $align-self {
+            .align-self-#{$breakpoint}-#{$name} { align-self: $value !important; }
+        }
+        .flex-#{$breakpoint}-grow-0 { flex-grow: 0 !important; }
+        .flex-#{$breakpoint}-grow-1 { flex-grow: 1 !important; }
+        .flex-#{$breakpoint}-shrink-0 { flex-shrink: 0 !important; }
+        .flex-#{$breakpoint}-shrink-1 { flex-shrink: 1 !important; }
+        @each $name, $value in $orders {
+            .order-#{$breakpoint}-#{$name} { order: $value !important; }
+        }
+    }
+}
+
+
+// 4. Text Utilities
+// Classes: text-start, text-end, text-center, text-justify,
+//          text-lowercase, text-uppercase, text-capitalize,
+//          fw-bold, fw-bolder, fw-semibold, fw-normal, fw-light, fw-lighter,
+//          fst-italic, fst-normal
+// Responsive: text-{breakpoint}-*
+
+.text-start { text-align: left !important; }
+.text-end { text-align: right !important; }
+.text-center { text-align: center !important; }
+.text-justify { text-align: justify !important; }
+
+.text-lowercase { text-transform: lowercase !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+
+// Font weight
+.fw-bold { font-weight: bold !important; }
+.fw-bolder { font-weight: bolder !important; }
+.fw-semibold { font-weight: 600 !important; } // Assuming you have 600 weight in font-family
+.fw-normal { font-weight: normal !important; }
+.fw-light { font-weight: lighter !important; }
+.fw-lighter { font-weight: lighter !important; }
+
+// Font style
+.fst-italic { font-style: italic !important; }
+.fst-normal { font-style: normal !important; }
+
+// Responsive text alignment
+@each $breakpoint, $width in $breakpoints {
+    @media (min-width: $width) {
+        .text-#{$breakpoint}-start { text-align: left !important; }
+        .text-#{$breakpoint}-end { text-align: right !important; }
+        .text-#{$breakpoint}-center { text-align: center !important; }
+        .text-#{$breakpoint}-justify { text-align: justify !important; }
+    }
+}
+
+
+// 5. Visibility Utilities
+// Classes: visible, invisible
+.visible {
+    visibility: visible !important;
+}
+
+.invisible {
+    visibility: hidden !important;
+}

@@ -34,6 +34,7 @@
 // 4. Utility Classes
 // Single-purpose, reusable classes that often override component styles with `!important`.
 // They should come after components to ensure they can override.
+@use 'utilities/utilities'; // General utility styles
 @use 'utilities/responsive'; // General responsive helpers
 @use 'utilities/spacing';
 @use 'utilities/flex';
