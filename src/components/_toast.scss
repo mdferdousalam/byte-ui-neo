@@ -1,96 +1,150 @@
 // Components - Toast
 // This file defines styles for dismissible, non-interactive popover messages.
-// Requires JavaScript for functionality.
 
 :root {
-    --hikma-toast-zindex: 1090; // Higher than modals
-    --hikma-toast-width: 350px;
-    --hikma-toast-padding-x: 0.75rem;
-    --hikma-toast-padding-y: 0.75rem;
-    --hikma-toast-border-radius: var(--hikma-border-radius);
-    --hikma-toast-border-color: rgba(0, 0, 0, 0.1);
-    --hikma-toast-box-shadow: var(--hikma-box-shadow);
-    --hikma-toast-background-color: rgba(var(--hikma-background-color-base-rgb), 0.85); // Semi-transparent
-    --hikma-toast-header-color: var(--hikma-text-color-muted);
-    --hikma-toast-header-background-color: rgba(var(--hikma-background-color-base-rgb), 0.7);
-    --hikma-toast-header-border-color: rgba(0, 0, 0, 0.05);
-
-    --hikma-toast-transition-duration: 0.3s;
-    --hikma-toast-fade-transform: translate(calc(var(--hikma-toast-width) + 1.5rem), 0); // Off-screen for fade-in from right
+	--hikma-toast-zindex: 1090;
+	--hikma-toast-width: 350px;
+	--hikma-toast-padding-x: 0.75rem;
+	--hikma-toast-padding-y: 0.75rem;
+	--hikma-toast-border-radius: var(--hikma-border-radius);
+	--hikma-toast-border-color: rgba(0, 0, 0, 0.1);
+	--hikma-toast-box-shadow: var(--hikma-box-shadow);
+	--hikma-toast-background-color: rgba(
+		var(--hikma-background-color-base-rgb),
+		0.85
+	);
+	--hikma-toast-header-color: var(--hikma-text-color-muted);
+	--hikma-toast-header-background-color: rgba(
+		var(--hikma-background-color-base-rgb),
+		0.7
+	);
+	--hikma-toast-header-border-color: rgba(0, 0, 0, 0.05);
+	--hikma-toast-transition-duration: 0.3s;
+	--hikma-toast-fade-transform: translate(
+		calc(var(--hikma-toast-width) + 1.5rem),
+		0
+	);
 }
 
 // Wrapper for positioning toasts
 .toast-container {
-    position: fixed;
-    top: 1rem; // Example positioning
-    right: 1rem;
-    z-index: var(--hikma-toast-zindex);
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: var(--hikma-toast-zindex);
+	width: var(--hikma-toast-width);
+	max-width: calc(100% - 2rem); // Prevent overflow on mobile
+
+	// Positioning variants
+	&[data-position^='top-'] {
+		top: 1rem;
+	}
+	&[data-position^='bottom-'] {
+		top: auto;
+		bottom: 1rem;
+	}
+	&[data-position$='-left'] {
+		right: auto;
+		left: 1rem;
+	}
+	&[data-position$='-center'] {
+		right: 50%;
+		transform: translateX(50%);
+	}
 }
 
 .toast {
-    width: var(--hikma-toast-width);
-    max-width: 100%;
-    font-size: 0.875rem;
-    color: var(--hikma-text-color-base);
-    background-color: var(--hikma-toast-background-color);
-    background-clip: padding-box;
-    border: 1px solid var(--hikma-toast-border-color);
-    box-shadow: var(--hikma-toast-box-shadow);
-    border-radius: var(--hikma-toast-border-radius);
-    opacity: 0; // Hidden by default
-    transition: opacity var(--hikma-toast-transition-duration) ease-in-out;
-    backdrop-filter: blur(10px); // Optional: for glassy effect
-}
+	width: 100%;
+	font-size: 0.875rem;
+	color: var(--hikma-text-color-base);
+	background-color: var(--hikma-toast-background-color);
+	background-clip: padding-box;
+	border: 1px solid var(--hikma-toast-border-color);
+	box-shadow: var(--hikma-toast-box-shadow);
+	border-radius: var(--hikma-toast-border-radius);
+	opacity: 0;
+	transition: opacity var(--hikma-toast-transition-duration) ease-in-out,
+		transform var(--hikma-toast-transition-duration) ease-in-out;
 
-.toast:not(.show) {
-    display: none; // Hide completely when not shown
-}
+	// Cross-browser backdrop filter
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
 
-// For fade effect (requires JS to manage classes like .showing, .show)
-.toast.showing {
-    opacity: 0;
-}
+	// Animation states
+	&:not(.show) {
+		display: none;
+	}
 
-.toast.show {
-    opacity: 1;
-}
+	&.showing {
+		opacity: 0;
+		transform: var(--hikma-toast-fade-transform);
+	}
 
-// For specific positioning/animation (if using .fade.show instead of just .show)
-.toast.fade:not(.show) {
-    transition: opacity var(--hikma-toast-transition-duration) ease-out;
-}
-.toast.fade.show {
-    opacity: 1;
-}
-.toast.hide { // For when it starts to hide
-    opacity: 0;
-}
+	&.show {
+		opacity: 1;
+		transform: none;
+	}
 
+	&.hide {
+		opacity: 0;
+	}
+
+	// Stacking behavior for multiple toasts
+	+ .toast {
+		margin-top: 0.75rem;
+	}
+}
 
 .toast-header {
-    display: flex;
-    align-items: center;
-    padding: var(--hikma-toast-padding-y) var(--hikma-toast-padding-x);
-    color: var(--hikma-toast-header-color);
-    background-color: var(--hikma-toast-header-background-color);
-    background-clip: padding-box;
-    border-bottom: 1px solid var(--hikma-toast-header-border-color);
-    border-top-left-radius: calc(var(--hikma-toast-border-radius) - 1px);
-    border-top-right-radius: calc(var(--hikma-toast-border-radius) - 1px);
+	display: flex;
+	align-items: center;
+	padding: var(--hikma-toast-padding-y) var(--hikma-toast-padding-x);
+	color: var(--hikma-toast-header-color);
+	background-color: var(--hikma-toast-header-background-color);
+	background-clip: padding-box;
+	border-bottom: 1px solid var(--hikma-toast-header-border-color);
+	border-radius: calc(var(--hikma-toast-border-radius) - 1px)
+		calc(var(--hikma-toast-border-radius) - 1px) 0 0;
 
-    .me-auto { // Push next element to right
-        margin-right: auto !important;
-    }
+	.me-auto {
+		margin-right: auto !important;
+	}
 
-    .btn-close {
-        padding: calc(var(--hikma-toast-padding-y) * 0.5) calc(var(--hikma-toast-padding-x) * 0.5);
-        margin-right: calc(var(--hikma-toast-padding-x) * -0.5);
-        margin-left: var(--hikma-toast-padding-x);
-    }
+	.btn-close {
+		padding: calc(var(--hikma-toast-padding-y) * 0.5)
+			calc(var(--hikma-toast-padding-x) * 0.5);
+		margin-right: calc(var(--hikma-toast-padding-x) * -0.5);
+		margin-left: var(--hikma-toast-padding-x);
+	}
 }
 
 .toast-body {
-    padding: var(--hikma-toast-padding-y) var(--hikma-toast-padding-x);
-    word-wrap: break-word; // Ensures long words break
-    color: var(--hikma-text-color-base); // Ensure body text color
+	padding: var(--hikma-toast-padding-y) var(--hikma-toast-padding-x);
+	word-wrap: break-word;
+	color: var(--hikma-text-color-base);
+
+	// Ensure proper spacing when body contains multiple elements
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+// Responsive adjustments
+@media (max-width: 576px) {
+	.toast-container {
+		width: calc(100% - 2rem);
+		right: 1rem;
+		left: 1rem;
+
+		&[data-position$='-center'] {
+			right: 1rem;
+			left: 1rem;
+			transform: none;
+		}
+	}
+
+	.toast {
+		width: 100%;
+		--hikma-toast-fade-transform: translateY(20px);
+	}
 }
