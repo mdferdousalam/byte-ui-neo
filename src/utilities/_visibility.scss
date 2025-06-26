@@ -1,0 +1,7 @@
+// Utilities - Visibility
+// This file defines utility classes for controlling the visibility property.
+// Note: visibility: hidden; hides the element but still occupies space.
+// Use d-none (display: none;) for truly hiding an element without affecting layout.
+
+.visible { visibility: visible !important; }
+.invisible { visibility: hidden !important; }

@@ -1,0 +1,17 @@
+// Utilities - Opacity
+// This file defines utility classes for controlling the opacity of an element.
+
+// Opacity scale (adjust precision as needed, increments of 0.05 or 0.1 are common)
+$opacity-scale: (
+    0: 0,    // Fully transparent
+    25: 0.25,
+    50: 0.5,
+    75: 0.75,
+    100: 1    // Fully opaque
+);
+
+@each $level, $value in $opacity-scale {
+    .opacity-#{$level} {
+        opacity: $value !important;
+    }
+}

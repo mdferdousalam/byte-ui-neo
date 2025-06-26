@@ -31,6 +31,12 @@
 @use 'utilities/sizing';
 @use 'utilities/borders';
 @use 'utilities/shadows';
+@use 'utilities/position';
+@use 'utilities/z-index';
+@use 'utilities/opacity';
+@use 'utilities/visibility';
+@use 'utilities/float';
+@use 'utilities/screen-readers';
 
 // 5. Theme Styles / Overrides
 // Specific themes (like dark mode) or any global overrides that change existing styles.

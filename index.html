@@ -365,6 +365,80 @@
 			</div>
 		</div>
 
+
+		<hr />
+        <h2>More Advanced Utility Classes</h2>
+
+        <div class="container" style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem; position: relative; height: 200px;">
+            <h3>Position Utilities</h3>
+            <div class="p-sm bg-primary text-white position-absolute top-0 start-0">.top-0 .start-0</div>
+            <div class="p-sm bg-secondary text-white position-absolute top-50 start-50 translate-middle">.top-50 .start-50 .translate-middle (Centered)</div>
+            <div class="p-sm bg-dark text-white position-absolute bottom-0 end-0">.bottom-0 .end-0</div>
+
+            <div class="p-sm bg-info text-white position-absolute inset-0 opacity-50 z-max d-flex align-items-center justify-content-center">
+                .inset-0 .opacity-50 .z-max (Overlay Example)
+            </div>
+        </div>
+
+        <div class="container" style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem;">
+            <h3>Z-Index & Opacity Utilities</h3>
+            <div class="position-relative p-lg border">
+                <div class="bg-warning p-md position-absolute top-0 start-0 z-1" style="width: 100px; height: 100px;">Z-1</div>
+                <div class="bg-success p-md position-absolute top-md start-md z-2" style="width: 100px; height: 100px;">Z-2</div>
+                <div class="bg-primary p-md position-absolute top-xl start-xl z-3" style="width: 100px; height: 100px;">Z-3</div>
+                <div class="bg-danger p-md position-absolute top-xxl start-xxl z-max">Z-Max</div>
+            </div>
+
+            <div class="mt-xl p-md border">
+                <p>This text is normal.</p>
+                <p class="opacity-75">This text has opacity 75.</p>
+                <p class="opacity-50">This text has opacity 50.</p>
+                <p class="opacity-25">This text has opacity 25.</p>
+                <p class="opacity-0">This text has opacity 0 (invisible but occupies space).</p>
+            </div>
+        </div>
+
+        <div class="container" style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem;">
+            <h3>Visibility Utilities</h3>
+            <div class="p-md border">
+                <span class="p-sm bg-success d-inline-block">Visible Text</span>
+                <span class="p-sm bg-danger d-inline-block invisible">Invisible Text (still takes space)</span>
+                <span class="p-sm bg-info d-inline-block">Another Visible Text</span>
+            </div>
+        </div>
+
+
+		<hr />
+        <h2>More Utility Classes: Text Decoration, Float, Screen Readers</h2>
+
+        <div class="container" style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem;">
+            <h3>Text Decoration & Whitespace Utilities</h3>
+            <p class="text-decoration-underline">This text is underlined.</p>
+            <p class="text-decoration-line-through">This text has a line through it.</p>
+            <a href="#" class="text-decoration-none">This link has no underline.</a>
+            <p class="text-nowrap bg-light p-sm">This is a very long line of text that should not wrap unless the container is too small to fit it all.</p>
+            <p class="w-25 text-truncate border p-sm">This is a very long text that will be truncated with ellipses.</p>
+        </div>
+
+        <div class="container clearfix" style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem;">
+            <h3>Float Utilities</h3>
+            <img src="https://via.placeholder.com/100x100" alt="Placeholder" class="float-start me-md rounded">
+            <p>This paragraph will wrap around the floated image. The image is floated to the start (left) and has some right margin. The parent container uses `.clearfix` to contain the float.</p>
+            <div class="clearfix"></div> <img src="https://via.placeholder.com/100x100" alt="Placeholder" class="float-end ms-md rounded">
+            <p>This paragraph will wrap around the second image, which is floated to the end (right) and has some left margin.</p>
+        </div>
+
+        <div class="container" style="border: 1px dashed #ccc; padding: 1rem; margin-top: 2rem;">
+            <h3>Screen Reader Utilities (Accessibility)</h3>
+            <p>
+                This text is visible.
+                <span class="sr-only">This text is only for screen readers.</span>
+            </p>
+            <a href="#main-content" class="sr-only sr-only-focusable p-sm bg-primary text-white" style="left: 0; top: 0;">Skip to main content</a>
+            <p>Press Tab to test the "Skip to main content" link above.</p>
+            <div id="main-content" style="height: 100px; background: #eee; display: flex; justify-content: center; align-items: center;">Main Content Area</div>
+        </div>
+
 		<script src="/dist/hikma-ui-js.js"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {

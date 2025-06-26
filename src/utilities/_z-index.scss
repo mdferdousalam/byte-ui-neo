@@ -1,0 +1,22 @@
+// Utilities - Z-Index
+// This file defines utility classes for controlling the z-index property.
+
+// Define common z-index values (adjust as per your project's needs)
+// Higher values mean the element is placed "on top" of others.
+$z-index-scale: (
+    0: 0,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5, // Commonly used for tooltips, dropdowns
+    10: 10, // Higher for modals
+    100: 100, // Even higher for alerts/notifications
+    max: 9999 // For critical overlays that must be on top
+);
+
+@each $level, $value in $z-index-scale {
+    .z-#{$level} {
+        z-index: $value !important;
+    }
+}

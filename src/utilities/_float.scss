@@ -1,0 +1,34 @@
+// Utilities - Float
+// This file defines utility classes for floating elements and clearfixes.
+// While Flexbox/Grid are preferred for layout, floats are still useful for specific cases.
+
+// Base floats
+.float-start { float: left !important; } // left for LTR
+.float-end { float: right !important; }  // right for LTR
+.float-none { float: none !important; }
+
+// Responsive floats (using grid breakpoints)
+$grid-breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+@each $breakpoint-name, $breakpoint-value in $grid-breakpoints {
+    @media (min-width: #{$breakpoint-value}) {
+        .float-#{$breakpoint-name}-start { float: left !important; }
+        .float-#{$breakpoint-name}-end { float: right !important; }
+        .float-#{$breakpoint-name}-none { float: none !important; }
+    }
+}
+
+// Clearfix utility (for containing floats)
+.clearfix {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}

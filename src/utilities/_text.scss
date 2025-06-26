@@ -20,9 +20,18 @@
 
 // Text decoration
 .text-decoration-none { text-decoration: none !important; }
+.text-decoration-underline { text-decoration: underline !important; }
+.text-decoration-line-through { text-decoration: line-through !important; }
+.text-decoration-underline-line-through { text-decoration: underline line-through !important; }
 
 // White space
 .text-nowrap { white-space: nowrap !important; }
+.text-break { word-break: break-word !important; } // For long strings
+.text-truncate {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
 
 // Responsive text alignment
 $grid-breakpoints: (
