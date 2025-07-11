@@ -1,6 +1,9 @@
 // Utility functions (if any, e.g., for toggling classes)
 // This file will contain all the JavaScript for Hikma UI interactive components.
 
+// Import advanced components
+import './advanced-components.js';
+
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('Hikma UI JavaScript loaded!');
 
@@ -52,45 +55,65 @@ function handleModals() {
 	document.querySelectorAll('[data-bs-toggle="modal"]').forEach((trigger) => {
 		const modalId = trigger.dataset.bsTarget;
 		const modal = document.querySelector(modalId);
-		const backdrop = document.createElement('div');
-		backdrop.classList.add('modal-backdrop', 'fade');
-		document.body.appendChild(backdrop);
+		
+		if (!modal) {
+			console.warn('Modal not found:', modalId);
+			return;
+		}
 
 		// Open Modal
-		trigger.addEventListener('click', () => {
+		trigger.addEventListener('click', (event) => {
+			event.preventDefault();
+			
+			// Create backdrop if it doesn't exist
+			let backdrop = document.querySelector('.modal-backdrop');
+			if (!backdrop) {
+				backdrop = document.createElement('div');
+				backdrop.classList.add('modal-backdrop', 'fade');
+				document.body.appendChild(backdrop);
+			}
+
 			modal.style.display = 'block';
-			document.body.classList.add('modal-open'); // Prevent body scroll
+			document.body.classList.add('modal-open');
+			
+			// Force reflow for animation
+			modal.offsetHeight;
+			
 			setTimeout(() => {
-				// For transition
 				modal.classList.add('show');
 				backdrop.classList.add('show');
 			}, 10);
-		});
 
-		// Close Modal function
-		const closeModal = () => {
-			modal.classList.remove('show');
-			backdrop.classList.remove('show');
-			document.body.classList.remove('modal-open');
-			setTimeout(() => {
-				// After transition
-				modal.style.display = 'none';
-			}, 300); // Match CSS transition duration
-		};
+			// Close Modal function
+			const closeModal = () => {
+				modal.classList.remove('show');
+				backdrop.classList.remove('show');
+				document.body.classList.remove('modal-open');
+				
+				setTimeout(() => {
+					modal.style.display = 'none';
+					if (backdrop && backdrop.parentNode) {
+						backdrop.parentNode.removeChild(backdrop);
+					}
+				}, 300);
+			};
 
-		// Close by button inside modal
-		modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach((closeBtn) => {
-			closeBtn.addEventListener('click', closeModal);
-		});
+			// Close by button inside modal
+			modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach((closeBtn) => {
+				closeBtn.addEventListener('click', closeModal);
+			});
 
-		// Close by clicking outside (backdrop)
-		backdrop.addEventListener('click', closeModal);
+			// Close by clicking outside (backdrop)
+			backdrop.addEventListener('click', closeModal);
 
-		// Close by ESC key
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape' && modal.classList.contains('show')) {
-				closeModal();
-			}
+			// Close by ESC key
+			const escapeHandler = (e) => {
+				if (e.key === 'Escape' && modal.classList.contains('show')) {
+					closeModal();
+					document.removeEventListener('keydown', escapeHandler);
+				}
+			};
+			document.addEventListener('keydown', escapeHandler);
 		});
 	});
 }

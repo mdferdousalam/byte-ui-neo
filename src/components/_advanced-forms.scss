@@ -1,0 +1,347 @@
+// Advanced Form Components
+// Input Groups, File Upload, Range Sliders, Switch Toggle
+
+// Input Groups
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+
+  > .form-control,
+  > .form-select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    margin-bottom: 0;
+    
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: var(--hikma-input-padding-y) var(--hikma-input-padding-x);
+    font-size: var(--hikma-input-font-size);
+    font-weight: 400;
+    line-height: var(--hikma-input-line-height);
+    color: var(--hikma-input-group-addon-color);
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--hikma-input-group-addon-bg);
+    border: var(--hikma-input-border-width) solid var(--hikma-input-group-addon-border-color);
+    border-radius: var(--hikma-input-border-radius);
+    
+    &:not(:first-child) {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    &:not(:last-child) {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+  }
+}
+
+// File Upload
+.file-upload {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  
+  &__input {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--hikma-input-padding-y) var(--hikma-input-padding-x);
+    font-size: var(--hikma-input-font-size);
+    font-weight: 400;
+    line-height: var(--hikma-input-line-height);
+    color: var(--hikma-input-color);
+    background-color: var(--hikma-input-bg);
+    border: var(--hikma-input-border-width) solid var(--hikma-input-border-color);
+    border-radius: var(--hikma-input-border-radius);
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+    &:hover {
+      border-color: var(--hikma-input-focus-border-color);
+    }
+    
+    &:focus-within {
+      border-color: var(--hikma-input-focus-border-color);
+      box-shadow: 0 0 0 0.2rem rgba(var(--hikma-color-primary-rgb), 0.25);
+    }
+  }
+  
+  &__icon {
+    width: 1.2em;
+    height: 1.2em;
+    fill: currentColor;
+  }
+  
+  &__text {
+    color: var(--hikma-text-muted);
+    
+    &.has-file {
+      color: var(--hikma-input-color);
+    }
+  }
+  
+  &--drag-over {
+    .file-upload__label {
+      border-color: var(--hikma-color-primary);
+      background-color: rgba(var(--hikma-color-primary-rgb), 0.1);
+    }
+  }
+}
+
+// Range Slider
+.range-slider {
+  position: relative;
+  width: 100%;
+  height: 1.5rem;
+  margin: 1rem 0;
+  
+  &__input {
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 0.25rem;
+    background: var(--hikma-gray-200);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    appearance: none;
+    
+    &:hover {
+      opacity: 1;
+    }
+    
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: var(--hikma-color-primary);
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    
+    &::-moz-range-thumb {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: var(--hikma-color-primary);
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  &__track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background: var(--hikma-color-primary);
+    border-radius: 0.25rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  &__labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--hikma-text-muted);
+  }
+}
+
+// Switch Toggle
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.5rem;
+  height: 2rem;
+  
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+    &:checked + .switch__slider {
+      background-color: var(--hikma-color-primary);
+      
+      &::before {
+        transform: translateX(1.5rem);
+      }
+    }
+    
+    &:focus + .switch__slider {
+      box-shadow: 0 0 0 0.2rem rgba(var(--hikma-color-primary-rgb), 0.25);
+    }
+    
+    &:disabled + .switch__slider {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hikma-gray-400);
+    transition: 0.3s;
+    border-radius: 2rem;
+    
+    &::before {
+      position: absolute;
+      content: "";
+      height: 1.5rem;
+      width: 1.5rem;
+      left: 0.25rem;
+      bottom: 0.25rem;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Search Input
+.search-input {
+  position: relative;
+  
+  &__field {
+    padding-left: 2.5rem;
+  }
+  
+  &__icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--hikma-text-muted);
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none;
+  }
+  
+  &__clear {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--hikma-text-muted);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    
+    &:hover {
+      background-color: var(--hikma-gray-200);
+    }
+  }
+}
+
+// Floating Labels
+.floating-label {
+  position: relative;
+  
+  &__input {
+    width: 100%;
+    padding: 1rem 0.75rem 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--hikma-input-border-color);
+    border-radius: var(--hikma-input-border-radius);
+    outline: none;
+    background: transparent;
+    transition: border-color 0.2s;
+    
+    &:focus {
+      border-color: var(--hikma-color-primary);
+      box-shadow: 0 0 0 0.2rem rgba(var(--hikma-color-primary-rgb), 0.25);
+    }
+    
+    &:focus + .floating-label__label,
+    &:not(:placeholder-shown) + .floating-label__label {
+      transform: translateY(-0.5rem) scale(0.8);
+      color: var(--hikma-color-primary);
+    }
+  }
+  
+  &__label {
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    font-size: 1rem;
+    color: var(--hikma-text-muted);
+    pointer-events: none;
+    transition: all 0.2s;
+    transform-origin: left top;
+    background: var(--hikma-body-bg);
+    padding: 0 0.25rem;
+  }
+}
+
+// CSS Variables for Advanced Forms
+:root {
+  --hikma-input-group-addon-color: #6c757d;
+  --hikma-input-group-addon-bg: #f8f9fa;
+  --hikma-input-group-addon-border-color: #ced4da;
+}
+
+// Dark mode adjustments
+[data-theme="dark"] {
+  --hikma-input-group-addon-color: #dee2e6;
+  --hikma-input-group-addon-bg: #495057;
+  --hikma-input-group-addon-border-color: #6c757d;
+}

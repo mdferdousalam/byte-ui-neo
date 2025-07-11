@@ -1,0 +1,370 @@
+// Gradient Utilities
+// Modern gradient backgrounds and text effects
+
+// Background Gradients
+.bg-gradient {
+  &-to-t {
+    background-image: linear-gradient(to top, var(--hikma-gradient-color-stops));
+  }
+  
+  &-to-tr {
+    background-image: linear-gradient(to top right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-to-r {
+    background-image: linear-gradient(to right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-to-br {
+    background-image: linear-gradient(to bottom right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-to-b {
+    background-image: linear-gradient(to bottom, var(--hikma-gradient-color-stops));
+  }
+  
+  &-to-bl {
+    background-image: linear-gradient(to bottom left, var(--hikma-gradient-color-stops));
+  }
+  
+  &-to-l {
+    background-image: linear-gradient(to left, var(--hikma-gradient-color-stops));
+  }
+  
+  &-to-tl {
+    background-image: linear-gradient(to top left, var(--hikma-gradient-color-stops));
+  }
+}
+
+// Radial Gradients
+.bg-radial {
+  &-gradient {
+    background-image: radial-gradient(var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-t {
+    background-image: radial-gradient(at top, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-tr {
+    background-image: radial-gradient(at top right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-r {
+    background-image: radial-gradient(at right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-br {
+    background-image: radial-gradient(at bottom right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-b {
+    background-image: radial-gradient(at bottom, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-bl {
+    background-image: radial-gradient(at bottom left, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-l {
+    background-image: radial-gradient(at left, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-tl {
+    background-image: radial-gradient(at top left, var(--hikma-gradient-color-stops));
+  }
+}
+
+// Conic Gradients
+.bg-conic {
+  &-gradient {
+    background-image: conic-gradient(var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-t {
+    background-image: conic-gradient(at top, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-tr {
+    background-image: conic-gradient(at top right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-r {
+    background-image: conic-gradient(at right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-br {
+    background-image: conic-gradient(at bottom right, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-b {
+    background-image: conic-gradient(at bottom, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-bl {
+    background-image: conic-gradient(at bottom left, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-l {
+    background-image: conic-gradient(at left, var(--hikma-gradient-color-stops));
+  }
+  
+  &-gradient-at-tl {
+    background-image: conic-gradient(at top left, var(--hikma-gradient-color-stops));
+  }
+}
+
+// Gradient Color Stops
+.from {
+  &-transparent { --hikma-gradient-from: transparent; --hikma-gradient-to: rgba(0, 0, 0, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-current { --hikma-gradient-from: currentColor; --hikma-gradient-to: rgba(255, 255, 255, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-black { --hikma-gradient-from: #000; --hikma-gradient-to: rgba(0, 0, 0, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-white { --hikma-gradient-from: #fff; --hikma-gradient-to: rgba(255, 255, 255, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-primary { --hikma-gradient-from: var(--hikma-color-primary); --hikma-gradient-to: rgba(var(--hikma-color-primary-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-secondary { --hikma-gradient-from: var(--hikma-color-secondary); --hikma-gradient-to: rgba(var(--hikma-color-secondary-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-success { --hikma-gradient-from: var(--hikma-color-success); --hikma-gradient-to: rgba(var(--hikma-color-success-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-danger { --hikma-gradient-from: var(--hikma-color-danger); --hikma-gradient-to: rgba(var(--hikma-color-danger-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-warning { --hikma-gradient-from: var(--hikma-color-warning); --hikma-gradient-to: rgba(var(--hikma-color-warning-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-info { --hikma-gradient-from: var(--hikma-color-info); --hikma-gradient-to: rgba(var(--hikma-color-info-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-light { --hikma-gradient-from: var(--hikma-color-light); --hikma-gradient-to: rgba(var(--hikma-color-light-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-dark { --hikma-gradient-from: var(--hikma-color-dark); --hikma-gradient-to: rgba(var(--hikma-color-dark-rgb), 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  
+  // Gray colors
+  &-gray-50 { --hikma-gradient-from: #f9fafb; --hikma-gradient-to: rgba(249, 250, 251, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-100 { --hikma-gradient-from: #f3f4f6; --hikma-gradient-to: rgba(243, 244, 246, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-200 { --hikma-gradient-from: #e5e7eb; --hikma-gradient-to: rgba(229, 231, 235, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-300 { --hikma-gradient-from: #d1d5db; --hikma-gradient-to: rgba(209, 213, 219, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-400 { --hikma-gradient-from: #9ca3af; --hikma-gradient-to: rgba(156, 163, 175, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-500 { --hikma-gradient-from: #6b7280; --hikma-gradient-to: rgba(107, 114, 128, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-600 { --hikma-gradient-from: #4b5563; --hikma-gradient-to: rgba(75, 85, 99, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-700 { --hikma-gradient-from: #374151; --hikma-gradient-to: rgba(55, 65, 81, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-800 { --hikma-gradient-from: #1f2937; --hikma-gradient-to: rgba(31, 41, 55, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+  &-gray-900 { --hikma-gradient-from: #111827; --hikma-gradient-to: rgba(17, 24, 39, 0); --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-gradient-to); }
+}
+
+.via {
+  &-transparent { --hikma-gradient-color-stops: var(--hikma-gradient-from), transparent, var(--hikma-gradient-to); }
+  &-current { --hikma-gradient-color-stops: var(--hikma-gradient-from), currentColor, var(--hikma-gradient-to); }
+  &-black { --hikma-gradient-color-stops: var(--hikma-gradient-from), #000, var(--hikma-gradient-to); }
+  &-white { --hikma-gradient-color-stops: var(--hikma-gradient-from), #fff, var(--hikma-gradient-to); }
+  &-primary { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-primary), var(--hikma-gradient-to); }
+  &-secondary { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-secondary), var(--hikma-gradient-to); }
+  &-success { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-success), var(--hikma-gradient-to); }
+  &-danger { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-danger), var(--hikma-gradient-to); }
+  &-warning { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-warning), var(--hikma-gradient-to); }
+  &-info { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-info), var(--hikma-gradient-to); }
+  &-light { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-light), var(--hikma-gradient-to); }
+  &-dark { --hikma-gradient-color-stops: var(--hikma-gradient-from), var(--hikma-color-dark), var(--hikma-gradient-to); }
+  
+  // Gray colors
+  &-gray-50 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #f9fafb, var(--hikma-gradient-to); }
+  &-gray-100 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #f3f4f6, var(--hikma-gradient-to); }
+  &-gray-200 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #e5e7eb, var(--hikma-gradient-to); }
+  &-gray-300 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #d1d5db, var(--hikma-gradient-to); }
+  &-gray-400 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #9ca3af, var(--hikma-gradient-to); }
+  &-gray-500 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #6b7280, var(--hikma-gradient-to); }
+  &-gray-600 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #4b5563, var(--hikma-gradient-to); }
+  &-gray-700 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #374151, var(--hikma-gradient-to); }
+  &-gray-800 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #1f2937, var(--hikma-gradient-to); }
+  &-gray-900 { --hikma-gradient-color-stops: var(--hikma-gradient-from), #111827, var(--hikma-gradient-to); }
+}
+
+.to {
+  &-transparent { --hikma-gradient-to: transparent; }
+  &-current { --hikma-gradient-to: currentColor; }
+  &-black { --hikma-gradient-to: #000; }
+  &-white { --hikma-gradient-to: #fff; }
+  &-primary { --hikma-gradient-to: var(--hikma-color-primary); }
+  &-secondary { --hikma-gradient-to: var(--hikma-color-secondary); }
+  &-success { --hikma-gradient-to: var(--hikma-color-success); }
+  &-danger { --hikma-gradient-to: var(--hikma-color-danger); }
+  &-warning { --hikma-gradient-to: var(--hikma-color-warning); }
+  &-info { --hikma-gradient-to: var(--hikma-color-info); }
+  &-light { --hikma-gradient-to: var(--hikma-color-light); }
+  &-dark { --hikma-gradient-to: var(--hikma-color-dark); }
+  
+  // Gray colors
+  &-gray-50 { --hikma-gradient-to: #f9fafb; }
+  &-gray-100 { --hikma-gradient-to: #f3f4f6; }
+  &-gray-200 { --hikma-gradient-to: #e5e7eb; }
+  &-gray-300 { --hikma-gradient-to: #d1d5db; }
+  &-gray-400 { --hikma-gradient-to: #9ca3af; }
+  &-gray-500 { --hikma-gradient-to: #6b7280; }
+  &-gray-600 { --hikma-gradient-to: #4b5563; }
+  &-gray-700 { --hikma-gradient-to: #374151; }
+  &-gray-800 { --hikma-gradient-to: #1f2937; }
+  &-gray-900 { --hikma-gradient-to: #111827; }
+}
+
+// Predefined Gradient Combinations
+.gradient {
+  &-sunset {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  }
+  
+  &-ocean {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+  
+  &-forest {
+    background: linear-gradient(135deg, #134e5e, #71b280);
+  }
+  
+  &-fire {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+  }
+  
+  &-purple {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+  
+  &-pink {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  }
+  
+  &-blue {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+  }
+  
+  &-green {
+    background: linear-gradient(135deg, #d299c2, #fef9d7);
+  }
+  
+  &-orange {
+    background: linear-gradient(135deg, #fad0c4, #ffd1ff);
+  }
+  
+  &-red {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  }
+  
+  &-yellow {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  }
+  
+  &-rainbow {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+  }
+  
+  &-dark {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  }
+  
+  &-light {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  }
+}
+
+// Text Gradients
+.text-gradient {
+  background: linear-gradient(var(--hikma-gradient-color-stops));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  &-primary {
+    background: linear-gradient(135deg, var(--hikma-color-primary), var(--hikma-color-primary-light, var(--hikma-color-primary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &-secondary {
+    background: linear-gradient(135deg, var(--hikma-color-secondary), var(--hikma-color-secondary-light, var(--hikma-color-secondary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &-success {
+    background: linear-gradient(135deg, var(--hikma-color-success), var(--hikma-color-success-light, var(--hikma-color-success)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &-danger {
+    background: linear-gradient(135deg, var(--hikma-color-danger), var(--hikma-color-danger-light, var(--hikma-color-danger)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &-warning {
+    background: linear-gradient(135deg, var(--hikma-color-warning), var(--hikma-color-warning-light, var(--hikma-color-warning)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &-info {
+    background: linear-gradient(135deg, var(--hikma-color-info), var(--hikma-color-info-light, var(--hikma-color-info)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  &-rainbow {
+    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+// Mesh Gradients
+.mesh-gradient {
+  &-1 {
+    background: radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%);
+  }
+  
+  &-2 {
+    background: radial-gradient(at 27% 37%, hsla(215,98%,61%,1) 0px, transparent 0%),
+                radial-gradient(at 97% 21%, hsla(125,98%,72%,1) 0px, transparent 50%),
+                radial-gradient(at 52% 99%, hsla(354,98%,61%,1) 0px, transparent 50%),
+                radial-gradient(at 10% 29%, hsla(256,96%,67%,1) 0px, transparent 50%),
+                radial-gradient(at 97% 96%, hsla(38,60%,74%,1) 0px, transparent 50%),
+                radial-gradient(at 33% 50%, hsla(222,67%,73%,1) 0px, transparent 50%),
+                radial-gradient(at 79% 53%, hsla(343,68%,79%,1) 0px, transparent 50%);
+  }
+  
+  &-3 {
+    background: radial-gradient(at 83% 67%, hsla(263,87%,75%,1) 0px, transparent 0%),
+                radial-gradient(at 67% 20%, hsla(357,94%,71%,1) 0px, transparent 50%),
+                radial-gradient(at 88% 35%, hsla(222,81%,65%,1) 0px, transparent 50%),
+                radial-gradient(at 31% 91%, hsla(9,61%,61%,1) 0px, transparent 50%),
+                radial-gradient(at 27% 71%, hsla(336,87%,75%,1) 0px, transparent 50%),
+                radial-gradient(at 74% 89%, hsla(30,98%,65%,1) 0px, transparent 50%);
+  }
+}
+
+// Backdrop Filters with Gradients
+.backdrop-gradient {
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  &-dark {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+// CSS Variables for RGB values
+:root {
+  --hikma-color-primary-rgb: 0, 123, 255;
+  --hikma-color-secondary-rgb: 108, 117, 125;
+  --hikma-color-success-rgb: 40, 167, 69;
+  --hikma-color-danger-rgb: 220, 53, 69;
+  --hikma-color-warning-rgb: 255, 193, 7;
+  --hikma-color-info-rgb: 23, 162, 184;
+  --hikma-color-light-rgb: 248, 249, 250;
+  --hikma-color-dark-rgb: 52, 58, 64;
+}

@@ -1,0 +1,584 @@
+// Modern CSS Animations and Transitions
+// Keyframes, transition utilities, and animation classes
+
+// Animation Utilities
+.animate {
+  &__fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  &__fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+  }
+  
+  &__slide-in-up {
+    animation: slideInUp 0.3s ease-out;
+  }
+  
+  &__slide-in-down {
+    animation: slideInDown 0.3s ease-out;
+  }
+  
+  &__slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+  }
+  
+  &__slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  &__zoom-in {
+    animation: zoomIn 0.3s ease-out;
+  }
+  
+  &__zoom-out {
+    animation: zoomOut 0.3s ease-out;
+  }
+  
+  &__bounce {
+    animation: bounce 0.6s ease-in-out;
+  }
+  
+  &__shake {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  &__pulse {
+    animation: pulse 1s ease-in-out infinite;
+  }
+  
+  &__rotate {
+    animation: rotate 1s linear infinite;
+  }
+  
+  &__flip {
+    animation: flip 0.6s ease-in-out;
+  }
+  
+  &__swing {
+    animation: swing 0.6s ease-in-out;
+  }
+  
+  &__rubberBand {
+    animation: rubberBand 0.6s ease-in-out;
+  }
+  
+  &__wobble {
+    animation: wobble 0.6s ease-in-out;
+  }
+  
+  &__jello {
+    animation: jello 0.6s ease-in-out;
+  }
+  
+  &__heartBeat {
+    animation: heartBeat 1s ease-in-out infinite;
+  }
+  
+  &__flash {
+    animation: flash 0.6s ease-in-out;
+  }
+  
+  &__tada {
+    animation: tada 0.6s ease-in-out;
+  }
+  
+  // Duration variants
+  &__slow {
+    animation-duration: 2s;
+  }
+  
+  &__slower {
+    animation-duration: 3s;
+  }
+  
+  &__fast {
+    animation-duration: 0.8s;
+  }
+  
+  &__faster {
+    animation-duration: 0.5s;
+  }
+  
+  // Delay variants
+  &__delay-1s {
+    animation-delay: 1s;
+  }
+  
+  &__delay-2s {
+    animation-delay: 2s;
+  }
+  
+  &__delay-3s {
+    animation-delay: 3s;
+  }
+  
+  &__delay-4s {
+    animation-delay: 4s;
+  }
+  
+  &__delay-5s {
+    animation-delay: 5s;
+  }
+  
+  // Repeat variants
+  &__repeat-1 {
+    animation-iteration-count: 1;
+  }
+  
+  &__repeat-2 {
+    animation-iteration-count: 2;
+  }
+  
+  &__repeat-3 {
+    animation-iteration-count: 3;
+  }
+  
+  &__infinite {
+    animation-iteration-count: infinite;
+  }
+}
+
+// Transition Utilities
+.transition {
+  transition: all 0.3s ease;
+  
+  &__none {
+    transition: none;
+  }
+  
+  &__all {
+    transition: all 0.3s ease;
+  }
+  
+  &__colors {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  &__opacity {
+    transition: opacity 0.3s ease;
+  }
+  
+  &__shadow {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  &__transform {
+    transition: transform 0.3s ease;
+  }
+  
+  // Duration variants
+  &__75 {
+    transition-duration: 75ms;
+  }
+  
+  &__100 {
+    transition-duration: 100ms;
+  }
+  
+  &__150 {
+    transition-duration: 150ms;
+  }
+  
+  &__200 {
+    transition-duration: 200ms;
+  }
+  
+  &__300 {
+    transition-duration: 300ms;
+  }
+  
+  &__500 {
+    transition-duration: 500ms;
+  }
+  
+  &__700 {
+    transition-duration: 700ms;
+  }
+  
+  &__1000 {
+    transition-duration: 1000ms;
+  }
+  
+  // Easing variants
+  &__linear {
+    transition-timing-function: linear;
+  }
+  
+  &__ease-in {
+    transition-timing-function: ease-in;
+  }
+  
+  &__ease-out {
+    transition-timing-function: ease-out;
+  }
+  
+  &__ease-in-out {
+    transition-timing-function: ease-in-out;
+  }
+}
+
+// Transform Utilities
+.transform {
+  transform: translate(var(--hikma-translate-x, 0), var(--hikma-translate-y, 0)) rotate(var(--hikma-rotate, 0)) skewX(var(--hikma-skew-x, 0)) skewY(var(--hikma-skew-y, 0)) scaleX(var(--hikma-scale-x, 1)) scaleY(var(--hikma-scale-y, 1));
+  
+  &__none {
+    transform: none;
+  }
+  
+  &__gpu {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Individual transform utilities
+.translate {
+  &__x-0 { --hikma-translate-x: 0px; }
+  &__x-1 { --hikma-translate-x: 0.25rem; }
+  &__x-2 { --hikma-translate-x: 0.5rem; }
+  &__x-3 { --hikma-translate-x: 0.75rem; }
+  &__x-4 { --hikma-translate-x: 1rem; }
+  &__x-5 { --hikma-translate-x: 1.25rem; }
+  &__x-6 { --hikma-translate-x: 1.5rem; }
+  &__x-8 { --hikma-translate-x: 2rem; }
+  &__x-10 { --hikma-translate-x: 2.5rem; }
+  &__x-12 { --hikma-translate-x: 3rem; }
+  &__x-16 { --hikma-translate-x: 4rem; }
+  &__x-20 { --hikma-translate-x: 5rem; }
+  &__x-24 { --hikma-translate-x: 6rem; }
+  &__x-32 { --hikma-translate-x: 8rem; }
+  &__x-40 { --hikma-translate-x: 10rem; }
+  &__x-48 { --hikma-translate-x: 12rem; }
+  &__x-56 { --hikma-translate-x: 14rem; }
+  &__x-64 { --hikma-translate-x: 16rem; }
+  &__x-full { --hikma-translate-x: 100%; }
+  &__x-1\/2 { --hikma-translate-x: 50%; }
+  &__x-1\/3 { --hikma-translate-x: 33.333333%; }
+  &__x-2\/3 { --hikma-translate-x: 66.666667%; }
+  &__x-1\/4 { --hikma-translate-x: 25%; }
+  &__x-2\/4 { --hikma-translate-x: 50%; }
+  &__x-3\/4 { --hikma-translate-x: 75%; }
+  
+  &__y-0 { --hikma-translate-y: 0px; }
+  &__y-1 { --hikma-translate-y: 0.25rem; }
+  &__y-2 { --hikma-translate-y: 0.5rem; }
+  &__y-3 { --hikma-translate-y: 0.75rem; }
+  &__y-4 { --hikma-translate-y: 1rem; }
+  &__y-5 { --hikma-translate-y: 1.25rem; }
+  &__y-6 { --hikma-translate-y: 1.5rem; }
+  &__y-8 { --hikma-translate-y: 2rem; }
+  &__y-10 { --hikma-translate-y: 2.5rem; }
+  &__y-12 { --hikma-translate-y: 3rem; }
+  &__y-16 { --hikma-translate-y: 4rem; }
+  &__y-20 { --hikma-translate-y: 5rem; }
+  &__y-24 { --hikma-translate-y: 6rem; }
+  &__y-32 { --hikma-translate-y: 8rem; }
+  &__y-40 { --hikma-translate-y: 10rem; }
+  &__y-48 { --hikma-translate-y: 12rem; }
+  &__y-56 { --hikma-translate-y: 14rem; }
+  &__y-64 { --hikma-translate-y: 16rem; }
+  &__y-full { --hikma-translate-y: 100%; }
+  &__y-1\/2 { --hikma-translate-y: 50%; }
+  &__y-1\/3 { --hikma-translate-y: 33.333333%; }
+  &__y-2\/3 { --hikma-translate-y: 66.666667%; }
+  &__y-1\/4 { --hikma-translate-y: 25%; }
+  &__y-2\/4 { --hikma-translate-y: 50%; }
+  &__y-3\/4 { --hikma-translate-y: 75%; }
+}
+
+.scale {
+  &__0 { --hikma-scale-x: 0; --hikma-scale-y: 0; }
+  &__50 { --hikma-scale-x: 0.5; --hikma-scale-y: 0.5; }
+  &__75 { --hikma-scale-x: 0.75; --hikma-scale-y: 0.75; }
+  &__90 { --hikma-scale-x: 0.9; --hikma-scale-y: 0.9; }
+  &__95 { --hikma-scale-x: 0.95; --hikma-scale-y: 0.95; }
+  &__100 { --hikma-scale-x: 1; --hikma-scale-y: 1; }
+  &__105 { --hikma-scale-x: 1.05; --hikma-scale-y: 1.05; }
+  &__110 { --hikma-scale-x: 1.1; --hikma-scale-y: 1.1; }
+  &__125 { --hikma-scale-x: 1.25; --hikma-scale-y: 1.25; }
+  &__150 { --hikma-scale-x: 1.5; --hikma-scale-y: 1.5; }
+  
+  &__x-0 { --hikma-scale-x: 0; }
+  &__x-50 { --hikma-scale-x: 0.5; }
+  &__x-75 { --hikma-scale-x: 0.75; }
+  &__x-90 { --hikma-scale-x: 0.9; }
+  &__x-95 { --hikma-scale-x: 0.95; }
+  &__x-100 { --hikma-scale-x: 1; }
+  &__x-105 { --hikma-scale-x: 1.05; }
+  &__x-110 { --hikma-scale-x: 1.1; }
+  &__x-125 { --hikma-scale-x: 1.25; }
+  &__x-150 { --hikma-scale-x: 1.5; }
+  
+  &__y-0 { --hikma-scale-y: 0; }
+  &__y-50 { --hikma-scale-y: 0.5; }
+  &__y-75 { --hikma-scale-y: 0.75; }
+  &__y-90 { --hikma-scale-y: 0.9; }
+  &__y-95 { --hikma-scale-y: 0.95; }
+  &__y-100 { --hikma-scale-y: 1; }
+  &__y-105 { --hikma-scale-y: 1.05; }
+  &__y-110 { --hikma-scale-y: 1.1; }
+  &__y-125 { --hikma-scale-y: 1.25; }
+  &__y-150 { --hikma-scale-y: 1.5; }
+}
+
+.rotate {
+  &__0 { --hikma-rotate: 0deg; }
+  &__1 { --hikma-rotate: 1deg; }
+  &__2 { --hikma-rotate: 2deg; }
+  &__3 { --hikma-rotate: 3deg; }
+  &__6 { --hikma-rotate: 6deg; }
+  &__12 { --hikma-rotate: 12deg; }
+  &__45 { --hikma-rotate: 45deg; }
+  &__90 { --hikma-rotate: 90deg; }
+  &__180 { --hikma-rotate: 180deg; }
+}
+
+.skew {
+  &__x-0 { --hikma-skew-x: 0deg; }
+  &__x-1 { --hikma-skew-x: 1deg; }
+  &__x-2 { --hikma-skew-x: 2deg; }
+  &__x-3 { --hikma-skew-x: 3deg; }
+  &__x-6 { --hikma-skew-x: 6deg; }
+  &__x-12 { --hikma-skew-x: 12deg; }
+  
+  &__y-0 { --hikma-skew-y: 0deg; }
+  &__y-1 { --hikma-skew-y: 1deg; }
+  &__y-2 { --hikma-skew-y: 2deg; }
+  &__y-3 { --hikma-skew-y: 3deg; }
+  &__y-6 { --hikma-skew-y: 6deg; }
+  &__y-12 { --hikma-skew-y: 12deg; }
+}
+
+// Keyframes
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideInUp {
+  from { transform: translate3d(0, 100%, 0); visibility: visible; }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideInDown {
+  from { transform: translate3d(0, -100%, 0); visibility: visible; }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translate3d(-100%, 0, 0); visibility: visible; }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translate3d(100%, 0, 0); visibility: visible; }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+  50% { opacity: 1; }
+}
+
+@keyframes zoomOut {
+  from { opacity: 1; }
+  50% { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+  to { opacity: 0; }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); transform: translate3d(0, 0, 0); }
+  40%, 43% { animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0, -30px, 0); }
+  70% { animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06); transform: translate3d(0, -15px, 0); }
+  90% { transform: translate3d(0, -4px, 0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  10%, 30%, 50%, 70%, 90% { transform: translate3d(-10px, 0, 0); }
+  20%, 40%, 60%, 80% { transform: translate3d(10px, 0, 0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale3d(1, 1, 1); }
+  50% { transform: scale3d(1.05, 1.05, 1.05); }
+  100% { transform: scale3d(1, 1, 1); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flip {
+  0% { transform: perspective(400px) rotate3d(0, 1, 0, -360deg); animation-timing-function: ease-out; }
+  40% { transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg); animation-timing-function: ease-out; }
+  50% { transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg); animation-timing-function: ease-in; }
+  80% { transform: perspective(400px) scale3d(0.95, 0.95, 0.95); animation-timing-function: ease-in; }
+  100% { transform: perspective(400px); animation-timing-function: ease-in; }
+}
+
+@keyframes swing {
+  20% { transform: rotate3d(0, 0, 1, 15deg); }
+  40% { transform: rotate3d(0, 0, 1, -10deg); }
+  60% { transform: rotate3d(0, 0, 1, 5deg); }
+  80% { transform: rotate3d(0, 0, 1, -5deg); }
+  100% { transform: rotate3d(0, 0, 1, 0deg); }
+}
+
+@keyframes rubberBand {
+  0% { transform: scale3d(1, 1, 1); }
+  30% { transform: scale3d(1.25, 0.75, 1); }
+  40% { transform: scale3d(0.75, 1.25, 1); }
+  50% { transform: scale3d(1.15, 0.85, 1); }
+  65% { transform: scale3d(0.95, 1.05, 1); }
+  75% { transform: scale3d(1.05, 0.95, 1); }
+  100% { transform: scale3d(1, 1, 1); }
+}
+
+@keyframes wobble {
+  0% { transform: translate3d(0, 0, 0); }
+  15% { transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg); }
+  30% { transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg); }
+  45% { transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg); }
+  60% { transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg); }
+  75% { transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes jello {
+  0%, 11.1%, 100% { transform: translate3d(0, 0, 0); }
+  22.2% { transform: skewX(-12.5deg) skewY(-12.5deg); }
+  33.3% { transform: skewX(6.25deg) skewY(6.25deg); }
+  44.4% { transform: skewX(-3.125deg) skewY(-3.125deg); }
+  55.5% { transform: skewX(1.5625deg) skewY(1.5625deg); }
+  66.6% { transform: skewX(-0.78125deg) skewY(-0.78125deg); }
+  77.7% { transform: skewX(0.390625deg) skewY(0.390625deg); }
+  88.8% { transform: skewX(-0.1953125deg) skewY(-0.1953125deg); }
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.3); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.3); }
+  70% { transform: scale(1); }
+}
+
+@keyframes flash {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+@keyframes tada {
+  0% { transform: scale3d(1, 1, 1); }
+  10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+  30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+  40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+  100% { transform: scale3d(1, 1, 1); }
+}
+
+// Hover effects
+.hover {
+  &__scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  &__scale-110:hover {
+    transform: scale(1.1);
+  }
+  
+  &__scale-125:hover {
+    transform: scale(1.25);
+  }
+  
+  &__rotate-6:hover {
+    transform: rotate(6deg);
+  }
+  
+  &__rotate-12:hover {
+    transform: rotate(12deg);
+  }
+  
+  &__rotate-180:hover {
+    transform: rotate(180deg);
+  }
+  
+  &__skew-12:hover {
+    transform: skew(12deg, 12deg);
+  }
+  
+  &__translate-x-1:hover {
+    transform: translateX(0.25rem);
+  }
+  
+  &__translate-y-1:hover {
+    transform: translateY(-0.25rem);
+  }
+  
+  &__shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  &__shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  &__shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+// Focus effects
+.focus {
+  &__scale-105:focus {
+    transform: scale(1.05);
+  }
+  
+  &__scale-110:focus {
+    transform: scale(1.1);
+  }
+  
+  &__scale-125:focus {
+    transform: scale(1.25);
+  }
+}
+
+// Animation performance optimization
+.animate,
+.transition,
+.transform,
+.hover,
+.focus {
+  &[class*="animate"],
+  &[class*="transition"],
+  &[class*="transform"],
+  &[class*="hover"],
+  &[class*="focus"] {
+    will-change: transform, opacity;
+  }
+}
+
+// Prefers reduced motion
+@media (prefers-reduced-motion: reduce) {
+  .animate,
+  .transition,
+  .transform,
+  .hover,
+  .focus {
+    &[class*="animate"],
+    &[class*="transition"],
+    &[class*="transform"],
+    &[class*="hover"],
+    &[class*="focus"] {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

@@ -31,6 +31,13 @@
 @use 'components/spinner';
 @use 'components/toast';
 
+// 3.1 Advanced Components
+@use 'components/advanced-forms';
+@use 'components/data-visualization';
+@use 'components/layout-components';
+@use 'components/interactive-components';
+@use 'components/utility-components';
+
 // 4. Utility Classes
 // Single-purpose, reusable classes that often override component styles with `!important`.
 // They should come after components to ensure they can override.
@@ -52,6 +59,8 @@
 @use 'utilities/interactions';
 @use 'utilities/overflow';
 @use 'utilities/align';
+@use 'utilities/animations';
+@use 'utilities/gradients';
 
 // 5. Theme Styles / Overrides
 // Specific themes (like dark mode) or any global overrides that change existing styles.
