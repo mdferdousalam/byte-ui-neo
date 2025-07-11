@@ -1,6 +1,6 @@
 {
-	"name": "@mdferdousalam1989/byte-ui",
-	"version": "1.1.1",
+	"name": "byte-ui",
+	"version": "0.0.2",
 	"description": "A modern, lightweight CSS framework built with Sass and vanilla JavaScript",
 	"main": "dist/byte-ui.min.js",
 	"style": "dist/byte-ui.min.css",
