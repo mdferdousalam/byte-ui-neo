@@ -7,29 +7,35 @@
 ### 🎯 Available Commands
 
 #### 1. **Simple Development Server**
+
 ```bash
 npm run dev
 ```
+
 - Basic webpack dev server
 - Manual restart required if crashes
 
 #### 2. **Auto-Restart Development Server (Recommended)**
+
 ```bash
 npm start
 # or
 npm run dev:auto
 ```
+
 - **Automatic restart** on crash
 - **Health monitoring** every 10 seconds
 - **Graceful shutdown** with Ctrl+C
 - **Error handling** and logging
 
 #### 3. **Bash Script Auto-Restart**
+
 ```bash
 npm run dev:safe
 # or
 ./start-dev.sh
 ```
+
 - Bash script based auto-restart
 - Simple monitoring
 - Works on all Unix systems
@@ -37,6 +43,7 @@ npm run dev:safe
 ### 🛠️ Features
 
 #### ✅ **Auto-Restart Capabilities**
+
 - **Crash Detection**: Monitors server health
 - **Automatic Restart**: Restarts on failure
 - **Restart Limits**: Max 5 restart attempts
@@ -44,6 +51,7 @@ npm run dev:safe
 - **Graceful Shutdown**: Proper cleanup on exit
 
 #### ✅ **Development Experience**
+
 - **Hot Module Replacement**: Live reloading
 - **Source Maps**: Debugging support
 - **Error Logging**: Detailed error messages
@@ -52,12 +60,14 @@ npm run dev:safe
 ### 🔧 Configuration
 
 #### Server Settings
+
 - **Port**: 9000 (localhost:9000)
 - **Host**: localhost + network IP
 - **Auto-reload**: Enabled
 - **Source maps**: Enabled in development
 
 #### Auto-Restart Settings
+
 - **Health Check Interval**: 10 seconds
 - **Max Restart Attempts**: 5
 - **Restart Delay**: 3 seconds
@@ -66,16 +76,19 @@ npm run dev:safe
 ### 📊 Monitoring
 
 #### Health Check
+
 ```bash
 curl -s http://localhost:9000
 ```
 
 #### Process Status
+
 ```bash
 ps aux | grep webpack
 ```
 
 #### Kill Server
+
 ```bash
 pkill -f "webpack serve"
 ```
@@ -83,17 +96,21 @@ pkill -f "webpack serve"
 ### 🚨 Troubleshooting
 
 #### If Server Won't Start
+
 1. Check if port 9000 is in use:
+
    ```bash
    lsof -i :9000
    ```
 
 2. Kill existing processes:
+
    ```bash
    pkill -f "webpack serve"
    ```
 
 3. Clear npm cache:
+
    ```bash
    npm cache clean --force
    ```
@@ -105,12 +122,15 @@ pkill -f "webpack serve"
    ```
 
 #### If Auto-Restart Doesn't Work
+
 1. Check Node.js version:
+
    ```bash
    node --version
    ```
 
 2. Use bash script fallback:
+
    ```bash
    ./start-dev.sh
    ```
@@ -123,23 +143,27 @@ pkill -f "webpack serve"
 ### 🎯 Best Practices
 
 #### For Development
+
 - Use `npm start` for auto-restart
 - Keep terminal open to see logs
 - Use Ctrl+C to stop gracefully
 
 #### For Production
+
 - Use `npm run build` to create production build
 - Use `npm run serve` to test production build locally
 
 ### 🔍 Logs and Debugging
 
 #### Server Logs
+
 - ✅ Server started successfully
 - 🔄 Starting development server...
 - ❌ Server process exited with code X
 - 🔄 Restarting server...
 
 #### Health Check Logs
+
 - ✅ Server health check passed
 - ❌ Server health check failed - restarting...
 
@@ -154,8 +178,9 @@ pkill -f "webpack serve"
 ### 🎉 Success Indicators
 
 #### Server Started Successfully
+
 ```
-🚀 Hikma UI Development Server with Auto-Restart
+🚀 Byte UI Development Server with Auto-Restart
 📍 URL: http://localhost:9000
 🔄 Auto-restart enabled
 🛑 Press Ctrl+C to stop
@@ -167,6 +192,7 @@ pkill -f "webpack serve"
 ```
 
 #### Auto-Restart Working
+
 ```
 ❌ Server process exited with code 1
 🔄 Restarting server (attempt 1/5)...

@@ -1,12 +1,12 @@
 // 1. Root-level CSS Variables (Global Design Tokens)
 // Define base font size as a Sass variable first
-$hikma-base-font-size: 1rem; // এটি একটি Sass ভেরিয়েবল
+$byte-base-font-size: 1rem; // এটি একটি Sass ভেরিয়েবল
 
 :root {
-	--byte-font-size-base: #{$hikma-base-font-size};
-	--byte-font-size-sm: #{$hikma-base-font-size * 0.875}; // উদাহরণ ছোট ফন্ট
-	--byte-font-size-lg: #{$hikma-base-font-size * 1.25}; // এখানে গণনা করা হয়েছে
-	--byte-font-size-xl: #{$hikma-base-font-size * 1.5}; // উদাহরণ বড় ফন্ট
+	--byte-font-size-base: #{$byte-base-font-size};
+	--byte-font-size-sm: #{$byte-base-font-size * 0.875}; // উদাহরণ ছোট ফন্ট
+	--byte-font-size-lg: #{$byte-base-font-size * 1.25}; // এখানে গণনা করা হয়েছে
+	--byte-font-size-xl: #{$byte-base-font-size * 1.5}; // উদাহরণ বড় ফন্ট
 
 	// Colors
 	--byte-color-primary: #007bff;
@@ -53,7 +53,7 @@ $hikma-base-font-size: 1rem; // এটি একটি Sass ভেরিয়�
 
 // 2. Sass Variables (for calculations, loops, etc. if needed)
 // These are compiled away, unlike CSS variables which are runtime.
-$hikma-breakpoints: (
+$byte-breakpoints: (
 	sm: 576px,
 	md: 768px,
 	lg: 992px,
@@ -63,7 +63,7 @@ $hikma-breakpoints: (
 
 // Define minimum width for each breakpoint
 // This map will be used by our mixins
-$hikma-breakpoint-up: (
+$byte-breakpoint-up: (
 	sm: 576px,
 	md: 768px,
 	lg: 992px,
@@ -73,7 +73,7 @@ $hikma-breakpoint-up: (
 
 // Define maximum width for each breakpoint (useful for ranges, e.g., md-only)
 // Subtracting 0.02px ensures no overlap between breakpoint ranges
-$hikma-breakpoint-down: (
+$byte-breakpoint-down: (
 	xs: 575.98px,
 	// Represents anything *smaller* than sm
 	sm: 767.98px,
@@ -82,5 +82,5 @@ $hikma-breakpoint-down: (
 	// Represents anything *smaller* than lg
 	lg: 1199.98px,
 	// Represents anything *smaller* than xl
-	xl: 1399.98px // Represents anything *smaller* than xxl,,
+	xl: 1399.98px // Represents anything *smaller* than xxl,,,
 );

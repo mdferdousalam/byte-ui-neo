@@ -123,7 +123,7 @@ function adjustTextColorForContrast(
 //    For example, you could have a `js-auto-contrast` class, and a script loops through
 //    elements with this class, calculates, and applies the color.
 // At the end of contrast-checker.js
-window.HikmaUI = {
+window.ByteUI = {
 	adjustTextColorForContrast,
 	hexToRgb,
 	getRelativeLuminance,

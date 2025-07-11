@@ -1,9 +1,9 @@
 /**
- * Modern JavaScript Features for Hikma UI
+ * Modern JavaScript Features for Byte UI
  * Advanced component patterns and modern web APIs
  */
 
-class HikmaModernFeatures {
+class ByteModernFeatures {
 	constructor() {
 		this.init();
 	}
@@ -89,7 +89,7 @@ class HikmaModernFeatures {
 
 				// Custom event for size changes
 				element.dispatchEvent(
-					new CustomEvent('hikma:resize', {
+					new CustomEvent('Byte:resize', {
 						detail: { width, height: entry.contentRect.height },
 					}),
 				);
@@ -179,13 +179,13 @@ class HikmaModernFeatures {
 
 	// 5. Web Components
 	initWebComponents() {
-		this.defineHikmaCard();
-		this.defineHikmaButton();
-		this.defineHikmaTooltip();
+		this.defineByteCard();
+		this.defineByteButton();
+		this.defineByteTooltip();
 	}
 
-	defineHikmaCard() {
-		class HikmaCard extends HTMLElement {
+	defineByteCard() {
+		class ByteCard extends HTMLElement {
 			constructor() {
 				super();
 				this.attachShadow({ mode: 'open' });
@@ -265,7 +265,7 @@ class HikmaModernFeatures {
 					if (e.target.matches('[data-action]')) {
 						const action = e.target.dataset.action;
 						this.dispatchEvent(
-							new CustomEvent('hikma:card:action', {
+							new CustomEvent('Byte:card:action', {
 								detail: { action, element: e.target },
 							}),
 						);
@@ -274,11 +274,11 @@ class HikmaModernFeatures {
 			}
 		}
 
-		customElements.define('hikma-card', HikmaCard);
+		customElements.define('byte-card', ByteCard);
 	}
 
-	defineHikmaButton() {
-		class HikmaButton extends HTMLElement {
+	defineByteButton() {
+		class ByteButton extends HTMLElement {
 			static get observedAttributes() {
 				return ['variant', 'size', 'disabled', 'loading'];
 			}
@@ -399,7 +399,7 @@ class HikmaModernFeatures {
 					}
 
 					this.dispatchEvent(
-						new CustomEvent('hikma:button:click', {
+						new CustomEvent('Byte:button:click', {
 							detail: { button: this },
 						}),
 					);
@@ -407,11 +407,11 @@ class HikmaModernFeatures {
 			}
 		}
 
-		customElements.define('hikma-button', HikmaButton);
+		customElements.define('byte-button', ByteButton);
 	}
 
-	defineHikmaTooltip() {
-		class HikmaTooltip extends HTMLElement {
+	defineByteTooltip() {
+		class ByteTooltip extends HTMLElement {
 			constructor() {
 				super();
 				this.attachShadow({ mode: 'open' });
@@ -547,7 +547,7 @@ class HikmaModernFeatures {
 			}
 		}
 
-		customElements.define('hikma-tooltip', HikmaTooltip);
+		customElements.define('byte-tooltip', ByteTooltip);
 	}
 
 	// 6. Modern Animations with Web Animations API
@@ -693,7 +693,7 @@ class HikmaModernFeatures {
 
 			// Dispatch custom event
 			document.dispatchEvent(
-				new CustomEvent('hikma:color-scheme-change', {
+				new CustomEvent('Byte:color-scheme-change', {
 					detail: { isDark: e.matches },
 				}),
 			);
@@ -899,13 +899,13 @@ class HikmaModernFeatures {
 // Initialize when DOM is loaded
 if (document.readyState === 'loading') {
 	document.addEventListener('DOMContentLoaded', () => {
-		window.hikmaModernFeatures = new HikmaModernFeatures();
+		window.ByteModernFeatures = new ByteModernFeatures();
 	});
 } else {
-	window.hikmaModernFeatures = new HikmaModernFeatures();
+	window.ByteModernFeatures = new ByteModernFeatures();
 }
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {
-	module.exports = HikmaModernFeatures;
+	module.exports = ByteModernFeatures;
 }

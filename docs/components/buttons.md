@@ -1,6 +1,6 @@
 # 🔘 Buttons
 
-Buttons are one of the most important interactive elements in any user interface. Hikma UI provides a comprehensive set of button styles, sizes, and states to cover all your needs.
+Buttons are one of the most important interactive elements in any user interface. Byte UI provides a comprehensive set of button styles, sizes, and states to cover all your needs.
 
 ## Basic Usage
 

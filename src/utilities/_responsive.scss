@@ -9,13 +9,13 @@
 //   }
 // }
 @mixin media-up($breakpoint) {
-  @if map.has-key($hikma-breakpoint-up, $breakpoint) {
-    @media (min-width: map.get($hikma-breakpoint-up, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint '#{$breakpoint}' not found in $hikma-breakpoint-up map.";
-  }
+	@if map.has-key($byte-breakpoint-up, $breakpoint) {
+		@media (min-width: map.get($byte-breakpoint-up, $breakpoint)) {
+			@content;
+		}
+	} @else {
+		@warn "Breakpoint '#{$breakpoint}' not found in $byte-breakpoint-up map.";
+	}
 }
 
 // Mixin for "max-width" (down to a breakpoint)
@@ -26,13 +26,13 @@
 //   }
 // }
 @mixin media-down($breakpoint) {
-  @if map.has-key($hikma-breakpoint-down, $breakpoint) {
-    @media (max-width: map.get($hikma-breakpoint-down, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint '#{$breakpoint}' not found in $hikma-breakpoint-down map.";
-  }
+	@if map.has-key($byte-breakpoint-down, $breakpoint) {
+		@media (max-width: map.get($byte-breakpoint-down, $breakpoint)) {
+			@content;
+		}
+	} @else {
+		@warn "Breakpoint '#{$breakpoint}' not found in $byte-breakpoint-down map.";
+	}
 }
 
 // Mixin for a specific range (between two breakpoints)
@@ -43,11 +43,13 @@
 //   }
 // }
 @mixin media-between($lower, $upper) {
-  @if map.has-key($hikma-breakpoint-up, $lower) and map.has-key($hikma-breakpoint-down, $upper) {
-    @media (min-width: map.get($hikma-breakpoint-up, $lower)) and (max-width: map.get($hikma-breakpoint-down, $upper)) {
-      @content;
-    }
-  } @else {
-    @warn "One or both breakpoints '#{$lower}' and '#{$upper}' not found in breakpoint maps.";
-  }
+	@if map.has-key($byte-breakpoint-up, $lower) and
+		map.has-key($byte-breakpoint-down, $upper)
+	{
+		@media (min-width: map.get($byte-breakpoint-up, $lower)) and (max-width: map.get($byte-breakpoint-down, $upper)) {
+			@content;
+		}
+	} @else {
+		@warn "One or both breakpoints '#{$lower}' and '#{$upper}' not found in breakpoint maps.";
+	}
 }

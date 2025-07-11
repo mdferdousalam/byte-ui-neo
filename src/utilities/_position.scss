@@ -25,7 +25,7 @@
 }
 
 // Responsive position classes
-@each $breakpoint, $value in $hikma-breakpoints {
+@each $breakpoint, $value in $byte-breakpoints {
 	@include media-up($breakpoint) {
 		.#{$breakpoint}\:position-static {
 			position: static !important;
@@ -103,7 +103,7 @@ $position-offsets: map.merge($position-offsets, $spacing-scale-for-position);
 	}
 
 	// Responsive offsets
-	@each $breakpoint, $value in $hikma-breakpoints {
+	@each $breakpoint, $value in $byte-breakpoints {
 		@include media-up($breakpoint) {
 			.#{$breakpoint}\:top-#{$val-abbr} {
 				top: $val !important;

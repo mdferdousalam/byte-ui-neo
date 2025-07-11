@@ -1,18 +1,18 @@
 # 🔧 JavaScript API Reference
 
-Hikma UI provides a comprehensive JavaScript API for interactive components. All components are built with vanilla JavaScript and provide both automatic initialization and manual control.
+Byte UI provides a comprehensive JavaScript API for interactive components. All components are built with vanilla JavaScript and provide both automatic initialization and manual control.
 
 ## Global Object
 
-All Hikma UI JavaScript functionality is available through the global `HikmaUI` object:
+All Byte UI JavaScript functionality is available through the global `ByteUI` object:
 
 ```javascript
-// Access the global HikmaUI object
-console.log(HikmaUI);
+// Access the global ByteUI object
+console.log(ByteUI);
 
 // Available methods and utilities
-HikmaUI.adjustTextColorForContrast('#007bff', '#ffffff');
-HikmaUI.init(); // Initialize all components
+ByteUI.adjustTextColorForContrast('#007bff', '#ffffff');
+ByteUI.init(); // Initialize all components
 ```
 
 ## Component APIs
@@ -23,16 +23,16 @@ HikmaUI.init(); // Initialize all components
 
 ```javascript
 // Show modal
-HikmaUI.Modal.show(modalId);
+ByteUI.Modal.show(modalId);
 
 // Hide modal
-HikmaUI.Modal.hide(modalId);
+ByteUI.Modal.hide(modalId);
 
 // Toggle modal
-HikmaUI.Modal.toggle(modalId);
+ByteUI.Modal.toggle(modalId);
 
 // Get modal instance
-const modal = HikmaUI.Modal.getInstance(modalId);
+const modal = ByteUI.Modal.getInstance(modalId);
 ```
 
 #### Events
@@ -40,19 +40,19 @@ const modal = HikmaUI.Modal.getInstance(modalId);
 ```javascript
 // Listen to modal events
 document.addEventListener('modal:show', (event) => {
-    console.log('Modal shown:', event.detail.modalId);
+	console.log('Modal shown:', event.detail.modalId);
 });
 
 document.addEventListener('modal:hide', (event) => {
-    console.log('Modal hidden:', event.detail.modalId);
+	console.log('Modal hidden:', event.detail.modalId);
 });
 
 document.addEventListener('modal:shown', (event) => {
-    console.log('Modal show transition completed:', event.detail.modalId);
+	console.log('Modal show transition completed:', event.detail.modalId);
 });
 
 document.addEventListener('modal:hidden', (event) => {
-    console.log('Modal hide transition completed:', event.detail.modalId);
+	console.log('Modal hide transition completed:', event.detail.modalId);
 });
 ```
 
@@ -60,16 +60,16 @@ document.addEventListener('modal:hidden', (event) => {
 
 ```javascript
 // Initialize specific modal
-HikmaUI.Modal.init('#myModal');
+ByteUI.Modal.init('#myModal');
 
 // Initialize all modals
-HikmaUI.Modal.initAll();
+ByteUI.Modal.initAll();
 
 // Create modal with options
-const modal = new HikmaUI.Modal('#myModal', {
-    backdrop: true,
-    keyboard: true,
-    focus: true
+const modal = new ByteUI.Modal('#myModal', {
+	backdrop: true,
+	keyboard: true,
+	focus: true,
 });
 ```
 
@@ -79,16 +79,16 @@ const modal = new HikmaUI.Modal('#myModal', {
 
 ```javascript
 // Show dropdown
-HikmaUI.Dropdown.show(dropdownId);
+ByteUI.Dropdown.show(dropdownId);
 
 // Hide dropdown
-HikmaUI.Dropdown.hide(dropdownId);
+ByteUI.Dropdown.hide(dropdownId);
 
 // Toggle dropdown
-HikmaUI.Dropdown.toggle(dropdownId);
+ByteUI.Dropdown.toggle(dropdownId);
 
 // Get dropdown instance
-const dropdown = HikmaUI.Dropdown.getInstance(dropdownId);
+const dropdown = ByteUI.Dropdown.getInstance(dropdownId);
 ```
 
 #### Events
@@ -96,11 +96,11 @@ const dropdown = HikmaUI.Dropdown.getInstance(dropdownId);
 ```javascript
 // Listen to dropdown events
 document.addEventListener('dropdown:show', (event) => {
-    console.log('Dropdown shown:', event.detail.dropdownId);
+	console.log('Dropdown shown:', event.detail.dropdownId);
 });
 
 document.addEventListener('dropdown:hide', (event) => {
-    console.log('Dropdown hidden:', event.detail.dropdownId);
+	console.log('Dropdown hidden:', event.detail.dropdownId);
 });
 ```
 
@@ -108,16 +108,16 @@ document.addEventListener('dropdown:hide', (event) => {
 
 ```javascript
 // Initialize specific dropdown
-HikmaUI.Dropdown.init('.dropdown-toggle');
+ByteUI.Dropdown.init('.dropdown-toggle');
 
 // Initialize all dropdowns
-HikmaUI.Dropdown.initAll();
+ByteUI.Dropdown.initAll();
 
 // Create dropdown with options
-const dropdown = new HikmaUI.Dropdown('.dropdown-toggle', {
-    boundary: 'viewport',
-    offset: 10,
-    flip: true
+const dropdown = new ByteUI.Dropdown('.dropdown-toggle', {
+	boundary: 'viewport',
+	offset: 10,
+	flip: true,
 });
 ```
 
@@ -127,13 +127,13 @@ const dropdown = new HikmaUI.Dropdown('.dropdown-toggle', {
 
 ```javascript
 // Show tab
-HikmaUI.Tabs.show(tabId);
+ByteUI.Tabs.show(tabId);
 
 // Get active tab
-const activeTab = HikmaUI.Tabs.getActive(tabGroupId);
+const activeTab = ByteUI.Tabs.getActive(tabGroupId);
 
 // Get tab instance
-const tab = HikmaUI.Tabs.getInstance(tabId);
+const tab = ByteUI.Tabs.getInstance(tabId);
 ```
 
 #### Events
@@ -141,19 +141,19 @@ const tab = HikmaUI.Tabs.getInstance(tabId);
 ```javascript
 // Listen to tab events
 document.addEventListener('tab:show', (event) => {
-    console.log('Tab shown:', event.detail.tabId);
+	console.log('Tab shown:', event.detail.tabId);
 });
 
 document.addEventListener('tab:hide', (event) => {
-    console.log('Tab hidden:', event.detail.tabId);
+	console.log('Tab hidden:', event.detail.tabId);
 });
 
 document.addEventListener('tab:shown', (event) => {
-    console.log('Tab show transition completed:', event.detail.tabId);
+	console.log('Tab show transition completed:', event.detail.tabId);
 });
 
 document.addEventListener('tab:hidden', (event) => {
-    console.log('Tab hide transition completed:', event.detail.tabId);
+	console.log('Tab hide transition completed:', event.detail.tabId);
 });
 ```
 
@@ -161,15 +161,15 @@ document.addEventListener('tab:hidden', (event) => {
 
 ```javascript
 // Initialize specific tab group
-HikmaUI.Tabs.init('[data-bs-toggle="tab"]');
+ByteUI.Tabs.init('[data-bs-toggle="tab"]');
 
 // Initialize all tabs
-HikmaUI.Tabs.initAll();
+ByteUI.Tabs.initAll();
 
 // Create tab with options
-const tab = new HikmaUI.Tabs('[data-bs-toggle="tab"]', {
-    fade: true,
-    keyboard: true
+const tab = new ByteUI.Tabs('[data-bs-toggle="tab"]', {
+	fade: true,
+	keyboard: true,
 });
 ```
 
@@ -179,22 +179,22 @@ const tab = new HikmaUI.Tabs('[data-bs-toggle="tab"]', {
 
 ```javascript
 // Next slide
-HikmaUI.Carousel.next(carouselId);
+ByteUI.Carousel.next(carouselId);
 
 // Previous slide
-HikmaUI.Carousel.prev(carouselId);
+ByteUI.Carousel.prev(carouselId);
 
 // Go to specific slide
-HikmaUI.Carousel.goTo(carouselId, slideIndex);
+ByteUI.Carousel.goTo(carouselId, slideIndex);
 
 // Start auto-sliding
-HikmaUI.Carousel.start(carouselId);
+ByteUI.Carousel.start(carouselId);
 
 // Stop auto-sliding
-HikmaUI.Carousel.stop(carouselId);
+ByteUI.Carousel.stop(carouselId);
 
 // Get carousel instance
-const carousel = HikmaUI.Carousel.getInstance(carouselId);
+const carousel = ByteUI.Carousel.getInstance(carouselId);
 ```
 
 #### Events
@@ -202,11 +202,11 @@ const carousel = HikmaUI.Carousel.getInstance(carouselId);
 ```javascript
 // Listen to carousel events
 document.addEventListener('carousel:slide', (event) => {
-    console.log('Carousel sliding:', event.detail);
+	console.log('Carousel sliding:', event.detail);
 });
 
 document.addEventListener('carousel:slid', (event) => {
-    console.log('Carousel slide completed:', event.detail);
+	console.log('Carousel slide completed:', event.detail);
 });
 ```
 
@@ -214,17 +214,17 @@ document.addEventListener('carousel:slid', (event) => {
 
 ```javascript
 // Initialize specific carousel
-HikmaUI.Carousel.init('#myCarousel');
+ByteUI.Carousel.init('#myCarousel');
 
 // Initialize all carousels
-HikmaUI.Carousel.initAll();
+ByteUI.Carousel.initAll();
 
 // Create carousel with options
-const carousel = new HikmaUI.Carousel('#myCarousel', {
-    interval: 5000,
-    pause: 'hover',
-    wrap: true,
-    keyboard: true
+const carousel = new ByteUI.Carousel('#myCarousel', {
+	interval: 5000,
+	pause: 'hover',
+	wrap: true,
+	keyboard: true,
 });
 ```
 
@@ -234,10 +234,10 @@ const carousel = new HikmaUI.Carousel('#myCarousel', {
 
 ```javascript
 // Close alert
-HikmaUI.Alert.close(alertId);
+ByteUI.Alert.close(alertId);
 
 // Get alert instance
-const alert = HikmaUI.Alert.getInstance(alertId);
+const alert = ByteUI.Alert.getInstance(alertId);
 ```
 
 #### Events
@@ -245,11 +245,11 @@ const alert = HikmaUI.Alert.getInstance(alertId);
 ```javascript
 // Listen to alert events
 document.addEventListener('alert:close', (event) => {
-    console.log('Alert closing:', event.detail.alertId);
+	console.log('Alert closing:', event.detail.alertId);
 });
 
 document.addEventListener('alert:closed', (event) => {
-    console.log('Alert closed:', event.detail.alertId);
+	console.log('Alert closed:', event.detail.alertId);
 });
 ```
 
@@ -257,12 +257,12 @@ document.addEventListener('alert:closed', (event) => {
 
 ```javascript
 // Initialize all alerts
-HikmaUI.Alert.initAll();
+ByteUI.Alert.initAll();
 
 // Create alert with options
-const alert = new HikmaUI.Alert('.alert-dismissible', {
-    fade: true,
-    duration: 150
+const alert = new ByteUI.Alert('.alert-dismissible', {
+	fade: true,
+	duration: 150,
 });
 ```
 
@@ -272,13 +272,13 @@ const alert = new HikmaUI.Alert('.alert-dismissible', {
 
 ```javascript
 // Show toast
-HikmaUI.Toast.show(toastId);
+ByteUI.Toast.show(toastId);
 
 // Hide toast
-HikmaUI.Toast.hide(toastId);
+ByteUI.Toast.hide(toastId);
 
 // Get toast instance
-const toast = HikmaUI.Toast.getInstance(toastId);
+const toast = ByteUI.Toast.getInstance(toastId);
 ```
 
 #### Events
@@ -286,19 +286,19 @@ const toast = HikmaUI.Toast.getInstance(toastId);
 ```javascript
 // Listen to toast events
 document.addEventListener('toast:show', (event) => {
-    console.log('Toast shown:', event.detail.toastId);
+	console.log('Toast shown:', event.detail.toastId);
 });
 
 document.addEventListener('toast:hide', (event) => {
-    console.log('Toast hidden:', event.detail.toastId);
+	console.log('Toast hidden:', event.detail.toastId);
 });
 
 document.addEventListener('toast:shown', (event) => {
-    console.log('Toast show transition completed:', event.detail.toastId);
+	console.log('Toast show transition completed:', event.detail.toastId);
 });
 
 document.addEventListener('toast:hidden', (event) => {
-    console.log('Toast hide transition completed:', event.detail.toastId);
+	console.log('Toast hide transition completed:', event.detail.toastId);
 });
 ```
 
@@ -306,15 +306,15 @@ document.addEventListener('toast:hidden', (event) => {
 
 ```javascript
 // Initialize specific toast
-HikmaUI.Toast.init('#myToast');
+ByteUI.Toast.init('#myToast');
 
 // Initialize all toasts
-HikmaUI.Toast.initAll();
+ByteUI.Toast.initAll();
 
 // Create toast with options
-const toast = new HikmaUI.Toast('#myToast', {
-    autohide: true,
-    delay: 5000
+const toast = new ByteUI.Toast('#myToast', {
+	autohide: true,
+	delay: 5000,
 });
 ```
 
@@ -324,16 +324,16 @@ const toast = new HikmaUI.Toast('#myToast', {
 
 ```javascript
 // Validate form
-const isValid = HikmaUI.FormValidation.validate(formElement);
+const isValid = ByteUI.FormValidation.validate(formElement);
 
 // Validate field
-const isFieldValid = HikmaUI.FormValidation.validateField(fieldElement);
+const isFieldValid = ByteUI.FormValidation.validateField(fieldElement);
 
 // Reset validation
-HikmaUI.FormValidation.reset(formElement);
+ByteUI.FormValidation.reset(formElement);
 
 // Get validation errors
-const errors = HikmaUI.FormValidation.getErrors(formElement);
+const errors = ByteUI.FormValidation.getErrors(formElement);
 ```
 
 #### Events
@@ -341,19 +341,19 @@ const errors = HikmaUI.FormValidation.getErrors(formElement);
 ```javascript
 // Listen to validation events
 document.addEventListener('form:validate', (event) => {
-    console.log('Form validation:', event.detail);
+	console.log('Form validation:', event.detail);
 });
 
 document.addEventListener('form:valid', (event) => {
-    console.log('Form is valid:', event.detail);
+	console.log('Form is valid:', event.detail);
 });
 
 document.addEventListener('form:invalid', (event) => {
-    console.log('Form is invalid:', event.detail);
+	console.log('Form is invalid:', event.detail);
 });
 
 document.addEventListener('field:validate', (event) => {
-    console.log('Field validation:', event.detail);
+	console.log('Field validation:', event.detail);
 });
 ```
 
@@ -361,16 +361,16 @@ document.addEventListener('field:validate', (event) => {
 
 ```javascript
 // Initialize form validation
-HikmaUI.FormValidation.init('.needs-validation');
+ByteUI.FormValidation.init('.needs-validation');
 
 // Initialize all forms
-HikmaUI.FormValidation.initAll();
+ByteUI.FormValidation.initAll();
 
 // Create form validation with options
-const validation = new HikmaUI.FormValidation('.needs-validation', {
-    validateOnInput: true,
-    validateOnBlur: true,
-    showFeedback: true
+const validation = new ByteUI.FormValidation('.needs-validation', {
+	validateOnInput: true,
+	validateOnBlur: true,
+	showFeedback: true,
 });
 ```
 
@@ -380,40 +380,40 @@ const validation = new HikmaUI.FormValidation('.needs-validation', {
 
 ```javascript
 // Adjust text color for contrast
-const textColor = HikmaUI.adjustTextColorForContrast(
-    '#007bff',      // background color
-    '#ffffff',      // original text color
-    4.5            // contrast ratio threshold (optional)
+const textColor = ByteUI.adjustTextColorForContrast(
+	'#007bff', // background color
+	'#ffffff', // original text color
+	4.5, // contrast ratio threshold (optional)
 );
 
 // Convert hex to RGB
-const rgb = HikmaUI.hexToRgb('#007bff');
+const rgb = ByteUI.hexToRgb('#007bff');
 // Returns: { r: 0, g: 123, b: 255 }
 
 // Get relative luminance
-const luminance = HikmaUI.getRelativeLuminance({ r: 0, g: 123, b: 255 });
+const luminance = ByteUI.getRelativeLuminance({ r: 0, g: 123, b: 255 });
 
 // Get contrast ratio
-const ratio = HikmaUI.getContrastRatio(0.2, 0.8);
+const ratio = ByteUI.getContrastRatio(0.2, 0.8);
 ```
 
 ### Theme Utilities
 
 ```javascript
 // Toggle dark mode
-HikmaUI.Theme.toggleDarkMode();
+ByteUI.Theme.toggleDarkMode();
 
 // Set theme
-HikmaUI.Theme.setTheme('dark'); // or 'light'
+ByteUI.Theme.setTheme('dark'); // or 'light'
 
 // Get current theme
-const currentTheme = HikmaUI.Theme.getCurrentTheme();
+const currentTheme = ByteUI.Theme.getCurrentTheme();
 
 // Save theme preference
-HikmaUI.Theme.savePreference('dark');
+ByteUI.Theme.savePreference('dark');
 
 // Load theme preference
-HikmaUI.Theme.loadPreference();
+ByteUI.Theme.loadPreference();
 ```
 
 ## Configuration
@@ -422,18 +422,18 @@ HikmaUI.Theme.loadPreference();
 
 ```javascript
 // Set global configuration
-HikmaUI.config({
-    prefix: 'hikma-',
-    autoInit: true,
-    debug: false,
-    theme: 'light',
-    breakpoints: {
-        sm: 576,
-        md: 768,
-        lg: 992,
-        xl: 1200,
-        xxl: 1400
-    }
+ByteUI.config({
+	prefix: 'byte-',
+	autoInit: true,
+	debug: false,
+	theme: 'light',
+	breakpoints: {
+		sm: 576,
+		md: 768,
+		lg: 992,
+		xl: 1200,
+		xxl: 1400,
+	},
 });
 ```
 
@@ -441,27 +441,27 @@ HikmaUI.config({
 
 ```javascript
 // Configure modals globally
-HikmaUI.Modal.config({
-    backdrop: true,
-    keyboard: true,
-    focus: true,
-    show: true
+ByteUI.Modal.config({
+	backdrop: true,
+	keyboard: true,
+	focus: true,
+	show: true,
 });
 
 // Configure dropdowns globally
-HikmaUI.Dropdown.config({
-    boundary: 'viewport',
-    offset: 10,
-    flip: true,
-    autoClose: true
+ByteUI.Dropdown.config({
+	boundary: 'viewport',
+	offset: 10,
+	flip: true,
+	autoClose: true,
 });
 
 // Configure carousels globally
-HikmaUI.Carousel.config({
-    interval: 5000,
-    pause: 'hover',
-    wrap: true,
-    keyboard: true
+ByteUI.Carousel.config({
+	interval: 5000,
+	pause: 'hover',
+	wrap: true,
+	keyboard: true,
 });
 ```
 
@@ -471,16 +471,16 @@ HikmaUI.Carousel.config({
 
 ```javascript
 // Initialize all components automatically
-HikmaUI.init();
+ByteUI.init();
 
 // Initialize specific component types
-HikmaUI.init(['Modal', 'Dropdown', 'Tabs']);
+ByteUI.init(['Modal', 'Dropdown', 'Tabs']);
 
 // Initialize with options
-HikmaUI.init({
-    components: ['Modal', 'Dropdown'],
-    autoInit: true,
-    debug: true
+ByteUI.init({
+	components: ['Modal', 'Dropdown'],
+	autoInit: true,
+	debug: true,
 });
 ```
 
@@ -488,12 +488,12 @@ HikmaUI.init({
 
 ```javascript
 // Initialize individual components
-const modal = new HikmaUI.Modal('#myModal');
-const dropdown = new HikmaUI.Dropdown('.dropdown-toggle');
-const tabs = new HikmaUI.Tabs('[data-bs-toggle="tab"]');
-const carousel = new HikmaUI.Carousel('#myCarousel');
-const alert = new HikmaUI.Alert('.alert-dismissible');
-const toast = new HikmaUI.Toast('#myToast');
+const modal = new ByteUI.Modal('#myModal');
+const dropdown = new ByteUI.Dropdown('.dropdown-toggle');
+const tabs = new ByteUI.Tabs('[data-bs-toggle="tab"]');
+const carousel = new ByteUI.Carousel('#myCarousel');
+const alert = new ByteUI.Alert('.alert-dismissible');
+const toast = new ByteUI.Toast('#myToast');
 ```
 
 ## Event Management
@@ -502,29 +502,29 @@ const toast = new HikmaUI.Toast('#myToast');
 
 ```javascript
 // Dispatch custom events
-HikmaUI.Events.dispatch('custom:event', {
-    detail: { message: 'Hello from Hikma UI' }
+ByteUI.Events.dispatch('custom:event', {
+	detail: { message: 'Hello from Byte UI' },
 });
 
 // Listen to custom events
-HikmaUI.Events.on('custom:event', (event) => {
-    console.log(event.detail.message);
+ByteUI.Events.on('custom:event', (event) => {
+	console.log(event.detail.message);
 });
 
 // Remove event listener
-HikmaUI.Events.off('custom:event', handlerFunction);
+ByteUI.Events.off('custom:event', handlerFunction);
 ```
 
 ### Event Delegation
 
 ```javascript
 // Add delegated event listeners
-HikmaUI.Events.delegate(document, 'click', '.btn', (event) => {
-    console.log('Button clicked:', event.target);
+ByteUI.Events.delegate(document, 'click', '.btn', (event) => {
+	console.log('Button clicked:', event.target);
 });
 
 // Remove delegated event listeners
-HikmaUI.Events.undelegate(document, 'click', '.btn');
+ByteUI.Events.undelegate(document, 'click', '.btn');
 ```
 
 ## Advanced Usage
@@ -533,28 +533,28 @@ HikmaUI.Events.undelegate(document, 'click', '.btn');
 
 ```javascript
 // Create custom component
-class CustomComponent extends HikmaUI.Component {
-    constructor(element, options = {}) {
-        super(element, options);
-        this.init();
-    }
-    
-    init() {
-        this.element.addEventListener('click', this.handleClick.bind(this));
-    }
-    
-    handleClick(event) {
-        this.dispatch('custom:click', { element: this.element });
-    }
-    
-    destroy() {
-        this.element.removeEventListener('click', this.handleClick);
-        super.destroy();
-    }
+class CustomComponent extends ByteUI.Component {
+	constructor(element, options = {}) {
+		super(element, options);
+		this.init();
+	}
+
+	init() {
+		this.element.addEventListener('click', this.handleClick.bind(this));
+	}
+
+	handleClick(event) {
+		this.dispatch('custom:click', { element: this.element });
+	}
+
+	destroy() {
+		this.element.removeEventListener('click', this.handleClick);
+		super.destroy();
+	}
 }
 
 // Register custom component
-HikmaUI.register('CustomComponent', CustomComponent);
+ByteUI.register('CustomComponent', CustomComponent);
 ```
 
 ### Plugin System
@@ -562,23 +562,23 @@ HikmaUI.register('CustomComponent', CustomComponent);
 ```javascript
 // Create plugin
 const MyPlugin = {
-    name: 'MyPlugin',
-    version: '1.0.0',
-    
-    init() {
-        console.log('MyPlugin initialized');
-    },
-    
-    destroy() {
-        console.log('MyPlugin destroyed');
-    }
+	name: 'MyPlugin',
+	version: '1.0.0',
+
+	init() {
+		console.log('MyPlugin initialized');
+	},
+
+	destroy() {
+		console.log('MyPlugin destroyed');
+	},
 };
 
 // Register plugin
-HikmaUI.use(MyPlugin);
+ByteUI.use(MyPlugin);
 
 // Use plugin
-HikmaUI.MyPlugin.someMethod();
+ByteUI.MyPlugin.someMethod();
 ```
 
 ## Error Handling
@@ -587,12 +587,12 @@ HikmaUI.MyPlugin.someMethod();
 
 ```javascript
 // Set global error handler
-HikmaUI.onError((error, component) => {
-    console.error('Hikma UI Error:', error);
-    console.error('Component:', component);
-    
-    // Send error to logging service
-    // logError(error, component);
+ByteUI.onError((error, component) => {
+	console.error('Byte UI Error:', error);
+	console.error('Component:', component);
+
+	// Send error to logging service
+	// logError(error, component);
 });
 ```
 
@@ -601,15 +601,15 @@ HikmaUI.onError((error, component) => {
 ```javascript
 // Handle component errors
 try {
-    const modal = new HikmaUI.Modal('#nonExistentModal');
+	const modal = new ByteUI.Modal('#nonExistentModal');
 } catch (error) {
-    console.error('Modal initialization failed:', error);
+	console.error('Modal initialization failed:', error);
 }
 
 // Use safe initialization
-const modal = HikmaUI.Modal.safe('#maybeModal');
+const modal = ByteUI.Modal.safe('#maybeModal');
 if (modal) {
-    modal.show();
+	modal.show();
 }
 ```
 
@@ -619,15 +619,15 @@ if (modal) {
 
 ```javascript
 // Load components on demand
-HikmaUI.lazy('Modal', () => {
-    import('./components/modal.js').then(module => {
-        HikmaUI.register('Modal', module.default);
-    });
+ByteUI.lazy('Modal', () => {
+	import('./components/modal.js').then((module) => {
+		ByteUI.register('Modal', module.default);
+	});
 });
 
 // Use lazy-loaded component
-HikmaUI.whenReady('Modal', () => {
-    const modal = new HikmaUI.Modal('#myModal');
+ByteUI.whenReady('Modal', () => {
+	const modal = new ByteUI.Modal('#myModal');
 });
 ```
 
@@ -635,18 +635,18 @@ HikmaUI.whenReady('Modal', () => {
 
 ```javascript
 // Debounce function calls
-const debouncedResize = HikmaUI.debounce(() => {
-    // Handle resize
+const debouncedResize = ByteUI.debounce(() => {
+	// Handle resize
 }, 300);
 
 window.addEventListener('resize', debouncedResize);
 
 // Throttle function calls
-const throttledScroll = HikmaUI.throttle(() => {
-    // Handle scroll
+const throttledScroll = ByteUI.throttle(() => {
+	// Handle scroll
 }, 100);
 
 window.addEventListener('scroll', throttledScroll);
 ```
 
-This comprehensive JavaScript API reference provides all the tools you need to work with Hikma UI components programmatically!
+This comprehensive JavaScript API reference provides all the tools you need to work with Byte UI components programmatically!

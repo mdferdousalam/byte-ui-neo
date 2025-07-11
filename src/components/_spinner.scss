@@ -9,7 +9,7 @@
 	--byte-spinner-color: currentColor; // Inherits color from parent
 }
 
-@keyframes hikma-spinner-border {
+@keyframes byte-spinner-border {
 	to {
 		transform: rotate(360deg);
 	}
@@ -23,7 +23,7 @@
 	border: var(--byte-spinner-border-width) solid var(--byte-spinner-color);
 	border-right-color: transparent; // Creates the spinning effect
 	border-radius: 50%;
-	animation: hikma-spinner-border var(--byte-spinner-animation-speed) linear
+	animation: byte-spinner-border var(--byte-spinner-animation-speed) linear
 		infinite;
 }
 
@@ -62,7 +62,7 @@
 }
 
 // Grow spinner (dot that grows and shrinks)
-@keyframes hikma-spinner-grow {
+@keyframes byte-spinner-grow {
 	0% {
 		transform: scale(0);
 	}
@@ -80,7 +80,7 @@
 	background-color: var(--byte-spinner-color);
 	border-radius: 50%;
 	opacity: 0; // Starts hidden
-	animation: hikma-spinner-grow var(--byte-spinner-animation-speed) linear
+	animation: byte-spinner-grow var(--byte-spinner-animation-speed) linear
 		infinite;
 }
 

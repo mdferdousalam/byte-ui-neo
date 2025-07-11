@@ -1,12 +1,12 @@
 // Utility functions (if any, e.g., for toggling classes)
-// This file will contain all the JavaScript for Hikma UI interactive components.
+// This file will contain all the JavaScript for Byte UI interactive components.
 
 // Import advanced components and features
 import './advanced-components.js';
 import './advanced-features.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-	console.log('Hikma UI JavaScript loaded!');
+	console.log('Byte UI JavaScript loaded!');
 
 	// 1. Navbar Toggler
 	handleNavbarToggle();
@@ -56,7 +56,7 @@ function handleModals() {
 	document.querySelectorAll('[data-bs-toggle="modal"]').forEach((trigger) => {
 		const modalId = trigger.dataset.bsTarget;
 		const modal = document.querySelector(modalId);
-		
+
 		if (!modal) {
 			console.warn('Modal not found:', modalId);
 			return;
@@ -65,7 +65,7 @@ function handleModals() {
 		// Open Modal
 		trigger.addEventListener('click', (event) => {
 			event.preventDefault();
-			
+
 			// Create backdrop if it doesn't exist
 			let backdrop = document.querySelector('.modal-backdrop');
 			if (!backdrop) {
@@ -76,10 +76,10 @@ function handleModals() {
 
 			modal.style.display = 'block';
 			document.body.classList.add('modal-open');
-			
+
 			// Force reflow for animation
 			modal.offsetHeight;
-			
+
 			setTimeout(() => {
 				modal.classList.add('show');
 				backdrop.classList.add('show');
@@ -90,7 +90,7 @@ function handleModals() {
 				modal.classList.remove('show');
 				backdrop.classList.remove('show');
 				document.body.classList.remove('modal-open');
-				
+
 				setTimeout(() => {
 					modal.style.display = 'none';
 					if (backdrop && backdrop.parentNode) {
@@ -100,9 +100,11 @@ function handleModals() {
 			};
 
 			// Close by button inside modal
-			modal.querySelectorAll('[data-bs-dismiss="modal"]').forEach((closeBtn) => {
-				closeBtn.addEventListener('click', closeModal);
-			});
+			modal
+				.querySelectorAll('[data-bs-dismiss="modal"]')
+				.forEach((closeBtn) => {
+					closeBtn.addEventListener('click', closeModal);
+				});
 
 			// Close by clicking outside (backdrop)
 			backdrop.addEventListener('click', closeModal);
@@ -318,50 +320,60 @@ function handleCarousel() {
 	});
 }
 
-
 // 8. Form Validation
 function handleFormValidation() {
-    // Select all forms that need validation (e.g., add 'needs-validation' class to them)
-    const forms = document.querySelectorAll('.needs-validation');
+	// Select all forms that need validation (e.g., add 'needs-validation' class to them)
+	const forms = document.querySelectorAll('.needs-validation');
 
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', (event) => {
-            if (!form.checkValidity()) { // Browser's built-in validation check
-                event.preventDefault();
-                event.stopPropagation();
-            }
+	// Loop over them and prevent submission
+	Array.from(forms).forEach((form) => {
+		form.addEventListener(
+			'submit',
+			(event) => {
+				if (!form.checkValidity()) {
+					// Browser's built-in validation check
+					event.preventDefault();
+					event.stopPropagation();
+				}
 
-            // Add 'was-validated' class to the form to show validation feedback
-            form.classList.add('was-validated');
+				// Add 'was-validated' class to the form to show validation feedback
+				form.classList.add('was-validated');
 
-            // Manually check each input for custom feedback
-            form.querySelectorAll('.form-control, .form-check-input').forEach(input => {
-                if (input.type !== 'submit') { // Exclude submit buttons
-                    if (input.checkValidity()) {
-                        input.classList.remove('is-invalid');
-                        input.classList.add('is-valid');
-                    } else {
-                        input.classList.remove('is-valid');
-                        input.classList.add('is-invalid');
-                    }
-                }
-            });
-        }, false);
-    });
+				// Manually check each input for custom feedback
+				form
+					.querySelectorAll('.form-control, .form-check-input')
+					.forEach((input) => {
+						if (input.type !== 'submit') {
+							// Exclude submit buttons
+							if (input.checkValidity()) {
+								input.classList.remove('is-invalid');
+								input.classList.add('is-valid');
+							} else {
+								input.classList.remove('is-valid');
+								input.classList.add('is-invalid');
+							}
+						}
+					});
+			},
+			false,
+		);
+	});
 
-    // Optional: Real-time validation on input change (less common for full forms, but useful)
-    document.querySelectorAll('.form-control[required], .form-check-input[required]').forEach(input => {
-        input.addEventListener('input', () => {
-            if (input.closest('.was-validated')) { // Only validate in real-time if form was already attempted
-                if (input.checkValidity()) {
-                    input.classList.remove('is-invalid');
-                    input.classList.add('is-valid');
-                } else {
-                    input.classList.remove('is-valid');
-                    input.classList.add('is-invalid');
-                }
-            }
-        });
-    });
+	// Optional: Real-time validation on input change (less common for full forms, but useful)
+	document
+		.querySelectorAll('.form-control[required], .form-check-input[required]')
+		.forEach((input) => {
+			input.addEventListener('input', () => {
+				if (input.closest('.was-validated')) {
+					// Only validate in real-time if form was already attempted
+					if (input.checkValidity()) {
+						input.classList.remove('is-invalid');
+						input.classList.add('is-valid');
+					} else {
+						input.classList.remove('is-valid');
+						input.classList.add('is-invalid');
+					}
+				}
+			});
+		});
 }
