@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
 		mode: isProduction ? 'production' : 'development',
 		entry: {
 			'hikma-ui': './src/main.scss',
-			'hikma-ui-js': './src/javascript/contrast-checker.js',
+			'hikma-ui-js': './src/js/contrast-checker.js',
 		},
 		output: {
 			filename: isProduction ? '[name].min.js' : '[name].js',

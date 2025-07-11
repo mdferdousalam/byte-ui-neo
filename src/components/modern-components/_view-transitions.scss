@@ -1,0 +1,79 @@
+// 10. Advanced CSS View Transitions (when supported)
+.view-transition {
+    view-transition-name: var(--transition-name);
+    
+    &.fade-in {
+        view-transition-name: fade-in;
+    }
+    
+    &.slide-in {
+        view-transition-name: slide-in;
+    }
+    
+    &.scale-in {
+        view-transition-name: scale-in;
+    }
+}
+
+// View Transition Animations
+@supports (view-transition-name: fade-in) {
+    ::view-transition-old(fade-in),
+    ::view-transition-new(fade-in) {
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+    }
+    
+    ::view-transition-old(fade-in) {
+        animation-name: fade-out;
+    }
+    
+    ::view-transition-new(fade-in) {
+        animation-name: fade-in;
+    }
+    
+    ::view-transition-old(slide-in) {
+        animation-name: slide-out;
+    }
+    
+    ::view-transition-new(slide-in) {
+        animation-name: slide-in;
+    }
+    
+    ::view-transition-old(scale-in) {
+        animation-name: scale-out;
+    }
+    
+    ::view-transition-new(scale-in) {
+        animation-name: scale-in;
+    }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slide-in {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slide-out {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes scale-in {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes scale-out {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.8); opacity: 0; }
+}

@@ -1,0 +1,21 @@
+// Sticky Elements
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  &--top {
+    top: 0;
+  }
+  
+  &--bottom {
+    bottom: 0;
+  }
+  
+  &--navbar {
+    top: 0;
+    background: var(--hikma-body-bg);
+    border-bottom: 1px solid var(--hikma-border-color);
+    backdrop-filter: blur(10px);
+  }
+}

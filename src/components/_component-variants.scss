@@ -1,0 +1,651 @@
+// Component Variants System
+// Advanced component styling with variants, sizes, and states
+// Based on modern component architecture patterns
+
+@use '../core/design-tokens' as *;
+@use 'sass:map';
+
+// =============================================================================
+// MIXINS
+// =============================================================================
+
+// Mixin for semantic button variants
+@mixin button-semantic($color) {
+  &.btn--solid {
+    background: #{$color};
+    border-color: #{$color};
+    
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, #{$color} 85%, black);
+      border-color: color-mix(in srgb, #{$color} 85%, black);
+    }
+  }
+  
+  &.btn--outline {
+    color: #{$color};
+    border-color: #{$color};
+    
+    &:hover:not(:disabled) {
+      background: #{$color};
+      color: white;
+    }
+  }
+  
+  &.btn--ghost {
+    color: #{$color};
+    
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, #{$color} 10%, transparent);
+    }
+  }
+  
+  &.btn--soft {
+    color: #{$color};
+    background: color-mix(in srgb, #{$color} 10%, transparent);
+    
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, #{$color} 15%, transparent);
+    }
+  }
+}
+
+// Mixin for semantic badge variants
+@mixin badge-semantic($color) {
+  &.badge--solid {
+    background: #{$color};
+    color: white;
+  }
+  
+  &.badge--outline {
+    color: #{$color};
+    border-color: #{$color};
+  }
+  
+  &.badge--soft {
+    background: color-mix(in srgb, #{$color} 10%, transparent);
+    color: #{$color};
+  }
+}
+
+// =============================================================================
+// BUTTON VARIANTS
+// =============================================================================
+
+.btn {
+  // Base styles
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--easing-smooth);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  
+  // Default size
+  height: $button-height-md;
+  padding: 0 $button-padding-x-md;
+  font-size: $font-size-sm;
+  border-radius: var(--radius-base);
+  
+  // Disabled state
+  &:disabled,
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  // Loading state
+  &.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1rem;
+      height: 1rem;
+      margin: -0.5rem 0 0 -0.5rem;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+  }
+  
+  // Variant: Solid (default)
+  &--solid {
+    color: white;
+    background: var(--color-brand-primary);
+    border-color: var(--color-brand-primary);
+    box-shadow: var(--shadow-base);
+    
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--color-brand-primary) 85%, black);
+      border-color: color-mix(in srgb, var(--color-brand-primary) 85%, black);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-1px);
+    }
+    
+    &:active:not(:disabled) {
+      transform: translateY(0);
+      box-shadow: var(--shadow-base);
+    }
+  }
+  
+  // Variant: Outline
+  &--outline {
+    color: var(--color-brand-primary);
+    background: transparent;
+    border-color: var(--color-brand-primary);
+    
+    &:hover:not(:disabled) {
+      background: var(--color-brand-primary);
+      color: white;
+      box-shadow: var(--shadow-base);
+    }
+  }
+  
+  // Variant: Ghost
+  &--ghost {
+    color: var(--color-brand-primary);
+    background: transparent;
+    border-color: transparent;
+    
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--color-brand-primary) 10%, transparent);
+    }
+  }
+  
+  // Variant: Soft
+  &--soft {
+    color: var(--color-brand-primary);
+    background: color-mix(in srgb, var(--color-brand-primary) 10%, transparent);
+    border-color: transparent;
+    
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--color-brand-primary) 15%, transparent);
+    }
+  }
+  
+  // Variant: Glass (glassmorphism)
+  &--glass {
+    color: var(--color-brand-primary);
+    background: color-mix(in srgb, var(--color-brand-primary) 10%, transparent);
+    border-color: color-mix(in srgb, var(--color-brand-primary) 20%, transparent);
+    backdrop-filter: blur(10px);
+    
+    &:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--color-brand-primary) 15%, transparent);
+      border-color: color-mix(in srgb, var(--color-brand-primary) 30%, transparent);
+    }
+  }
+  
+  // Semantic variants
+  &--success {
+    @include button-semantic(var(--color-semantic-success));
+  }
+  
+  &--warning {
+    @include button-semantic(var(--color-semantic-warning));
+  }
+  
+  &--error {
+    @include button-semantic(var(--color-semantic-error));
+  }
+  
+  &--info {
+    @include button-semantic(var(--color-semantic-info));
+  }
+  
+  // Size variants
+  &--xs {
+    height: 1.5rem;
+    padding: 0 $spacing-2;
+    font-size: $font-size-xs;
+    border-radius: calc(var(--radius-base) * 0.75);
+  }
+  
+  &--sm {
+    height: $button-height-sm;
+    padding: 0 $button-padding-x-sm;
+    font-size: $font-size-xs;
+    border-radius: calc(var(--radius-base) * 0.875);
+  }
+  
+  &--lg {
+    height: $button-height-lg;
+    padding: 0 $button-padding-x-lg;
+    font-size: $font-size-base;
+    border-radius: calc(var(--radius-base) * 1.25);
+  }
+  
+  &--xl {
+    height: $button-height-xl;
+    padding: 0 $button-padding-x-xl;
+    font-size: $font-size-lg;
+    border-radius: calc(var(--radius-base) * 1.5);
+  }
+  
+  // Icon variants
+  &--icon-only {
+    aspect-ratio: 1;
+    padding: 0;
+    
+    &.btn--sm {
+      width: $button-height-sm;
+    }
+    
+    &.btn--md {
+      width: $button-height-md;
+    }
+    
+    &.btn--lg {
+      width: $button-height-lg;
+    }
+    
+    &.btn--xl {
+      width: $button-height-xl;
+    }
+  }
+  
+  // Floating action button
+  &--fab {
+    border-radius: $radius-full;
+    box-shadow: var(--shadow-lg);
+    
+    &:hover:not(:disabled) {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// =============================================================================
+// CARD VARIANTS
+// =============================================================================
+
+.card {
+  // Base styles
+  display: flex;
+  flex-direction: column;
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--easing-smooth);
+  
+  // Default padding
+  --card-padding: #{$card-padding-md};
+  
+  // Variant: Elevated
+  &--elevated {
+    border: none;
+    box-shadow: var(--shadow-lg);
+    
+    &:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-2px);
+    }
+  }
+  
+  // Variant: Bordered
+  &--bordered {
+    border: 2px solid var(--color-neutral-200);
+    
+    &:hover {
+      border-color: var(--color-brand-primary);
+    }
+  }
+  
+  // Variant: Glass
+  &--glass {
+    background: color-mix(in srgb, var(--color-neutral-0) 80%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-neutral-300) 50%, transparent);
+    backdrop-filter: blur(10px);
+  }
+  
+  // Variant: Gradient
+  &--gradient {
+    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-accent));
+    border: none;
+    color: white;
+    
+    .card-title {
+      color: white;
+    }
+    
+    .card-text {
+      color: color-mix(in srgb, white 80%, transparent);
+    }
+  }
+  
+  // Size variants
+  &--sm {
+    --card-padding: #{$card-padding-sm};
+  }
+  
+  &--lg {
+    --card-padding: #{$card-padding-lg};
+  }
+  
+  // Interactive variants
+  &--interactive {
+    cursor: pointer;
+    
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.card-header,
+.card-body,
+.card-footer {
+  padding: var(--card-padding);
+}
+
+.card-header {
+  border-bottom: 1px solid var(--color-neutral-200);
+  background: var(--color-neutral-50);
+}
+
+.card-footer {
+  border-top: 1px solid var(--color-neutral-200);
+  background: var(--color-neutral-50);
+}
+
+// =============================================================================
+// INPUT VARIANTS
+// =============================================================================
+
+.input {
+  // Base styles
+  display: block;
+  width: 100%;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-normal;
+  color: var(--color-neutral-900);
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-base);
+  transition: all var(--duration-fast) var(--easing-smooth);
+  
+  // Default size
+  height: $input-height-md;
+  padding: 0 $input-padding-x-md;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--color-brand-primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand-primary) 10%, transparent);
+  }
+  
+  &::placeholder {
+    color: var(--color-neutral-500);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--color-neutral-100);
+  }
+  
+  // Variant: Filled
+  &--filled {
+    background: var(--color-neutral-100);
+    border: 1px solid transparent;
+    
+    &:focus {
+      background: var(--color-neutral-0);
+      border-color: var(--color-brand-primary);
+    }
+  }
+  
+  // Variant: Underlined
+  &--underlined {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--color-neutral-300);
+    border-radius: 0;
+    
+    &:focus {
+      border-bottom-color: var(--color-brand-primary);
+      box-shadow: none;
+    }
+  }
+  
+  // Variant: Ghost
+  &--ghost {
+    background: transparent;
+    border: 1px solid transparent;
+    
+    &:focus {
+      background: var(--color-neutral-0);
+      border-color: var(--color-brand-primary);
+    }
+  }
+  
+  // Size variants
+  &--sm {
+    height: $input-height-sm;
+    padding: 0 $input-padding-x-sm;
+    font-size: $font-size-xs;
+  }
+  
+  &--lg {
+    height: $input-height-lg;
+    padding: 0 $input-padding-x-lg;
+    font-size: $font-size-base;
+  }
+  
+  // State variants
+  &--error {
+    border-color: var(--color-semantic-error);
+    
+    &:focus {
+      border-color: var(--color-semantic-error);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-semantic-error) 10%, transparent);
+    }
+  }
+  
+  &--success {
+    border-color: var(--color-semantic-success);
+    
+    &:focus {
+      border-color: var(--color-semantic-success);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-semantic-success) 10%, transparent);
+    }
+  }
+  
+  &--warning {
+    border-color: var(--color-semantic-warning);
+    
+    &:focus {
+      border-color: var(--color-semantic-warning);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-semantic-warning) 10%, transparent);
+    }
+  }
+}
+
+// =============================================================================
+// BADGE VARIANTS
+// =============================================================================
+
+.badge {
+  // Base styles
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-base);
+  
+  // Variant: Solid (default)
+  &--solid {
+    background: var(--color-brand-primary);
+    color: white;
+  }
+  
+  // Variant: Outline
+  &--outline {
+    background: transparent;
+    color: var(--color-brand-primary);
+    border: 1px solid var(--color-brand-primary);
+  }
+  
+  // Variant: Soft
+  &--soft {
+    background: color-mix(in srgb, var(--color-brand-primary) 10%, transparent);
+    color: var(--color-brand-primary);
+  }
+  
+  // Semantic variants
+  &--success {
+    @include badge-semantic(var(--color-semantic-success));
+  }
+  
+  &--warning {
+    @include badge-semantic(var(--color-semantic-warning));
+  }
+  
+  &--error {
+    @include badge-semantic(var(--color-semantic-error));
+  }
+  
+  &--info {
+    @include badge-semantic(var(--color-semantic-info));
+  }
+  
+  // Size variants
+  &--xs {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.25rem;
+  }
+  
+  &--sm {
+    font-size: $font-size-xs;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  &--lg {
+    font-size: $font-size-sm;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  // Shape variants
+  &--pill {
+    border-radius: $radius-full;
+  }
+  
+  &--square {
+    border-radius: 0;
+  }
+  
+  // Dot variant
+  &--dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    padding: 0;
+    border-radius: $radius-full;
+    
+    &.badge--lg {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+}
+
+// =============================================================================
+// ANIMATIONS
+// =============================================================================
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+// Animation utilities
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--easing-smooth);
+}
+
+.animate-slide-in {
+  animation: slideIn var(--duration-normal) var(--easing-smooth);
+}
+
+.animate-bounce {
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+// Hover animations
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.hover\:scale-110:hover {
+  transform: scale(1.1);
+}
+
+.hover\:rotate-3:hover {
+  transform: rotate(3deg);
+}
+
+.hover\:rotate-6:hover {
+  transform: rotate(6deg);
+}

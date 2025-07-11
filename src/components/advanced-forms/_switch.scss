@@ -1,0 +1,55 @@
+// Switch Toggle
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.5rem;
+  height: 2rem;
+  
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+    &:checked + .switch__slider {
+      background-color: var(--hikma-color-primary);
+      
+      &::before {
+        transform: translateX(1.5rem);
+      }
+    }
+    
+    &:focus + .switch__slider {
+      box-shadow: 0 0 0 0.2rem rgba(var(--hikma-color-primary-rgb), 0.25);
+    }
+    
+    &:disabled + .switch__slider {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hikma-gray-400);
+    transition: 0.3s;
+    border-radius: 2rem;
+    
+    &::before {
+      position: absolute;
+      content: "";
+      height: 1.5rem;
+      width: 1.5rem;
+      left: 0.25rem;
+      bottom: 0.25rem;
+      background-color: white;
+      transition: 0.3s;
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

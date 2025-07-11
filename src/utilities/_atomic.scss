@@ -1,0 +1,1161 @@
+@use '../core/variables' as *;
+@use "sass:math";
+
+// Atomic CSS Utilities
+// Modern utility-first approach inspired by Tailwind CSS
+
+// Atomic Display Utilities
+@each $breakpoint, $value in $grid-breakpoints {
+    @if $breakpoint == 'xs' {
+        @each $display in (none, block, inline-block, inline, flex, inline-flex, grid, inline-grid, table, table-cell, table-row, contents, list-item, run-in, flow-root) {
+            .d-#{$display} { display: #{$display} !important; }
+        }
+    } @else {
+        @media (min-width: #{$value}) {
+            @each $display in (none, block, inline-block, inline, flex, inline-flex, grid, inline-grid, table, table-cell, table-row, contents, list-item, run-in, flow-root) {
+                .d-#{$breakpoint}-#{$display} { display: #{$display} !important; }
+            }
+        }
+    }
+}
+
+// Atomic Flexbox Utilities
+$flex-directions: (
+    row: row,
+    row-reverse: row-reverse,
+    col: column,
+    col-reverse: column-reverse
+);
+
+$flex-wraps: (
+    nowrap: nowrap,
+    wrap: wrap,
+    wrap-reverse: wrap-reverse
+);
+
+$justify-content: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly
+);
+
+$align-items: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch
+);
+
+$align-content: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly,
+    stretch: stretch
+);
+
+$align-self: (
+    auto: auto,
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    baseline: baseline,
+    stretch: stretch
+);
+
+@each $breakpoint, $value in $grid-breakpoints {
+    @if $breakpoint == 'xs' {
+        // Flex direction
+        @each $name, $direction in $flex-directions {
+            .flex-#{$name} { flex-direction: #{$direction} !important; }
+        }
+        
+        // Flex wrap
+        @each $name, $wrap in $flex-wraps {
+            .flex-#{$name} { flex-wrap: #{$wrap} !important; }
+        }
+        
+        // Justify content
+        @each $name, $justify in $justify-content {
+            .justify-#{$name} { justify-content: #{$justify} !important; }
+        }
+        
+        // Align items
+        @each $name, $align in $align-items {
+            .items-#{$name} { align-items: #{$align} !important; }
+        }
+        
+        // Align content
+        @each $name, $align in $align-content {
+            .content-#{$name} { align-content: #{$align} !important; }
+        }
+        
+        // Align self
+        @each $name, $align in $align-self {
+            .self-#{$name} { align-self: #{$align} !important; }
+        }
+        
+        // Flex grow/shrink
+        @for $i from 0 through 12 {
+            .flex-grow-#{$i} { flex-grow: #{$i} !important; }
+            .flex-shrink-#{$i} { flex-shrink: #{$i} !important; }
+        }
+        
+        // Flex basis
+        .flex-auto { flex: 1 1 auto !important; }
+        .flex-initial { flex: 0 1 auto !important; }
+        .flex-none { flex: none !important; }
+        
+        @each $size, $value in $spacing-sizes {
+            .flex-basis-#{$size} { flex-basis: #{$value} !important; }
+        }
+        
+        // Flex percentages
+        @for $i from 0 through 12 {
+            .flex-#{$i} { flex: #{$i} !important; }
+        }
+        
+        // Order
+        @for $i from 0 through 12 {
+            .order-#{$i} { order: #{$i} !important; }
+        }
+        .order-first { order: -1 !important; }
+        .order-last { order: 13 !important; }
+        .order-none { order: 0 !important; }
+        
+    } @else {
+        @media (min-width: #{$value}) {
+            // Flex direction
+            @each $name, $direction in $flex-directions {
+                .flex-#{$breakpoint}-#{$name} { flex-direction: #{$direction} !important; }
+            }
+            
+            // Flex wrap
+            @each $name, $wrap in $flex-wraps {
+                .flex-#{$breakpoint}-#{$name} { flex-wrap: #{$wrap} !important; }
+            }
+            
+            // Justify content
+            @each $name, $justify in $justify-content {
+                .justify-#{$breakpoint}-#{$name} { justify-content: #{$justify} !important; }
+            }
+            
+            // Align items
+            @each $name, $align in $align-items {
+                .items-#{$breakpoint}-#{$name} { align-items: #{$align} !important; }
+            }
+            
+            // Align content
+            @each $name, $align in $align-content {
+                .content-#{$breakpoint}-#{$name} { align-content: #{$align} !important; }
+            }
+            
+            // Align self
+            @each $name, $align in $align-self {
+                .self-#{$breakpoint}-#{$name} { align-self: #{$align} !important; }
+            }
+            
+            // Flex grow/shrink
+            @for $i from 0 through 12 {
+                .flex-#{$breakpoint}-grow-#{$i} { flex-grow: #{$i} !important; }
+                .flex-#{$breakpoint}-shrink-#{$i} { flex-shrink: #{$i} !important; }
+            }
+            
+            // Order
+            @for $i from 0 through 12 {
+                .order-#{$breakpoint}-#{$i} { order: #{$i} !important; }
+            }
+            .order-#{$breakpoint}-first { order: -1 !important; }
+            .order-#{$breakpoint}-last { order: 13 !important; }
+            .order-#{$breakpoint}-none { order: 0 !important; }
+        }
+    }
+}
+
+// Atomic Grid Utilities
+$grid-columns: 12;
+
+@each $breakpoint, $value in $grid-breakpoints {
+    @if $breakpoint == 'xs' {
+        // Grid template columns
+        @for $i from 1 through $grid-columns {
+            .grid-cols-#{$i} { grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important; }
+        }
+        .grid-cols-none { grid-template-columns: none !important; }
+        
+        // Grid column span
+        @for $i from 1 through $grid-columns {
+            .col-span-#{$i} { grid-column: span #{$i} / span #{$i} !important; }
+        }
+        .col-span-full { grid-column: 1 / -1 !important; }
+        
+        // Grid column start/end
+        @for $i from 1 through ($grid-columns + 1) {
+            .col-start-#{$i} { grid-column-start: #{$i} !important; }
+            .col-end-#{$i} { grid-column-end: #{$i} !important; }
+        }
+        .col-start-auto { grid-column-start: auto !important; }
+        .col-end-auto { grid-column-end: auto !important; }
+        
+        // Grid template rows
+        @for $i from 1 through 6 {
+            .grid-rows-#{$i} { grid-template-rows: repeat(#{$i}, minmax(0, 1fr)) !important; }
+        }
+        .grid-rows-none { grid-template-rows: none !important; }
+        
+        // Grid row span
+        @for $i from 1 through 6 {
+            .row-span-#{$i} { grid-row: span #{$i} / span #{$i} !important; }
+        }
+        .row-span-full { grid-row: 1 / -1 !important; }
+        
+        // Grid row start/end
+        @for $i from 1 through 7 {
+            .row-start-#{$i} { grid-row-start: #{$i} !important; }
+            .row-end-#{$i} { grid-row-end: #{$i} !important; }
+        }
+        .row-start-auto { grid-row-start: auto !important; }
+        .row-end-auto { grid-row-end: auto !important; }
+        
+        // Grid gap
+        @each $size, $value in $spacing-sizes {
+            .gap-#{$size} { gap: #{$value} !important; }
+            .gap-x-#{$size} { column-gap: #{$value} !important; }
+            .gap-y-#{$size} { row-gap: #{$value} !important; }
+        }
+        
+        // Grid auto flow
+        .grid-flow-row { grid-auto-flow: row !important; }
+        .grid-flow-col { grid-auto-flow: column !important; }
+        .grid-flow-dense { grid-auto-flow: dense !important; }
+        .grid-flow-row-dense { grid-auto-flow: row dense !important; }
+        .grid-flow-col-dense { grid-auto-flow: column dense !important; }
+        
+        // Grid auto columns
+        .auto-cols-auto { grid-auto-columns: auto !important; }
+        .auto-cols-min { grid-auto-columns: min-content !important; }
+        .auto-cols-max { grid-auto-columns: max-content !important; }
+        .auto-cols-fr { grid-auto-columns: minmax(0, 1fr) !important; }
+        
+        // Grid auto rows
+        .auto-rows-auto { grid-auto-rows: auto !important; }
+        .auto-rows-min { grid-auto-rows: min-content !important; }
+        .auto-rows-max { grid-auto-rows: max-content !important; }
+        .auto-rows-fr { grid-auto-rows: minmax(0, 1fr) !important; }
+        
+    } @else {
+        @media (min-width: #{$value}) {
+            // Grid template columns
+            @for $i from 1 through $grid-columns {
+                .grid-#{$breakpoint}-cols-#{$i} { grid-template-columns: repeat(#{$i}, minmax(0, 1fr)) !important; }
+            }
+            .grid-#{$breakpoint}-cols-none { grid-template-columns: none !important; }
+            
+            // Grid column span
+            @for $i from 1 through $grid-columns {
+                .col-#{$breakpoint}-span-#{$i} { grid-column: span #{$i} / span #{$i} !important; }
+            }
+            .col-#{$breakpoint}-span-full { grid-column: 1 / -1 !important; }
+            
+            // Grid column start/end
+            @for $i from 1 through ($grid-columns + 1) {
+                .col-#{$breakpoint}-start-#{$i} { grid-column-start: #{$i} !important; }
+                .col-#{$breakpoint}-end-#{$i} { grid-column-end: #{$i} !important; }
+            }
+            .col-#{$breakpoint}-start-auto { grid-column-start: auto !important; }
+            .col-#{$breakpoint}-end-auto { grid-column-end: auto !important; }
+            
+            // Grid template rows
+            @for $i from 1 through 6 {
+                .grid-#{$breakpoint}-rows-#{$i} { grid-template-rows: repeat(#{$i}, minmax(0, 1fr)) !important; }
+            }
+            .grid-#{$breakpoint}-rows-none { grid-template-rows: none !important; }
+            
+            // Grid row span
+            @for $i from 1 through 6 {
+                .row-#{$breakpoint}-span-#{$i} { grid-row: span #{$i} / span #{$i} !important; }
+            }
+            .row-#{$breakpoint}-span-full { grid-row: 1 / -1 !important; }
+            
+            // Grid row start/end
+            @for $i from 1 through 7 {
+                .row-#{$breakpoint}-start-#{$i} { grid-row-start: #{$i} !important; }
+                .row-#{$breakpoint}-end-#{$i} { grid-row-end: #{$i} !important; }
+            }
+            .row-#{$breakpoint}-start-auto { grid-row-start: auto !important; }
+            .row-#{$breakpoint}-end-auto { grid-row-end: auto !important; }
+            
+            // Grid gap
+            @each $size, $value in $spacing-sizes {
+                .gap-#{$breakpoint}-#{$size} { gap: #{$value} !important; }
+                .gap-#{$breakpoint}-x-#{$size} { column-gap: #{$value} !important; }
+                .gap-#{$breakpoint}-y-#{$size} { row-gap: #{$value} !important; }
+            }
+        }
+    }
+}
+
+// Atomic Positioning Utilities
+$positions: (
+    static: static,
+    relative: relative,
+    absolute: absolute,
+    fixed: fixed,
+    sticky: sticky
+);
+
+$position-values: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    8: 2rem,
+    10: 2.5rem,
+    12: 3rem,
+    16: 4rem,
+    20: 5rem,
+    24: 6rem,
+    32: 8rem,
+    40: 10rem,
+    48: 12rem,
+    56: 14rem,
+    64: 16rem,
+    auto: auto,
+    px: 1px,
+    "1-2": 50%,
+    "1-3": 33.333333%,
+    "2-3": 66.666667%,
+    "1-4": 25%,
+    "3-4": 75%,
+    full: 100%
+);
+
+@each $breakpoint, $value in $grid-breakpoints {
+    @if $breakpoint == 'xs' {
+        // Position
+        @each $name, $position in $positions {
+            .#{$name} { position: #{$position} !important; }
+        }
+        
+        // Position values
+        @each $name, $value in $position-values {
+            .top-#{$name} { top: #{$value} !important; }
+            .right-#{$name} { right: #{$value} !important; }
+            .bottom-#{$name} { bottom: #{$value} !important; }
+            .left-#{$name} { left: #{$value} !important; }
+        }
+        
+        // Inset
+        @each $name, $value in $position-values {
+            .inset-#{$name} { 
+                top: #{$value} !important; 
+                right: #{$value} !important; 
+                bottom: #{$value} !important; 
+                left: #{$value} !important; 
+            }
+            .inset-x-#{$name} { 
+                right: #{$value} !important; 
+                left: #{$value} !important; 
+            }
+            .inset-y-#{$name} { 
+                top: #{$value} !important; 
+                bottom: #{$value} !important; 
+            }
+        }
+        
+    } @else {
+        @media (min-width: #{$value}) {
+            // Position
+            @each $name, $position in $positions {
+                .#{$breakpoint}-#{$name} { position: #{$position} !important; }
+            }
+            
+            // Position values
+            @each $name, $pos-value in $position-values {
+                .#{$breakpoint}-top-#{$name} { top: #{$pos-value} !important; }
+                .#{$breakpoint}-right-#{$name} { right: #{$pos-value} !important; }
+                .#{$breakpoint}-bottom-#{$name} { bottom: #{$pos-value} !important; }
+                .#{$breakpoint}-left-#{$name} { left: #{$pos-value} !important; }
+            }
+        }
+    }
+}
+
+// Atomic Width & Height Utilities
+$size-values: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    7: 1.75rem,
+    8: 2rem,
+    9: 2.25rem,
+    10: 2.5rem,
+    11: 2.75rem,
+    12: 3rem,
+    14: 3.5rem,
+    16: 4rem,
+    20: 5rem,
+    24: 6rem,
+    28: 7rem,
+    32: 8rem,
+    36: 9rem,
+    40: 10rem,
+    44: 11rem,
+    48: 12rem,
+    52: 13rem,
+    56: 14rem,
+    60: 15rem,
+    64: 16rem,
+    72: 18rem,
+    80: 20rem,
+    96: 24rem,
+    px: 1px,
+    auto: auto,
+    "1-2": 50%,
+    "1-3": 33.333333%,
+    "2-3": 66.666667%,
+    "1-4": 25%,
+    "2-4": 50%,
+    "3-4": 75%,
+    "1-5": 20%,
+    "2-5": 40%,
+    "3-5": 60%,
+    "4-5": 80%,
+    "1-6": 16.666667%,
+    "5-6": 83.333333%,
+    "1-12": 8.333333%,
+    "2-12": 16.666667%,
+    "3-12": 25%,
+    "4-12": 33.333333%,
+    "5-12": 41.666667%,
+    "6-12": 50%,
+    "7-12": 58.333333%,
+    "8-12": 66.666667%,
+    "9-12": 75%,
+    "10-12": 83.333333%,
+    "11-12": 91.666667%,
+    full: 100%,
+    screen: 100vh,
+    min: min-content,
+    max: max-content,
+    fit: fit-content
+);
+
+@each $breakpoint, $value in $grid-breakpoints {
+    @if $breakpoint == 'xs' {
+        // Width
+        @each $name, $size in $size-values {
+            .w-#{$name} { width: #{$size} !important; }
+        }
+        
+        // Min width
+        @each $name, $size in $size-values {
+            .min-w-#{$name} { min-width: #{$size} !important; }
+        }
+        
+        // Max width
+        @each $name, $size in $size-values {
+            .max-w-#{$name} { max-width: #{$size} !important; }
+        }
+        
+        // Height
+        @each $name, $size in $size-values {
+            .h-#{$name} { height: #{$size} !important; }
+        }
+        
+        // Min height
+        @each $name, $size in $size-values {
+            .min-h-#{$name} { min-height: #{$size} !important; }
+        }
+        
+        // Max height
+        @each $name, $size in $size-values {
+            .max-h-#{$name} { max-height: #{$size} !important; }
+        }
+        
+    } @else {
+        @media (min-width: #{$value}) {
+            // Width
+            @each $name, $size in $size-values {
+                .w-#{$breakpoint}-#{$name} { width: #{$size} !important; }
+            }
+            
+            // Min width
+            @each $name, $size in $size-values {
+                .min-w-#{$breakpoint}-#{$name} { min-width: #{$size} !important; }
+            }
+            
+            // Max width
+            @each $name, $size in $size-values {
+                .max-w-#{$breakpoint}-#{$name} { max-width: #{$size} !important; }
+            }
+            
+            // Height
+            @each $name, $size in $size-values {
+                .h-#{$breakpoint}-#{$name} { height: #{$size} !important; }
+            }
+            
+            // Min height
+            @each $name, $size in $size-values {
+                .min-h-#{$breakpoint}-#{$name} { min-height: #{$size} !important; }
+            }
+            
+            // Max height
+            @each $name, $size in $size-values {
+                .max-h-#{$breakpoint}-#{$name} { max-height: #{$size} !important; }
+            }
+        }
+    }
+}
+
+// Atomic Color Utilities
+$color-palette: (
+    primary: var(--hikma-color-primary),
+    secondary: var(--hikma-color-secondary),
+    success: var(--hikma-color-success),
+    danger: var(--hikma-color-danger),
+    warning: var(--hikma-color-warning),
+    info: var(--hikma-color-info),
+    light: var(--hikma-color-light),
+    dark: var(--hikma-color-dark),
+    "white": #ffffff,
+    "black": #000000,
+    "transparent": transparent,
+    current: currentColor
+);
+
+@each $name, $color in $color-palette {
+    .text-#{$name} { color: #{$color} !important; }
+    .bg-#{$name} { background-color: #{$color} !important; }
+    .border-#{$name} { border-color: #{$color} !important; }
+    .fill-#{$name} { fill: #{$color} !important; }
+    .stroke-#{$name} { stroke: #{$color} !important; }
+}
+
+// Atomic Opacity Utilities
+@for $i from 0 through 10 {
+    $opacity: $i * 0.1;
+    .opacity-#{$i * 10} { opacity: #{$opacity} !important; }
+}
+
+// Atomic Z-Index Utilities
+$z-indexes: (
+    0: 0,
+    10: 10,
+    20: 20,
+    30: 30,
+    40: 40,
+    50: 50,
+    auto: auto
+);
+
+@each $name, $z in $z-indexes {
+    .z-#{$name} { z-index: #{$z} !important; }
+}
+
+// Atomic Border Utilities
+$border-widths: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    4: 4px,
+    8: 8px
+);
+
+$border-styles: (
+    solid: solid,
+    dashed: dashed,
+    dotted: dotted,
+    double: double,
+    none: none
+);
+
+@each $name, $width in $border-widths {
+    .border-#{$name} { border-width: #{$width} !important; }
+    .border-t-#{$name} { border-top-width: #{$width} !important; }
+    .border-r-#{$name} { border-right-width: #{$width} !important; }
+    .border-b-#{$name} { border-bottom-width: #{$width} !important; }
+    .border-l-#{$name} { border-left-width: #{$width} !important; }
+    .border-x-#{$name} { 
+        border-left-width: #{$width} !important; 
+        border-right-width: #{$width} !important; 
+    }
+    .border-y-#{$name} { 
+        border-top-width: #{$width} !important; 
+        border-bottom-width: #{$width} !important; 
+    }
+}
+
+@each $name, $style in $border-styles {
+    .border-#{$name} { border-style: #{$style} !important; }
+}
+
+// Atomic Border Radius Utilities
+$border-radius: (
+    none: 0,
+    sm: 0.125rem,
+    base: 0.25rem,
+    md: 0.375rem,
+    lg: 0.5rem,
+    xl: 0.75rem,
+    "2xl": 1rem,
+    "3xl": 1.5rem,
+    full: 9999px
+);
+
+@each $name, $radius in $border-radius {
+    .rounded-#{$name} { border-radius: #{$radius} !important; }
+    .rounded-t-#{$name} { 
+        border-top-left-radius: #{$radius} !important; 
+        border-top-right-radius: #{$radius} !important; 
+    }
+    .rounded-r-#{$name} { 
+        border-top-right-radius: #{$radius} !important; 
+        border-bottom-right-radius: #{$radius} !important; 
+    }
+    .rounded-b-#{$name} { 
+        border-bottom-right-radius: #{$radius} !important; 
+        border-bottom-left-radius: #{$radius} !important; 
+    }
+    .rounded-l-#{$name} { 
+        border-top-left-radius: #{$radius} !important; 
+        border-bottom-left-radius: #{$radius} !important; 
+    }
+    .rounded-tl-#{$name} { border-top-left-radius: #{$radius} !important; }
+    .rounded-tr-#{$name} { border-top-right-radius: #{$radius} !important; }
+    .rounded-br-#{$name} { border-bottom-right-radius: #{$radius} !important; }
+    .rounded-bl-#{$name} { border-bottom-left-radius: #{$radius} !important; }
+}
+
+// Atomic Typography Utilities
+$font-weights: (
+    thin: 100,
+    extralight: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    "black": 900
+);
+
+$font-sizes: (
+    xs: 0.75rem,
+    sm: 0.875rem,
+    base: 1rem,
+    lg: 1.125rem,
+    xl: 1.25rem,
+    "2xl": 1.5rem,
+    "3xl": 1.875rem,
+    "4xl": 2.25rem,
+    "5xl": 3rem,
+    "6xl": 3.75rem,
+    "7xl": 4.5rem,
+    "8xl": 6rem,
+    "9xl": 8rem
+);
+
+$line-heights: (
+    none: 1,
+    tight: 1.25,
+    snug: 1.375,
+    normal: 1.5,
+    relaxed: 1.625,
+    loose: 2
+);
+
+$letter-spacing: (
+    tighter: -0.05em,
+    tight: -0.025em,
+    normal: 0,
+    wide: 0.025em,
+    wider: 0.05em,
+    widest: 0.1em
+);
+
+@each $name, $weight in $font-weights {
+    .font-#{$name} { font-weight: #{$weight} !important; }
+}
+
+@each $name, $size in $font-sizes {
+    .text-#{$name} { font-size: #{$size} !important; }
+}
+
+@each $name, $height in $line-heights {
+    .leading-#{$name} { line-height: #{$height} !important; }
+}
+
+@each $name, $spacing in $letter-spacing {
+    .tracking-#{$name} { letter-spacing: #{$spacing} !important; }
+}
+
+// Text alignment
+$text-alignments: (
+    left: left,
+    center: center,
+    right: right,
+    justify: justify,
+    start: start,
+    end: end
+);
+
+@each $breakpoint, $value in $grid-breakpoints {
+    @if $breakpoint == 'xs' {
+        @each $name, $align in $text-alignments {
+            .text-#{$name} { text-align: #{$align} !important; }
+        }
+    } @else {
+        @media (min-width: #{$value}) {
+            @each $name, $align in $text-alignments {
+                .text-#{$breakpoint}-#{$name} { text-align: #{$align} !important; }
+            }
+        }
+    }
+}
+
+// Text decoration
+$text-decorations: (
+    underline: underline,
+    overline: overline,
+    line-through: line-through,
+    none: none
+);
+
+@each $name, $decoration in $text-decorations {
+    .#{$name} { text-decoration: #{$decoration} !important; }
+}
+
+// Text transform
+$text-transforms: (
+    uppercase: uppercase,
+    lowercase: lowercase,
+    capitalize: capitalize,
+    normal-case: none
+);
+
+@each $name, $transform in $text-transforms {
+    .#{$name} { text-transform: #{$transform} !important; }
+}
+
+// Text overflow
+.truncate {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.text-ellipsis { text-overflow: ellipsis !important; }
+.text-clip { text-overflow: clip !important; }
+
+// White space
+$white-space: (
+    normal: normal,
+    nowrap: nowrap,
+    pre: pre,
+    pre-line: pre-line,
+    pre-wrap: pre-wrap,
+    break-spaces: break-spaces
+);
+
+@each $name, $space in $white-space {
+    .whitespace-#{$name} { white-space: #{$space} !important; }
+}
+
+// Word break
+.break-normal { 
+    overflow-wrap: normal !important; 
+    word-break: normal !important; 
+}
+.break-words { overflow-wrap: break-word !important; }
+.break-all { word-break: break-all !important; }
+
+// Atomic Shadow Utilities
+$shadows: (
+    sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05),
+    base: (0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)),
+    md: (0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)),
+    lg: (0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)),
+    xl: (0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)),
+    "2xl": 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06),
+    none: none
+);
+
+@each $name, $shadow in $shadows {
+    .shadow-#{$name} { box-shadow: #{$shadow} !important; }
+}
+
+// Atomic Transform Utilities
+$transforms: (
+    none: none,
+    gpu: translateZ(0)
+);
+
+$scales: (
+    0: 0,
+    50: 0.5,
+    75: 0.75,
+    90: 0.9,
+    95: 0.95,
+    100: 1,
+    105: 1.05,
+    110: 1.1,
+    125: 1.25,
+    150: 1.5
+);
+
+$rotations: (
+    0: 0deg,
+    1: 1deg,
+    2: 2deg,
+    3: 3deg,
+    6: 6deg,
+    12: 12deg,
+    45: 45deg,
+    90: 90deg,
+    180: 180deg
+);
+
+$translations: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 0.75rem,
+    4: 1rem,
+    5: 1.25rem,
+    6: 1.5rem,
+    8: 2rem,
+    10: 2.5rem,
+    12: 3rem,
+    16: 4rem,
+    20: 5rem,
+    24: 6rem,
+    32: 8rem,
+    40: 10rem,
+    48: 12rem,
+    56: 14rem,
+    64: 16rem,
+    px: 1px,
+    "1-2": 50%,
+    "1-3": 33.333333%,
+    "2-3": 66.666667%,
+    "1-4": 25%,
+    "3-4": 75%,
+    full: 100%
+);
+
+@each $name, $transform in $transforms {
+    .transform-#{$name} { transform: #{$transform} !important; }
+}
+
+@each $name, $scale in $scales {
+    .scale-#{$name} { transform: scale(#{$scale}) !important; }
+    .scale-x-#{$name} { transform: scaleX(#{$scale}) !important; }
+    .scale-y-#{$name} { transform: scaleY(#{$scale}) !important; }
+}
+
+@each $name, $rotation in $rotations {
+    .rotate-#{$name} { transform: rotate(#{$rotation}) !important; }
+    .-rotate-#{$name} { transform: rotate(-#{$rotation}) !important; }
+}
+
+@each $name, $translation in $translations {
+    .translate-x-#{$name} { transform: translateX(#{$translation}) !important; }
+    .translate-y-#{$name} { transform: translateY(#{$translation}) !important; }
+    .-translate-x-#{$name} { transform: translateX(-#{$translation}) !important; }
+    .-translate-y-#{$name} { transform: translateY(-#{$translation}) !important; }
+}
+
+// Atomic Transition Utilities
+$transition-properties: (
+    none: none,
+    all: all,
+    colors: color background-color border-color text-decoration-color fill stroke,
+    opacity: opacity,
+    shadow: box-shadow,
+    transform: transform
+);
+
+$transition-durations: (
+    75: 75ms,
+    100: 100ms,
+    150: 150ms,
+    200: 200ms,
+    300: 300ms,
+    500: 500ms,
+    700: 700ms,
+    1000: 1000ms
+);
+
+$transition-timings: (
+    linear: linear,
+    in: cubic-bezier(0.4, 0, 1, 1),
+    out: cubic-bezier(0, 0, 0.2, 1),
+    in-out: cubic-bezier(0.4, 0, 0.2, 1)
+);
+
+@each $name, $property in $transition-properties {
+    .transition-#{$name} { 
+        transition-property: #{$property} !important; 
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important; 
+        transition-duration: 150ms !important; 
+    }
+}
+
+@each $name, $duration in $transition-durations {
+    .duration-#{$name} { transition-duration: #{$duration} !important; }
+}
+
+@each $name, $timing in $transition-timings {
+    .ease-#{$name} { transition-timing-function: #{$timing} !important; }
+}
+
+// Atomic Animation Utilities
+$animations: (
+    none: none,
+    spin: spin 1s linear infinite,
+    ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite,
+    pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite,
+    bounce: bounce 1s infinite
+);
+
+@each $name, $animation in $animations {
+    .animate-#{$name} { animation: #{$animation} !important; }
+}
+
+// Keyframes
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ping {
+    75%, 100% { 
+        transform: scale(2); 
+        opacity: 0; 
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes bounce {
+    0%, 100% { 
+        transform: translateY(-25%); 
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1); 
+    }
+    50% { 
+        transform: translateY(0); 
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1); 
+    }
+}
+
+// Atomic Cursor Utilities
+$cursors: (
+    auto: auto,
+    default: default,
+    pointer: pointer,
+    wait: wait,
+    text: text,
+    move: move,
+    help: help,
+    not-allowed: not-allowed,
+    none: none,
+    context-menu: context-menu,
+    progress: progress,
+    cell: cell,
+    crosshair: crosshair,
+    vertical-text: vertical-text,
+    alias: alias,
+    copy: copy,
+    no-drop: no-drop,
+    grab: grab,
+    grabbing: grabbing,
+    all-scroll: all-scroll,
+    col-resize: col-resize,
+    row-resize: row-resize,
+    n-resize: n-resize,
+    e-resize: e-resize,
+    s-resize: s-resize,
+    w-resize: w-resize,
+    ne-resize: ne-resize,
+    nw-resize: nw-resize,
+    se-resize: se-resize,
+    sw-resize: sw-resize,
+    ew-resize: ew-resize,
+    ns-resize: ns-resize,
+    nesw-resize: nesw-resize,
+    nwse-resize: nwse-resize,
+    zoom-in: zoom-in,
+    zoom-out: zoom-out
+);
+
+@each $name, $cursor in $cursors {
+    .cursor-#{$name} { cursor: #{$cursor} !important; }
+}
+
+// Atomic User Select Utilities
+$user-selects: (
+    none: none,
+    text: text,
+    all: all,
+    auto: auto
+);
+
+@each $name, $select in $user-selects {
+    .select-#{$name} { user-select: #{$name} !important; }
+}
+
+// Atomic Pointer Events Utilities
+$pointer-events: (
+    none: none,
+    auto: auto
+);
+
+@each $name, $event in $pointer-events {
+    .pointer-events-#{$name} { pointer-events: #{$event} !important; }
+}
+
+// Atomic Resize Utilities
+$resizes: (
+    none: none,
+    both: both,
+    horizontal: horizontal,
+    vertical: vertical
+);
+
+@each $name, $resize in $resizes {
+    .resize-#{$name} { resize: #{$resize} !important; }
+}
+
+// Atomic Scroll Utilities
+$scroll-behaviors: (
+    auto: auto,
+    smooth: smooth
+);
+
+@each $name, $behavior in $scroll-behaviors {
+    .scroll-#{$name} { scroll-behavior: #{$behavior} !important; }
+}
+
+// Atomic Backdrop Utilities
+$backdrop-filters: (
+    none: none,
+    blur: blur(8px),
+    brightness: brightness(0.5),
+    contrast: contrast(0.5),
+    grayscale: grayscale(1),
+    hue-rotate: hue-rotate(90deg),
+    invert: invert(1),
+    saturate: saturate(2),
+    sepia: sepia(1)
+);
+
+@each $name, $filter in $backdrop-filters {
+    .backdrop-#{$name} { backdrop-filter: #{$filter} !important; }
+}
+
+// Atomic Container Queries (Modern CSS)
+@container (min-width: 320px) {
+    .container-sm\:block { display: block !important; }
+    .container-sm\:hidden { display: none !important; }
+}
+
+@container (min-width: 768px) {
+    .container-md\:block { display: block !important; }
+    .container-md\:hidden { display: none !important; }
+}
+
+@container (min-width: 1024px) {
+    .container-lg\:block { display: block !important; }
+    .container-lg\:hidden { display: none !important; }
+}
+
+// Atomic Logical Properties (Modern CSS)
+$logical-properties: (
+    inline-start: inline-start,
+    inline-end: inline-end,
+    block-start: block-start,
+    block-end: block-end
+);
+
+@each $name, $value in $logical-properties {
+    .text-#{$name} { text-align: #{$value} !important; }
+}
+
+// Atomic Aspect Ratio Utilities (Modern CSS)
+
+$aspect-ratios: (
+    auto: auto,
+    square: math.div(1, 1),
+    video: math.div(16, 9),
+    "4-3": math.div(4, 3),
+    "3-2": math.div(3, 2),
+    "2-1": math.div(2, 1),
+    "1-1": math.div(1, 1)
+);
+
+@each $name, $ratio in $aspect-ratios {
+    .aspect-#{$name} { aspect-ratio: #{$ratio} !important; }
+}
+
+// Atomic Scroll Snap Utilities (Modern CSS)
+$scroll-snap-types: (
+    none: none,
+    x: x mandatory,
+    y: y mandatory,
+    both: both mandatory
+);
+
+$scroll-snap-aligns: (
+    start: start,
+    end: end,
+    center: center,
+    none: none
+);
+
+@each $name, $type in $scroll-snap-types {
+    .snap-#{$name} { scroll-snap-type: #{$type} !important; }
+}
+
+@each $name, $align in $scroll-snap-aligns {
+    .snap-align-#{$name} { scroll-snap-align: #{$align} !important; }
+}
+
+// Atomic Scroll Padding Utilities (Modern CSS)
+@each $size, $value in $spacing-sizes {
+    .scroll-p-#{$size} { scroll-padding: #{$value} !important; }
+    .scroll-px-#{$size} { scroll-padding-left: #{$value} !important; scroll-padding-right: #{$value} !important; }
+    .scroll-py-#{$size} { scroll-padding-top: #{$value} !important; scroll-padding-bottom: #{$value} !important; }
+    .scroll-pt-#{$size} { scroll-padding-top: #{$value} !important; }
+    .scroll-pr-#{$size} { scroll-padding-right: #{$value} !important; }
+    .scroll-pb-#{$size} { scroll-padding-bottom: #{$value} !important; }
+    .scroll-pl-#{$size} { scroll-padding-left: #{$value} !important; }
+}
+
+// Atomic Scroll Margin Utilities (Modern CSS)
+@each $size, $value in $spacing-sizes {
+    .scroll-m-#{$size} { scroll-margin: #{$value} !important; }
+    .scroll-mx-#{$size} { scroll-margin-left: #{$value} !important; scroll-margin-right: #{$value} !important; }
+    .scroll-my-#{$size} { scroll-margin-top: #{$value} !important; scroll-margin-bottom: #{$value} !important; }
+    .scroll-mt-#{$size} { scroll-margin-top: #{$value} !important; }
+    .scroll-mr-#{$size} { scroll-margin-right: #{$value} !important; }
+    .scroll-mb-#{$size} { scroll-margin-bottom: #{$value} !important; }
+    .scroll-ml-#{$size} { scroll-margin-left: #{$value} !important; }
+}

@@ -1,0 +1,52 @@
+// 13. Advanced Media Queries Component
+.responsive-component {
+    display: grid;
+    gap: var(--hikma-spacing-md);
+    
+    // Standard breakpoints
+    grid-template-columns: 1fr;
+    
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+    
+    // Modern media queries
+    @media (orientation: landscape) {
+        gap: var(--hikma-spacing-lg);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+        animation: none;
+    }
+    
+    @media (prefers-contrast: high) {
+        border: 2px solid var(--hikma-text-color-base);
+        background: var(--hikma-background-color-base);
+    }
+    
+    @media (prefers-color-scheme: dark) {
+        --component-bg: var(--hikma-background-color-base);
+        --component-text: var(--hikma-text-color-base);
+    }
+    
+    // Container queries
+    @container (min-width: 400px) {
+        .component-content {
+            display: flex;
+            align-items: center;
+            gap: var(--hikma-spacing-md);
+        }
+    }
+    
+    @container (max-width: 300px) {
+        .component-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}

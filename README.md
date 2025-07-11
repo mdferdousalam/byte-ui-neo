@@ -13,14 +13,18 @@
 
 ### ✨ Key Features
 
-- 🎨 **16+ UI Components** - Buttons, Forms, Modals, Navigation, Cards, and more
-- 🌈 **8 Color Variants** - Primary, Secondary, Success, Danger, Warning, Info, Light, Dark
-- 📱 **Mobile-First Responsive** - Works perfectly on all devices
-- ♿ **Accessibility First** - WCAG compliant with proper ARIA attributes
-- 🔧 **Highly Customizable** - CSS custom properties for easy theming
-- 🚀 **Production Ready** - Minified CSS (53.3 KB) and JS (7.13 KB)
-- 🎯 **Modern CSS** - Flexbox, Grid, and CSS Custom Properties
-- 🔌 **JavaScript Components** - Interactive elements with vanilla JS
+- 🎨 **30+ UI Components** - Buttons, Forms, Modals, Navigation, Cards, and advanced components
+- 🌈 **Design System** - Comprehensive design tokens and semantic color system
+- 📱 **Mobile-First Responsive** - Container queries and modern responsive design
+- ♿ **WCAG 2.1 AA Compliant** - Full accessibility with screen reader support
+- 🔧 **Component Variants** - Multiple variants for each component (solid, outline, ghost, soft, glass)
+- 🚀 **Production Ready** - Minified CSS (79.4 KB) and JS (7.13 KB) with tree-shaking
+- 🎯 **Modern CSS Features** - Container queries, cascade layers, view transitions
+- 🔌 **Advanced JavaScript** - Modern web APIs, performance monitoring, accessibility enhancements
+- 🌙 **Advanced Dark Mode** - System preference detection and smooth transitions
+- ⚡ **Performance Optimized** - Core Web Vitals monitoring and optimizations
+- 🎨 **Utility-First** - Comprehensive atomic utilities inspired by Tailwind CSS
+- 🌍 **Internationalization** - RTL support and logical properties
 
 ## 🚀 Quick Start
 
@@ -83,36 +87,52 @@ Download the latest release from [GitHub Releases](https://github.com/mdferdousa
 
 ## 🎨 Components Overview
 
-### 🔘 Buttons
+### 🔘 Advanced Button System
 ```html
-<!-- Solid Buttons -->
-<button class="btn btn--primary">Primary</button>
-<button class="btn btn--success">Success</button>
-<button class="btn btn--danger">Danger</button>
+<!-- Variant Types -->
+<button class="btn btn--solid btn--primary">Solid</button>
+<button class="btn btn--outline btn--primary">Outline</button>
+<button class="btn btn--ghost btn--primary">Ghost</button>
+<button class="btn btn--soft btn--primary">Soft</button>
+<button class="btn btn--glass btn--primary">Glass</button>
 
-<!-- Outline Buttons -->
-<button class="btn btn--outline-primary">Primary Outline</button>
-<button class="btn btn--outline-success">Success Outline</button>
+<!-- Sizes -->
+<button class="btn btn--xs">Extra Small</button>
+<button class="btn btn--sm">Small</button>
+<button class="btn btn--md">Medium</button>
+<button class="btn btn--lg">Large</button>
+<button class="btn btn--xl">Extra Large</button>
 
-<!-- Button Sizes -->
-<button class="btn btn--primary btn--sm">Small</button>
-<button class="btn btn--primary">Default</button>
-<button class="btn btn--primary btn--lg">Large</button>
-
-<!-- Button States -->
+<!-- States -->
+<button class="btn btn--primary loading">Loading...</button>
 <button class="btn btn--primary" disabled>Disabled</button>
-<button class="btn btn--primary btn--loading">Loading</button>
+
+<!-- Special Types -->
+<button class="btn btn--fab btn--primary">🚀</button>
+<button class="btn btn--icon-only btn--primary">+</button>
 ```
 
-### 🃏 Cards
+### 🃏 Enhanced Cards
 ```html
-<div class="card">
-    <img src="image.jpg" class="card-img-top" alt="Card image">
+<!-- Card Variants -->
+<div class="card card--elevated">
     <div class="card-body">
-        <h5 class="card-title">Card Title</h5>
-        <h6 class="card-subtitle">Card Subtitle</h6>
-        <p class="card-text">Some quick example text to build on the card title.</p>
-        <a href="#" class="btn btn--primary">Go somewhere</a>
+        <h5 class="card-title">Elevated Card</h5>
+        <p class="card-text">Beautiful shadow and hover effects</p>
+    </div>
+</div>
+
+<div class="card card--glass">
+    <div class="card-body">
+        <h5 class="card-title">Glass Card</h5>
+        <p class="card-text">Glassmorphism design with backdrop blur</p>
+    </div>
+</div>
+
+<div class="card card--interactive">
+    <div class="card-body">
+        <h5 class="card-title">Interactive Card</h5>
+        <p class="card-text">Hover for smooth animations</p>
     </div>
 </div>
 ```
@@ -155,42 +175,57 @@ Download the latest release from [GitHub Releases](https://github.com/mdferdousa
 <span class="badge rounded-pill badge-danger">Danger</span>
 ```
 
-## 🎯 Utility Classes
+## 🎯 Advanced Utility System
 
-### 📐 Spacing
+### 📐 Comprehensive Spacing
 ```html
-<!-- Margin -->
-<div class="m-xs">Margin XS</div>
-<div class="mt-md">Margin Top MD</div>
-<div class="mx-auto">Margin X Auto (Center)</div>
+<!-- Modern spacing scale -->
+<div class="p-1">4px padding</div>
+<div class="p-4">16px padding</div>
+<div class="p-8">32px padding</div>
+<div class="mx-auto">Auto center</div>
 
-<!-- Padding -->
-<div class="p-sm">Padding SM</div>
-<div class="py-lg">Padding Y LG</div>
-<div class="px-xl">Padding X XL</div>
+<!-- Responsive spacing -->
+<div class="p-2 p-md-4 p-lg-6">Responsive padding</div>
 ```
 
-### 🎨 Display & Flexbox
+### 🎨 Flexbox & Grid
 ```html
-<!-- Display -->
-<div class="d-none d-md-block">Hidden on mobile, visible on desktop</div>
-<div class="d-flex">Flexbox container</div>
-
-<!-- Flexbox -->
-<div class="d-flex justify-content-center align-items-center">
-    <div>Centered content</div>
+<!-- Advanced flexbox -->
+<div class="d-flex justify-content-center align-items-center gap-4">
+    <div>Item 1</div>
+    <div>Item 2</div>
 </div>
-<div class="d-flex flex-column flex-md-row">
-    <div>Responsive flex direction</div>
+
+<!-- CSS Grid utilities -->
+<div class="d-grid grid-cols-3 gap-4">
+    <div>Grid item 1</div>
+    <div>Grid item 2</div>
+    <div>Grid item 3</div>
 </div>
 ```
 
-### 📝 Typography
+### 📝 Typography & Colors
 ```html
-<p class="text-center">Centered text</p>
-<p class="text-uppercase">Uppercase text</p>
-<p class="fw-bold">Bold text</p>
-<p class="text-md-start text-lg-end">Responsive text alignment</p>
+<!-- Typography scale -->
+<h1 class="text-4xl font-bold">Large heading</h1>
+<p class="text-lg text-neutral-600">Subtitle</p>
+
+<!-- Color utilities -->
+<div class="bg-primary text-white">Primary background</div>
+<div class="bg-gradient-to-r from-primary to-accent">Gradient</div>
+```
+
+### 🔄 Animations & Interactions
+```html
+<!-- Hover effects -->
+<div class="hover:scale-105 transition-transform">Scale on hover</div>
+<div class="hover:rotate-3 transition-transform">Rotate on hover</div>
+
+<!-- Scroll animations -->
+<div class="animate-on-scroll" data-scroll-animation="fade-in">
+    Fade in on scroll
+</div>
 ```
 
 ## 🎪 Interactive Components
@@ -242,44 +277,133 @@ Download the latest release from [GitHub Releases](https://github.com/mdferdousa
 </div>
 ```
 
-## 🎨 Customization
+## 🚀 Modern CSS Features
 
-### CSS Custom Properties
+### Container Queries
 ```css
-:root {
-    /* Colors */
-    --hikma-color-primary: #007bff;
-    --hikma-color-success: #28a745;
-    --hikma-color-danger: #dc3545;
-    
-    /* Spacing */
-    --hikma-spacing-xs: 0.25rem;
-    --hikma-spacing-sm: 0.5rem;
-    --hikma-spacing-md: 1rem;
-    --hikma-spacing-lg: 1.5rem;
-    --hikma-spacing-xl: 2rem;
-    
-    /* Typography */
-    --hikma-font-size-sm: 0.875rem;
-    --hikma-font-size-base: 1rem;
-    --hikma-font-size-lg: 1.25rem;
-    
-    /* Border */
-    --hikma-border-radius: 0.375rem;
-    --hikma-border-width: 1px;
+/* Responsive based on container size */
+.responsive-card {
+  @container card (min-width: 400px) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
 }
 ```
 
-### Dark Mode
+### View Transitions
+```javascript
+// Smooth page transitions
+document.startViewTransition(() => {
+  // Update DOM
+});
+```
+
+### CSS Cascade Layers
+```css
+/* Organized CSS with layers */
+@layer reset, base, components, utilities, overrides;
+```
+
+## 🎨 Advanced Customization
+
+### Design Token System
+```css
+:root {
+    /* Brand colors */
+    --color-brand-primary: #2563eb;
+    --color-brand-secondary: #64748b;
+    --color-brand-accent: #f59e0b;
+    
+    /* Semantic colors */
+    --color-semantic-success: #10b981;
+    --color-semantic-warning: #f59e0b;
+    --color-semantic-error: #ef4444;
+    
+    /* Spacing scale */
+    --spacing-unit: 0.25rem;
+    --spacing-1: 0.25rem;
+    --spacing-4: 1rem;
+    --spacing-8: 2rem;
+    
+    /* Typography */
+    --font-family-sans: 'Inter', sans-serif;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    
+    /* Shadows */
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+```
+
+### Advanced Dark Mode
 ```html
-<body class="dark-mode">
-    <!-- Your content here -->
-</body>
+<!-- Theme toggle with system preference -->
+<button data-theme-toggle>🌙</button>
 ```
 
 ```javascript
-// Toggle dark mode
-document.body.classList.toggle('dark-mode');
+// Automatic theme detection
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+// Smart theme switching with smooth transitions
+```
+
+## ♿ Accessibility Features
+
+### WCAG 2.1 AA Compliance
+```html
+<!-- Skip navigation -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Accessible forms -->
+<div class="form-field">
+    <label for="email" class="form-label required">Email Address</label>
+    <input type="email" id="email" class="form-input" 
+           aria-describedby="email-help" required>
+    <div id="email-help" class="form-help">
+        We'll never share your email with anyone else.
+    </div>
+</div>
+
+<!-- Focus management -->
+<div class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-dialog" tabindex="-1">
+        <h2 id="modal-title">Modal Title</h2>
+        <!-- Modal content -->
+    </div>
+</div>
+```
+
+### Accessibility Features
+- **Focus trapping** in modals and dialogs
+- **Keyboard navigation** with proper tab order
+- **Screen reader support** with ARIA labels
+- **High contrast mode** compatibility
+- **Reduced motion** preferences support
+- **Touch-friendly** 44px minimum targets
+
+## ⚡ Performance & Optimization
+
+### Core Web Vitals
+- **LCP optimization** with lazy loading
+- **FID monitoring** with Performance Observer
+- **CLS prevention** with size reservations
+- **Lighthouse 95+ scores** out of the box
+
+### Modern JavaScript Features
+```javascript
+// Intersection Observer for lazy loading
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Load content
+    }
+  });
+});
+
+// Performance monitoring
+const perfObserver = new PerformanceObserver((list) => {
+  // Monitor Core Web Vitals
+});
 ```
 
 ## 🔧 Build from Source

@@ -1,0 +1,24 @@
+// 2. Advanced CSS Grid Components
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--hikma-spacing-md);
+    
+    // Modern CSS Masonry (when supported)
+    @supports (grid-template-rows: masonry) {
+        grid-template-rows: masonry;
+    }
+    
+    .masonry-item {
+        background: var(--hikma-surface-color);
+        border-radius: var(--hikma-border-radius);
+        padding: var(--hikma-spacing-md);
+        border: 1px solid var(--hikma-border-color-light);
+        transition: var(--hikma-transition-base);
+        
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--hikma-shadow-lg);
+        }
+    }
+}

@@ -1,37 +1,180 @@
-// Theme - Dark Mode
-// This file defines styles and color variables for a dark theme.
+// Theme - Advanced Dark Mode with CSS light-dark() Function
+// Modern CSS color scheme using light-dark() function for automatic theme switching
 
-// Default (light) theme variables - defined in :root somewhere else,
-// but included here for clarity if you choose to override them specifically for dark mode.
-// For now, assume your light theme colors are defined in a _variables.scss or similar in core.
-
-// Dark theme variables
-// These variables will override the default light theme variables when the 'dark-mode' class is active.
+// Color scheme preference detection
 :root {
-    // Default light theme variables (example, adjust based on your _variables.scss)
-    // --hikma-color-primary: #007bff;
-    // --hikma-color-secondary: #6c757d;
-    // --hikma-text-color-base: #212529; // Dark text
-    // --hikma-background-color-base: #ffffff; // Light background
-    // --hikma-border-color-base: #dee2e6;
+    // Enable automatic color scheme detection
+    color-scheme: light dark;
+    
+    // Modern CSS light-dark() function for automatic theme switching
+    --hikma-color-primary: light-dark(#007bff, #0d6efd);
+    --hikma-color-secondary: light-dark(#6c757d, #6c7293);
+    --hikma-color-success: light-dark(#28a745, #198754);
+    --hikma-color-danger: light-dark(#dc3545, #e74c3c);
+    --hikma-color-warning: light-dark(#ffc107, #f39c12);
+    --hikma-color-info: light-dark(#17a2b8, #3498db);
+    --hikma-color-light: light-dark(#f8f9fa, #343a40);
+    --hikma-color-dark: light-dark(#343a40, #f8f9fa);
+    
+    // Base colors
+    --hikma-text-color-base: light-dark(#212529, #f8f9fa);
+    --hikma-text-color-muted: light-dark(#6c757d, #adb5bd);
+    --hikma-background-color-base: light-dark(#ffffff, #212529);
+    --hikma-background-color-secondary: light-dark(#f8f9fa, #343a40);
+    --hikma-border-color-base: light-dark(#dee2e6, #495057);
+    --hikma-border-color-light: light-dark(#e9ecef, #6c757d);
+    
+    // Surface colors
+    --hikma-surface-color: light-dark(#ffffff, #343a40);
+    --hikma-surface-color-hover: light-dark(#f8f9fa, #495057);
+    --hikma-surface-color-active: light-dark(#e9ecef, #6c757d);
+    
+    // Shadow colors
+    --hikma-shadow-color: light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
+    --hikma-shadow-color-lg: light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+    
+    // Focus colors
+    --hikma-focus-color: light-dark(rgba(0, 123, 255, 0.25), rgba(13, 110, 253, 0.5));
+    
+    // Component specific colors
+    --hikma-btn-primary-bg: var(--hikma-color-primary);
+    --hikma-btn-primary-text: light-dark(#ffffff, #ffffff);
+    --hikma-btn-secondary-bg: var(--hikma-color-secondary);
+    --hikma-btn-secondary-text: light-dark(#ffffff, #ffffff);
+    
+    // Form colors
+    --hikma-input-bg: light-dark(#ffffff, #495057);
+    --hikma-input-border: light-dark(#ced4da, #6c757d);
+    --hikma-input-focus-border: light-dark(#86b7fe, #0d6efd);
+    --hikma-input-focus-shadow: light-dark(rgba(0, 123, 255, 0.25), rgba(13, 110, 253, 0.5));
+    
+    // Card colors
+    --hikma-card-bg: light-dark(#ffffff, #343a40);
+    --hikma-card-border: light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.125));
+    
+    // Modal colors
+    --hikma-modal-bg: light-dark(#ffffff, #343a40);
+    --hikma-modal-backdrop: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+    
+    // Navigation colors
+    --hikma-navbar-bg: light-dark(#f8f9fa, #343a40);
+    --hikma-navbar-text: light-dark(#212529, #f8f9fa);
+    --hikma-navbar-hover: light-dark(#e9ecef, #495057);
 }
 
-.dark-mode {
-    // Override colors for dark mode
-    --hikma-color-primary: #6ab04c; // A different primary color for dark mode
-    --hikma-color-secondary: #57606f; // A different secondary color
-    --hikma-text-color-base: #e0e0e0; // Light text for dark backgrounds
-    --hikma-background-color-base: #2c2c2c; // Dark background
-    --hikma-border-color-base: #495057;
-
-    // Adjust specific component colors if needed
-    // Example for buttons (if button component uses these specific vars)
-    --hikma-btn-primary-bg: var(--hikma-color-primary);
-    --hikma-btn-primary-text: var(--hikma-text-color-base);
-
-    // Section colors (example)
-    --hikma-section-primary-bg: #343a40; // Darker primary section
-    --hikma-section-primary-text: var(--hikma-text-color-base);
+// Fallback for browsers that don't support light-dark()
+@supports not (color: light-dark(white, black)) {
+    :root {
+        --hikma-color-primary: #007bff;
+        --hikma-color-secondary: #6c757d;
+        --hikma-color-success: #28a745;
+        --hikma-color-danger: #dc3545;
+        --hikma-color-warning: #ffc107;
+        --hikma-color-info: #17a2b8;
+        --hikma-color-light: #f8f9fa;
+        --hikma-color-dark: #343a40;
+        --hikma-text-color-base: #212529;
+        --hikma-text-color-muted: #6c757d;
+        --hikma-background-color-base: #ffffff;
+        --hikma-background-color-secondary: #f8f9fa;
+        --hikma-border-color-base: #dee2e6;
+        --hikma-border-color-light: #e9ecef;
+        --hikma-surface-color: #ffffff;
+        --hikma-surface-color-hover: #f8f9fa;
+        --hikma-surface-color-active: #e9ecef;
+        --hikma-shadow-color: rgba(0, 0, 0, 0.15);
+        --hikma-shadow-color-lg: rgba(0, 0, 0, 0.25);
+        --hikma-focus-color: rgba(0, 123, 255, 0.25);
+        --hikma-btn-primary-text: #ffffff;
+        --hikma-btn-secondary-text: #ffffff;
+        --hikma-input-bg: #ffffff;
+        --hikma-input-border: #ced4da;
+        --hikma-input-focus-border: #86b7fe;
+        --hikma-input-focus-shadow: rgba(0, 123, 255, 0.25);
+        --hikma-card-bg: #ffffff;
+        --hikma-card-border: rgba(0, 0, 0, 0.125);
+        --hikma-modal-bg: #ffffff;
+        --hikma-modal-backdrop: rgba(0, 0, 0, 0.5);
+        --hikma-navbar-bg: #f8f9fa;
+        --hikma-navbar-text: #212529;
+        --hikma-navbar-hover: #e9ecef;
+    }
+    
+    // Manual dark mode class for fallback
+    .dark-mode {
+        --hikma-color-primary: #0d6efd;
+        --hikma-color-secondary: #6c7293;
+        --hikma-color-success: #198754;
+        --hikma-color-danger: #e74c3c;
+        --hikma-color-warning: #f39c12;
+        --hikma-color-info: #3498db;
+        --hikma-color-light: #343a40;
+        --hikma-color-dark: #f8f9fa;
+        --hikma-text-color-base: #f8f9fa;
+        --hikma-text-color-muted: #adb5bd;
+        --hikma-background-color-base: #212529;
+        --hikma-background-color-secondary: #343a40;
+        --hikma-border-color-base: #495057;
+        --hikma-border-color-light: #6c757d;
+        --hikma-surface-color: #343a40;
+        --hikma-surface-color-hover: #495057;
+        --hikma-surface-color-active: #6c757d;
+        --hikma-shadow-color: rgba(0, 0, 0, 0.5);
+        --hikma-shadow-color-lg: rgba(0, 0, 0, 0.75);
+        --hikma-focus-color: rgba(13, 110, 253, 0.5);
+        --hikma-btn-primary-text: #ffffff;
+        --hikma-btn-secondary-text: #ffffff;
+        --hikma-input-bg: #495057;
+        --hikma-input-border: #6c757d;
+        --hikma-input-focus-border: #0d6efd;
+        --hikma-input-focus-shadow: rgba(13, 110, 253, 0.5);
+        --hikma-card-bg: #343a40;
+        --hikma-card-border: rgba(255, 255, 255, 0.125);
+        --hikma-modal-bg: #343a40;
+        --hikma-modal-backdrop: rgba(0, 0, 0, 0.75);
+        --hikma-navbar-bg: #343a40;
+        --hikma-navbar-text: #f8f9fa;
+        --hikma-navbar-hover: #495057;
+    }
+    
+    // Forced dark mode preference
+    @media (prefers-color-scheme: dark) {
+        :root:not(.light-mode) {
+            --hikma-color-primary: #0d6efd;
+            --hikma-color-secondary: #6c7293;
+            --hikma-color-success: #198754;
+            --hikma-color-danger: #e74c3c;
+            --hikma-color-warning: #f39c12;
+            --hikma-color-info: #3498db;
+            --hikma-color-light: #343a40;
+            --hikma-color-dark: #f8f9fa;
+            --hikma-text-color-base: #f8f9fa;
+            --hikma-text-color-muted: #adb5bd;
+            --hikma-background-color-base: #212529;
+            --hikma-background-color-secondary: #343a40;
+            --hikma-border-color-base: #495057;
+            --hikma-border-color-light: #6c757d;
+            --hikma-surface-color: #343a40;
+            --hikma-surface-color-hover: #495057;
+            --hikma-surface-color-active: #6c757d;
+            --hikma-shadow-color: rgba(0, 0, 0, 0.5);
+            --hikma-shadow-color-lg: rgba(0, 0, 0, 0.75);
+            --hikma-focus-color: rgba(13, 110, 253, 0.5);
+            --hikma-btn-primary-text: #ffffff;
+            --hikma-btn-secondary-text: #ffffff;
+            --hikma-input-bg: #495057;
+            --hikma-input-border: #6c757d;
+            --hikma-input-focus-border: #0d6efd;
+            --hikma-input-focus-shadow: rgba(13, 110, 253, 0.5);
+            --hikma-card-bg: #343a40;
+            --hikma-card-border: rgba(255, 255, 255, 0.125);
+            --hikma-modal-bg: #343a40;
+            --hikma-modal-backdrop: rgba(0, 0, 0, 0.75);
+            --hikma-navbar-bg: #343a40;
+            --hikma-navbar-text: #f8f9fa;
+            --hikma-navbar-hover: #495057;
+        }
+    }
 }
 
 // Optional: Add a smooth transition for color changes

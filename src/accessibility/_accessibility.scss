@@ -1,0 +1,609 @@
+// Accessibility Features
+// WCAG 2.1 AA compliant styles and patterns
+
+@use '../core/design-tokens' as *;
+
+// =============================================================================
+// FOCUS MANAGEMENT
+// =============================================================================
+
+// High visibility focus styles
+.focus-visible {
+  outline: none;
+  
+  &:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px var(--color-neutral-0);
+  }
+}
+
+// Focus trap styles
+.focus-trap {
+  position: relative;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+// Skip links
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-brand-primary);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: var(--radius-base);
+  font-weight: $font-weight-medium;
+  z-index: $z-index-skiplink;
+  transition: top var(--duration-fast) var(--easing-smooth);
+  
+  &:focus {
+    top: 6px;
+  }
+}
+
+// =============================================================================
+// COLOR CONTRAST
+// =============================================================================
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  :root {
+    --color-neutral-0: #ffffff;
+    --color-neutral-50: #f8f9fa;
+    --color-neutral-100: #e9ecef;
+    --color-neutral-200: #dee2e6;
+    --color-neutral-300: #ced4da;
+    --color-neutral-400: #6c757d;
+    --color-neutral-500: #495057;
+    --color-neutral-600: #343a40;
+    --color-neutral-700: #212529;
+    --color-neutral-800: #000000;
+    --color-neutral-900: #000000;
+  }
+  
+  .btn {
+    border-width: 2px;
+    font-weight: $font-weight-bold;
+    
+    &:focus {
+      outline: 3px solid;
+      outline-offset: 2px;
+    }
+  }
+  
+  .card {
+    border-width: 2px;
+  }
+  
+  .input {
+    border-width: 2px;
+    
+    &:focus {
+      outline: 3px solid;
+      outline-offset: 2px;
+    }
+  }
+  
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+}
+
+// Forced colors mode (Windows High Contrast)
+@media (forced-colors: active) {
+  .btn {
+    forced-color-adjust: none;
+    border: 1px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+    
+    &:hover {
+      background: Highlight;
+      color: HighlightText;
+    }
+    
+    &:focus {
+      outline: 2px solid ButtonText;
+      outline-offset: 2px;
+    }
+  }
+  
+  .card {
+    forced-color-adjust: none;
+    border: 1px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+  
+  .input {
+    forced-color-adjust: none;
+    border: 1px solid ButtonText;
+    background: Field;
+    color: FieldText;
+    
+    &:focus {
+      outline: 2px solid Highlight;
+      outline-offset: 2px;
+    }
+  }
+  
+  .link {
+    forced-color-adjust: none;
+    color: LinkText;
+    
+    &:visited {
+      color: VisitedText;
+    }
+  }
+}
+
+// =============================================================================
+// REDUCED MOTION
+// =============================================================================
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  // Keep essential animations for feedback
+  .loading-spinner {
+    animation-duration: 1s !important;
+  }
+  
+  .progress-bar {
+    transition-duration: 0.3s !important;
+  }
+  
+  // Remove parallax and auto-playing animations
+  .parallax {
+    transform: none !important;
+  }
+  
+  .auto-play {
+    animation-play-state: paused !important;
+  }
+}
+
+// =============================================================================
+// SCREEN READER SUPPORT
+// =============================================================================
+
+// Screen reader only content
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// Focusable screen reader content
+.sr-only-focusable {
+  @extend .sr-only;
+  
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+// Screen reader status updates
+.sr-status {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  
+  &[aria-live="polite"] {
+    // Polite announcements
+  }
+  
+  &[aria-live="assertive"] {
+    // Assertive announcements
+  }
+}
+
+// =============================================================================
+// KEYBOARD NAVIGATION
+// =============================================================================
+
+// Keyboard-only users
+.keyboard-user {
+  :focus {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+  
+  .btn:focus {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+  
+  .input:focus {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 2px;
+  }
+}
+
+// Tab navigation indicators
+.tab-indicator {
+  position: absolute;
+  background: var(--color-brand-primary);
+  height: 2px;
+  transition: all var(--duration-fast) var(--easing-smooth);
+  pointer-events: none;
+}
+
+// =============================================================================
+// ARIA LIVE REGIONS
+// =============================================================================
+
+.live-region {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  
+  &[aria-live="polite"] {
+    // Announced when user is idle
+  }
+  
+  &[aria-live="assertive"] {
+    // Announced immediately
+  }
+}
+
+// Status messages
+.status-message {
+  padding: $spacing-3 $spacing-4;
+  border-radius: var(--radius-base);
+  font-weight: $font-weight-medium;
+  
+  &--success {
+    background: color-mix(in srgb, var(--color-semantic-success) 10%, transparent);
+    color: var(--color-semantic-success);
+    border: 1px solid color-mix(in srgb, var(--color-semantic-success) 30%, transparent);
+  }
+  
+  &--error {
+    background: color-mix(in srgb, var(--color-semantic-error) 10%, transparent);
+    color: var(--color-semantic-error);
+    border: 1px solid color-mix(in srgb, var(--color-semantic-error) 30%, transparent);
+  }
+  
+  &--warning {
+    background: color-mix(in srgb, var(--color-semantic-warning) 10%, transparent);
+    color: var(--color-semantic-warning);
+    border: 1px solid color-mix(in srgb, var(--color-semantic-warning) 30%, transparent);
+  }
+  
+  &--info {
+    background: color-mix(in srgb, var(--color-semantic-info) 10%, transparent);
+    color: var(--color-semantic-info);
+    border: 1px solid color-mix(in srgb, var(--color-semantic-info) 30%, transparent);
+  }
+}
+
+// =============================================================================
+// COMPONENT ACCESSIBILITY
+// =============================================================================
+
+// Accessible buttons
+.btn {
+  // Minimum touch target size (44px)
+  min-height: 44px;
+  min-width: 44px;
+  
+  // Clear focus styles
+  &:focus-visible {
+    outline: 3px solid var(--color-brand-primary);
+    outline-offset: 2px;
+    z-index: 1;
+  }
+  
+  // Disabled state
+  &:disabled {
+    cursor: not-allowed;
+    
+    &:focus {
+      outline: 3px solid var(--color-neutral-400);
+    }
+  }
+  
+  // Loading state
+  &[aria-busy="true"] {
+    cursor: progress;
+  }
+}
+
+// Accessible forms
+.form-field {
+  margin-bottom: $spacing-4;
+  
+  .form-label {
+    display: block;
+    margin-bottom: $spacing-2;
+    font-weight: $font-weight-medium;
+    color: var(--color-neutral-700);
+    
+    &.required::after {
+      content: ' *';
+      color: var(--color-semantic-error);
+      font-weight: $font-weight-bold;
+    }
+  }
+  
+  .form-input {
+    &[aria-invalid="true"] {
+      border-color: var(--color-semantic-error);
+      
+      &:focus {
+        outline-color: var(--color-semantic-error);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-semantic-error) 20%, transparent);
+      }
+    }
+    
+    &[aria-describedby] {
+      // Associated with help text or error message
+    }
+  }
+  
+  .form-help {
+    margin-top: $spacing-1;
+    font-size: $font-size-sm;
+    color: var(--color-neutral-600);
+  }
+  
+  .form-error {
+    margin-top: $spacing-1;
+    font-size: $font-size-sm;
+    color: var(--color-semantic-error);
+    font-weight: $font-weight-medium;
+  }
+}
+
+// Accessible modals
+.modal {
+  // Focus management
+  &[aria-hidden="true"] {
+    display: none;
+  }
+  
+  &[aria-hidden="false"] {
+    display: flex;
+  }
+  
+  .modal-dialog {
+    outline: none;
+    
+    &:focus {
+      outline: 2px solid var(--color-brand-primary);
+      outline-offset: -2px;
+    }
+  }
+  
+  .modal-header {
+    .modal-title {
+      margin: 0;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-semibold;
+    }
+  }
+  
+  .modal-close {
+    padding: $spacing-2;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    
+    &:focus-visible {
+      outline: 2px solid var(--color-brand-primary);
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Accessible navigation
+.nav {
+  &[role="navigation"] {
+    .nav-item {
+      &[aria-current="page"] {
+        font-weight: $font-weight-bold;
+        color: var(--color-brand-primary);
+      }
+    }
+  }
+  
+  &[role="tablist"] {
+    .nav-item {
+      &[aria-selected="true"] {
+        background: var(--color-brand-primary);
+        color: white;
+      }
+    }
+  }
+}
+
+// Accessible tables
+.table {
+  &[role="table"] {
+    .table-header {
+      background: var(--color-neutral-100);
+      font-weight: $font-weight-semibold;
+      
+      [role="columnheader"] {
+        &[aria-sort="ascending"]::after {
+          content: ' ↑';
+        }
+        
+        &[aria-sort="descending"]::after {
+          content: ' ↓';
+        }
+      }
+    }
+    
+    .table-row {
+      &[aria-selected="true"] {
+        background: color-mix(in srgb, var(--color-brand-primary) 10%, transparent);
+      }
+    }
+  }
+}
+
+// =============================================================================
+// RESPONSIVE ACCESSIBILITY
+// =============================================================================
+
+// Touch-friendly sizes on mobile
+@media (max-width: $breakpoint-md) {
+  .btn {
+    min-height: 48px;
+    min-width: 48px;
+    padding: $spacing-3 $spacing-4;
+  }
+  
+  .input {
+    min-height: 48px;
+    padding: $spacing-3 $spacing-4;
+  }
+  
+  .checkbox,
+  .radio {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// =============================================================================
+// PRINT ACCESSIBILITY
+// =============================================================================
+
+@media print {
+  // Remove focus styles in print
+  :focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  // Ensure good contrast in print
+  .btn {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+  }
+  
+  .card {
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+  }
+  
+  // Show link URLs in print
+  .link[href]:after {
+    content: ' (' attr(href) ')';
+    font-size: smaller;
+  }
+  
+  // Hide decorative elements
+  .decorative {
+    display: none !important;
+  }
+}
+
+// =============================================================================
+// UTILITY CLASSES
+// =============================================================================
+
+// Accessibility utilities
+.a11y-hidden {
+  @extend .sr-only;
+}
+
+.a11y-focusable {
+  @extend .sr-only-focusable;
+}
+
+.a11y-skip {
+  @extend .skip-link;
+}
+
+.a11y-no-animation {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+.a11y-high-contrast {
+  filter: contrast(150%) saturate(200%);
+}
+
+.a11y-large-text {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+// Focus management utilities
+.focus-trap-start,
+.focus-trap-end {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// ARIA landmark indicators (for development)
+.dev-landmarks {
+  [role="banner"]::before { content: 'BANNER: '; }
+  [role="navigation"]::before { content: 'NAVIGATION: '; }
+  [role="main"]::before { content: 'MAIN: '; }
+  [role="complementary"]::before { content: 'COMPLEMENTARY: '; }
+  [role="contentinfo"]::before { content: 'CONTENTINFO: '; }
+  [role="search"]::before { content: 'SEARCH: '; }
+  [role="form"]::before { content: 'FORM: '; }
+  [role="region"]::before { content: 'REGION: '; }
+}

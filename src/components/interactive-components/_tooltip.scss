@@ -1,0 +1,103 @@
+// Tooltip
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  margin: 0;
+  font-family: var(--hikma-font-family-base);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  opacity: 0;
+  
+  &.show {
+    opacity: 0.9;
+  }
+  
+  &__arrow {
+    position: absolute;
+    display: block;
+    width: 0.8rem;
+    height: 0.4rem;
+    
+    &::before {
+      position: absolute;
+      content: "";
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+  
+  &__inner {
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    color: var(--hikma-tooltip-color);
+    text-align: center;
+    background-color: var(--hikma-tooltip-bg);
+    border-radius: var(--hikma-tooltip-border-radius);
+  }
+  
+  // Placement variants
+  &--top {
+    .tooltip__arrow {
+      bottom: 0;
+      
+      &::before {
+        top: 0;
+        border-width: 0.4rem 0.4rem 0;
+        border-top-color: var(--hikma-tooltip-bg);
+      }
+    }
+  }
+  
+  &--right {
+    .tooltip__arrow {
+      left: 0;
+      width: 0.4rem;
+      height: 0.8rem;
+      
+      &::before {
+        right: 0;
+        border-width: 0.4rem 0.4rem 0.4rem 0;
+        border-right-color: var(--hikma-tooltip-bg);
+      }
+    }
+  }
+  
+  &--bottom {
+    .tooltip__arrow {
+      top: 0;
+      
+      &::before {
+        bottom: 0;
+        border-width: 0 0.4rem 0.4rem;
+        border-bottom-color: var(--hikma-tooltip-bg);
+      }
+    }
+  }
+  
+  &--left {
+    .tooltip__arrow {
+      right: 0;
+      width: 0.4rem;
+      height: 0.8rem;
+      
+      &::before {
+        left: 0;
+        border-width: 0.4rem 0 0.4rem 0.4rem;
+        border-left-color: var(--hikma-tooltip-bg);
+      }
+    }
+  }
+}

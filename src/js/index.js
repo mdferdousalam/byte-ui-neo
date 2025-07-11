@@ -1,8 +1,9 @@
 // Utility functions (if any, e.g., for toggling classes)
 // This file will contain all the JavaScript for Hikma UI interactive components.
 
-// Import advanced components
+// Import advanced components and features
 import './advanced-components.js';
+import './advanced-features.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	console.log('Hikma UI JavaScript loaded!');

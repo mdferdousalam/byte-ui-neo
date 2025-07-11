@@ -1,0 +1,34 @@
+// 15. Advanced CSS Layers Component
+@layer base, components, utilities;
+
+@layer base {
+    .layered-base {
+        font-family: var(--hikma-font-family-base);
+        line-height: 1.6;
+        color: var(--hikma-text-color-base);
+    }
+}
+
+@layer components {
+    .layered-component {
+        background: var(--hikma-surface-color);
+        border: 1px solid var(--hikma-border-color-base);
+        border-radius: var(--hikma-border-radius);
+        padding: var(--hikma-spacing-md);
+        transition: var(--hikma-transition-base);
+        
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--hikma-shadow-lg);
+        }
+    }
+}
+
+@layer utilities {
+    .layered-utility {
+        margin: var(--hikma-spacing-md) !important;
+        padding: var(--hikma-spacing-lg) !important;
+        background: var(--hikma-color-primary) !important;
+        color: white !important;
+    }
+}

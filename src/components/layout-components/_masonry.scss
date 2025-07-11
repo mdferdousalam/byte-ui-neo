@@ -1,0 +1,23 @@
+// Masonry Layout
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1.5rem;
+  grid-auto-rows: 10px;
+  
+  &__item {
+    background: var(--hikma-body-bg);
+    border: 1px solid var(--hikma-border-color);
+    border-radius: var(--hikma-border-radius);
+    padding: 1.5rem;
+    
+    &:nth-child(1) { grid-row-end: span 20; }
+    &:nth-child(2) { grid-row-end: span 30; }
+    &:nth-child(3) { grid-row-end: span 25; }
+    &:nth-child(4) { grid-row-end: span 35; }
+    &:nth-child(5) { grid-row-end: span 40; }
+    &:nth-child(6) { grid-row-end: span 30; }
+    &:nth-child(7) { grid-row-end: span 20; }
+    &:nth-child(8) { grid-row-end: span 45; }
+  }
+}

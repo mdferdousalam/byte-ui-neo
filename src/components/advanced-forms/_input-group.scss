@@ -1,0 +1,58 @@
+// Input Groups
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+
+  > .form-control,
+  > .form-select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+    margin-bottom: 0;
+    
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: var(--hikma-input-padding-y) var(--hikma-input-padding-x);
+    font-size: var(--hikma-input-font-size);
+    font-weight: 400;
+    line-height: var(--hikma-input-line-height);
+    color: var(--hikma-input-group-addon-color);
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--hikma-input-group-addon-bg);
+    border: var(--hikma-input-border-width) solid var(--hikma-input-group-addon-border-color);
+    border-radius: var(--hikma-input-border-radius);
+    
+    &:not(:first-child) {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    &:not(:last-child) {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+  }
+}

@@ -1,0 +1,43 @@
+// Divider
+.divider {
+  height: 1px;
+  background: var(--hikma-border-color);
+  margin: 2rem 0;
+  border: none;
+  
+  &--dashed {
+    background: none;
+    border-top: 1px dashed var(--hikma-border-color);
+  }
+  
+  &--dotted {
+    background: none;
+    border-top: 1px dotted var(--hikma-border-color);
+  }
+  
+  &--thick {
+    height: 2px;
+  }
+  
+  &--with-text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    &::before,
+    &::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--hikma-border-color);
+    }
+    
+    &::before {
+      margin-right: 1rem;
+    }
+    
+    &::after {
+      margin-left: 1rem;
+    }
+  }
+}

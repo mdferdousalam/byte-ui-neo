@@ -1,0 +1,568 @@
+// Modern CSS Features
+// Container Queries, Cascade Layers, View Transitions, and more
+
+@use '../core/design-tokens' as *;
+
+// =============================================================================
+// CASCADE LAYERS
+// =============================================================================
+
+// Define layer order (first has lowest priority, last has highest)
+@layer reset, base, tokens, components, patterns, utilities, overrides;
+
+// =============================================================================
+// CONTAINER QUERIES
+// =============================================================================
+
+// Container query contexts
+.container-query {
+  container-type: inline-size;
+  container-name: main;
+}
+
+.card-container {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.sidebar-container {
+  container-type: inline-size;
+  container-name: sidebar;
+}
+
+.content-container {
+  container-type: inline-size;
+  container-name: content;
+}
+
+// Responsive card based on container size
+.responsive-card {
+  padding: $spacing-4;
+  
+  @container card (min-width: 300px) {
+    padding: $spacing-6;
+    
+    .card-title {
+      font-size: $font-size-xl;
+    }
+    
+    .card-text {
+      font-size: $font-size-base;
+    }
+  }
+  
+  @container card (min-width: 400px) {
+    padding: $spacing-8;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: $spacing-6;
+    align-items: center;
+    
+    .card-title {
+      font-size: $font-size-2xl;
+    }
+  }
+}
+
+// Responsive navigation
+.responsive-nav {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2;
+  
+  @container main (min-width: 600px) {
+    flex-direction: row;
+    gap: $spacing-6;
+  }
+  
+  @container main (min-width: 900px) {
+    gap: $spacing-8;
+    
+    .nav-item {
+      padding: $spacing-3 $spacing-6;
+    }
+  }
+}
+
+// Responsive grid
+.responsive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-4;
+  
+  @container main (min-width: 400px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @container main (min-width: 600px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-6;
+  }
+  
+  @container main (min-width: 900px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: $spacing-8;
+  }
+}
+
+// Responsive typography
+.responsive-heading {
+  font-size: $font-size-lg;
+  line-height: $line-height-tight;
+  
+  @container content (min-width: 400px) {
+    font-size: $font-size-xl;
+  }
+  
+  @container content (min-width: 600px) {
+    font-size: $font-size-2xl;
+  }
+  
+  @container content (min-width: 800px) {
+    font-size: $font-size-3xl;
+  }
+}
+
+// =============================================================================
+// VIEW TRANSITIONS API
+// =============================================================================
+
+// Enable view transitions for supported browsers
+@supports (view-transition-name: auto) {
+  // Root element for page transitions
+  :root {
+    view-transition-name: auto;
+  }
+  
+  // Smooth page transitions
+  .page-transition {
+    view-transition-name: page;
+  }
+  
+  // Card transitions
+  .card-transition {
+    view-transition-name: card;
+  }
+  
+  // Image transitions
+  .image-transition {
+    view-transition-name: image;
+  }
+  
+  // Navigation transitions
+  .nav-transition {
+    view-transition-name: navigation;
+  }
+  
+  // Modal transitions
+  .modal-transition {
+    view-transition-name: modal;
+  }
+}
+
+// Custom view transition animations
+::view-transition-old(page) {
+  animation: slide-out-left 0.3s ease-out;
+}
+
+::view-transition-new(page) {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+::view-transition-old(card) {
+  animation: fade-out 0.2s ease-out;
+}
+
+::view-transition-new(card) {
+  animation: fade-in 0.2s ease-out;
+}
+
+::view-transition-old(modal) {
+  animation: modal-out 0.3s ease-out;
+}
+
+::view-transition-new(modal) {
+  animation: modal-in 0.3s ease-out;
+}
+
+// View transition keyframes
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// =============================================================================
+// MODERN COLOR SPACES
+// =============================================================================
+
+// LCH color support
+@supports (color: lch(50% 50 180)) {
+  .modern-colors {
+    --color-primary-lch: lch(60% 50 260);
+    --color-secondary-lch: lch(70% 30 200);
+    --color-accent-lch: lch(75% 70 85);
+    --color-success-lch: lch(70% 60 140);
+    --color-warning-lch: lch(75% 70 85);
+    --color-error-lch: lch(60% 70 40);
+  }
+  
+  .btn--modern {
+    background: var(--color-primary-lch);
+    color: white;
+    
+    &:hover {
+      background: lch(from var(--color-primary-lch) calc(l - 10%) c h);
+    }
+  }
+}
+
+// LAB color support
+@supports (color: lab(50% 20 -30)) {
+  .lab-colors {
+    --color-primary-lab: lab(50% 20 -30);
+    --color-secondary-lab: lab(60% 10 -20);
+    --color-accent-lab: lab(70% 40 50);
+  }
+}
+
+// Color-mix function for better color manipulation
+@supports (color: color-mix(in srgb, red 50%, blue)) {
+  .color-mix-utils {
+    --color-primary-light: color-mix(in srgb, var(--color-brand-primary) 80%, white);
+    --color-primary-dark: color-mix(in srgb, var(--color-brand-primary) 80%, black);
+    --color-primary-alpha: color-mix(in srgb, var(--color-brand-primary) 50%, transparent);
+  }
+}
+
+// =============================================================================
+// ADVANCED SELECTORS
+// =============================================================================
+
+// :has() selector support
+@supports selector(:has(*)) {
+  // Card with image
+  .card:has(.card-image) {
+    overflow: hidden;
+    
+    .card-body {
+      padding-top: $spacing-6;
+    }
+  }
+  
+  // Form with errors
+  .form:has(.input--error) {
+    .form-submit {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+  
+  // Navigation with active items
+  .nav:has(.nav-item--active) {
+    .nav-item:not(.nav-item--active) {
+      opacity: 0.7;
+    }
+  }
+}
+
+// =============================================================================
+// LOGICAL PROPERTIES
+// =============================================================================
+
+// Use logical properties for better internationalization
+.logical-spacing {
+  margin-block-start: $spacing-4;
+  margin-block-end: $spacing-4;
+  margin-inline-start: $spacing-6;
+  margin-inline-end: $spacing-6;
+  
+  padding-block: $spacing-4;
+  padding-inline: $spacing-6;
+}
+
+.logical-border {
+  border-inline-start: 2px solid var(--color-brand-primary);
+  border-block-start: 1px solid var(--color-neutral-200);
+}
+
+.logical-text {
+  text-align: start;
+  
+  &[dir="rtl"] {
+    text-align: end;
+  }
+}
+
+// =============================================================================
+// SCROLL-DRIVEN ANIMATIONS
+// =============================================================================
+
+// Scroll-driven animations (experimental)
+@supports (animation-timeline: scroll()) {
+  .scroll-animate {
+    animation: fade-in-up linear;
+    animation-timeline: scroll();
+    animation-range: entry 0% entry 100%;
+  }
+  
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      to right,
+      var(--color-brand-primary) 0%,
+      var(--color-brand-primary) var(--scroll-progress, 0%),
+      transparent var(--scroll-progress, 0%)
+    );
+    animation: scroll-progress linear;
+    animation-timeline: scroll();
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-progress {
+  from {
+    --scroll-progress: 0%;
+  }
+  to {
+    --scroll-progress: 100%;
+  }
+}
+
+// =============================================================================
+// ANCHOR POSITIONING
+// =============================================================================
+
+// Anchor positioning (experimental)
+@supports (anchor-name: --anchor) {
+  .anchor-reference {
+    anchor-name: --tooltip-anchor;
+  }
+  
+  .anchor-positioned {
+    position: absolute;
+    position-anchor: --tooltip-anchor;
+    top: anchor(bottom);
+    left: anchor(center);
+    transform: translateX(-50%);
+    margin-top: $spacing-2;
+  }
+}
+
+// =============================================================================
+// SUBGRID SUPPORT
+// =============================================================================
+
+// Subgrid for better nested layouts
+@supports (grid-template-columns: subgrid) {
+  .subgrid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $spacing-4;
+  }
+  
+  .subgrid-item {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 6;
+    
+    .subgrid-content {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+// =============================================================================
+// NESTING SUPPORT
+// =============================================================================
+
+// Native CSS nesting (modern browsers)
+.nested-component {
+  padding: $spacing-4;
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  
+  & .nested-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-2;
+    
+    &:hover {
+      color: var(--color-brand-primary);
+    }
+  }
+  
+  & .nested-content {
+    font-size: $font-size-sm;
+    color: var(--color-neutral-600);
+    
+    & p {
+      margin-bottom: $spacing-2;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  &:hover {
+    background: var(--color-neutral-100);
+    
+    & .nested-title {
+      color: var(--color-brand-primary);
+    }
+  }
+}
+
+// =============================================================================
+// MODERN FOCUS STYLES
+// =============================================================================
+
+// Modern focus styles with focus-visible
+.modern-focus {
+  outline: none;
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-base);
+  }
+}
+
+// Skip to content link
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-brand-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius-base);
+  z-index: $z-index-skiplink;
+  
+  &:focus {
+    top: 6px;
+  }
+}
+
+// =============================================================================
+// ACCESSIBILITY FEATURES
+// =============================================================================
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid;
+    
+    &:focus {
+      outline: 3px solid;
+      outline-offset: 2px;
+    }
+  }
+  
+  .card {
+    border: 2px solid;
+  }
+  
+  .input {
+    border: 2px solid;
+  }
+}
+
+// Forced colors mode (Windows High Contrast)
+@media (forced-colors: active) {
+  .btn {
+    forced-color-adjust: none;
+    border: 1px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+    
+    &:hover {
+      background: Highlight;
+      color: HighlightText;
+    }
+  }
+}

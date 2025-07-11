@@ -1,0 +1,42 @@
+// 12. Advanced CSS Functions Component
+.advanced-functions {
+    --dynamic-size: clamp(1rem, 2vw + 1rem, 2rem);
+    --dynamic-padding: max(1rem, 2vw);
+    --dynamic-margin: min(2rem, 5vw);
+    
+    background: var(--hikma-surface-color);
+    border: 1px solid var(--hikma-border-color-base);
+    border-radius: var(--hikma-border-radius);
+    padding: var(--dynamic-padding);
+    margin: var(--dynamic-margin);
+    
+    .function-title {
+        font-size: var(--dynamic-size);
+        font-weight: var(--hikma-font-weight-bold);
+        color: var(--hikma-text-color-base);
+        margin-bottom: var(--hikma-spacing-md);
+    }
+    
+    .function-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+        gap: var(--hikma-spacing-md);
+        
+        .function-item {
+            background: var(--hikma-surface-color-hover);
+            border-radius: var(--hikma-border-radius);
+            padding: var(--hikma-spacing-md);
+            aspect-ratio: 3 / 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: var(--hikma-transition-base);
+            
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: var(--hikma-shadow-lg);
+            }
+        }
+    }
+}

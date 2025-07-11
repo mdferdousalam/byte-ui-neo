@@ -1,9 +1,9 @@
 // Hikma UI Framework - Main SCSS Entry Point
-// This file imports all the necessary modules in a logical order.
+// Modern CSS framework with advanced features and accessibility
 
 // 1. Core & Configuration
-// These files contain global variables, mixins, and base styles.
-// They should be imported first so their definitions are available everywhere.
+// Modern design system with design tokens and advanced CSS features
+@use 'core/design-tokens';
 @use 'core/variables';
 @use 'core/mixins';
 @use 'core/base'; // Base includes reset, html, body, and heading styles
@@ -28,15 +28,20 @@
 @use 'components/dropdown';
 @use 'components/navs'; // (for Tabs/Pills)
 @use 'components/carousel';
+@use 'components/data-visualization';
 @use 'components/spinner';
 @use 'components/toast';
 
 // 3.1 Advanced Components
-@use 'components/advanced-forms';
-@use 'components/data-visualization';
-@use 'components/layout-components';
-@use 'components/interactive-components';
-@use 'components/utility-components';
+@use 'components/advanced-forms/index' as advanced-forms;
+@use 'components/interactive-components/index' as interactive-components;
+@use 'components/layout-components/index' as layout-components;
+@use 'components/modern-components/index' as modern-components;
+@use 'components/utility-components/index' as utility-components;
+
+// 3.2 Component Variants System
+@use 'components/component-variants';
+
 
 // 4. Utility Classes
 // Single-purpose, reusable classes that often override component styles with `!important`.
@@ -62,7 +67,19 @@
 @use 'utilities/animations';
 @use 'utilities/gradients';
 
-// 5. Theme Styles / Overrides
+// 4.1 Atomic Utility Classes (Modern Utility-First Approach)
+// Comprehensive atomic utilities inspired by Tailwind CSS
+@use 'utilities/atomic';
+
+// 5. Modern CSS Features
+// Container queries, cascade layers, view transitions, and other modern CSS features
+@use 'modern/modern-css';
+
+// 6. Accessibility
+// WCAG 2.1 AA compliant styles and accessibility features
+@use 'accessibility/accessibility';
+
+// 7. Theme Styles / Overrides
 // Specific themes (like dark mode) or any global overrides that change existing styles.
 // These should generally be imported last to easily override previous styles.
 @use 'theme/dark-mode';

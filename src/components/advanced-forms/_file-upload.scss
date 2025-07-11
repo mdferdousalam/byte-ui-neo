@@ -1,0 +1,59 @@
+// File Upload
+.file-upload {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  
+  &__input {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--hikma-input-padding-y) var(--hikma-input-padding-x);
+    font-size: var(--hikma-input-font-size);
+    font-weight: 400;
+    line-height: var(--hikma-input-line-height);
+    color: var(--hikma-input-color);
+    background-color: var(--hikma-input-bg);
+    border: var(--hikma-input-border-width) solid var(--hikma-input-border-color);
+    border-radius: var(--hikma-input-border-radius);
+    cursor: pointer;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+    &:hover {
+      border-color: var(--hikma-input-focus-border-color);
+    }
+    
+    &:focus-within {
+      border-color: var(--hikma-input-focus-border-color);
+      box-shadow: 0 0 0 0.2rem rgba(var(--hikma-color-primary-rgb), 0.25);
+    }
+  }
+  
+  &__icon {
+    width: 1.2em;
+    height: 1.2em;
+    fill: currentColor;
+  }
+  
+  &__text {
+    color: var(--hikma-text-muted);
+    
+    &.has-file {
+      color: var(--hikma-input-color);
+    }
+  }
+  
+  &--drag-over {
+    .file-upload__label {
+      border-color: var(--hikma-color-primary);
+      background-color: rgba(var(--hikma-color-primary-rgb), 0.1);
+    }
+  }
+}

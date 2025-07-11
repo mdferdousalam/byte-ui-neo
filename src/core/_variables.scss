@@ -120,3 +120,12 @@ $grid-breakpoints: (
 	xl: 1200px,
 	xxl: 1400px,
 );
+
+$spacing-sizes: (
+  xs: var(--hikma-spacing-xs),
+  sm: var(--hikma-spacing-sm),
+  md: var(--hikma-spacing-md),
+  lg: var(--hikma-spacing-lg),
+  xl: var(--hikma-spacing-xl),
+  xxl: var(--hikma-spacing-xxl)
+);

@@ -1,0 +1,29 @@
+// 8. Advanced CSS Scroll-Driven Animations
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    
+    &.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    // CSS Scroll-driven animations (when supported)
+    @supports (animation-timeline: scroll()) {
+        animation: scroll-reveal linear both;
+        animation-timeline: scroll();
+        animation-range: entry 0% cover 30%;
+    }
+}
+
+@keyframes scroll-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
