@@ -2,79 +2,121 @@
 // This file defines styles for loading spinners.
 
 :root {
-    --hikma-spinner-width: 2rem;
-    --hikma-spinner-height: 2rem;
-    --hikma-spinner-border-width: 0.25em;
-    --hikma-spinner-animation-speed: 0.75s;
-    --hikma-spinner-color: currentColor; // Inherits color from parent
+	--byte-spinner-width: 2rem;
+	--byte-spinner-height: 2rem;
+	--byte-spinner-border-width: 0.25em;
+	--byte-spinner-animation-speed: 0.75s;
+	--byte-spinner-color: currentColor; // Inherits color from parent
 }
 
 @keyframes hikma-spinner-border {
-    to { transform: rotate(360deg); }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .spinner-border {
-    display: inline-block;
-    width: var(--hikma-spinner-width);
-    height: var(--hikma-spinner-height);
-    vertical-align: -0.125em; // Adjust vertical alignment
-    border: var(--hikma-spinner-border-width) solid var(--hikma-spinner-color);
-    border-right-color: transparent; // Creates the spinning effect
-    border-radius: 50%;
-    animation: hikma-spinner-border var(--hikma-spinner-animation-speed) linear infinite;
+	display: inline-block;
+	width: var(--byte-spinner-width);
+	height: var(--byte-spinner-height);
+	vertical-align: -0.125em; // Adjust vertical alignment
+	border: var(--byte-spinner-border-width) solid var(--byte-spinner-color);
+	border-right-color: transparent; // Creates the spinning effect
+	border-radius: 50%;
+	animation: hikma-spinner-border var(--byte-spinner-animation-speed) linear
+		infinite;
 }
 
 // Colors for spinners (inherits from text/contextual colors)
-.spinner-border-primary { border-color: var(--hikma-color-primary); border-right-color: transparent; }
-.spinner-border-secondary { border-color: var(--hikma-color-secondary); border-right-color: transparent; }
-.spinner-border-success { border-color: var(--hikma-color-success); border-right-color: transparent; }
-.spinner-border-danger { border-color: var(--hikma-color-danger); border-right-color: transparent; }
-.spinner-border-warning { border-color: var(--hikma-color-warning); border-right-color: transparent; }
-.spinner-border-info { border-color: var(--hikma-color-info); border-right-color: transparent; }
-.spinner-border-light { border-color: var(--hikma-color-light); border-right-color: transparent; }
-.spinner-border-dark { border-color: var(--hikma-color-dark); border-right-color: transparent; }
-
+.spinner-border-primary {
+	border-color: var(--byte-color-primary);
+	border-right-color: transparent;
+}
+.spinner-border-secondary {
+	border-color: var(--byte-color-secondary);
+	border-right-color: transparent;
+}
+.spinner-border-success {
+	border-color: var(--byte-color-success);
+	border-right-color: transparent;
+}
+.spinner-border-danger {
+	border-color: var(--byte-color-danger);
+	border-right-color: transparent;
+}
+.spinner-border-warning {
+	border-color: var(--byte-color-warning);
+	border-right-color: transparent;
+}
+.spinner-border-info {
+	border-color: var(--byte-color-info);
+	border-right-color: transparent;
+}
+.spinner-border-light {
+	border-color: var(--byte-color-light);
+	border-right-color: transparent;
+}
+.spinner-border-dark {
+	border-color: var(--byte-color-dark);
+	border-right-color: transparent;
+}
 
 // Grow spinner (dot that grows and shrinks)
 @keyframes hikma-spinner-grow {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-    }
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .spinner-grow {
-    display: inline-block;
-    width: var(--hikma-spinner-width);
-    height: var(--hikma-spinner-height);
-    vertical-align: -0.125em;
-    background-color: var(--hikma-spinner-color);
-    border-radius: 50%;
-    opacity: 0; // Starts hidden
-    animation: hikma-spinner-grow var(--hikma-spinner-animation-speed) linear infinite;
+	display: inline-block;
+	width: var(--byte-spinner-width);
+	height: var(--byte-spinner-height);
+	vertical-align: -0.125em;
+	background-color: var(--byte-spinner-color);
+	border-radius: 50%;
+	opacity: 0; // Starts hidden
+	animation: hikma-spinner-grow var(--byte-spinner-animation-speed) linear
+		infinite;
 }
 
 // Colors for grow spinners (inherits from text/contextual colors)
-.spinner-grow-primary { background-color: var(--hikma-color-primary); }
-.spinner-grow-secondary { background-color: var(--hikma-color-secondary); }
-.spinner-grow-success { background-color: var(--hikma-color-success); }
-.spinner-grow-danger { background-color: var(--hikma-color-danger); }
-.spinner-grow-warning { background-color: var(--hikma-color-warning); }
-.spinner-grow-info { background-color: var(--hikma-color-info); }
-.spinner-grow-light { background-color: var(--hikma-color-light); }
-.spinner-grow-dark { background-color: var(--hikma-color-dark); }
-
+.spinner-grow-primary {
+	background-color: var(--byte-color-primary);
+}
+.spinner-grow-secondary {
+	background-color: var(--byte-color-secondary);
+}
+.spinner-grow-success {
+	background-color: var(--byte-color-success);
+}
+.spinner-grow-danger {
+	background-color: var(--byte-color-danger);
+}
+.spinner-grow-warning {
+	background-color: var(--byte-color-warning);
+}
+.spinner-grow-info {
+	background-color: var(--byte-color-info);
+}
+.spinner-grow-light {
+	background-color: var(--byte-color-light);
+}
+.spinner-grow-dark {
+	background-color: var(--byte-color-dark);
+}
 
 // Small spinners
 .spinner-border-sm {
-    --hikma-spinner-width: 1rem;
-    --hikma-spinner-height: 1rem;
-    --hikma-spinner-border-width: 0.2em; // Slightly thinner border
+	--byte-spinner-width: 1rem;
+	--byte-spinner-height: 1rem;
+	--byte-spinner-border-width: 0.2em; // Slightly thinner border
 }
 .spinner-grow-sm {
-    --hikma-spinner-width: 1rem;
-    --hikma-spinner-height: 1rem;
+	--byte-spinner-width: 1rem;
+	--byte-spinner-height: 1rem;
 }

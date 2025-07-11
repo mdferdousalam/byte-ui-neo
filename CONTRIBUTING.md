@@ -1,8 +1,8 @@
-# Contributing to Hikma UI
+# Contributing to Byte UI
 
-First off, thank you for considering contributing to Hikma UI! 🎉
+First off, thank you for considering contributing to Byte UI! 🎉
 
-The following is a set of guidelines for contributing to Hikma UI. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to Byte UI. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ The process described here has several goals:
 
 - Maintain code quality
 - Fix problems that are important to users
-- Engage the community in working toward the best possible Hikma UI
+- Engage the community in working toward the best possible Byte UI
 - Enable a sustainable system for maintainers to review contributions
 
 ## Development Setup
@@ -68,22 +68,26 @@ The process described here has several goals:
 
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
+
    ```bash
-   git clone https://github.com/YOUR-USERNAME/hikma-ui.git
-   cd hikma-ui
+   git clone https://github.com/YOUR-USERNAME/byte-ui.git
+   cd byte-ui
    ```
 
 3. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 4. **Create a branch** for your changes:
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
 
 5. **Start the development server**:
+
    ```bash
    npm run dev
    ```
@@ -98,7 +102,7 @@ The process described here has several goals:
 ### Project Structure
 
 ```
-hikma-ui/
+byte-ui/
 ├── src/
 │   ├── components/        # SCSS component files
 │   ├── utilities/         # Utility classes
@@ -124,23 +128,28 @@ hikma-ui/
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
 - [ ] Documentation update
 
 ## Testing
+
 - [ ] I have tested this change locally
 - [ ] I have added tests for this change
 - [ ] All existing tests pass
 
 ## Screenshots (if applicable)
+
 Add screenshots here
 
 ## Checklist
+
 - [ ] My code follows the project's style guidelines
 - [ ] I have performed a self-review of my code
 - [ ] I have commented my code where necessary
@@ -153,38 +162,44 @@ Add screenshots here
 ### SCSS Guidelines
 
 1. **Use BEM methodology** for class naming:
+
    ```scss
-   .component {}
-   .component__element {}
-   .component--modifier {}
+   .component {
+   }
+   .component__element {
+   }
+   .component--modifier {
+   }
    ```
 
 2. **Use CSS custom properties** for theming:
+
    ```scss
    .component {
-     color: var(--hikma-text-color-base);
-     background: var(--hikma-background-color-base);
+   	color: var(--byte-text-color-base);
+   	background: var(--byte-background-color-base);
    }
    ```
 
 3. **Follow the mobile-first approach**:
+
    ```scss
    .component {
-     // Mobile styles first
-     width: 100%;
-     
-     // Then larger screens
-     @include media-up(md) {
-       width: auto;
-     }
+   	// Mobile styles first
+   	width: 100%;
+
+   	// Then larger screens
+   	@include media-up(md) {
+   		width: auto;
+   	}
    }
    ```
 
 4. **Use consistent spacing** with our scale:
    ```scss
    .component {
-     margin: var(--hikma-spacing-md);
-     padding: var(--hikma-spacing-sm);
+   	margin: var(--byte-spacing-md);
+   	padding: var(--byte-spacing-sm);
    }
    ```
 
@@ -193,13 +208,14 @@ Add screenshots here
 1. **Use vanilla JavaScript** (no frameworks)
 2. **Follow ES6+ standards**
 3. **Use consistent naming conventions**:
+
    ```javascript
    // Classes: PascalCase
    class ComponentName {}
-   
+
    // Functions: camelCase
    function handleClick() {}
-   
+
    // Constants: UPPER_CASE
    const DEFAULT_OPTIONS = {};
    ```
@@ -274,8 +290,8 @@ If you need help, you can:
 
 ## License
 
-By contributing to Hikma UI, you agree that your contributions will be licensed under the MIT License.
+By contributing to Byte UI, you agree that your contributions will be licensed under the MIT License.
 
 ---
 
-Thank you for contributing to Hikma UI! 🚀
+Thank you for contributing to Byte UI! 🚀

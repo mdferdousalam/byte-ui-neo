@@ -2,52 +2,54 @@
 // This file defines styles for breadcrumb navigation.
 
 :root {
-    --hikma-breadcrumb-padding-x: 0;
-    --hikma-breadcrumb-padding-y: 0;
-    --hikma-breadcrumb-margin-bottom: 1rem;
-    --hikma-breadcrumb-bg: transparent;
-    --hikma-breadcrumb-border-radius: 0;
-    --hikma-breadcrumb-divider-color: var(--hikma-text-color-muted);
-    --hikma-breadcrumb-item-padding-x: 0.5rem; // Padding between items and divider
-    --hikma-breadcrumb-item-color: var(--hikma-link-color);
-    --hikma-breadcrumb-active-color: var(--hikma-text-color-base); // Current page color
+	--byte-breadcrumb-padding-x: 0;
+	--byte-breadcrumb-padding-y: 0;
+	--byte-breadcrumb-margin-bottom: 1rem;
+	--byte-breadcrumb-bg: transparent;
+	--byte-breadcrumb-border-radius: 0;
+	--byte-breadcrumb-divider-color: var(--byte-text-color-muted);
+	--byte-breadcrumb-item-padding-x: 0.5rem; // Padding between items and divider
+	--byte-breadcrumb-item-color: var(--byte-link-color);
+	--byte-breadcrumb-active-color: var(
+		--byte-text-color-base
+	); // Current page color
 }
 
 .breadcrumb {
-    display: flex;
-    flex-wrap: wrap;
-    padding: var(--hikma-breadcrumb-padding-y) var(--hikma-breadcrumb-padding-x);
-    margin-bottom: var(--hikma-breadcrumb-margin-bottom);
-    list-style: none;
-    background-color: var(--hikma-breadcrumb-bg);
-    border-radius: var(--hikma-breadcrumb-border-radius);
+	display: flex;
+	flex-wrap: wrap;
+	padding: var(--byte-breadcrumb-padding-y) var(--byte-breadcrumb-padding-x);
+	margin-bottom: var(--byte-breadcrumb-margin-bottom);
+	list-style: none;
+	background-color: var(--byte-breadcrumb-bg);
+	border-radius: var(--byte-breadcrumb-border-radius);
 }
 
 .breadcrumb-item {
-    // No specific styling for the li itself, li is just a container for the link
-    + .breadcrumb-item {
-        padding-left: var(--hikma-breadcrumb-item-padding-x); // Space before divider
+	// No specific styling for the li itself, li is just a container for the link
+	+ .breadcrumb-item {
+		padding-left: var(--byte-breadcrumb-item-padding-x); // Space before divider
 
-        &::before {
-            float: left;
-            padding-right: var(--hikma-breadcrumb-item-padding-x);
-            color: var(--hikma-breadcrumb-divider-color);
-            content: var(--hikma-breadcrumb-divider, "/"); // Default divider is '/'
-        }
-    }
+		&::before {
+			float: left;
+			padding-right: var(--byte-breadcrumb-item-padding-x);
+			color: var(--byte-breadcrumb-divider-color);
+			content: var(--byte-breadcrumb-divider, '/'); // Default divider is '/'
+		}
+	}
 
-    a {
-        color: var(--hikma-breadcrumb-item-color);
-        text-decoration: none;
+	a {
+		color: var(--byte-breadcrumb-item-color);
+		text-decoration: none;
 
-        &:hover {
-            text-decoration: underline;
-        }
-    }
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 
-    &.active {
-        color: var(--hikma-breadcrumb-active-color);
-        text-decoration: none;
-        pointer-events: none; // Disable clicking on active item
-    }
+	&.active {
+		color: var(--byte-breadcrumb-active-color);
+		text-decoration: none;
+		pointer-events: none; // Disable clicking on active item
+	}
 }

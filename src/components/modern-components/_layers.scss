@@ -2,33 +2,33 @@
 @layer base, components, utilities;
 
 @layer base {
-    .layered-base {
-        font-family: var(--hikma-font-family-base);
-        line-height: 1.6;
-        color: var(--hikma-text-color-base);
-    }
+	.layered-base {
+		font-family: var(--byte-font-family-base);
+		line-height: 1.6;
+		color: var(--byte-text-color-base);
+	}
 }
 
 @layer components {
-    .layered-component {
-        background: var(--hikma-surface-color);
-        border: 1px solid var(--hikma-border-color-base);
-        border-radius: var(--hikma-border-radius);
-        padding: var(--hikma-spacing-md);
-        transition: var(--hikma-transition-base);
-        
-        &:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--hikma-shadow-lg);
-        }
-    }
+	.layered-component {
+		background: var(--byte-surface-color);
+		border: 1px solid var(--byte-border-color-base);
+		border-radius: var(--byte-border-radius);
+		padding: var(--byte-spacing-md);
+		transition: var(--byte-transition-base);
+
+		&:hover {
+			transform: translateY(-2px);
+			box-shadow: var(--byte-shadow-lg);
+		}
+	}
 }
 
 @layer utilities {
-    .layered-utility {
-        margin: var(--hikma-spacing-md) !important;
-        padding: var(--hikma-spacing-lg) !important;
-        background: var(--hikma-color-primary) !important;
-        color: white !important;
-    }
+	.layered-utility {
+		margin: var(--byte-spacing-md) !important;
+		padding: var(--byte-spacing-lg) !important;
+		background: var(--byte-color-primary) !important;
+		color: white !important;
+	}
 }

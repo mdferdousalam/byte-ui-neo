@@ -1,831 +1,1081 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hikma UI - Modern CSS Framework</title>
-    <link rel="stylesheet" href="./dist/hikma-ui.min.css">
-    <style>
-        /* Custom documentation styles */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-            margin-bottom: 3rem;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        .sidebar {
-            position: sticky;
-            top: 2rem;
-            height: fit-content;
-            background: #f8f9fa;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-        }
-        .sidebar h6 {
-            color: #495057;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .sidebar li {
-            margin-bottom: 0.5rem;
-        }
-        .sidebar a {
-            color: #6c757d;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .sidebar a:hover {
-            color: #007bff;
-        }
-        .section {
-            margin-bottom: 4rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .section h2 {
-            color: #495057;
-            border-bottom: 3px solid #007bff;
-            padding-bottom: 0.5rem;
-            margin-bottom: 2rem;
-        }
-        .code-block {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 0.375rem;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-family: 'Courier New', monospace;
-            font-size: 0.875rem;
-            overflow-x: auto;
-        }
-        .example-box {
-            border: 2px dashed #dee2e6;
-            border-radius: 0.375rem;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            background: #f8f9fa;
-        }
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #007bff;
-        }
-        .stat-label {
-            color: #6c757d;
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-        }
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .section {
-                padding: 1rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <h1>🌟 Hikma UI</h1>
-            <p>Modern, Lightweight CSS Framework Built with Sass & Vanilla JavaScript</p>
-            <div class="btn-group">
-                <a href="#getting-started" class="btn btn--outline-light btn--lg">Get Started</a>
-                <a href="#components" class="btn btn--primary btn--lg">View Components</a>
-                <a href="https://github.com/mdferdousalam/hikma-ui" class="btn btn--outline-light btn--lg">GitHub</a>
-            </div>
-        </div>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Byte UI - Modern CSS Framework</title>
+		<link rel="stylesheet" href="./dist/byte-ui.min.css" />
+		<style>
+			/* Custom documentation styles */
+			.hero {
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				color: white;
+				text-align: center;
+				padding: 4rem 2rem;
+				margin-bottom: 3rem;
+			}
+			.hero h1 {
+				font-size: 3rem;
+				margin-bottom: 1rem;
+				font-weight: 700;
+			}
+			.hero p {
+				font-size: 1.25rem;
+				margin-bottom: 2rem;
+				opacity: 0.9;
+			}
+			.sidebar {
+				position: sticky;
+				top: 2rem;
+				height: fit-content;
+				background: #f8f9fa;
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+			}
+			.sidebar h6 {
+				color: #495057;
+				font-weight: 600;
+				margin-bottom: 1rem;
+				text-transform: uppercase;
+				font-size: 0.875rem;
+				letter-spacing: 0.05em;
+			}
+			.sidebar ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.sidebar li {
+				margin-bottom: 0.5rem;
+			}
+			.sidebar a {
+				color: #6c757d;
+				text-decoration: none;
+				transition: color 0.2s;
+			}
+			.sidebar a:hover {
+				color: #007bff;
+			}
+			.section {
+				margin-bottom: 4rem;
+				padding: 2rem;
+				background: white;
+				border-radius: 0.5rem;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
+			.section h2 {
+				color: #495057;
+				border-bottom: 3px solid #007bff;
+				padding-bottom: 0.5rem;
+				margin-bottom: 2rem;
+			}
+			.code-block {
+				background: #f8f9fa;
+				border: 1px solid #e9ecef;
+				border-radius: 0.375rem;
+				padding: 1rem;
+				margin: 1rem 0;
+				font-family: 'Courier New', monospace;
+				font-size: 0.875rem;
+				overflow-x: auto;
+			}
+			.example-box {
+				border: 2px dashed #dee2e6;
+				border-radius: 0.375rem;
+				padding: 1.5rem;
+				margin: 1rem 0;
+				background: #f8f9fa;
+			}
+			.stats {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+				gap: 1rem;
+				margin: 2rem 0;
+			}
+			.stat-card {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 0.5rem;
+				text-align: center;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			}
+			.stat-number {
+				font-size: 2rem;
+				font-weight: 700;
+				color: #007bff;
+			}
+			.stat-label {
+				color: #6c757d;
+				font-size: 0.875rem;
+				margin-top: 0.5rem;
+			}
+			@media (max-width: 768px) {
+				.hero h1 {
+					font-size: 2rem;
+				}
+				.hero p {
+					font-size: 1rem;
+				}
+				.section {
+					padding: 1rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Hero Section -->
+		<div class="hero">
+			<div class="container">
+				<h1>🌟 Byte UI</h1>
+				<p>
+					Modern, Lightweight CSS Framework Built with Sass & Vanilla JavaScript
+				</p>
+				<div class="btn-group">
+					<a href="#getting-started" class="btn btn--outline-light btn--lg"
+						>Get Started</a
+					>
+					<a href="#components" class="btn btn--primary btn--lg"
+						>View Components</a
+					>
+					<a
+						href="https://github.com/mdferdousalam/byte-ui"
+						class="btn btn--outline-light btn--lg"
+						>GitHub</a
+					>
+				</div>
+			</div>
+		</div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <!-- Sidebar Navigation -->
-            <div class="col-md-3">
-                <div class="sidebar">
-                    <h6>Navigation</h6>
-                    <ul>
-                        <li><a href="#overview">Overview</a></li>
-                        <li><a href="#getting-started">Getting Started</a></li>
-                        <li><a href="#components">Components</a></li>
-                        <li><a href="#buttons">Buttons</a></li>
-                        <li><a href="#forms">Forms</a></li>
-                        <li><a href="#cards">Cards</a></li>
-                        <li><a href="#navigation">Navigation</a></li>
-                        <li><a href="#interactive">Interactive</a></li>
-                        <li><a href="#utilities">Utilities</a></li>
-                        <li><a href="#customization">Customization</a></li>
-                    </ul>
-                </div>
-            </div>
+		<!-- Main Content -->
+		<div class="container">
+			<div class="row">
+				<!-- Sidebar Navigation -->
+				<div class="col-md-3">
+					<div class="sidebar">
+						<h6>Navigation</h6>
+						<ul>
+							<li><a href="#overview">Overview</a></li>
+							<li><a href="#getting-started">Getting Started</a></li>
+							<li><a href="#components">Components</a></li>
+							<li><a href="#buttons">Buttons</a></li>
+							<li><a href="#forms">Forms</a></li>
+							<li><a href="#cards">Cards</a></li>
+							<li><a href="#navigation">Navigation</a></li>
+							<li><a href="#interactive">Interactive</a></li>
+							<li><a href="#utilities">Utilities</a></li>
+							<li><a href="#customization">Customization</a></li>
+						</ul>
+					</div>
+				</div>
 
-            <!-- Main Documentation -->
-            <div class="col-md-9">
-                <!-- Overview Section -->
-                <div id="overview" class="section">
-                    <h2>📖 Overview</h2>
-                    <p>Hikma UI is a modern, lightweight CSS framework built with Sass and vanilla JavaScript. It provides a comprehensive set of UI components, utility classes, and responsive design patterns.</p>
-                    
-                    <div class="stats">
-                        <div class="stat-card">
-                            <div class="stat-number">16+</div>
-                            <div class="stat-label">Components</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">54KB</div>
-                            <div class="stat-label">CSS Size</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">7KB</div>
-                            <div class="stat-label">JS Size</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Responsive</div>
-                        </div>
-                    </div>
+				<!-- Main Documentation -->
+				<div class="col-md-9">
+					<!-- Overview Section -->
+					<div id="overview" class="section">
+						<h2>📖 Overview</h2>
+						<p>
+							Byte UI is a modern, lightweight CSS framework built with Sass
+							and vanilla JavaScript. It provides a comprehensive set of UI
+							components, utility classes, and responsive design patterns.
+						</p>
 
-                    <h3>✨ Key Features</h3>
-                    <ul>
-                        <li>🎨 <strong>16+ UI Components</strong> - Buttons, Forms, Modals, Navigation, Cards, and more</li>
-                        <li>🌈 <strong>8 Color Variants</strong> - Primary, Secondary, Success, Danger, Warning, Info, Light, Dark</li>
-                        <li>📱 <strong>Mobile-First Responsive</strong> - Works perfectly on all devices</li>
-                        <li>♿ <strong>Accessibility First</strong> - WCAG compliant with proper ARIA attributes</li>
-                        <li>🔧 <strong>Highly Customizable</strong> - CSS custom properties for easy theming</li>
-                        <li>🌙 <strong>Dark Mode Support</strong> - Built-in theme switching</li>
-                    </ul>
-                </div>
+						<div class="stats">
+							<div class="stat-card">
+								<div class="stat-number">16+</div>
+								<div class="stat-label">Components</div>
+							</div>
+							<div class="stat-card">
+								<div class="stat-number">54KB</div>
+								<div class="stat-label">CSS Size</div>
+							</div>
+							<div class="stat-card">
+								<div class="stat-number">7KB</div>
+								<div class="stat-label">JS Size</div>
+							</div>
+							<div class="stat-card">
+								<div class="stat-number">100%</div>
+								<div class="stat-label">Responsive</div>
+							</div>
+						</div>
 
-                <!-- Getting Started Section -->
-                <div id="getting-started" class="section">
-                    <h2>🚀 Getting Started</h2>
-                    
-                    <h3>📦 Installation</h3>
-                    <div class="code-block">
-                        <strong>Via CDN:</strong><br>
-                        &lt;link rel="stylesheet" href="https://unpkg.com/hikma-ui@1.0.0/dist/hikma-ui.min.css"&gt;<br>
-                        &lt;script src="https://unpkg.com/hikma-ui@1.0.0/dist/hikma-ui-js.min.js"&gt;&lt;/script&gt;
-                    </div>
+						<h3>✨ Key Features</h3>
+						<ul>
+							<li>
+								🎨 <strong>16+ UI Components</strong> - Buttons, Forms, Modals,
+								Navigation, Cards, and more
+							</li>
+							<li>
+								🌈 <strong>8 Color Variants</strong> - Primary, Secondary,
+								Success, Danger, Warning, Info, Light, Dark
+							</li>
+							<li>
+								📱 <strong>Mobile-First Responsive</strong> - Works perfectly on
+								all devices
+							</li>
+							<li>
+								♿ <strong>Accessibility First</strong> - WCAG compliant with
+								proper ARIA attributes
+							</li>
+							<li>
+								🔧 <strong>Highly Customizable</strong> - CSS custom properties
+								for easy theming
+							</li>
+							<li>
+								🌙 <strong>Dark Mode Support</strong> - Built-in theme switching
+							</li>
+						</ul>
+					</div>
 
-                    <div class="code-block">
-                        <strong>Via NPM:</strong><br>
-                        npm install hikma-ui
-                    </div>
+					<!-- Getting Started Section -->
+					<div id="getting-started" class="section">
+						<h2>🚀 Getting Started</h2>
 
-                    <h3>🛠️ Basic Usage</h3>
-                    <div class="code-block">
-                        &lt;div class="container"&gt;<br>
-                        &nbsp;&nbsp;&lt;h1&gt;Hello Hikma UI!&lt;/h1&gt;<br>
-                        &nbsp;&nbsp;&lt;button class="btn btn--primary"&gt;Get Started&lt;/button&gt;<br>
-                        &lt;/div&gt;
-                    </div>
-                </div>
+						<h3>📦 Installation</h3>
+						<div class="code-block">
+							<strong>Via CDN:</strong><br />
+							&lt;link rel="stylesheet"
+							href="https://unpkg.com/byte-ui@1.0.0/dist/byte-ui.min.css"&gt;<br />
+							&lt;script
+							src="https://unpkg.com/byte-ui@1.0.0/dist/byte-ui-js.min.js"&gt;&lt;/script&gt;
+						</div>
 
-                <!-- Components Section -->
-                <div id="components" class="section">
-                    <h2>🧩 Components</h2>
-                    <p>Hikma UI provides a comprehensive set of pre-built components for rapid development.</p>
-                    
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6 class="card-title">🔘 Buttons</h6>
-                                    <p class="card-text">16 variants, 3 sizes, multiple states</p>
-                                    <a href="#buttons" class="btn btn--primary btn--sm">View Examples</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6 class="card-title">📝 Forms</h6>
-                                    <p class="card-text">Complete form controls with validation</p>
-                                    <a href="#forms" class="btn btn--primary btn--sm">View Examples</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6 class="card-title">🃏 Cards</h6>
-                                    <p class="card-text">Flexible content containers</p>
-                                    <a href="#cards" class="btn btn--primary btn--sm">View Examples</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6 class="card-title">🚨 Alerts</h6>
-                                    <p class="card-text">Contextual feedback messages</p>
-                                    <a href="#interactive" class="btn btn--primary btn--sm">View Examples</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="code-block">
+							<strong>Via NPM:</strong><br />
+							npm install byte-ui
+						</div>
 
-                <!-- Buttons Section -->
-                <div id="buttons" class="section">
-                    <h2>🔘 Buttons</h2>
-                    
-                    <h3>Solid Button Variants</h3>
-                    <div class="example-box">
-                        <button class="btn btn--primary me-2 mb-2">Primary</button>
-                        <button class="btn btn--secondary me-2 mb-2">Secondary</button>
-                        <button class="btn btn--success me-2 mb-2">Success</button>
-                        <button class="btn btn--danger me-2 mb-2">Danger</button>
-                        <button class="btn btn--warning me-2 mb-2">Warning</button>
-                        <button class="btn btn--info me-2 mb-2">Info</button>
-                        <button class="btn btn--light me-2 mb-2">Light</button>
-                        <button class="btn btn--dark me-2 mb-2">Dark</button>
-                    </div>
-                    <div class="code-block">
-                        &lt;button class="btn btn--primary"&gt;Primary&lt;/button&gt;<br>
-                        &lt;button class="btn btn--success"&gt;Success&lt;/button&gt;<br>
-                        &lt;button class="btn btn--danger"&gt;Danger&lt;/button&gt;
-                    </div>
+						<h3>🛠️ Basic Usage</h3>
+						<div class="code-block">
+							&lt;div class="container"&gt;<br />
+							&nbsp;&nbsp;&lt;h1&gt;Hello Byte UI!&lt;/h1&gt;<br />
+							&nbsp;&nbsp;&lt;button class="btn btn--primary"&gt;Get
+							Started&lt;/button&gt;<br />
+							&lt;/div&gt;
+						</div>
+					</div>
 
-                    <h3>Outline Button Variants</h3>
-                    <div class="example-box">
-                        <button class="btn btn--outline-primary me-2 mb-2">Primary</button>
-                        <button class="btn btn--outline-secondary me-2 mb-2">Secondary</button>
-                        <button class="btn btn--outline-success me-2 mb-2">Success</button>
-                        <button class="btn btn--outline-danger me-2 mb-2">Danger</button>
-                        <button class="btn btn--outline-warning me-2 mb-2">Warning</button>
-                        <button class="btn btn--outline-info me-2 mb-2">Info</button>
-                        <button class="btn btn--outline-light me-2 mb-2">Light</button>
-                        <button class="btn btn--outline-dark me-2 mb-2">Dark</button>
-                    </div>
+					<!-- Components Section -->
+					<div id="components" class="section">
+						<h2>🧩 Components</h2>
+						<p>
+							Byte UI provides a comprehensive set of pre-built components for
+							rapid development.
+						</p>
 
-                    <h3>Button Sizes</h3>
-                    <div class="example-box">
-                        <button class="btn btn--primary btn--sm me-2">Small</button>
-                        <button class="btn btn--primary me-2">Default</button>
-                        <button class="btn btn--primary btn--lg me-2">Large</button>
-                    </div>
-                    <div class="code-block">
-                        &lt;button class="btn btn--primary btn--sm"&gt;Small&lt;/button&gt;<br>
-                        &lt;button class="btn btn--primary"&gt;Default&lt;/button&gt;<br>
-                        &lt;button class="btn btn--primary btn--lg"&gt;Large&lt;/button&gt;
-                    </div>
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<div class="card">
+									<div class="card-body">
+										<h6 class="card-title">🔘 Buttons</h6>
+										<p class="card-text">
+											16 variants, 3 sizes, multiple states
+										</p>
+										<a href="#buttons" class="btn btn--primary btn--sm"
+											>View Examples</a
+										>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 mb-3">
+								<div class="card">
+									<div class="card-body">
+										<h6 class="card-title">📝 Forms</h6>
+										<p class="card-text">
+											Complete form controls with validation
+										</p>
+										<a href="#forms" class="btn btn--primary btn--sm"
+											>View Examples</a
+										>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 mb-3">
+								<div class="card">
+									<div class="card-body">
+										<h6 class="card-title">🃏 Cards</h6>
+										<p class="card-text">Flexible content containers</p>
+										<a href="#cards" class="btn btn--primary btn--sm"
+											>View Examples</a
+										>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 mb-3">
+								<div class="card">
+									<div class="card-body">
+										<h6 class="card-title">🚨 Alerts</h6>
+										<p class="card-text">Contextual feedback messages</p>
+										<a href="#interactive" class="btn btn--primary btn--sm"
+											>View Examples</a
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <h3>Button States</h3>
-                    <div class="example-box">
-                        <button class="btn btn--primary me-2">Normal</button>
-                        <button class="btn btn--primary me-2" disabled>Disabled</button>
-                        <button class="btn btn--primary btn--loading me-2">Loading</button>
-                    </div>
-                    <div class="code-block">
-                        &lt;button class="btn btn--primary"&gt;Normal&lt;/button&gt;<br>
-                        &lt;button class="btn btn--primary" disabled&gt;Disabled&lt;/button&gt;<br>
-                        &lt;button class="btn btn--primary btn--loading"&gt;Loading&lt;/button&gt;
-                    </div>
+					<!-- Buttons Section -->
+					<div id="buttons" class="section">
+						<h2>🔘 Buttons</h2>
 
-                    <h3>Button Groups</h3>
-                    <div class="example-box">
-                        <div class="btn-group mb-3">
-                            <button class="btn btn--primary">Left</button>
-                            <button class="btn btn--primary">Middle</button>
-                            <button class="btn btn--primary">Right</button>
-                        </div>
-                        <br>
-                        <div class="btn-group btn-group--vertical">
-                            <button class="btn btn--secondary">Top</button>
-                            <button class="btn btn--secondary">Middle</button>
-                            <button class="btn btn--secondary">Bottom</button>
-                        </div>
-                    </div>
-                    <div class="code-block">
-                        &lt;div class="btn-group"&gt;<br>
-                        &nbsp;&nbsp;&lt;button class="btn btn--primary"&gt;Left&lt;/button&gt;<br>
-                        &nbsp;&nbsp;&lt;button class="btn btn--primary"&gt;Middle&lt;/button&gt;<br>
-                        &nbsp;&nbsp;&lt;button class="btn btn--primary"&gt;Right&lt;/button&gt;<br>
-                        &lt;/div&gt;
-                    </div>
-                </div>
+						<h3>Solid Button Variants</h3>
+						<div class="example-box">
+							<button class="btn btn--primary me-2 mb-2">Primary</button>
+							<button class="btn btn--secondary me-2 mb-2">Secondary</button>
+							<button class="btn btn--success me-2 mb-2">Success</button>
+							<button class="btn btn--danger me-2 mb-2">Danger</button>
+							<button class="btn btn--warning me-2 mb-2">Warning</button>
+							<button class="btn btn--info me-2 mb-2">Info</button>
+							<button class="btn btn--light me-2 mb-2">Light</button>
+							<button class="btn btn--dark me-2 mb-2">Dark</button>
+						</div>
+						<div class="code-block">
+							&lt;button class="btn btn--primary"&gt;Primary&lt;/button&gt;<br />
+							&lt;button class="btn btn--success"&gt;Success&lt;/button&gt;<br />
+							&lt;button class="btn btn--danger"&gt;Danger&lt;/button&gt;
+						</div>
 
-                <!-- Forms Section -->
-                <div id="forms" class="section">
-                    <h2>📝 Forms</h2>
-                    
-                    <h3>Form Controls</h3>
-                    <div class="example-box">
-                        <form>
-                            <div class="mb-md">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                                <div class="form-text">We'll never share your email with anyone else.</div>
-                            </div>
-                            <div class="mb-md">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password">
-                            </div>
-                            <div class="mb-md">
-                                <label for="textarea" class="form-label">Message</label>
-                                <textarea class="form-control" id="textarea" rows="3" placeholder="Your message here..."></textarea>
-                            </div>
-                            <div class="mb-md">
-                                <label for="select" class="form-label">Select option</label>
-                                <select class="form-control" id="select">
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                    <option>Option 3</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn--primary">Submit</button>
-                        </form>
-                    </div>
+						<h3>Outline Button Variants</h3>
+						<div class="example-box">
+							<button class="btn btn--outline-primary me-2 mb-2">
+								Primary
+							</button>
+							<button class="btn btn--outline-secondary me-2 mb-2">
+								Secondary
+							</button>
+							<button class="btn btn--outline-success me-2 mb-2">
+								Success
+							</button>
+							<button class="btn btn--outline-danger me-2 mb-2">Danger</button>
+							<button class="btn btn--outline-warning me-2 mb-2">
+								Warning
+							</button>
+							<button class="btn btn--outline-info me-2 mb-2">Info</button>
+							<button class="btn btn--outline-light me-2 mb-2">Light</button>
+							<button class="btn btn--outline-dark me-2 mb-2">Dark</button>
+						</div>
 
-                    <h3>Checkboxes and Radios</h3>
-                    <div class="example-box">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Default checkbox
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Checked checkbox
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Default radio
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Checked radio
-                            </label>
-                        </div>
-                    </div>
+						<h3>Button Sizes</h3>
+						<div class="example-box">
+							<button class="btn btn--primary btn--sm me-2">Small</button>
+							<button class="btn btn--primary me-2">Default</button>
+							<button class="btn btn--primary btn--lg me-2">Large</button>
+						</div>
+						<div class="code-block">
+							&lt;button class="btn btn--primary
+							btn--sm"&gt;Small&lt;/button&gt;<br />
+							&lt;button class="btn btn--primary"&gt;Default&lt;/button&gt;<br />
+							&lt;button class="btn btn--primary
+							btn--lg"&gt;Large&lt;/button&gt;
+						</div>
 
-                    <h3>Validation States</h3>
-                    <div class="example-box">
-                        <div class="mb-md">
-                            <label for="validInput" class="form-label">Valid Input</label>
-                            <input type="text" class="form-control is-valid" id="validInput" value="Valid input">
-                            <div class="form-text">Looks good!</div>
-                        </div>
-                        <div class="mb-md">
-                            <label for="invalidInput" class="form-label">Invalid Input</label>
-                            <input type="text" class="form-control is-invalid" id="invalidInput" value="Invalid input">
-                            <div class="form-text">Please provide a valid input.</div>
-                        </div>
-                    </div>
-                </div>
+						<h3>Button States</h3>
+						<div class="example-box">
+							<button class="btn btn--primary me-2">Normal</button>
+							<button class="btn btn--primary me-2" disabled>Disabled</button>
+							<button class="btn btn--primary btn--loading me-2">
+								Loading
+							</button>
+						</div>
+						<div class="code-block">
+							&lt;button class="btn btn--primary"&gt;Normal&lt;/button&gt;<br />
+							&lt;button class="btn btn--primary"
+							disabled&gt;Disabled&lt;/button&gt;<br />
+							&lt;button class="btn btn--primary
+							btn--loading"&gt;Loading&lt;/button&gt;
+						</div>
 
-                <!-- Cards Section -->
-                <div id="cards" class="section">
-                    <h2>🃏 Cards</h2>
-                    
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="https://via.placeholder.com/300x200?text=Card+Image" class="card-img-top" alt="Card image">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card Title</h5>
-                                    <h6 class="card-subtitle mb-2 text-muted">Card Subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn--primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    Featured
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Special title treatment</h5>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn--primary">Go somewhere</a>
-                                </div>
-                                <div class="card-footer text-muted">
-                                    2 days ago
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <div class="card text-center">
-                                <div class="card-body">
-                                    <h5 class="card-title">Centered Card</h5>
-                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn--primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<h3>Button Groups</h3>
+						<div class="example-box">
+							<div class="btn-group mb-3">
+								<button class="btn btn--primary">Left</button>
+								<button class="btn btn--primary">Middle</button>
+								<button class="btn btn--primary">Right</button>
+							</div>
+							<br />
+							<div class="btn-group btn-group--vertical">
+								<button class="btn btn--secondary">Top</button>
+								<button class="btn btn--secondary">Middle</button>
+								<button class="btn btn--secondary">Bottom</button>
+							</div>
+						</div>
+						<div class="code-block">
+							&lt;div class="btn-group"&gt;<br />
+							&nbsp;&nbsp;&lt;button class="btn
+							btn--primary"&gt;Left&lt;/button&gt;<br />
+							&nbsp;&nbsp;&lt;button class="btn
+							btn--primary"&gt;Middle&lt;/button&gt;<br />
+							&nbsp;&nbsp;&lt;button class="btn
+							btn--primary"&gt;Right&lt;/button&gt;<br />
+							&lt;/div&gt;
+						</div>
+					</div>
 
-                <!-- Navigation Section -->
-                <div id="navigation" class="section">
-                    <h2>🧭 Navigation</h2>
-                    
-                    <h3>Navbar</h3>
-                    <div class="example-box">
-                        <nav class="navbar navbar-expand-md">
-                            <div class="container">
-                                <a class="navbar-brand" href="#">Hikma UI</a>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarNav">
-                                    <ul class="navbar-nav ms-auto">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Home</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Features</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Pricing</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled">Disabled</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
+					<!-- Forms Section -->
+					<div id="forms" class="section">
+						<h2>📝 Forms</h2>
 
-                    <h3>Breadcrumb</h3>
-                    <div class="example-box">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Data</li>
-                            </ol>
-                        </nav>
-                    </div>
+						<h3>Form Controls</h3>
+						<div class="example-box">
+							<form>
+								<div class="mb-md">
+									<label for="email" class="form-label">Email address</label>
+									<input
+										type="email"
+										class="form-control"
+										id="email"
+										placeholder="name@example.com"
+									/>
+									<div class="form-text">
+										We'll never share your email with anyone else.
+									</div>
+								</div>
+								<div class="mb-md">
+									<label for="password" class="form-label">Password</label>
+									<input
+										type="password"
+										class="form-control"
+										id="password"
+										placeholder="Password"
+									/>
+								</div>
+								<div class="mb-md">
+									<label for="textarea" class="form-label">Message</label>
+									<textarea
+										class="form-control"
+										id="textarea"
+										rows="3"
+										placeholder="Your message here..."
+									></textarea>
+								</div>
+								<div class="mb-md">
+									<label for="select" class="form-label">Select option</label>
+									<select class="form-control" id="select">
+										<option>Option 1</option>
+										<option>Option 2</option>
+										<option>Option 3</option>
+									</select>
+								</div>
+								<button type="submit" class="btn btn--primary">Submit</button>
+							</form>
+						</div>
 
-                    <h3>Pagination</h3>
-                    <div class="example-box">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active" aria-current="page">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+						<h3>Checkboxes and Radios</h3>
+						<div class="example-box">
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									value=""
+									id="flexCheckDefault"
+								/>
+								<label class="form-check-label" for="flexCheckDefault">
+									Default checkbox
+								</label>
+							</div>
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									value=""
+									id="flexCheckChecked"
+									checked
+								/>
+								<label class="form-check-label" for="flexCheckChecked">
+									Checked checkbox
+								</label>
+							</div>
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="radio"
+									name="flexRadioDefault"
+									id="flexRadioDefault1"
+								/>
+								<label class="form-check-label" for="flexRadioDefault1">
+									Default radio
+								</label>
+							</div>
+							<div class="form-check">
+								<input
+									class="form-check-input"
+									type="radio"
+									name="flexRadioDefault"
+									id="flexRadioDefault2"
+									checked
+								/>
+								<label class="form-check-label" for="flexRadioDefault2">
+									Checked radio
+								</label>
+							</div>
+						</div>
 
-                <!-- Interactive Section -->
-                <div id="interactive" class="section">
-                    <h2>🎪 Interactive Components</h2>
-                    
-                    <h3>Alerts</h3>
-                    <div class="example-box">
-                        <div class="alert alert-primary" role="alert">
-                            A simple primary alert—check it out!
-                        </div>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Well done!</strong> You successfully read this important alert message.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                        </div>
-                        <div class="alert alert-warning" role="alert">
-                            A simple warning alert—check in on some of those fields below.
-                        </div>
-                        <div class="alert alert-danger" role="alert">
-                            A simple danger alert—check in on some of those fields below.
-                        </div>
-                    </div>
+						<h3>Validation States</h3>
+						<div class="example-box">
+							<div class="mb-md">
+								<label for="validInput" class="form-label">Valid Input</label>
+								<input
+									type="text"
+									class="form-control is-valid"
+									id="validInput"
+									value="Valid input"
+								/>
+								<div class="form-text">Looks good!</div>
+							</div>
+							<div class="mb-md">
+								<label for="invalidInput" class="form-label"
+									>Invalid Input</label
+								>
+								<input
+									type="text"
+									class="form-control is-invalid"
+									id="invalidInput"
+									value="Invalid input"
+								/>
+								<div class="form-text">Please provide a valid input.</div>
+							</div>
+						</div>
+					</div>
 
-                    <h3>Badges</h3>
-                    <div class="example-box">
-                        <span class="badge badge-primary me-1">Primary</span>
-                        <span class="badge badge-secondary me-1">Secondary</span>
-                        <span class="badge badge-success me-1">Success</span>
-                        <span class="badge badge-danger me-1">Danger</span>
-                        <span class="badge badge-warning me-1">Warning</span>
-                        <span class="badge badge-info me-1">Info</span>
-                        <span class="badge badge-light me-1">Light</span>
-                        <span class="badge badge-dark me-1">Dark</span>
-                        <br><br>
-                        <span class="badge rounded-pill badge-primary me-1">Primary</span>
-                        <span class="badge rounded-pill badge-secondary me-1">Secondary</span>
-                        <span class="badge rounded-pill badge-success me-1">Success</span>
-                    </div>
+					<!-- Cards Section -->
+					<div id="cards" class="section">
+						<h2>🃏 Cards</h2>
 
-                    <h3>Modal</h3>
-                    <div class="example-box">
-                        <button type="button" class="btn btn--primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Launch demo modal
-                        </button>
-                        
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        This is the content of your modal. You can put any HTML here.
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn--secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn--primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+						<div class="row">
+							<div class="col-md-4 mb-4">
+								<div class="card">
+									<img
+										src="https://via.placeholder.com/300x200?text=Card+Image"
+										class="card-img-top"
+										alt="Card image"
+									/>
+									<div class="card-body">
+										<h5 class="card-title">Card Title</h5>
+										<h6 class="card-subtitle mb-2 text-muted">Card Subtitle</h6>
+										<p class="card-text">
+											Some quick example text to build on the card title and
+											make up the bulk of the card's content.
+										</p>
+										<a href="#" class="btn btn--primary">Go somewhere</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4 mb-4">
+								<div class="card">
+									<div class="card-header">Featured</div>
+									<div class="card-body">
+										<h5 class="card-title">Special title treatment</h5>
+										<p class="card-text">
+											With supporting text below as a natural lead-in to
+											additional content.
+										</p>
+										<a href="#" class="btn btn--primary">Go somewhere</a>
+									</div>
+									<div class="card-footer text-muted">2 days ago</div>
+								</div>
+							</div>
+							<div class="col-md-4 mb-4">
+								<div class="card text-center">
+									<div class="card-body">
+										<h5 class="card-title">Centered Card</h5>
+										<p class="card-text">
+											This card has supporting text below as a natural lead-in
+											to additional content.
+										</p>
+										<a href="#" class="btn btn--primary">Go somewhere</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-                    <h3>Dropdown</h3>
-                    <div class="example-box">
-                        <div class="dropdown">
-                            <button class="btn btn--primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-                                Dropdown button
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    </div>
+					<!-- Navigation Section -->
+					<div id="navigation" class="section">
+						<h2>🧭 Navigation</h2>
 
-                    <h3>Spinners</h3>
-                    <div class="example-box">
-                        <div class="spinner-border text-primary me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <div class="spinner-border text-secondary me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <div class="spinner-border text-success me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <div class="spinner-border text-danger me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <br><br>
-                        <div class="spinner-grow text-primary me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <div class="spinner-grow text-secondary me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <div class="spinner-grow text-success me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                        <div class="spinner-grow text-danger me-2" role="status">
-                            <span class="sr-only">Loading...</span>
-                        </div>
-                    </div>
+						<h3>Navbar</h3>
+						<div class="example-box">
+							<nav class="navbar navbar-expand-md">
+								<div class="container">
+									<a class="navbar-brand" href="#">Byte UI</a>
+									<button
+										class="navbar-toggler"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#navbarNav"
+									>
+										<span class="navbar-toggler-icon"></span>
+									</button>
+									<div class="collapse navbar-collapse" id="navbarNav">
+										<ul class="navbar-nav ms-auto">
+											<li class="nav-item">
+												<a class="nav-link active" href="#">Home</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Features</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="#">Pricing</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link disabled">Disabled</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</div>
 
-                    <h3>Toast</h3>
-                    <div class="example-box">
-                        <button type="button" class="btn btn--primary" id="liveToastBtn">
-                            Show live toast
-                        </button>
-                        
-                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                            <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-                                <div class="toast-header">
-                                    <img src="https://via.placeholder.com/20x20" class="rounded me-2" alt="...">
-                                    <strong class="me-auto">Hikma UI</strong>
-                                    <small>11 mins ago</small>
-                                    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-                                </div>
-                                <div class="toast-body">
-                                    Hello, world! This is a toast message.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<h3>Breadcrumb</h3>
+						<div class="example-box">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item"><a href="#">Home</a></li>
+									<li class="breadcrumb-item"><a href="#">Library</a></li>
+									<li class="breadcrumb-item active" aria-current="page">
+										Data
+									</li>
+								</ol>
+							</nav>
+						</div>
 
-                <!-- Utilities Section -->
-                <div id="utilities" class="section">
-                    <h2>🛠️ Utility Classes</h2>
-                    
-                    <h3>Spacing</h3>
-                    <div class="example-box">
-                        <div class="p-xs bg-primary text-white d-inline-block me-2 mb-2">p-xs</div>
-                        <div class="p-sm bg-secondary text-white d-inline-block me-2 mb-2">p-sm</div>
-                        <div class="p-md bg-success text-white d-inline-block me-2 mb-2">p-md</div>
-                        <div class="p-lg bg-danger text-white d-inline-block me-2 mb-2">p-lg</div>
-                        <div class="p-xl bg-info text-white d-inline-block me-2 mb-2">p-xl</div>
-                    </div>
+						<h3>Pagination</h3>
+						<div class="example-box">
+							<nav aria-label="Page navigation">
+								<ul class="pagination">
+									<li class="page-item disabled">
+										<a class="page-link" href="#" tabindex="-1">Previous</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item active" aria-current="page">
+										<a class="page-link" href="#">2</a>
+									</li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item">
+										<a class="page-link" href="#">Next</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
 
-                    <h3>Flexbox</h3>
-                    <div class="example-box">
-                        <div class="d-flex justify-content-between align-items-center bg-light p-md mb-2">
-                            <div class="bg-primary text-white p-sm">Item 1</div>
-                            <div class="bg-secondary text-white p-sm">Item 2</div>
-                            <div class="bg-success text-white p-sm">Item 3</div>
-                        </div>
-                        <div class="d-flex flex-column align-items-center bg-light p-md">
-                            <div class="bg-primary text-white p-sm mb-2">Column Item 1</div>
-                            <div class="bg-secondary text-white p-sm mb-2">Column Item 2</div>
-                            <div class="bg-success text-white p-sm">Column Item 3</div>
-                        </div>
-                    </div>
+					<!-- Interactive Section -->
+					<div id="interactive" class="section">
+						<h2>🎪 Interactive Components</h2>
 
-                    <h3>Text Utilities</h3>
-                    <div class="example-box">
-                        <p class="text-start">Left aligned text</p>
-                        <p class="text-center">Center aligned text</p>
-                        <p class="text-end">Right aligned text</p>
-                        <p class="text-uppercase">Uppercase text</p>
-                        <p class="text-lowercase">LOWERCASE TEXT</p>
-                        <p class="text-capitalize">capitalized text</p>
-                        <p class="fw-bold">Bold text</p>
-                        <p class="fst-italic">Italic text</p>
-                    </div>
-                </div>
+						<h3>Alerts</h3>
+						<div class="example-box">
+							<div class="alert alert-primary" role="alert">
+								A simple primary alert—check it out!
+							</div>
+							<div
+								class="alert alert-success alert-dismissible fade show"
+								role="alert"
+							>
+								<strong>Well done!</strong> You successfully read this important
+								alert message.
+								<button
+									type="button"
+									class="btn-close"
+									data-bs-dismiss="alert"
+								></button>
+							</div>
+							<div class="alert alert-warning" role="alert">
+								A simple warning alert—check in on some of those fields below.
+							</div>
+							<div class="alert alert-danger" role="alert">
+								A simple danger alert—check in on some of those fields below.
+							</div>
+						</div>
 
-                <!-- Customization Section -->
-                <div id="customization" class="section">
-                    <h2>🎨 Customization</h2>
-                    
-                    <h3>CSS Custom Properties</h3>
-                    <p>Hikma UI uses CSS custom properties for easy customization:</p>
-                    <div class="code-block">
-                        :root {<br>
-                        &nbsp;&nbsp;--hikma-color-primary: #007bff;<br>
-                        &nbsp;&nbsp;--hikma-color-success: #28a745;<br>
-                        &nbsp;&nbsp;--hikma-color-danger: #dc3545;<br>
-                        &nbsp;&nbsp;--hikma-font-size-base: 1rem;<br>
-                        &nbsp;&nbsp;--hikma-border-radius: 0.375rem;<br>
-                        }
-                    </div>
+						<h3>Badges</h3>
+						<div class="example-box">
+							<span class="badge badge-primary me-1">Primary</span>
+							<span class="badge badge-secondary me-1">Secondary</span>
+							<span class="badge badge-success me-1">Success</span>
+							<span class="badge badge-danger me-1">Danger</span>
+							<span class="badge badge-warning me-1">Warning</span>
+							<span class="badge badge-info me-1">Info</span>
+							<span class="badge badge-light me-1">Light</span>
+							<span class="badge badge-dark me-1">Dark</span>
+							<br /><br />
+							<span class="badge rounded-pill badge-primary me-1">Primary</span>
+							<span class="badge rounded-pill badge-secondary me-1"
+								>Secondary</span
+							>
+							<span class="badge rounded-pill badge-success me-1">Success</span>
+						</div>
 
-                    <h3>Dark Mode</h3>
-                    <div class="example-box">
-                        <button type="button" class="btn btn--secondary" id="darkModeToggle">
-                            Toggle Dark Mode
-                        </button>
-                        <p class="mt-2">Click the button above to toggle between light and dark themes.</p>
-                    </div>
+						<h3>Modal</h3>
+						<div class="example-box">
+							<button
+								type="button"
+								class="btn btn--primary"
+								data-bs-toggle="modal"
+								data-bs-target="#exampleModal"
+							>
+								Launch demo modal
+							</button>
 
-                    <h3>Responsive Design</h3>
-                    <p>Hikma UI uses a mobile-first approach with the following breakpoints:</p>
-                    <div class="code-block">
-                        • SM: 576px and up<br>
-                        • MD: 768px and up<br>
-                        • LG: 992px and up<br>
-                        • XL: 1200px and up<br>
-                        • XXL: 1400px and up
-                    </div>
-                </div>
+							<div
+								class="modal fade"
+								id="exampleModal"
+								tabindex="-1"
+								aria-labelledby="exampleModalLabel"
+								aria-hidden="true"
+							>
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">
+												Modal title
+											</h5>
+											<button
+												type="button"
+												class="btn-close"
+												data-bs-dismiss="modal"
+											></button>
+										</div>
+										<div class="modal-body">
+											This is the content of your modal. You can put any HTML
+											here.
+										</div>
+										<div class="modal-footer">
+											<button
+												type="button"
+												class="btn btn--secondary"
+												data-bs-dismiss="modal"
+											>
+												Close
+											</button>
+											<button type="button" class="btn btn--primary">
+												Save changes
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-                <!-- Footer -->
-                <div class="section">
-                    <h2>📞 Support & Documentation</h2>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h5>📚 Documentation</h5>
-                            <ul>
-                                <li><a href="./docs/README.md">Complete Documentation</a></li>
-                                <li><a href="./docs/guides/getting-started.md">Getting Started</a></li>
-                                <li><a href="./docs/guides/customization.md">Customization Guide</a></li>
-                                <li><a href="./docs/api/javascript.md">JavaScript API</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h5>🔗 Links</h5>
-                            <ul>
-                                <li><a href="https://github.com/mdferdousalam/hikma-ui">GitHub Repository</a></li>
-                                <li><a href="https://github.com/mdferdousalam/hikma-ui/issues">Report Issues</a></li>
-                                <li><a href="https://github.com/mdferdousalam/hikma-ui/discussions">Discussions</a></li>
-                                <li><a href="https://www.npmjs.com/package/hikma-ui">NPM Package</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h5>💬 Community</h5>
-                            <p>Join our community to get help, share ideas, and contribute to the project.</p>
-                            <a href="https://github.com/mdferdousalam/hikma-ui/discussions" class="btn btn--primary">Join Discussion</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+						<h3>Dropdown</h3>
+						<div class="example-box">
+							<div class="dropdown">
+								<button
+									class="btn btn--primary dropdown-toggle"
+									type="button"
+									id="dropdownMenuButton"
+									data-bs-toggle="dropdown"
+								>
+									Dropdown button
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									<li><a class="dropdown-item" href="#">Action</a></li>
+									<li><a class="dropdown-item" href="#">Another action</a></li>
+									<li>
+										<a class="dropdown-item" href="#">Something else here</a>
+									</li>
+									<li><hr class="dropdown-divider" /></li>
+									<li><a class="dropdown-item" href="#">Separated link</a></li>
+								</ul>
+							</div>
+						</div>
 
-    <!-- JavaScript -->
-    <script src="./dist/hikma-ui-js.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
+						<h3>Spinners</h3>
+						<div class="example-box">
+							<div class="spinner-border text-primary me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="spinner-border text-secondary me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="spinner-border text-success me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="spinner-border text-danger me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<br /><br />
+							<div class="spinner-grow text-primary me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="spinner-grow text-secondary me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="spinner-grow text-success me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+							<div class="spinner-grow text-danger me-2" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+						</div>
 
-            // Dark mode toggle
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const body = document.body;
+						<h3>Toast</h3>
+						<div class="example-box">
+							<button type="button" class="btn btn--primary" id="liveToastBtn">
+								Show live toast
+							</button>
 
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                body.classList.add(savedTheme);
-            }
+							<div class="toast-container position-fixed bottom-0 end-0 p-3">
+								<div
+									id="liveToast"
+									class="toast hide"
+									role="alert"
+									aria-live="assertive"
+									aria-atomic="true"
+								>
+									<div class="toast-header">
+										<img
+											src="https://via.placeholder.com/20x20"
+											class="rounded me-2"
+											alt="..."
+										/>
+										<strong class="me-auto">Byte UI</strong>
+										<small>11 mins ago</small>
+										<button
+											type="button"
+											class="btn-close"
+											data-bs-dismiss="toast"
+										></button>
+									</div>
+									<div class="toast-body">
+										Hello, world! This is a toast message.
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-            darkModeToggle.addEventListener('click', () => {
-                if (body.classList.contains('dark-mode')) {
-                    body.classList.remove('dark-mode');
-                    localStorage.setItem('theme', 'light-mode');
-                } else {
-                    body.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark-mode');
-                }
-            });
+					<!-- Utilities Section -->
+					<div id="utilities" class="section">
+						<h2>🛠️ Utility Classes</h2>
 
-            // Highlight active navigation
-            const sections = document.querySelectorAll('.section');
-            const navLinks = document.querySelectorAll('.sidebar a');
+						<h3>Spacing</h3>
+						<div class="example-box">
+							<div class="p-xs bg-primary text-white d-inline-block me-2 mb-2">
+								p-xs
+							</div>
+							<div
+								class="p-sm bg-secondary text-white d-inline-block me-2 mb-2"
+							>
+								p-sm
+							</div>
+							<div class="p-md bg-success text-white d-inline-block me-2 mb-2">
+								p-md
+							</div>
+							<div class="p-lg bg-danger text-white d-inline-block me-2 mb-2">
+								p-lg
+							</div>
+							<div class="p-xl bg-info text-white d-inline-block me-2 mb-2">
+								p-xl
+							</div>
+						</div>
 
-            const observerOptions = {
-                root: null,
-                rootMargin: '-20% 0px -80% 0px',
-                threshold: 0
-            };
+						<h3>Flexbox</h3>
+						<div class="example-box">
+							<div
+								class="d-flex justify-content-between align-items-center bg-light p-md mb-2"
+							>
+								<div class="bg-primary text-white p-sm">Item 1</div>
+								<div class="bg-secondary text-white p-sm">Item 2</div>
+								<div class="bg-success text-white p-sm">Item 3</div>
+							</div>
+							<div class="d-flex flex-column align-items-center bg-light p-md">
+								<div class="bg-primary text-white p-sm mb-2">Column Item 1</div>
+								<div class="bg-secondary text-white p-sm mb-2">
+									Column Item 2
+								</div>
+								<div class="bg-success text-white p-sm">Column Item 3</div>
+							</div>
+						</div>
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.style.color = link.getAttribute('href') === `#${id}` ? '#007bff' : '#6c757d';
-                        });
-                    }
-                });
-            }, observerOptions);
+						<h3>Text Utilities</h3>
+						<div class="example-box">
+							<p class="text-start">Left aligned text</p>
+							<p class="text-center">Center aligned text</p>
+							<p class="text-end">Right aligned text</p>
+							<p class="text-uppercase">Uppercase text</p>
+							<p class="text-lowercase">LOWERCASE TEXT</p>
+							<p class="text-capitalize">capitalized text</p>
+							<p class="fw-bold">Bold text</p>
+							<p class="fst-italic">Italic text</p>
+						</div>
+					</div>
 
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
-</body>
+					<!-- Customization Section -->
+					<div id="customization" class="section">
+						<h2>🎨 Customization</h2>
+
+						<h3>CSS Custom Properties</h3>
+						<p>Byte UI uses CSS custom properties for easy customization:</p>
+						<div class="code-block">
+							:root {<br />
+							&nbsp;&nbsp;--byte-color-primary: #007bff;<br />
+							&nbsp;&nbsp;--byte-color-success: #28a745;<br />
+							&nbsp;&nbsp;--byte-color-danger: #dc3545;<br />
+							&nbsp;&nbsp;--byte-font-size-base: 1rem;<br />
+							&nbsp;&nbsp;--byte-border-radius: 0.375rem;<br />
+							}
+						</div>
+
+						<h3>Dark Mode</h3>
+						<div class="example-box">
+							<button
+								type="button"
+								class="btn btn--secondary"
+								id="darkModeToggle"
+							>
+								Toggle Dark Mode
+							</button>
+							<p class="mt-2">
+								Click the button above to toggle between light and dark themes.
+							</p>
+						</div>
+
+						<h3>Responsive Design</h3>
+						<p>
+							Byte UI uses a mobile-first approach with the following
+							breakpoints:
+						</p>
+						<div class="code-block">
+							• SM: 576px and up<br />
+							• MD: 768px and up<br />
+							• LG: 992px and up<br />
+							• XL: 1200px and up<br />
+							• XXL: 1400px and up
+						</div>
+					</div>
+
+					<!-- Footer -->
+					<div class="section">
+						<h2>📞 Support & Documentation</h2>
+						<div class="row">
+							<div class="col-md-4">
+								<h5>📚 Documentation</h5>
+								<ul>
+									<li><a href="./docs/README.md">Complete Documentation</a></li>
+									<li>
+										<a href="./docs/guides/getting-started.md"
+											>Getting Started</a
+										>
+									</li>
+									<li>
+										<a href="./docs/guides/customization.md"
+											>Customization Guide</a
+										>
+									</li>
+									<li><a href="./docs/api/javascript.md">JavaScript API</a></li>
+								</ul>
+							</div>
+							<div class="col-md-4">
+								<h5>🔗 Links</h5>
+								<ul>
+									<li>
+										<a href="https://github.com/mdferdousalam/byte-ui"
+											>GitHub Repository</a
+										>
+									</li>
+									<li>
+										<a href="https://github.com/mdferdousalam/byte-ui/issues"
+											>Report Issues</a
+										>
+									</li>
+									<li>
+										<a
+											href="https://github.com/mdferdousalam/byte-ui/discussions"
+											>Discussions</a
+										>
+									</li>
+									<li>
+										<a href="https://www.npmjs.com/package/byte-ui"
+											>NPM Package</a
+										>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-4">
+								<h5>💬 Community</h5>
+								<p>
+									Join our community to get help, share ideas, and contribute to
+									the project.
+								</p>
+								<a
+									href="https://github.com/mdferdousalam/byte-ui/discussions"
+									class="btn btn--primary"
+									>Join Discussion</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- JavaScript -->
+		<script src="./dist/byte-ui-js.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// Smooth scrolling for navigation links
+				document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+					anchor.addEventListener('click', function (e) {
+						e.preventDefault();
+						const target = document.querySelector(this.getAttribute('href'));
+						if (target) {
+							target.scrollIntoView({
+								behavior: 'smooth',
+								block: 'start',
+							});
+						}
+					});
+				});
+
+				// Dark mode toggle
+				const darkModeToggle = document.getElementById('darkModeToggle');
+				const body = document.body;
+
+				// Check for saved theme preference
+				const savedTheme = localStorage.getItem('theme');
+				if (savedTheme) {
+					body.classList.add(savedTheme);
+				}
+
+				darkModeToggle.addEventListener('click', () => {
+					if (body.classList.contains('dark-mode')) {
+						body.classList.remove('dark-mode');
+						localStorage.setItem('theme', 'light-mode');
+					} else {
+						body.classList.add('dark-mode');
+						localStorage.setItem('theme', 'dark-mode');
+					}
+				});
+
+				// Highlight active navigation
+				const sections = document.querySelectorAll('.section');
+				const navLinks = document.querySelectorAll('.sidebar a');
+
+				const observerOptions = {
+					root: null,
+					rootMargin: '-20% 0px -80% 0px',
+					threshold: 0,
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const id = entry.target.getAttribute('id');
+							navLinks.forEach((link) => {
+								link.style.color =
+									link.getAttribute('href') === `#${id}`
+										? '#007bff'
+										: '#6c757d';
+							});
+						}
+					});
+				}, observerOptions);
+
+				sections.forEach((section) => {
+					observer.observe(section);
+				});
+			});
+		</script>
+	</body>
 </html>

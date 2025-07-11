@@ -9,18 +9,18 @@
 }
 
 html {
-	line-height: var(--hikma-line-height-base);
+	line-height: var(--byte-line-height-base);
 	// Optionally set root font-size if not relying on browser default 16px
 	// font-size: 16px; // Or 62.5% for 10px base rem (but better to keep 16px base for accessibility)
 }
 
 body {
 	margin: 0; // Remove default body margin
-	font-family: var(--hikma-font-family-base);
-	font-size: var(--hikma-font-size-base);
-	line-height: var(--hikma-line-height-base);
-	color: var(--hikma-text-color-base);
-	background-color: var(--hikma-background-color-base);
+	font-family: var(--byte-font-family-base);
+	font-size: var(--byte-font-size-base);
+	line-height: var(--byte-line-height-base);
+	color: var(--byte-text-color-base);
+	background-color: var(--byte-background-color-base);
 	-webkit-font-smoothing: antialiased; // Improves text rendering on macOS/iOS
 	-moz-osx-font-smoothing: grayscale; // Improves text rendering on macOS
 }
@@ -33,43 +33,43 @@ h4,
 h5,
 h6 {
 	margin-top: 0;
-	margin-bottom: var(--hikma-spacing-md); // Consistent spacing below headings
+	margin-bottom: var(--byte-spacing-md); // Consistent spacing below headings
 	line-height: 1.2; // Tighter line-height for headings
-	color: var(--hikma-text-color-base); // Ensure headings use base text color
+	color: var(--byte-text-color-base); // Ensure headings use base text color
 }
 
 h1 {
-	font-size: var(--hikma-h1-font-size);
+	font-size: var(--byte-h1-font-size);
 }
 h2 {
-	font-size: var(--hikma-h2-font-size);
+	font-size: var(--byte-h2-font-size);
 }
 h3 {
-	font-size: var(--hikma-h3-font-size);
+	font-size: var(--byte-h3-font-size);
 }
 h4 {
-	font-size: var(--hikma-h4-font-size);
+	font-size: var(--byte-h4-font-size);
 }
 h5 {
-	font-size: var(--hikma-h5-font-size);
+	font-size: var(--byte-h5-font-size);
 }
 h6 {
-	font-size: var(--hikma-h6-font-size);
+	font-size: var(--byte-h6-font-size);
 }
 
 // Paragraphs
 p {
 	margin-top: 0;
-	margin-bottom: var(--hikma-spacing-lg); // Consistent spacing below paragraphs
+	margin-bottom: var(--byte-spacing-lg); // Consistent spacing below paragraphs
 }
 
 // Links
 a {
-	color: var(--hikma-color-primary); // Default link color
+	color: var(--byte-color-primary); // Default link color
 	text-decoration: none; // Remove default underline
 
 	&:hover {
-		color: var(--hikma-color-primary-dark);
+		color: var(--byte-color-primary-dark);
 		text-decoration: underline; // Add underline on hover
 	}
 }
@@ -84,9 +84,9 @@ img {
 // List styles
 ul,
 ol {
-	padding-left: var(--hikma-spacing-xl); // Default padding for lists
+	padding-left: var(--byte-spacing-xl); // Default padding for lists
 	margin-top: 0;
-	margin-bottom: var(--hikma-spacing-lg);
+	margin-bottom: var(--byte-spacing-lg);
 }
 ul ul,
 ol ol {

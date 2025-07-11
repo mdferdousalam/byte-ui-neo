@@ -5,10 +5,10 @@
 	display: flex;
 	flex-wrap: wrap; // Allows columns to wrap to the next line
 	margin-right: calc(
-		var(--hikma-spacing-md) * -1
+		var(--byte-spacing-md) * -1
 	); // Negative margin to offset column padding
 	margin-left: calc(
-		var(--hikma-spacing-md) * -1
+		var(--byte-spacing-md) * -1
 	); // Negative margin to offset column padding
 }
 
@@ -18,8 +18,8 @@
 	.col-#{$i} {
 		flex: 0 0 auto;
 		width: calc(100% / 12 * #{$i});
-		padding-right: var(--hikma-spacing-md);
-		padding-left: var(--hikma-spacing-md);
+		padding-right: var(--byte-spacing-md);
+		padding-left: var(--byte-spacing-md);
 	}
 }
 
@@ -39,8 +39,8 @@ $grid-breakpoints: (
 			.col-#{$name}-#{$i} {
 				flex: 0 0 auto;
 				width: calc(100% / 12 * #{$i});
-				padding-right: var(--hikma-spacing-md);
-				padding-left: var(--hikma-spacing-md);
+				padding-right: var(--byte-spacing-md);
+				padding-left: var(--byte-spacing-md);
 			}
 			.offset-#{$name}-#{$i} {
 				margin-left: calc(100% / 12 * #{$i});

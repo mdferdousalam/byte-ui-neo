@@ -111,7 +111,7 @@ function adjustTextColorForContrast(
 
 // Example Usage (for demonstration, won't run directly on page unless called)
 // You might use this in a component or script that applies styles.
-// For instance, you could dynamically set --hikma-text-color-base for certain elements.
+// For instance, you could dynamically set --byte-text-color-base for certain elements.
 
 // console.log("Adjusted text color for primary button:", adjustTextColorForContrast('#007bff', '#ffffff'));
 // console.log("Adjusted text color for dark background:", adjustTextColorForContrast('#343a40', '#ffffff'));

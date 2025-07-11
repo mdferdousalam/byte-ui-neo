@@ -3,53 +3,52 @@
 $hikma-base-font-size: 1rem; // এটি একটি Sass ভেরিয়েবল
 
 :root {
-	--hikma-font-size-base: #{$hikma-base-font-size};
-	--hikma-font-size-sm: #{$hikma-base-font-size * 0.875}; // উদাহরণ ছোট ফন্ট
-	--hikma-font-size-lg: #{$hikma-base-font-size * 1.25}; // এখানে গণনা করা হয়েছে
-	--hikma-font-size-xl: #{$hikma-base-font-size * 1.5}; // উদাহরণ বড় ফন্ট
+	--byte-font-size-base: #{$hikma-base-font-size};
+	--byte-font-size-sm: #{$hikma-base-font-size * 0.875}; // উদাহরণ ছোট ফন্ট
+	--byte-font-size-lg: #{$hikma-base-font-size * 1.25}; // এখানে গণনা করা হয়েছে
+	--byte-font-size-xl: #{$hikma-base-font-size * 1.5}; // উদাহরণ বড় ফন্ট
 
 	// Colors
-	--hikma-color-primary: #007bff;
-	--hikma-color-primary-hover: #0056b3;
-	--hikma-color-secondary: #6c757d;
-	--hikma-color-secondary-hover: #545b62;
-	--hikma-color-success: #28a745;
-	--hikma-color-danger: #dc3545;
-	--hikma-color-warning: #ffc107;
-	--hikma-color-info: #17a2b8;
-	--hikma-color-light: #f8f9fa;
-	--hikma-color-dark: #343a40;
-	
+	--byte-color-primary: #007bff;
+	--byte-color-primary-hover: #0056b3;
+	--byte-color-secondary: #6c757d;
+	--byte-color-secondary-hover: #545b62;
+	--byte-color-success: #28a745;
+	--byte-color-danger: #dc3545;
+	--byte-color-warning: #ffc107;
+	--byte-color-info: #17a2b8;
+	--byte-color-light: #f8f9fa;
+	--byte-color-dark: #343a40;
 
 	// Text Colors
-	--hikma-text-color-base: #212529;
-	--hikma-text-color-light: #6c757d;
-	--hikma-text-color-muted: #6c757d;
-	--hikma-text-color-white: #ffffff;
+	--byte-text-color-base: #212529;
+	--byte-text-color-light: #6c757d;
+	--byte-text-color-muted: #6c757d;
+	--byte-text-color-white: #ffffff;
 
 	// Background Colors
-	--hikma-bg-color-body: #ffffff;
-	--hikma-bg-color-dark: #343a40;
-	--hikma-bg-color-light: #f8f9fa;
+	--byte-bg-color-body: #ffffff;
+	--byte-bg-color-dark: #343a40;
+	--byte-bg-color-light: #f8f9fa;
 
 	// Spacing (using a consistent scale)
-	--hikma-spacing-unit: 0.25rem; // Base unit
-	--hikma-spacing-xs: calc(var(--hikma-spacing-unit) * 0.5); // 0.125rem
-	--hikma-spacing-sm: calc(var(--hikma-spacing-unit) * 1); // 0.25rem
-	--hikma-spacing-md: calc(var(--hikma-spacing-unit) * 2); // 0.5rem
-	--hikma-spacing-lg: calc(var(--hikma-spacing-unit) * 4); // 1rem
-	--hikma-spacing-xl: calc(var(--hikma-spacing-unit) * 8); // 2rem
+	--byte-spacing-unit: 0.25rem; // Base unit
+	--byte-spacing-xs: calc(var(--byte-spacing-unit) * 0.5); // 0.125rem
+	--byte-spacing-sm: calc(var(--byte-spacing-unit) * 1); // 0.25rem
+	--byte-spacing-md: calc(var(--byte-spacing-unit) * 2); // 0.5rem
+	--byte-spacing-lg: calc(var(--byte-spacing-unit) * 4); // 1rem
+	--byte-spacing-xl: calc(var(--byte-spacing-unit) * 8); // 2rem
 
 	// Typography
-	--hikma-font-family-base: 'Arial', sans-serif;
-	--hikma-font-size-base: 1rem; // 16px
-	--hikma-line-height-base: 1.5;
+	--byte-font-family-base: 'Arial', sans-serif;
+	--byte-font-size-base: 1rem; // 16px
+	--byte-line-height-base: 1.5;
 
 	// Border Radius
-	--hikma-border-radius: 0.25rem;
+	--byte-border-radius: 0.25rem;
 
 	// Transitions
-	--hikma-transition-ease: all 0.15s ease-in-out;
+	--byte-transition-ease: all 0.15s ease-in-out;
 }
 
 // 2. Sass Variables (for calculations, loops, etc. if needed)
@@ -83,5 +82,5 @@ $hikma-breakpoint-down: (
 	// Represents anything *smaller* than lg
 	lg: 1199.98px,
 	// Represents anything *smaller* than xl
-	xl: 1399.98px // Represents anything *smaller* than xxl,
+	xl: 1399.98px // Represents anything *smaller* than xxl,,
 );

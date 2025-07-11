@@ -1,31 +1,31 @@
 // 4. Modern CSS Logical Properties Component
 .logical-card {
-    background: var(--hikma-surface-color);
-    border: 1px solid var(--hikma-border-color-base);
-    border-radius: var(--hikma-border-radius);
-    padding-block: var(--hikma-spacing-md);
-    padding-inline: var(--hikma-spacing-lg);
-    margin-block-end: var(--hikma-spacing-md);
-    
-    .card-header {
-        border-block-end: 1px solid var(--hikma-border-color-light);
-        padding-block-end: var(--hikma-spacing-sm);
-        margin-block-end: var(--hikma-spacing-md);
-    }
-    
-    .card-actions {
-        display: flex;
-        gap: var(--hikma-spacing-sm);
-        margin-block-start: var(--hikma-spacing-md);
-        
-        &:dir(rtl) {
-            flex-direction: row-reverse;
-        }
-    }
-    
-    .card-title {
-        margin-block: 0;
-        font-size: var(--hikma-font-size-lg);
-        font-weight: var(--hikma-font-weight-semibold);
-    }
+	background: var(--byte-surface-color);
+	border: 1px solid var(--byte-border-color-base);
+	border-radius: var(--byte-border-radius);
+	padding-block: var(--byte-spacing-md);
+	padding-inline: var(--byte-spacing-lg);
+	margin-block-end: var(--byte-spacing-md);
+
+	.card-header {
+		border-block-end: 1px solid var(--byte-border-color-light);
+		padding-block-end: var(--byte-spacing-sm);
+		margin-block-end: var(--byte-spacing-md);
+	}
+
+	.card-actions {
+		display: flex;
+		gap: var(--byte-spacing-sm);
+		margin-block-start: var(--byte-spacing-md);
+
+		&:dir(rtl) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	.card-title {
+		margin-block: 0;
+		font-size: var(--byte-font-size-lg);
+		font-weight: var(--byte-font-weight-semibold);
+	}
 }

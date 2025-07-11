@@ -1,9 +1,9 @@
 {
-	"name": "hikma-ui",
-	"version": "1.0.0",
+	"name": "@mdferdousalam1989/byte-ui",
+	"version": "1.1.1",
 	"description": "A modern, lightweight CSS framework built with Sass and vanilla JavaScript",
-	"main": "dist/hikma-ui.min.js",
-	"style": "dist/hikma-ui.min.css",
+	"main": "dist/byte-ui.min.js",
+	"style": "dist/byte-ui.min.css",
 	"types": "types/index.d.ts",
 	"files": [
 		"dist/**/*",
@@ -15,11 +15,11 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mdferdousalam/hikma-ui.git"
+		"url": "https://github.com/mdferdousalam/byte-ui.git"
 	},
-	"homepage": "https://github.com/mdferdousalam/hikma-ui#readme",
+	"homepage": "https://github.com/mdferdousalam/byte-ui#readme",
 	"bugs": {
-		"url": "https://github.com/mdferdousalam/hikma-ui/issues"
+		"url": "https://github.com/mdferdousalam/byte-ui/issues"
 	},
 	"scripts": {
 		"dev": "webpack serve --mode development",

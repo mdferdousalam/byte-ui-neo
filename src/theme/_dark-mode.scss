@@ -3,183 +3,193 @@
 
 // Color scheme preference detection
 :root {
-    // Enable automatic color scheme detection
-    color-scheme: light dark;
-    
-    // Modern CSS light-dark() function for automatic theme switching
-    --hikma-color-primary: light-dark(#007bff, #0d6efd);
-    --hikma-color-secondary: light-dark(#6c757d, #6c7293);
-    --hikma-color-success: light-dark(#28a745, #198754);
-    --hikma-color-danger: light-dark(#dc3545, #e74c3c);
-    --hikma-color-warning: light-dark(#ffc107, #f39c12);
-    --hikma-color-info: light-dark(#17a2b8, #3498db);
-    --hikma-color-light: light-dark(#f8f9fa, #343a40);
-    --hikma-color-dark: light-dark(#343a40, #f8f9fa);
-    
-    // Base colors
-    --hikma-text-color-base: light-dark(#212529, #f8f9fa);
-    --hikma-text-color-muted: light-dark(#6c757d, #adb5bd);
-    --hikma-background-color-base: light-dark(#ffffff, #212529);
-    --hikma-background-color-secondary: light-dark(#f8f9fa, #343a40);
-    --hikma-border-color-base: light-dark(#dee2e6, #495057);
-    --hikma-border-color-light: light-dark(#e9ecef, #6c757d);
-    
-    // Surface colors
-    --hikma-surface-color: light-dark(#ffffff, #343a40);
-    --hikma-surface-color-hover: light-dark(#f8f9fa, #495057);
-    --hikma-surface-color-active: light-dark(#e9ecef, #6c757d);
-    
-    // Shadow colors
-    --hikma-shadow-color: light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
-    --hikma-shadow-color-lg: light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
-    
-    // Focus colors
-    --hikma-focus-color: light-dark(rgba(0, 123, 255, 0.25), rgba(13, 110, 253, 0.5));
-    
-    // Component specific colors
-    --hikma-btn-primary-bg: var(--hikma-color-primary);
-    --hikma-btn-primary-text: light-dark(#ffffff, #ffffff);
-    --hikma-btn-secondary-bg: var(--hikma-color-secondary);
-    --hikma-btn-secondary-text: light-dark(#ffffff, #ffffff);
-    
-    // Form colors
-    --hikma-input-bg: light-dark(#ffffff, #495057);
-    --hikma-input-border: light-dark(#ced4da, #6c757d);
-    --hikma-input-focus-border: light-dark(#86b7fe, #0d6efd);
-    --hikma-input-focus-shadow: light-dark(rgba(0, 123, 255, 0.25), rgba(13, 110, 253, 0.5));
-    
-    // Card colors
-    --hikma-card-bg: light-dark(#ffffff, #343a40);
-    --hikma-card-border: light-dark(rgba(0, 0, 0, 0.125), rgba(255, 255, 255, 0.125));
-    
-    // Modal colors
-    --hikma-modal-bg: light-dark(#ffffff, #343a40);
-    --hikma-modal-backdrop: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
-    
-    // Navigation colors
-    --hikma-navbar-bg: light-dark(#f8f9fa, #343a40);
-    --hikma-navbar-text: light-dark(#212529, #f8f9fa);
-    --hikma-navbar-hover: light-dark(#e9ecef, #495057);
+	// Enable automatic color scheme detection
+	color-scheme: light dark;
+
+	// Modern CSS light-dark() function for automatic theme switching
+	--byte-color-primary: light-dark(#007bff, #0d6efd);
+	--byte-color-secondary: light-dark(#6c757d, #6c7293);
+	--byte-color-success: light-dark(#28a745, #198754);
+	--byte-color-danger: light-dark(#dc3545, #e74c3c);
+	--byte-color-warning: light-dark(#ffc107, #f39c12);
+	--byte-color-info: light-dark(#17a2b8, #3498db);
+	--byte-color-light: light-dark(#f8f9fa, #343a40);
+	--byte-color-dark: light-dark(#343a40, #f8f9fa);
+
+	// Base colors
+	--byte-text-color-base: light-dark(#212529, #f8f9fa);
+	--byte-text-color-muted: light-dark(#6c757d, #adb5bd);
+	--byte-background-color-base: light-dark(#ffffff, #212529);
+	--byte-background-color-secondary: light-dark(#f8f9fa, #343a40);
+	--byte-border-color-base: light-dark(#dee2e6, #495057);
+	--byte-border-color-light: light-dark(#e9ecef, #6c757d);
+
+	// Surface colors
+	--byte-surface-color: light-dark(#ffffff, #343a40);
+	--byte-surface-color-hover: light-dark(#f8f9fa, #495057);
+	--byte-surface-color-active: light-dark(#e9ecef, #6c757d);
+
+	// Shadow colors
+	--byte-shadow-color: light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
+	--byte-shadow-color-lg: light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+
+	// Focus colors
+	--byte-focus-color: light-dark(
+		rgba(0, 123, 255, 0.25),
+		rgba(13, 110, 253, 0.5)
+	);
+
+	// Component specific colors
+	--byte-btn-primary-bg: var(--byte-color-primary);
+	--byte-btn-primary-text: light-dark(#ffffff, #ffffff);
+	--byte-btn-secondary-bg: var(--byte-color-secondary);
+	--byte-btn-secondary-text: light-dark(#ffffff, #ffffff);
+
+	// Form colors
+	--byte-input-bg: light-dark(#ffffff, #495057);
+	--byte-input-border: light-dark(#ced4da, #6c757d);
+	--byte-input-focus-border: light-dark(#86b7fe, #0d6efd);
+	--byte-input-focus-shadow: light-dark(
+		rgba(0, 123, 255, 0.25),
+		rgba(13, 110, 253, 0.5)
+	);
+
+	// Card colors
+	--byte-card-bg: light-dark(#ffffff, #343a40);
+	--byte-card-border: light-dark(
+		rgba(0, 0, 0, 0.125),
+		rgba(255, 255, 255, 0.125)
+	);
+
+	// Modal colors
+	--byte-modal-bg: light-dark(#ffffff, #343a40);
+	--byte-modal-backdrop: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+
+	// Navigation colors
+	--byte-navbar-bg: light-dark(#f8f9fa, #343a40);
+	--byte-navbar-text: light-dark(#212529, #f8f9fa);
+	--byte-navbar-hover: light-dark(#e9ecef, #495057);
 }
 
 // Fallback for browsers that don't support light-dark()
 @supports not (color: light-dark(white, black)) {
-    :root {
-        --hikma-color-primary: #007bff;
-        --hikma-color-secondary: #6c757d;
-        --hikma-color-success: #28a745;
-        --hikma-color-danger: #dc3545;
-        --hikma-color-warning: #ffc107;
-        --hikma-color-info: #17a2b8;
-        --hikma-color-light: #f8f9fa;
-        --hikma-color-dark: #343a40;
-        --hikma-text-color-base: #212529;
-        --hikma-text-color-muted: #6c757d;
-        --hikma-background-color-base: #ffffff;
-        --hikma-background-color-secondary: #f8f9fa;
-        --hikma-border-color-base: #dee2e6;
-        --hikma-border-color-light: #e9ecef;
-        --hikma-surface-color: #ffffff;
-        --hikma-surface-color-hover: #f8f9fa;
-        --hikma-surface-color-active: #e9ecef;
-        --hikma-shadow-color: rgba(0, 0, 0, 0.15);
-        --hikma-shadow-color-lg: rgba(0, 0, 0, 0.25);
-        --hikma-focus-color: rgba(0, 123, 255, 0.25);
-        --hikma-btn-primary-text: #ffffff;
-        --hikma-btn-secondary-text: #ffffff;
-        --hikma-input-bg: #ffffff;
-        --hikma-input-border: #ced4da;
-        --hikma-input-focus-border: #86b7fe;
-        --hikma-input-focus-shadow: rgba(0, 123, 255, 0.25);
-        --hikma-card-bg: #ffffff;
-        --hikma-card-border: rgba(0, 0, 0, 0.125);
-        --hikma-modal-bg: #ffffff;
-        --hikma-modal-backdrop: rgba(0, 0, 0, 0.5);
-        --hikma-navbar-bg: #f8f9fa;
-        --hikma-navbar-text: #212529;
-        --hikma-navbar-hover: #e9ecef;
-    }
-    
-    // Manual dark mode class for fallback
-    .dark-mode {
-        --hikma-color-primary: #0d6efd;
-        --hikma-color-secondary: #6c7293;
-        --hikma-color-success: #198754;
-        --hikma-color-danger: #e74c3c;
-        --hikma-color-warning: #f39c12;
-        --hikma-color-info: #3498db;
-        --hikma-color-light: #343a40;
-        --hikma-color-dark: #f8f9fa;
-        --hikma-text-color-base: #f8f9fa;
-        --hikma-text-color-muted: #adb5bd;
-        --hikma-background-color-base: #212529;
-        --hikma-background-color-secondary: #343a40;
-        --hikma-border-color-base: #495057;
-        --hikma-border-color-light: #6c757d;
-        --hikma-surface-color: #343a40;
-        --hikma-surface-color-hover: #495057;
-        --hikma-surface-color-active: #6c757d;
-        --hikma-shadow-color: rgba(0, 0, 0, 0.5);
-        --hikma-shadow-color-lg: rgba(0, 0, 0, 0.75);
-        --hikma-focus-color: rgba(13, 110, 253, 0.5);
-        --hikma-btn-primary-text: #ffffff;
-        --hikma-btn-secondary-text: #ffffff;
-        --hikma-input-bg: #495057;
-        --hikma-input-border: #6c757d;
-        --hikma-input-focus-border: #0d6efd;
-        --hikma-input-focus-shadow: rgba(13, 110, 253, 0.5);
-        --hikma-card-bg: #343a40;
-        --hikma-card-border: rgba(255, 255, 255, 0.125);
-        --hikma-modal-bg: #343a40;
-        --hikma-modal-backdrop: rgba(0, 0, 0, 0.75);
-        --hikma-navbar-bg: #343a40;
-        --hikma-navbar-text: #f8f9fa;
-        --hikma-navbar-hover: #495057;
-    }
-    
-    // Forced dark mode preference
-    @media (prefers-color-scheme: dark) {
-        :root:not(.light-mode) {
-            --hikma-color-primary: #0d6efd;
-            --hikma-color-secondary: #6c7293;
-            --hikma-color-success: #198754;
-            --hikma-color-danger: #e74c3c;
-            --hikma-color-warning: #f39c12;
-            --hikma-color-info: #3498db;
-            --hikma-color-light: #343a40;
-            --hikma-color-dark: #f8f9fa;
-            --hikma-text-color-base: #f8f9fa;
-            --hikma-text-color-muted: #adb5bd;
-            --hikma-background-color-base: #212529;
-            --hikma-background-color-secondary: #343a40;
-            --hikma-border-color-base: #495057;
-            --hikma-border-color-light: #6c757d;
-            --hikma-surface-color: #343a40;
-            --hikma-surface-color-hover: #495057;
-            --hikma-surface-color-active: #6c757d;
-            --hikma-shadow-color: rgba(0, 0, 0, 0.5);
-            --hikma-shadow-color-lg: rgba(0, 0, 0, 0.75);
-            --hikma-focus-color: rgba(13, 110, 253, 0.5);
-            --hikma-btn-primary-text: #ffffff;
-            --hikma-btn-secondary-text: #ffffff;
-            --hikma-input-bg: #495057;
-            --hikma-input-border: #6c757d;
-            --hikma-input-focus-border: #0d6efd;
-            --hikma-input-focus-shadow: rgba(13, 110, 253, 0.5);
-            --hikma-card-bg: #343a40;
-            --hikma-card-border: rgba(255, 255, 255, 0.125);
-            --hikma-modal-bg: #343a40;
-            --hikma-modal-backdrop: rgba(0, 0, 0, 0.75);
-            --hikma-navbar-bg: #343a40;
-            --hikma-navbar-text: #f8f9fa;
-            --hikma-navbar-hover: #495057;
-        }
-    }
+	:root {
+		--byte-color-primary: #007bff;
+		--byte-color-secondary: #6c757d;
+		--byte-color-success: #28a745;
+		--byte-color-danger: #dc3545;
+		--byte-color-warning: #ffc107;
+		--byte-color-info: #17a2b8;
+		--byte-color-light: #f8f9fa;
+		--byte-color-dark: #343a40;
+		--byte-text-color-base: #212529;
+		--byte-text-color-muted: #6c757d;
+		--byte-background-color-base: #ffffff;
+		--byte-background-color-secondary: #f8f9fa;
+		--byte-border-color-base: #dee2e6;
+		--byte-border-color-light: #e9ecef;
+		--byte-surface-color: #ffffff;
+		--byte-surface-color-hover: #f8f9fa;
+		--byte-surface-color-active: #e9ecef;
+		--byte-shadow-color: rgba(0, 0, 0, 0.15);
+		--byte-shadow-color-lg: rgba(0, 0, 0, 0.25);
+		--byte-focus-color: rgba(0, 123, 255, 0.25);
+		--byte-btn-primary-text: #ffffff;
+		--byte-btn-secondary-text: #ffffff;
+		--byte-input-bg: #ffffff;
+		--byte-input-border: #ced4da;
+		--byte-input-focus-border: #86b7fe;
+		--byte-input-focus-shadow: rgba(0, 123, 255, 0.25);
+		--byte-card-bg: #ffffff;
+		--byte-card-border: rgba(0, 0, 0, 0.125);
+		--byte-modal-bg: #ffffff;
+		--byte-modal-backdrop: rgba(0, 0, 0, 0.5);
+		--byte-navbar-bg: #f8f9fa;
+		--byte-navbar-text: #212529;
+		--byte-navbar-hover: #e9ecef;
+	}
+
+	// Manual dark mode class for fallback
+	.dark-mode {
+		--byte-color-primary: #0d6efd;
+		--byte-color-secondary: #6c7293;
+		--byte-color-success: #198754;
+		--byte-color-danger: #e74c3c;
+		--byte-color-warning: #f39c12;
+		--byte-color-info: #3498db;
+		--byte-color-light: #343a40;
+		--byte-color-dark: #f8f9fa;
+		--byte-text-color-base: #f8f9fa;
+		--byte-text-color-muted: #adb5bd;
+		--byte-background-color-base: #212529;
+		--byte-background-color-secondary: #343a40;
+		--byte-border-color-base: #495057;
+		--byte-border-color-light: #6c757d;
+		--byte-surface-color: #343a40;
+		--byte-surface-color-hover: #495057;
+		--byte-surface-color-active: #6c757d;
+		--byte-shadow-color: rgba(0, 0, 0, 0.5);
+		--byte-shadow-color-lg: rgba(0, 0, 0, 0.75);
+		--byte-focus-color: rgba(13, 110, 253, 0.5);
+		--byte-btn-primary-text: #ffffff;
+		--byte-btn-secondary-text: #ffffff;
+		--byte-input-bg: #495057;
+		--byte-input-border: #6c757d;
+		--byte-input-focus-border: #0d6efd;
+		--byte-input-focus-shadow: rgba(13, 110, 253, 0.5);
+		--byte-card-bg: #343a40;
+		--byte-card-border: rgba(255, 255, 255, 0.125);
+		--byte-modal-bg: #343a40;
+		--byte-modal-backdrop: rgba(0, 0, 0, 0.75);
+		--byte-navbar-bg: #343a40;
+		--byte-navbar-text: #f8f9fa;
+		--byte-navbar-hover: #495057;
+	}
+
+	// Forced dark mode preference
+	@media (prefers-color-scheme: dark) {
+		:root:not(.light-mode) {
+			--byte-color-primary: #0d6efd;
+			--byte-color-secondary: #6c7293;
+			--byte-color-success: #198754;
+			--byte-color-danger: #e74c3c;
+			--byte-color-warning: #f39c12;
+			--byte-color-info: #3498db;
+			--byte-color-light: #343a40;
+			--byte-color-dark: #f8f9fa;
+			--byte-text-color-base: #f8f9fa;
+			--byte-text-color-muted: #adb5bd;
+			--byte-background-color-base: #212529;
+			--byte-background-color-secondary: #343a40;
+			--byte-border-color-base: #495057;
+			--byte-border-color-light: #6c757d;
+			--byte-surface-color: #343a40;
+			--byte-surface-color-hover: #495057;
+			--byte-surface-color-active: #6c757d;
+			--byte-shadow-color: rgba(0, 0, 0, 0.5);
+			--byte-shadow-color-lg: rgba(0, 0, 0, 0.75);
+			--byte-focus-color: rgba(13, 110, 253, 0.5);
+			--byte-btn-primary-text: #ffffff;
+			--byte-btn-secondary-text: #ffffff;
+			--byte-input-bg: #495057;
+			--byte-input-border: #6c757d;
+			--byte-input-focus-border: #0d6efd;
+			--byte-input-focus-shadow: rgba(13, 110, 253, 0.5);
+			--byte-card-bg: #343a40;
+			--byte-card-border: rgba(255, 255, 255, 0.125);
+			--byte-modal-bg: #343a40;
+			--byte-modal-backdrop: rgba(0, 0, 0, 0.75);
+			--byte-navbar-bg: #343a40;
+			--byte-navbar-text: #f8f9fa;
+			--byte-navbar-hover: #495057;
+		}
+	}
 }
 
 // Optional: Add a smooth transition for color changes
 body,
 .section,
 .btn {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease,
+		border-color 0.3s ease;
 }

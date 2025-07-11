@@ -4,112 +4,108 @@
 :root {
 	// Colors (Light Theme Defaults)
 	// Primary Colors
-	--hikma-color-primary: #007bff; // Blue
-	--hikma-color-primary-dark: #0056b3; // Darker blue for hover/active
-	--hikma-color-secondary: #6c757d; // Gray
-	--hikma-color-secondary-dark: #5a6268; // Darker gray
+	--byte-color-primary: #007bff; // Blue
+	--byte-color-primary-dark: #0056b3; // Darker blue for hover/active
+	--byte-color-secondary: #6c757d; // Gray
+	--byte-color-secondary-dark: #5a6268; // Darker gray
 
 	// Neutral Colors
-	--hikma-color-dark: #343a40; // Dark text/background
-	--hikma-color-light: #f8f9fa; // Light background/text
-	--hikma-color-white: #ffffff;
-	--hikma-color-black: #000000;
-	--hikma-color-gray-100: #f8f9fa;
-	--hikma-color-gray-200: #e9ecef;
-	--hikma-color-gray-300: #dee2e6;
-	--hikma-color-gray-400: #ced4da;
-	--hikma-color-gray-500: #adb5bd;
-	--hikma-color-gray-600: #6c757d; // secondary
-	--hikma-color-gray-700: #495057;
-	--hikma-color-gray-800: #343a40; // dark
-	--hikma-color-gray-900: #212529;
+	--byte-color-dark: #343a40; // Dark text/background
+	--byte-color-light: #f8f9fa; // Light background/text
+	--byte-color-white: #ffffff;
+	--byte-color-black: #000000;
+	--byte-color-gray-100: #f8f9fa;
+	--byte-color-gray-200: #e9ecef;
+	--byte-color-gray-300: #dee2e6;
+	--byte-color-gray-400: #ced4da;
+	--byte-color-gray-500: #adb5bd;
+	--byte-color-gray-600: #6c757d; // secondary
+	--byte-color-gray-700: #495057;
+	--byte-color-gray-800: #343a40; // dark
+	--byte-color-gray-900: #212529;
 
 	// Semantic Colors (for alerts, status, etc. - expand as needed)
-	--hikma-color-success: #28a745;
-	--hikma-color-info: #17a2b8;
-	--hikma-color-warning: #ffc107;
-	--hikma-color-danger: #dc3545;
+	--byte-color-success: #28a745;
+	--byte-color-info: #17a2b8;
+	--byte-color-warning: #ffc107;
+	--byte-color-danger: #dc3545;
 
 	// If you need lighter/darker shades for alerts, add them like so:
 	// (You'll need to decide the actual color values based on your palette)
 
 	// Example for primary shades
-	--hikma-color-primary-lighter: #cce5ff; // Very light blue
-	--hikma-color-primary-light: #b8daff; // Light blue
-	--hikma-color-primary-darker: #004085; // Dark blue text for light blue background
-	--hikma-color-primary-rgb: 0, 123, 255; // For box-shadow rgba
+	--byte-color-primary-lighter: #cce5ff; // Very light blue
+	--byte-color-primary-light: #b8daff; // Light blue
+	--byte-color-primary-darker: #004085; // Dark blue text for light blue background
+	--byte-color-primary-rgb: 0, 123, 255; // For box-shadow rgba
 
 	// Example for success shades
-	--hikma-color-success-lighter: #d4edda;
-	--hikma-color-success-light: #c3e6cb;
-	--hikma-color-success-darker: #155724;
-	--hikma-color-success-rgb: 40, 167, 69;
+	--byte-color-success-lighter: #d4edda;
+	--byte-color-success-light: #c3e6cb;
+	--byte-color-success-darker: #155724;
+	--byte-color-success-rgb: 40, 167, 69;
 
 	// Add similar for secondary, info, warning, danger, light, dark.
 	// For warning, you might want a darker text color on a lighter background
-	--hikma-color-warning-lighter: #ffeeba;
-	--hikma-color-warning-light: #ffeccc;
-	--hikma-color-warning-darker: #856404;
-	--hikma-color-warning-rgb: 255, 193, 7;
+	--byte-color-warning-lighter: #ffeeba;
+	--byte-color-warning-light: #ffeccc;
+	--byte-color-warning-darker: #856404;
+	--byte-color-warning-rgb: 255, 193, 7;
 
 	// Also ensure you have a muted text color and default border color if not already present
-	--hikma-text-color-muted: var(--hikma-color-gray-600); // Or specific hex/rgb
-	--hikma-border-color-base: var(--hikma-color-gray-300); // Or specific hex/rgb
-	--hikma-border-color-hover: var(
-		--hikma-color-gray-400
-	); // For pagination hover
+	--byte-text-color-muted: var(--byte-color-gray-600); // Or specific hex/rgb
+	--byte-border-color-base: var(--byte-color-gray-300); // Or specific hex/rgb
+	--byte-border-color-hover: var(--byte-color-gray-400); // For pagination hover
 
 	// And general lighter/darker for text on light/dark backgrounds
-	--hikma-color-lighter: #f8f9fa; // Used for text on dark backgrounds in alerts
-	--hikma-color-darker: #343a40; // Used for text on light backgrounds in alerts
+	--byte-color-lighter: #f8f9fa; // Used for text on dark backgrounds in alerts
+	--byte-color-darker: #343a40; // Used for text on light backgrounds in alerts
 
 	// Text & Background Colors (Base)
-	--hikma-text-color-base: var(--hikma-color-gray-900); // Default text color
-	--hikma-background-color-base: var(
-		--hikma-color-white
+	--byte-text-color-base: var(--byte-color-gray-900); // Default text color
+	--byte-background-color-base: var(
+		--byte-color-white
 	); // Default background color
-	--hikma-border-color-base: var(
-		--hikma-color-gray-300
-	); // Default border color
+	--byte-border-color-base: var(--byte-color-gray-300); // Default border color
 
 	// Spacing Scale (using rem units for responsiveness)
-	--hikma-spacing-unit: 1rem; // Base spacing unit (16px assuming 16px root font-size)
-	--hikma-spacing-xs: calc(var(--hikma-spacing-unit) * 0.125); // 2px
-	--hikma-spacing-sm: calc(var(--hikma-spacing-unit) * 0.25); // 4px
-	--hikma-spacing-md: calc(
-		var(--hikma-spacing-unit) * 0.5
+	--byte-spacing-unit: 1rem; // Base spacing unit (16px assuming 16px root font-size)
+	--byte-spacing-xs: calc(var(--byte-spacing-unit) * 0.125); // 2px
+	--byte-spacing-sm: calc(var(--byte-spacing-unit) * 0.25); // 4px
+	--byte-spacing-md: calc(
+		var(--byte-spacing-unit) * 0.5
 	); // 8px (often used for gutters)
-	--hikma-spacing-lg: var(--hikma-spacing-unit); // 16px
-	--hikma-spacing-xl: calc(var(--hikma-spacing-unit) * 2); // 32px
-	--hikma-spacing-xxl: calc(var(--hikma-spacing-unit) * 4); // 64px
+	--byte-spacing-lg: var(--byte-spacing-unit); // 16px
+	--byte-spacing-xl: calc(var(--byte-spacing-unit) * 2); // 32px
+	--byte-spacing-xxl: calc(var(--byte-spacing-unit) * 4); // 64px
 
 	// Typography
-	--hikma-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-		Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
-		'Segoe UI Emoji', 'Segoe UI Symbol';
-	--hikma-font-size-base: 1rem; // 16px
-	--hikma-line-height-base: 1.5;
+	--byte-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+		'Segoe UI Symbol';
+	--byte-font-size-base: 1rem; // 16px
+	--byte-line-height-base: 1.5;
 
 	// Headings (adjust as needed)
-	--hikma-h1-font-size: calc(var(--hikma-font-size-base) * 2.5); // ~40px
-	--hikma-h2-font-size: calc(var(--hikma-font-size-base) * 2); // ~32px
-	--hikma-h3-font-size: calc(var(--hikma-font-size-base) * 1.75); // ~28px
-	--hikma-h4-font-size: calc(var(--hikma-font-size-base) * 1.5); // ~24px
-	--hikma-h5-font-size: calc(var(--hikma-font-size-base) * 1.25); // ~20px
-	--hikma-h6-font-size: calc(var(--hikma-font-size-base) * 1); // ~16px
+	--byte-h1-font-size: calc(var(--byte-font-size-base) * 2.5); // ~40px
+	--byte-h2-font-size: calc(var(--byte-font-size-base) * 2); // ~32px
+	--byte-h3-font-size: calc(var(--byte-font-size-base) * 1.75); // ~28px
+	--byte-h4-font-size: calc(var(--byte-font-size-base) * 1.5); // ~24px
+	--byte-h5-font-size: calc(var(--byte-font-size-base) * 1.25); // ~20px
+	--byte-h6-font-size: calc(var(--byte-font-size-base) * 1); // ~16px
 
 	// Border Width
-	--hikma-border-width: 1px; // Default border width
+	--byte-border-width: 1px; // Default border width
 
 	// Border Radius
-	--hikma-border-radius: 0.25rem;
-	--hikma-border-radius-lg: 0.3rem;
-	--hikma-border-radius-sm: 0.2rem;
+	--byte-border-radius: 0.25rem;
+	--byte-border-radius-lg: 0.3rem;
+	--byte-border-radius-sm: 0.2rem;
 
 	// Box Shadow
-	--hikma-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-	--hikma-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-	--hikma-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+	--byte-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+	--byte-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+	--byte-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
 // Sass Maps for Breakpoints (used by mixins and utilities)
@@ -122,10 +118,10 @@ $grid-breakpoints: (
 );
 
 $spacing-sizes: (
-  xs: var(--hikma-spacing-xs),
-  sm: var(--hikma-spacing-sm),
-  md: var(--hikma-spacing-md),
-  lg: var(--hikma-spacing-lg),
-  xl: var(--hikma-spacing-xl),
-  xxl: var(--hikma-spacing-xxl)
+	xs: var(--byte-spacing-xs),
+	sm: var(--byte-spacing-sm),
+	md: var(--byte-spacing-md),
+	lg: var(--byte-spacing-lg),
+	xl: var(--byte-spacing-xl),
+	xxl: var(--byte-spacing-xxl),
 );

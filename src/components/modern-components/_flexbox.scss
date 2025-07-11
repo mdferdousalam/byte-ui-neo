@@ -1,40 +1,40 @@
 // 3. Advanced Flexbox Components with CSS Subgrid
 .article-layout {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: var(--hikma-spacing-lg);
-    
-    @media (max-width: 1024px) {
-        grid-template-columns: 1fr;
-    }
-    
-    .article-content {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        gap: var(--hikma-spacing-md);
-        
-        // CSS Subgrid support
-        @supports (grid-template-rows: subgrid) {
-            grid-template-rows: subgrid;
-        }
-    }
-    
-    .article-sidebar {
-        display: grid;
-        grid-template-rows: repeat(auto-fit, minmax(200px, max-content));
-        gap: var(--hikma-spacing-md);
-        align-content: start;
-        
-        .sidebar-widget {
-            background: var(--hikma-surface-color);
-            border: 1px solid var(--hikma-border-color-light);
-            border-radius: var(--hikma-border-radius);
-            padding: var(--hikma-spacing-md);
-            
-            &.sticky {
-                position: sticky;
-                top: var(--hikma-spacing-md);
-            }
-        }
-    }
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	gap: var(--byte-spacing-lg);
+
+	@media (max-width: 1024px) {
+		grid-template-columns: 1fr;
+	}
+
+	.article-content {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		gap: var(--byte-spacing-md);
+
+		// CSS Subgrid support
+		@supports (grid-template-rows: subgrid) {
+			grid-template-rows: subgrid;
+		}
+	}
+
+	.article-sidebar {
+		display: grid;
+		grid-template-rows: repeat(auto-fit, minmax(200px, max-content));
+		gap: var(--byte-spacing-md);
+		align-content: start;
+
+		.sidebar-widget {
+			background: var(--byte-surface-color);
+			border: 1px solid var(--byte-border-color-light);
+			border-radius: var(--byte-border-radius);
+			padding: var(--byte-spacing-md);
+
+			&.sticky {
+				position: sticky;
+				top: var(--byte-spacing-md);
+			}
+		}
+	}
 }

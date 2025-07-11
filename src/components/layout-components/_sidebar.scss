@@ -1,125 +1,125 @@
 // Sidebar
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 250px;
-  background: var(--hikma-sidebar-bg);
-  border-right: 1px solid var(--hikma-border-color);
-  z-index: 1000;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  overflow-y: auto;
-  
-  &.show {
-    transform: translateX(0);
-  }
-  
-  &__header {
-    padding: 1.5rem 1rem;
-    border-bottom: 1px solid var(--hikma-border-color);
-    
-    h4 {
-      margin: 0;
-      color: var(--hikma-body-color);
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-  }
-  
-  &__nav {
-    padding: 1rem 0;
-  }
-  
-  &__item {
-    display: block;
-    padding: 0.75rem 1rem;
-    color: var(--hikma-sidebar-link-color);
-    text-decoration: none;
-    transition: all 0.2s;
-    border-left: 3px solid transparent;
-    
-    &:hover {
-      background: var(--hikma-sidebar-link-hover-bg);
-      color: var(--hikma-sidebar-link-hover-color);
-    }
-    
-    &.active {
-      background: var(--hikma-sidebar-link-active-bg);
-      color: var(--hikma-sidebar-link-active-color);
-      border-left-color: var(--hikma-color-primary);
-    }
-  }
-  
-  &__icon {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-right: 0.75rem;
-    vertical-align: middle;
-  }
-  
-  &__badge {
-    float: right;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    background: var(--hikma-color-primary);
-    color: white;
-    border-radius: 1rem;
-  }
-  
-  // Right sidebar
-  &--right {
-    left: auto;
-    right: 0;
-    transform: translateX(100%);
-    
-    &.show {
-      transform: translateX(0);
-    }
-  }
-  
-  // Collapsible sidebar
-  &--collapsible {
-    width: 60px;
-    
-    &.expanded {
-      width: 250px;
-    }
-    
-    .sidebar__item {
-      text-align: center;
-      
-      .sidebar__text {
-        display: none;
-      }
-    }
-    
-    &.expanded .sidebar__item {
-      text-align: left;
-      
-      .sidebar__text {
-        display: inline;
-      }
-    }
-  }
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 250px;
+	background: var(--byte-sidebar-bg);
+	border-right: 1px solid var(--byte-border-color);
+	z-index: 1000;
+	transform: translateX(-100%);
+	transition: transform 0.3s ease;
+	overflow-y: auto;
+
+	&.show {
+		transform: translateX(0);
+	}
+
+	&__header {
+		padding: 1.5rem 1rem;
+		border-bottom: 1px solid var(--byte-border-color);
+
+		h4 {
+			margin: 0;
+			color: var(--byte-body-color);
+			font-size: 1.25rem;
+			font-weight: 600;
+		}
+	}
+
+	&__nav {
+		padding: 1rem 0;
+	}
+
+	&__item {
+		display: block;
+		padding: 0.75rem 1rem;
+		color: var(--byte-sidebar-link-color);
+		text-decoration: none;
+		transition: all 0.2s;
+		border-left: 3px solid transparent;
+
+		&:hover {
+			background: var(--byte-sidebar-link-hover-bg);
+			color: var(--byte-sidebar-link-hover-color);
+		}
+
+		&.active {
+			background: var(--byte-sidebar-link-active-bg);
+			color: var(--byte-sidebar-link-active-color);
+			border-left-color: var(--byte-color-primary);
+		}
+	}
+
+	&__icon {
+		width: 1.2rem;
+		height: 1.2rem;
+		margin-right: 0.75rem;
+		vertical-align: middle;
+	}
+
+	&__badge {
+		float: right;
+		font-size: 0.75rem;
+		padding: 0.25rem 0.5rem;
+		background: var(--byte-color-primary);
+		color: white;
+		border-radius: 1rem;
+	}
+
+	// Right sidebar
+	&--right {
+		left: auto;
+		right: 0;
+		transform: translateX(100%);
+
+		&.show {
+			transform: translateX(0);
+		}
+	}
+
+	// Collapsible sidebar
+	&--collapsible {
+		width: 60px;
+
+		&.expanded {
+			width: 250px;
+		}
+
+		.sidebar__item {
+			text-align: center;
+
+			.sidebar__text {
+				display: none;
+			}
+		}
+
+		&.expanded .sidebar__item {
+			text-align: left;
+
+			.sidebar__text {
+				display: inline;
+			}
+		}
+	}
 }
 
 // Sidebar overlay
 .sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  
-  &.show {
-    opacity: 1;
-    visibility: visible;
-  }
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+
+	&.show {
+		opacity: 1;
+		visibility: visible;
+	}
 }

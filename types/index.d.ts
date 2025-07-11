@@ -1,22 +1,22 @@
 /**
- * Hikma UI Framework TypeScript Definitions
+ * Byte UI Framework TypeScript Definitions
  * Modern CSS Framework with TypeScript Support
  */
 
-declare module 'hikma-ui' {
+declare module 'byte-ui' {
   // Core Types
-  export type HikmaVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
-  export type HikmaSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-  export type HikmaBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-  export type HikmaSpacing = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
-  export type HikmaDisplay = 'none' | 'block' | 'inline' | 'inline-block' | 'flex' | 'inline-flex' | 'grid' | 'inline-grid';
-  export type HikmaTextAlign = 'start' | 'center' | 'end' | 'justify';
-  export type HikmaFlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
-  export type HikmaJustifyContent = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
-  export type HikmaAlignItems = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+  export type ByteVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+  export type ByteSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+  export type ByteBreakpoint = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+  export type ByteSpacing = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+  export type ByteDisplay = 'none' | 'block' | 'inline' | 'inline-block' | 'flex' | 'inline-flex' | 'grid' | 'inline-grid';
+  export type ByteTextAlign = 'start' | 'center' | 'end' | 'justify';
+  export type ByteFlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
+  export type ByteJustifyContent = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
+  export type ByteAlignItems = 'start' | 'center' | 'end' | 'stretch' | 'baseline';
   
   // Theme Configuration
-  export interface HikmaThemeConfig {
+  export interface ByteThemeConfig {
     colors: {
       primary: string;
       secondary: string;
@@ -74,8 +74,8 @@ declare module 'hikma-ui' {
 
   // Component Options
   export interface ButtonOptions {
-    variant?: HikmaVariant;
-    size?: HikmaSize;
+    variant?: ByteVariant;
+    size?: ByteSize;
     outline?: boolean;
     disabled?: boolean;
     loading?: boolean;
@@ -120,7 +120,7 @@ declare module 'hikma-ui' {
   }
 
   export interface ToastOptions {
-    variant?: HikmaVariant;
+    variant?: ByteVariant;
     position?: 'top-start' | 'top-center' | 'top-end' | 'bottom-start' | 'bottom-center' | 'bottom-end';
     delay?: number;
     autohide?: boolean;
@@ -129,7 +129,7 @@ declare module 'hikma-ui' {
   }
 
   export interface AlertOptions {
-    variant?: HikmaVariant;
+    variant?: ByteVariant;
     dismissible?: boolean;
     fade?: boolean;
     closeButton?: boolean;
@@ -153,7 +153,7 @@ declare module 'hikma-ui' {
     label?: string;
     placeholder?: string;
     helpText?: string;
-    size?: HikmaSize;
+    size?: ByteSize;
     disabled?: boolean;
     readonly?: boolean;
     required?: boolean;
@@ -162,34 +162,34 @@ declare module 'hikma-ui' {
   }
 
   // Component Classes
-  export class HikmaModal {
+  export class ByteModal {
     constructor(element: Element, options?: ModalOptions);
     show(): void;
     hide(): void;
     toggle(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaModal | null;
+    static getInstance(element: Element): ByteModal | null;
   }
 
-  export class HikmaTooltip {
+  export class ByteTooltip {
     constructor(element: Element, options?: TooltipOptions);
     show(): void;
     hide(): void;
     toggle(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaTooltip | null;
+    static getInstance(element: Element): ByteTooltip | null;
   }
 
-  export class HikmaDropdown {
+  export class ByteDropdown {
     constructor(element: Element, options?: DropdownOptions);
     show(): void;
     hide(): void;
     toggle(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaDropdown | null;
+    static getInstance(element: Element): ByteDropdown | null;
   }
 
-  export class HikmaCarousel {
+  export class ByteCarousel {
     constructor(element: Element, options?: CarouselOptions);
     cycle(): void;
     pause(): void;
@@ -198,51 +198,51 @@ declare module 'hikma-ui' {
     nextWhenVisible(): void;
     to(index: number): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaCarousel | null;
+    static getInstance(element: Element): ByteCarousel | null;
   }
 
-  export class HikmaToast {
+  export class ByteToast {
     constructor(element: Element, options?: ToastOptions);
     show(): void;
     hide(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaToast | null;
+    static getInstance(element: Element): ByteToast | null;
   }
 
-  export class HikmaAlert {
+  export class ByteAlert {
     constructor(element: Element, options?: AlertOptions);
     close(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaAlert | null;
+    static getInstance(element: Element): ByteAlert | null;
   }
 
-  export class HikmaCollapse {
+  export class ByteCollapse {
     constructor(element: Element, options?: { toggle?: boolean });
     show(): void;
     hide(): void;
     toggle(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaCollapse | null;
+    static getInstance(element: Element): ByteCollapse | null;
   }
 
-  export class HikmaTab {
+  export class ByteTab {
     constructor(element: Element);
     show(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaTab | null;
+    static getInstance(element: Element): ByteTab | null;
   }
 
-  export class HikmaOffcanvas {
+  export class ByteOffcanvas {
     constructor(element: Element, options?: { backdrop?: boolean | 'static'; keyboard?: boolean; scroll?: boolean });
     show(): void;
     hide(): void;
     toggle(): void;
     dispose(): void;
-    static getInstance(element: Element): HikmaOffcanvas | null;
+    static getInstance(element: Element): ByteOffcanvas | null;
   }
 
   // Utility Functions
-  export class HikmaUtils {
+  export class ByteUtils {
     static debounce(func: Function, wait: number): Function;
     static throttle(func: Function, limit: number): Function;
     static getElementOffset(element: Element): { top: number; left: number };
@@ -252,16 +252,16 @@ declare module 'hikma-ui' {
     static removeClass(element: Element, className: string): void;
     static toggleClass(element: Element, className: string): void;
     static hasClass(element: Element, className: string): boolean;
-    static getBreakpoint(): HikmaBreakpoint;
+    static getBreakpoint(): ByteBreakpoint;
     static isMobile(): boolean;
     static isTablet(): boolean;
     static isDesktop(): boolean;
   }
 
   // Theme Management
-  export class HikmaTheme {
-    static setTheme(config: Partial<HikmaThemeConfig>): void;
-    static getTheme(): HikmaThemeConfig;
+  export class ByteTheme {
+    static setTheme(config: Partial<ByteThemeConfig>): void;
+    static getTheme(): ByteThemeConfig;
     static toggleDarkMode(): void;
     static setDarkMode(enabled: boolean): void;
     static isDarkMode(): boolean;
@@ -270,7 +270,7 @@ declare module 'hikma-ui' {
   }
 
   // Form Validation
-  export class HikmaValidator {
+  export class ByteValidator {
     static validateField(element: HTMLInputElement, options?: FormValidationOptions): { valid: boolean; message?: string };
     static validateForm(form: HTMLFormElement): { valid: boolean; errors: { [key: string]: string } };
     static addValidator(name: string, validator: (value: any, options?: any) => boolean | string): void;
@@ -278,48 +278,48 @@ declare module 'hikma-ui' {
   }
 
   // Event System
-  export interface HikmaEventMap {
-    'hikma.modal.show': CustomEvent<{ modal: HikmaModal }>;
-    'hikma.modal.shown': CustomEvent<{ modal: HikmaModal }>;
-    'hikma.modal.hide': CustomEvent<{ modal: HikmaModal }>;
-    'hikma.modal.hidden': CustomEvent<{ modal: HikmaModal }>;
-    'hikma.tooltip.show': CustomEvent<{ tooltip: HikmaTooltip }>;
-    'hikma.tooltip.shown': CustomEvent<{ tooltip: HikmaTooltip }>;
-    'hikma.tooltip.hide': CustomEvent<{ tooltip: HikmaTooltip }>;
-    'hikma.tooltip.hidden': CustomEvent<{ tooltip: HikmaTooltip }>;
-    'hikma.dropdown.show': CustomEvent<{ dropdown: HikmaDropdown }>;
-    'hikma.dropdown.shown': CustomEvent<{ dropdown: HikmaDropdown }>;
-    'hikma.dropdown.hide': CustomEvent<{ dropdown: HikmaDropdown }>;
-    'hikma.dropdown.hidden': CustomEvent<{ dropdown: HikmaDropdown }>;
-    'hikma.carousel.slide': CustomEvent<{ carousel: HikmaCarousel; from: number; to: number }>;
-    'hikma.carousel.slid': CustomEvent<{ carousel: HikmaCarousel; from: number; to: number }>;
-    'hikma.toast.show': CustomEvent<{ toast: HikmaToast }>;
-    'hikma.toast.shown': CustomEvent<{ toast: HikmaToast }>;
-    'hikma.toast.hide': CustomEvent<{ toast: HikmaToast }>;
-    'hikma.toast.hidden': CustomEvent<{ toast: HikmaToast }>;
-    'hikma.alert.close': CustomEvent<{ alert: HikmaAlert }>;
-    'hikma.alert.closed': CustomEvent<{ alert: HikmaAlert }>;
-    'hikma.theme.changed': CustomEvent<{ theme: 'light' | 'dark' }>;
-    'hikma.form.validate': CustomEvent<{ form: HTMLFormElement; valid: boolean }>;
-    'hikma.form.field.validate': CustomEvent<{ field: HTMLInputElement; valid: boolean; message?: string }>;
+  export interface ByteEventMap {
+    'byte.modal.show': CustomEvent<{ modal: ByteModal }>;
+    'byte.modal.shown': CustomEvent<{ modal: ByteModal }>;
+    'byte.modal.hide': CustomEvent<{ modal: ByteModal }>;
+    'byte.modal.hidden': CustomEvent<{ modal: ByteModal }>;
+    'byte.tooltip.show': CustomEvent<{ tooltip: ByteTooltip }>;
+    'byte.tooltip.shown': CustomEvent<{ tooltip: ByteTooltip }>;
+    'byte.tooltip.hide': CustomEvent<{ tooltip: ByteTooltip }>;
+    'byte.tooltip.hidden': CustomEvent<{ tooltip: ByteTooltip }>;
+    'byte.dropdown.show': CustomEvent<{ dropdown: ByteDropdown }>;
+    'byte.dropdown.shown': CustomEvent<{ dropdown: ByteDropdown }>;
+    'byte.dropdown.hide': CustomEvent<{ dropdown: ByteDropdown }>;
+    'byte.dropdown.hidden': CustomEvent<{ dropdown: ByteDropdown }>;
+    'byte.carousel.slide': CustomEvent<{ carousel: ByteCarousel; from: number; to: number }>;
+    'byte.carousel.slid': CustomEvent<{ carousel: ByteCarousel; from: number; to: number }>;
+    'byte.toast.show': CustomEvent<{ toast: ByteToast }>;
+    'byte.toast.shown': CustomEvent<{ toast: ByteToast }>;
+    'byte.toast.hide': CustomEvent<{ toast: ByteToast }>;
+    'byte.toast.hidden': CustomEvent<{ toast: ByteToast }>;
+    'byte.alert.close': CustomEvent<{ alert: ByteAlert }>;
+    'byte.alert.closed': CustomEvent<{ alert: ByteAlert }>;
+    'byte.theme.changed': CustomEvent<{ theme: 'light' | 'dark' }>;
+    'byte.form.validate': CustomEvent<{ form: HTMLFormElement; valid: boolean }>;
+    'byte.form.field.validate': CustomEvent<{ field: HTMLInputElement; valid: boolean; message?: string }>;
   }
 
-  // Main Hikma Class
-  export class Hikma {
+  // Main Byte Class
+  export class Byte {
     static version: string;
-    static theme: typeof HikmaTheme;
-    static utils: typeof HikmaUtils;
-    static validator: typeof HikmaValidator;
+    static theme: typeof ByteTheme;
+    static utils: typeof ByteUtils;
+    static validator: typeof ByteValidator;
     
-    static Modal: typeof HikmaModal;
-    static Tooltip: typeof HikmaTooltip;
-    static Dropdown: typeof HikmaDropdown;
-    static Carousel: typeof HikmaCarousel;
-    static Toast: typeof HikmaToast;
-    static Alert: typeof HikmaAlert;
-    static Collapse: typeof HikmaCollapse;
-    static Tab: typeof HikmaTab;
-    static Offcanvas: typeof HikmaOffcanvas;
+    static Modal: typeof ByteModal;
+    static Tooltip: typeof ByteTooltip;
+    static Dropdown: typeof ByteDropdown;
+    static Carousel: typeof ByteCarousel;
+    static Toast: typeof ByteToast;
+    static Alert: typeof ByteAlert;
+    static Collapse: typeof ByteCollapse;
+    static Tab: typeof ByteTab;
+    static Offcanvas: typeof ByteOffcanvas;
     
     static init(): void;
     static dispose(): void;
@@ -327,24 +327,24 @@ declare module 'hikma-ui' {
   }
 
   // Default export
-  export default Hikma;
+  export default Byte;
 }
 
 // Global declarations
 declare global {
   interface Window {
-    Hikma: typeof import('hikma-ui').Hikma;
+    Byte: typeof import('byte-ui').Byte;
   }
   
   interface HTMLElement {
-    addEventListener<K extends keyof import('hikma-ui').HikmaEventMap>(
+    addEventListener<K extends keyof import('byte-ui').ByteEventMap>(
       type: K,
-      listener: (this: HTMLElement, ev: import('hikma-ui').HikmaEventMap[K]) => any,
+      listener: (this: HTMLElement, ev: import('byte-ui').ByteEventMap[K]) => any,
       options?: boolean | AddEventListenerOptions
     ): void;
-    removeEventListener<K extends keyof import('hikma-ui').HikmaEventMap>(
+    removeEventListener<K extends keyof import('byte-ui').ByteEventMap>(
       type: K,
-      listener: (this: HTMLElement, ev: import('hikma-ui').HikmaEventMap[K]) => any,
+      listener: (this: HTMLElement, ev: import('byte-ui').ByteEventMap[K]) => any,
       options?: boolean | EventListenerOptions
     ): void;
   }

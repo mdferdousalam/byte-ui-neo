@@ -1,12 +1,12 @@
 :root {
-  --hikma-input-group-addon-color: #6c757d;
-  --hikma-input-group-addon-bg: #f8f9fa;
-  --hikma-input-group-addon-border-color: #ced4da;
+	--byte-input-group-addon-color: #6c757d;
+	--byte-input-group-addon-bg: #f8f9fa;
+	--byte-input-group-addon-border-color: #ced4da;
 }
 
 // Dark mode adjustments
-[data-theme="dark"] {
-  --hikma-input-group-addon-color: #dee2e6;
-  --hikma-input-group-addon-bg: #495057;
-  --hikma-input-group-addon-border-color: #6c757d;
+[data-theme='dark'] {
+	--byte-input-group-addon-color: #dee2e6;
+	--byte-input-group-addon-bg: #495057;
+	--byte-input-group-addon-border-color: #6c757d;
 }

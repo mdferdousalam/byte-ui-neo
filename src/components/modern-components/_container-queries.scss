@@ -1,44 +1,44 @@
 // 1. Container Queries Components
 .adaptive-card {
-    container-type: inline-size;
-    container-name: card;
-    background: var(--hikma-surface-color);
-    border: 1px solid var(--hikma-border-color-base);
-    border-radius: var(--hikma-border-radius);
-    padding: var(--hikma-spacing-md);
-    transition: var(--hikma-transition-base);
-    
-    &:hover {
-        background: var(--hikma-surface-color-hover);
-        transform: translateY(-2px);
-        box-shadow: var(--hikma-shadow-lg);
-    }
-    
-    .card-content {
-        @container card (max-width: 300px) {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        @container card (min-width: 300px) {
-            display: flex;
-            align-items: center;
-            gap: var(--hikma-spacing-md);
-        }
-    }
-    
-    .card-image {
-        @container card (max-width: 300px) {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        @container card (min-width: 300px) {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-    }
+	container-type: inline-size;
+	container-name: card;
+	background: var(--byte-surface-color);
+	border: 1px solid var(--byte-border-color-base);
+	border-radius: var(--byte-border-radius);
+	padding: var(--byte-spacing-md);
+	transition: var(--byte-transition-base);
+
+	&:hover {
+		background: var(--byte-surface-color-hover);
+		transform: translateY(-2px);
+		box-shadow: var(--byte-shadow-lg);
+	}
+
+	.card-content {
+		@container card (max-width: 300px) {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		@container card (min-width: 300px) {
+			display: flex;
+			align-items: center;
+			gap: var(--byte-spacing-md);
+		}
+	}
+
+	.card-image {
+		@container card (max-width: 300px) {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+		}
+
+		@container card (min-width: 300px) {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+	}
 }

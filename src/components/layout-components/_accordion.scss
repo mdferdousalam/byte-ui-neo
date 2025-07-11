@@ -1,68 +1,68 @@
 // Accordion
 .accordion {
-  border: 1px solid var(--hikma-border-color);
-  border-radius: var(--hikma-border-radius);
-  overflow: hidden;
-  
-  &__item {
-    border-bottom: 1px solid var(--hikma-border-color);
-    
-    &:last-child {
-      border-bottom: none;
-    }
-  }
-  
-  &__header {
-    padding: 1rem 1.5rem;
-    background: var(--hikma-accordion-header-bg);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.2s;
-    
-    &:hover {
-      background: var(--hikma-accordion-header-hover-bg);
-    }
-    
-    &.active {
-      background: var(--hikma-accordion-header-active-bg);
-    }
-  }
-  
-  &__title {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--hikma-body-color);
-  }
-  
-  &__icon {
-    width: 1rem;
-    height: 1rem;
-    transition: transform 0.2s;
-    
-    &.rotated {
-      transform: rotate(180deg);
-    }
-  }
-  
-  &__content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    
-    &.show {
-      max-height: 500px;
-    }
-  }
-  
-  &__body {
-    padding: 1.5rem;
-    background: var(--hikma-accordion-body-bg);
-    
-    p:last-child {
-      margin-bottom: 0;
-    }
-  }
+	border: 1px solid var(--byte-border-color);
+	border-radius: var(--byte-border-radius);
+	overflow: hidden;
+
+	&__item {
+		border-bottom: 1px solid var(--byte-border-color);
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+
+	&__header {
+		padding: 1rem 1.5rem;
+		background: var(--byte-accordion-header-bg);
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		transition: background-color 0.2s;
+
+		&:hover {
+			background: var(--byte-accordion-header-hover-bg);
+		}
+
+		&.active {
+			background: var(--byte-accordion-header-active-bg);
+		}
+	}
+
+	&__title {
+		margin: 0;
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--byte-body-color);
+	}
+
+	&__icon {
+		width: 1rem;
+		height: 1rem;
+		transition: transform 0.2s;
+
+		&.rotated {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__content {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+
+		&.show {
+			max-height: 500px;
+		}
+	}
+
+	&__body {
+		padding: 1.5rem;
+		background: var(--byte-accordion-body-bg);
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
 }

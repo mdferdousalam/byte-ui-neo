@@ -6,15 +6,15 @@
 // Define the spacing scale using your root variables
 $spacing-scale: (
 	0: 0,
-	xs: var(--hikma-spacing-xs),
+	xs: var(--byte-spacing-xs),
 	// 0.125rem
-	sm: var(--hikma-spacing-sm),
+	sm: var(--byte-spacing-sm),
 	// 0.25rem
-	md: var(--hikma-spacing-md),
+	md: var(--byte-spacing-md),
 	// 0.5rem
-	lg: var(--hikma-spacing-lg),
+	lg: var(--byte-spacing-lg),
 	// 1rem
-	xl: var(--hikma-spacing-xl) // 2rem,,
+	xl: var(--byte-spacing-xl) // 2rem,,,
 );
 
 // Define directions for margin and padding
@@ -41,7 +41,7 @@ $directions: (
 			left,
 			right,
 		)
-		// All sides,,
+		// All sides,,,
 );
 
 // Generate spacing classes (margin: m-, padding: p-)
@@ -77,7 +77,6 @@ $grid-breakpoints: (
 				@each $size-abbr, $size-value in $spacing-scale {
 					.#{$prop-abbr}#{$dir-abbr}-#{$breakpoint-name}-#{$size-abbr} {
 						@if meta.type-of($dir-full) == list {
-							
 							@each $d in $dir-full {
 								#{$prop-full}-#{$d}: #{$size-value} !important;
 							}

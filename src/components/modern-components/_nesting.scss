@@ -1,156 +1,162 @@
 // 11. Advanced CSS Nesting Component
 .nested-card {
-    background: var(--hikma-surface-color);
-    border: 1px solid var(--hikma-border-color-base);
-    border-radius: var(--hikma-border-radius);
-    padding: var(--hikma-spacing-md);
-    
-    .card-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: var(--hikma-spacing-sm);
-        border-bottom: 1px solid var(--hikma-border-color-light);
-        margin-bottom: var(--hikma-spacing-md);
-        
-        .card-title {
-            margin: 0;
-            font-size: var(--hikma-font-size-lg);
-            font-weight: var(--hikma-font-weight-semibold);
-            color: var(--hikma-text-color-base);
-        }
-        
-        .card-actions {
-            display: flex;
-            gap: var(--hikma-spacing-xs);
-            
-            .action-button {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 32px;
-                height: 32px;
-                border: 1px solid var(--hikma-border-color-light);
-                border-radius: var(--hikma-border-radius);
-                background: transparent;
-                color: var(--hikma-text-color-muted);
-                cursor: pointer;
-                transition: var(--hikma-transition-base);
-                
-                &:hover {
-                    background: var(--hikma-surface-color-hover);
-                    color: var(--hikma-text-color-base);
-                    transform: translateY(-1px);
-                }
-                
-                &:active {
-                    transform: translateY(0);
-                }
-                
-                &.primary {
-                    background: var(--hikma-color-primary);
-                    color: white;
-                    border-color: var(--hikma-color-primary);
-                    
-                    &:hover {
-                        background: var(--hikma-color-primary-hover, var(--hikma-color-primary));
-                        opacity: 0.9;
-                    }
-                }
-            }
-        }
-    }
-    
-    .card-content {
-        .content-section {
-            margin-bottom: var(--hikma-spacing-md);
-            
-            &:last-child {
-                margin-bottom: 0;
-            }
-            
-            .section-title {
-                font-size: var(--hikma-font-size-base);
-                font-weight: var(--hikma-font-weight-medium);
-                color: var(--hikma-text-color-base);
-                margin-bottom: var(--hikma-spacing-xs);
-            }
-            
-            .section-content {
-                color: var(--hikma-text-color-muted);
-                line-height: 1.6;
-                
-                p {
-                    margin-bottom: var(--hikma-spacing-sm);
-                    
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                }
-                
-                .highlight {
-                    background: var(--hikma-color-warning);
-                    color: var(--hikma-text-color-base);
-                    padding: 0 var(--hikma-spacing-xs);
-                    border-radius: calc(var(--hikma-border-radius) / 2);
-                    font-weight: var(--hikma-font-weight-medium);
-                }
-            }
-        }
-    }
-    
-    .card-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: var(--hikma-spacing-md);
-        border-top: 1px solid var(--hikma-border-color-light);
-        margin-top: var(--hikma-spacing-md);
-        
-        .footer-info {
-            display: flex;
-            align-items: center;
-            gap: var(--hikma-spacing-sm);
-            color: var(--hikma-text-color-muted);
-            font-size: var(--hikma-font-size-sm);
-            
-            .info-icon {
-                width: 16px;
-                height: 16px;
-                opacity: 0.7;
-            }
-        }
-        
-        .footer-actions {
-            display: flex;
-            gap: var(--hikma-spacing-sm);
-            
-            .btn {
-                padding: var(--hikma-spacing-xs) var(--hikma-spacing-sm);
-                font-size: var(--hikma-font-size-sm);
-                
-                &.btn-primary {
-                    background: var(--hikma-color-primary);
-                    color: white;
-                    border: 1px solid var(--hikma-color-primary);
-                    
-                    &:hover {
-                        background: var(--hikma-color-primary-hover, var(--hikma-color-primary));
-                        opacity: 0.9;
-                    }
-                }
-                
-                &.btn-secondary {
-                    background: transparent;
-                    color: var(--hikma-text-color-muted);
-                    border: 1px solid var(--hikma-border-color-light);
-                    
-                    &:hover {
-                        background: var(--hikma-surface-color-hover);
-                        color: var(--hikma-text-color-base);
-                    }
-                }
-            }
-        }
-    }
+	background: var(--byte-surface-color);
+	border: 1px solid var(--byte-border-color-base);
+	border-radius: var(--byte-border-radius);
+	padding: var(--byte-spacing-md);
+
+	.card-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: var(--byte-spacing-sm);
+		border-bottom: 1px solid var(--byte-border-color-light);
+		margin-bottom: var(--byte-spacing-md);
+
+		.card-title {
+			margin: 0;
+			font-size: var(--byte-font-size-lg);
+			font-weight: var(--byte-font-weight-semibold);
+			color: var(--byte-text-color-base);
+		}
+
+		.card-actions {
+			display: flex;
+			gap: var(--byte-spacing-xs);
+
+			.action-button {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 32px;
+				height: 32px;
+				border: 1px solid var(--byte-border-color-light);
+				border-radius: var(--byte-border-radius);
+				background: transparent;
+				color: var(--byte-text-color-muted);
+				cursor: pointer;
+				transition: var(--byte-transition-base);
+
+				&:hover {
+					background: var(--byte-surface-color-hover);
+					color: var(--byte-text-color-base);
+					transform: translateY(-1px);
+				}
+
+				&:active {
+					transform: translateY(0);
+				}
+
+				&.primary {
+					background: var(--byte-color-primary);
+					color: white;
+					border-color: var(--byte-color-primary);
+
+					&:hover {
+						background: var(
+							--byte-color-primary-hover,
+							var(--byte-color-primary)
+						);
+						opacity: 0.9;
+					}
+				}
+			}
+		}
+	}
+
+	.card-content {
+		.content-section {
+			margin-bottom: var(--byte-spacing-md);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.section-title {
+				font-size: var(--byte-font-size-base);
+				font-weight: var(--byte-font-weight-medium);
+				color: var(--byte-text-color-base);
+				margin-bottom: var(--byte-spacing-xs);
+			}
+
+			.section-content {
+				color: var(--byte-text-color-muted);
+				line-height: 1.6;
+
+				p {
+					margin-bottom: var(--byte-spacing-sm);
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+
+				.highlight {
+					background: var(--byte-color-warning);
+					color: var(--byte-text-color-base);
+					padding: 0 var(--byte-spacing-xs);
+					border-radius: calc(var(--byte-border-radius) / 2);
+					font-weight: var(--byte-font-weight-medium);
+				}
+			}
+		}
+	}
+
+	.card-footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: var(--byte-spacing-md);
+		border-top: 1px solid var(--byte-border-color-light);
+		margin-top: var(--byte-spacing-md);
+
+		.footer-info {
+			display: flex;
+			align-items: center;
+			gap: var(--byte-spacing-sm);
+			color: var(--byte-text-color-muted);
+			font-size: var(--byte-font-size-sm);
+
+			.info-icon {
+				width: 16px;
+				height: 16px;
+				opacity: 0.7;
+			}
+		}
+
+		.footer-actions {
+			display: flex;
+			gap: var(--byte-spacing-sm);
+
+			.btn {
+				padding: var(--byte-spacing-xs) var(--byte-spacing-sm);
+				font-size: var(--byte-font-size-sm);
+
+				&.btn-primary {
+					background: var(--byte-color-primary);
+					color: white;
+					border: 1px solid var(--byte-color-primary);
+
+					&:hover {
+						background: var(
+							--byte-color-primary-hover,
+							var(--byte-color-primary)
+						);
+						opacity: 0.9;
+					}
+				}
+
+				&.btn-secondary {
+					background: transparent;
+					color: var(--byte-text-color-muted);
+					border: 1px solid var(--byte-border-color-light);
+
+					&:hover {
+						background: var(--byte-surface-color-hover);
+						color: var(--byte-text-color-base);
+					}
+				}
+			}
+		}
+	}
 }

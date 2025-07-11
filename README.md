@@ -1,4 +1,4 @@
-# 🌟 Hikma UI Framework
+# 🌟 Byte UI Framework
 
 <div align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version">
@@ -9,7 +9,7 @@
 
 ## 📖 Overview
 
-**Hikma UI** is a modern, lightweight, and highly customizable CSS framework built with **Sass (SCSS)** and **vanilla JavaScript**. It provides a comprehensive set of UI components, utility classes, and responsive design patterns to help you build beautiful, accessible, and performant web applications.
+**Byte UI** is a modern, lightweight, and highly customizable CSS framework built with **Sass (SCSS)** and **vanilla JavaScript**. It provides a comprehensive set of UI components, utility classes, and responsive design patterns to help you build beautiful, accessible, and performant web applications.
 
 ### ✨ Key Features
 
@@ -32,25 +32,25 @@
 
 #### Option 1: NPM (Recommended)
 ```bash
-npm install hikma-ui
+npm install @mdferdousalam1989/byte-ui
 ```
 
 #### Option 2: Yarn
 ```bash
-yarn add hikma-ui
+yarn add @mdferdousalam1989/byte-ui
 ```
 
 #### Option 3: CDN
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://unpkg.com/hikma-ui@1.0.0/dist/hikma-ui.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@mdferdousalam1989/byte-ui@1.1.1/dist/byte-ui.min.css">
 
 <!-- JavaScript -->
-<script src="https://unpkg.com/hikma-ui@1.0.0/dist/hikma-ui-js.min.js"></script>
+<script src="https://unpkg.com/@mdferdousalam1989/byte-ui@1.1.1/dist/byte-ui-js.min.js"></script>
 ```
 
 #### Option 4: Download
-Download the latest release from [GitHub Releases](https://github.com/mdferdousalam/hikma-ui/releases)
+Download the latest release from [GitHub Releases](https://github.com/mdferdousalam/byte-ui/releases)
 
 ### 🛠️ Usage
 
@@ -61,16 +61,16 @@ Download the latest release from [GitHub Releases](https://github.com/mdferdousa
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Hikma UI App</title>
-    <link rel="stylesheet" href="path/to/hikma-ui.min.css">
+    <title>My Byte UI App</title>
+    <link rel="stylesheet" href="path/to/byte-ui.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Hikma UI!</h1>
+        <h1>Welcome to Byte UI!</h1>
         <button class="btn btn--primary">Get Started</button>
     </div>
     
-    <script src="path/to/hikma-ui-js.min.js"></script>
+    <script src="path/to/byte-ui-js.min.js"></script>
 </body>
 </html>
 ```
@@ -78,11 +78,11 @@ Download the latest release from [GitHub Releases](https://github.com/mdferdousa
 #### Using with Build Tools
 ```scss
 // Import the entire framework
-@import '~hikma-ui/src/main.scss';
+@import '~@mdferdousalam1989/byte-ui/src/main.scss';
 
 // Or import specific components
-@import '~hikma-ui/src/components/button';
-@import '~hikma-ui/src/components/card';
+@import '~@mdferdousalam1989/byte-ui/src/components/button';
+@import '~@mdferdousalam1989/byte-ui/src/components/card';
 ```
 
 ## 🎨 Components Overview
@@ -410,8 +410,8 @@ const perfObserver = new PerformanceObserver((list) => {
 
 ```bash
 # Clone the repository
-git clone https://github.com/mdferdousalam/hikma-ui.git
-cd hikma-ui
+git clone https://github.com/mdferdousalam/byte-ui.git
+cd byte-ui
 
 # Install dependencies
 npm install
@@ -449,8 +449,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - 📧 Email: mdferdousalam@example.com
-- 💬 GitHub Discussions: [Ask questions](https://github.com/mdferdousalam/hikma-ui/discussions)
-- 🐛 Bug Reports: [Create an issue](https://github.com/mdferdousalam/hikma-ui/issues)
+- 💬 GitHub Discussions: [Ask questions](https://github.com/mdferdousalam/byte-ui/discussions)
+- 🐛 Bug Reports: [Create an issue](https://github.com/mdferdousalam/byte-ui/issues)
 
 ## 🙏 Acknowledgments
 

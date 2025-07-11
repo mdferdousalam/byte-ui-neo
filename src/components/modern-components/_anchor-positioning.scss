@@ -1,47 +1,47 @@
 // 9. Advanced CSS Anchor Positioning (when supported)
 .anchor-tooltip {
-    position: absolute;
-    background: var(--hikma-surface-color);
-    border: 1px solid var(--hikma-border-color-base);
-    border-radius: var(--hikma-border-radius);
-    padding: var(--hikma-spacing-sm);
-    box-shadow: var(--hikma-shadow-lg);
-    z-index: 1000;
-    max-width: 200px;
-    
-    // CSS Anchor Positioning (when supported)
-    @supports (anchor-name: --tooltip-anchor) {
-        position: absolute;
-        position-anchor: --tooltip-anchor;
-        top: anchor(bottom);
-        left: anchor(center);
-        transform: translateX(-50%);
-        margin-top: 8px;
-    }
-    
-    &::before {
-        content: '';
-        position: absolute;
-        top: -4px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-bottom: 4px solid var(--hikma-border-color-base);
-    }
-    
-    &::after {
-        content: '';
-        position: absolute;
-        top: -3px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        border-bottom: 4px solid var(--hikma-surface-color);
-    }
+	position: absolute;
+	background: var(--byte-surface-color);
+	border: 1px solid var(--byte-border-color-base);
+	border-radius: var(--byte-border-radius);
+	padding: var(--byte-spacing-sm);
+	box-shadow: var(--byte-shadow-lg);
+	z-index: 1000;
+	max-width: 200px;
+
+	// CSS Anchor Positioning (when supported)
+	@supports (anchor-name: --tooltip-anchor) {
+		position: absolute;
+		position-anchor: --tooltip-anchor;
+		top: anchor(bottom);
+		left: anchor(center);
+		transform: translateX(-50%);
+		margin-top: 8px;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: -4px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-bottom: 4px solid var(--byte-border-color-base);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: -3px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border-left: 4px solid transparent;
+		border-right: 4px solid transparent;
+		border-bottom: 4px solid var(--byte-surface-color);
+	}
 }

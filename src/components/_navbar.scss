@@ -2,149 +2,154 @@
 // This file defines styles for responsive navigation bars.
 
 :root {
-    --hikma-navbar-padding-x: var(--hikma-spacing-lg);
-    --hikma-navbar-padding-y: var(--hikma-spacing-md);
-    --hikma-navbar-color: var(--hikma-text-color-base);
-    --hikma-navbar-hover-color: var(--hikma-color-primary);
-    --hikma-navbar-active-color: var(--hikma-color-primary);
-    --hikma-navbar-toggler-padding-y: 0.25rem;
-    --hikma-navbar-toggler-padding-x: 0.75rem;
-    --hikma-navbar-toggler-font-size: 1.25rem;
-    --hikma-navbar-toggler-border-color: rgba(var(--hikma-color-dark-rgb), 0.1);
-    --hikma-navbar-toggler-border-radius: var(--hikma-border-radius);
-    --hikma-navbar-toggler-focus-width: 0.25rem;
-    --hikma-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+	--byte-navbar-padding-x: var(--byte-spacing-lg);
+	--byte-navbar-padding-y: var(--byte-spacing-md);
+	--byte-navbar-color: var(--byte-text-color-base);
+	--byte-navbar-hover-color: var(--byte-color-primary);
+	--byte-navbar-active-color: var(--byte-color-primary);
+	--byte-navbar-toggler-padding-y: 0.25rem;
+	--byte-navbar-toggler-padding-x: 0.75rem;
+	--byte-navbar-toggler-font-size: 1.25rem;
+	--byte-navbar-toggler-border-color: rgba(var(--byte-color-dark-rgb), 0.1);
+	--byte-navbar-toggler-border-radius: var(--byte-border-radius);
+	--byte-navbar-toggler-focus-width: 0.25rem;
+	--byte-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
 }
 
 .navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap; // For collapsing content
-    align-items: center;
-    justify-content: space-between; // Space out brand and toggler
-    padding: var(--hikma-navbar-padding-y) var(--hikma-navbar-padding-x);
-    background-color: var(--hikma-background-color-base);
-    border-bottom: var(--hikma-border-width) solid var(--hikma-border-color-base); // Optional border
+	position: relative;
+	display: flex;
+	flex-wrap: wrap; // For collapsing content
+	align-items: center;
+	justify-content: space-between; // Space out brand and toggler
+	padding: var(--byte-navbar-padding-y) var(--byte-navbar-padding-x);
+	background-color: var(--byte-background-color-base);
+	border-bottom: var(--byte-border-width) solid var(--byte-border-color-base); // Optional border
 }
 
 .navbar-brand {
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: var(--hikma-spacing-md);
-    font-size: 1.25rem;
-    text-decoration: none;
-    white-space: nowrap; // Prevent brand from wrapping
-    color: var(--hikma-navbar-color); // Default color for brand
+	padding-top: 0.3125rem;
+	padding-bottom: 0.3125rem;
+	margin-right: var(--byte-spacing-md);
+	font-size: 1.25rem;
+	text-decoration: none;
+	white-space: nowrap; // Prevent brand from wrapping
+	color: var(--byte-navbar-color); // Default color for brand
 
-    &:hover,
-    &:focus {
-        color: var(--hikma-navbar-hover-color);
-    }
+	&:hover,
+	&:focus {
+		color: var(--byte-navbar-hover-color);
+	}
 }
 
 .navbar-nav {
-    display: flex;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
+	display: flex;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
 }
 
 .nav-item {
-    // No specific style needed here for now, nav-link will handle it.
+	// No specific style needed here for now, nav-link will handle it.
 }
 
 .nav-link {
-    display: block;
-    padding: var(--hikma-spacing-xs) var(--hikma-spacing-sm);
-    text-decoration: none;
-    color: var(--hikma-navbar-color);
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+	display: block;
+	padding: var(--byte-spacing-xs) var(--byte-spacing-sm);
+	text-decoration: none;
+	color: var(--byte-navbar-color);
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out;
 
-    &:hover,
-    &:focus {
-        color: var(--hikma-navbar-hover-color);
-    }
+	&:hover,
+	&:focus {
+		color: var(--byte-navbar-hover-color);
+	}
 
-    &.active {
-        color: var(--hikma-navbar-active-color);
-        // text-decoration: underline; // Example active style
-    }
+	&.active {
+		color: var(--byte-navbar-active-color);
+		// text-decoration: underline; // Example active style
+	}
 
-    &.disabled {
-        color: var(--hikma-text-color-muted);
-        pointer-events: none; // Disable click
-    }
+	&.disabled {
+		color: var(--byte-text-color-muted);
+		pointer-events: none; // Disable click
+	}
 }
 
 // Navbar Toggler (for responsive collapsing)
 .navbar-toggler {
-    padding: var(--hikma-navbar-toggler-padding-y) var(--hikma-navbar-toggler-padding-x);
-    font-size: var(--hikma-navbar-toggler-font-size);
-    line-height: 1;
-    background-color: transparent;
-    border: var(--hikma-border-width) solid var(--hikma-navbar-toggler-border-color);
-    border-radius: var(--hikma-navbar-toggler-border-radius);
-    transition: var(--hikma-navbar-toggler-transition);
-    cursor: pointer;
+	padding: var(--byte-navbar-toggler-padding-y)
+		var(--byte-navbar-toggler-padding-x);
+	font-size: var(--byte-navbar-toggler-font-size);
+	line-height: 1;
+	background-color: transparent;
+	border: var(--byte-border-width) solid var(--byte-navbar-toggler-border-color);
+	border-radius: var(--byte-navbar-toggler-border-radius);
+	transition: var(--byte-navbar-toggler-transition);
+	cursor: pointer;
 
-    &:hover {
-        text-decoration: none;
-    }
+	&:hover {
+		text-decoration: none;
+	}
 
-    &:focus {
-        text-decoration: none;
-        outline: 0;
-        box-shadow: 0 0 0 var(--hikma-navbar-toggler-focus-width);
-    }
+	&:focus {
+		text-decoration: none;
+		outline: 0;
+		box-shadow: 0 0 0 var(--byte-navbar-toggler-focus-width);
+	}
 }
 
 .navbar-toggler-icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    // Example SVG for toggler icon (you can customize or use a font icon)
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23343a40' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	// Example SVG for toggler icon (you can customize or use a font icon)
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23343a40' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 // Collapsing navbar content (requires JS to toggle .collapse and .show classes)
 .navbar-collapse {
-    flex-basis: 100%;
-    flex-grow: 1;
-    align-items: center;
+	flex-basis: 100%;
+	flex-grow: 1;
+	align-items: center;
 }
 
 // Responsive behavior (example for medium breakpoint)
-@media (max-width: 767.98px) { // Adjust based on your md breakpoint minus 0.02px
-    .navbar-expand-md { // Use .navbar-expand-md on the .navbar to enable collapsing below md
-        .navbar-toggler {
-            display: block; // Show toggler on small screens
-        }
-        .navbar-collapse {
-            display: none !important; // Hide collapse content by default on small screens
-        }
-        .navbar-nav {
-            flex-direction: column; // Stack nav items vertically
-        }
-        .nav-link {
-            padding-left: 0; // Remove horizontal padding for stacked items
-        }
-    }
+@media (max-width: 767.98px) {
+	// Adjust based on your md breakpoint minus 0.02px
+	.navbar-expand-md {
+		// Use .navbar-expand-md on the .navbar to enable collapsing below md
+		.navbar-toggler {
+			display: block; // Show toggler on small screens
+		}
+		.navbar-collapse {
+			display: none !important; // Hide collapse content by default on small screens
+		}
+		.navbar-nav {
+			flex-direction: column; // Stack nav items vertically
+		}
+		.nav-link {
+			padding-left: 0; // Remove horizontal padding for stacked items
+		}
+	}
 }
 
-@media (min-width: 768px) { // Adjust based on your md breakpoint
-    .navbar-expand-md {
-        .navbar-toggler {
-            display: none; // Hide toggler on medium+ screens
-        }
-        .navbar-collapse.collapse:not(.show) {
-            display: flex !important; // Ensure content is flex on medium+ screens
-        }
-        .navbar-nav {
-            flex-direction: row; // Arrange nav items horizontally
-        }
-    }
+@media (min-width: 768px) {
+	// Adjust based on your md breakpoint
+	.navbar-expand-md {
+		.navbar-toggler {
+			display: none; // Hide toggler on medium+ screens
+		}
+		.navbar-collapse.collapse:not(.show) {
+			display: flex !important; // Ensure content is flex on medium+ screens
+		}
+		.navbar-nav {
+			flex-direction: row; // Arrange nav items horizontally
+		}
+	}
 }

@@ -1,38 +1,79 @@
 // Animations
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes bounce {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1); }
+	0%,
+	80%,
+	100% {
+		transform: scale(0);
+	}
+	40% {
+		transform: scale(1);
+	}
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.7; }
-  100% { transform: scale(0.95); opacity: 1; }
+	0% {
+		transform: scale(0.95);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 0.7;
+	}
+	100% {
+		transform: scale(0.95);
+		opacity: 1;
+	}
 }
 
 @keyframes bars {
-  0%, 40%, 100% { transform: scaleY(0.4); }
-  20% { transform: scaleY(1); }
+	0%,
+	40%,
+	100% {
+		transform: scaleY(0.4);
+	}
+	20% {
+		transform: scaleY(1);
+	}
 }
 
 @keyframes skeleton-loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
 }
 
 @keyframes pulse-success {
-  0% { box-shadow: 0 0 0 0 rgba(var(--hikma-color-success-rgb), 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(var(--hikma-color-success-rgb), 0); }
-  100% { box-shadow: 0 0 0 0 rgba(var(--hikma-color-success-rgb), 0); }
+	0% {
+		box-shadow: 0 0 0 0 rgba(var(--byte-color-success-rgb), 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(var(--byte-color-success-rgb), 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(var(--byte-color-success-rgb), 0);
+	}
 }
 
 @keyframes pulse-danger {
-  0% { box-shadow: 0 0 0 0 rgba(var(--hikma-color-danger-rgb), 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(var(--hikma-color-danger-rgb), 0); }
-  100% { box-shadow: 0 0 0 0 rgba(var(--hikma-color-danger-rgb), 0); }
+	0% {
+		box-shadow: 0 0 0 0 rgba(var(--byte-color-danger-rgb), 0.7);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(var(--byte-color-danger-rgb), 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(var(--byte-color-danger-rgb), 0);
+	}
 }

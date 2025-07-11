@@ -1,48 +1,48 @@
 // 5. Advanced CSS Custom Properties Component
 .theme-switcher {
-    --switcher-bg: var(--hikma-surface-color);
-    --switcher-border: var(--hikma-border-color-base);
-    --switcher-text: var(--hikma-text-color-base);
-    --switcher-accent: var(--hikma-color-primary);
-    --switcher-radius: var(--hikma-border-radius);
-    --switcher-shadow: var(--hikma-shadow-sm);
-    --switcher-transition: all 0.2s ease;
-    
-    display: inline-flex;
-    align-items: center;
-    gap: var(--hikma-spacing-sm);
-    background: var(--switcher-bg);
-    border: 1px solid var(--switcher-border);
-    border-radius: var(--switcher-radius);
-    padding: var(--hikma-spacing-sm);
-    box-shadow: var(--switcher-shadow);
-    transition: var(--switcher-transition);
-    
-    &:hover {
-        --switcher-shadow: var(--hikma-shadow-md);
-        transform: translateY(-1px);
-    }
-    
-    .switcher-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: var(--switcher-accent);
-        color: white;
-        font-size: 14px;
-        transition: var(--switcher-transition);
-        
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-    
-    .switcher-label {
-        color: var(--switcher-text);
-        font-size: var(--hikma-font-size-sm);
-        font-weight: var(--hikma-font-weight-medium);
-    }
+	--switcher-bg: var(--byte-surface-color);
+	--switcher-border: var(--byte-border-color-base);
+	--switcher-text: var(--byte-text-color-base);
+	--switcher-accent: var(--byte-color-primary);
+	--switcher-radius: var(--byte-border-radius);
+	--switcher-shadow: var(--byte-shadow-sm);
+	--switcher-transition: all 0.2s ease;
+
+	display: inline-flex;
+	align-items: center;
+	gap: var(--byte-spacing-sm);
+	background: var(--switcher-bg);
+	border: 1px solid var(--switcher-border);
+	border-radius: var(--switcher-radius);
+	padding: var(--byte-spacing-sm);
+	box-shadow: var(--switcher-shadow);
+	transition: var(--switcher-transition);
+
+	&:hover {
+		--switcher-shadow: var(--byte-shadow-md);
+		transform: translateY(-1px);
+	}
+
+	.switcher-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: var(--switcher-accent);
+		color: white;
+		font-size: 14px;
+		transition: var(--switcher-transition);
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	.switcher-label {
+		color: var(--switcher-text);
+		font-size: var(--byte-font-size-sm);
+		font-weight: var(--byte-font-weight-medium);
+	}
 }

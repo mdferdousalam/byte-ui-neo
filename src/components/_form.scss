@@ -3,48 +3,46 @@
 
 :root {
 	// Base Form Control Variables
-	--hikma-form-control-height: 2.25rem;
-	--hikma-form-control-padding-x: 0.75rem;
-	--hikma-form-control-padding-y: 0.375rem;
-	--hikma-form-control-font-size: var(--hikma-font-size-base);
-	--hikma-form-control-line-height: var(--hikma-line-height-base);
-	--hikma-form-control-color: var(--hikma-text-color-base);
-	--hikma-form-control-bg: var(--hikma-background-color-light);
-	--hikma-form-control-border-color: var(--hikma-border-color-base);
-	--hikma-form-control-border-width: var(--hikma-border-width);
-	--hikma-form-control-border-radius: var(--hikma-border-radius);
-	--hikma-form-control-focus-border-color: var(--hikma-color-primary-light);
-	--hikma-form-control-focus-box-shadow: 0 0 0 0.25rem
-		var(--hikma-color-primary-lighter);
-	--hikma-form-control-placeholder-color: var(--hikma-text-color-muted);
-	--hikma-form-control-disabled-bg: var(--hikma-background-color-muted);
+	--byte-form-control-height: 2.25rem;
+	--byte-form-control-padding-x: 0.75rem;
+	--byte-form-control-padding-y: 0.375rem;
+	--byte-form-control-font-size: var(--byte-font-size-base);
+	--byte-form-control-line-height: var(--byte-line-height-base);
+	--byte-form-control-color: var(--byte-text-color-base);
+	--byte-form-control-bg: var(--byte-background-color-light);
+	--byte-form-control-border-color: var(--byte-border-color-base);
+	--byte-form-control-border-width: var(--byte-border-width);
+	--byte-form-control-border-radius: var(--byte-border-radius);
+	--byte-form-control-focus-border-color: var(--byte-color-primary-light);
+	--byte-form-control-focus-box-shadow: 0 0 0 0.25rem
+		var(--byte-color-primary-lighter);
+	--byte-form-control-placeholder-color: var(--byte-text-color-muted);
+	--byte-form-control-disabled-bg: var(--byte-background-color-muted);
 
 	// Checkbox/Radio Variables
-	--hikma-form-check-input-width: 1.25em;
-	--hikma-form-check-input-margin-start: 0.5rem;
-	--hikma-form-check-label-margin-start: 0.375rem;
+	--byte-form-check-input-width: 1.25em;
+	--byte-form-check-input-margin-start: 0.5rem;
+	--byte-form-check-label-margin-start: 0.375rem;
 
 	// Validation Variables
-	--hikma-form-feedback-margin-top: 0.25rem;
-	--hikma-form-feedback-font-size: 0.875em;
-	--hikma-form-feedback-valid-color: var(--hikma-color-success);
-	--hikma-form-feedback-invalid-color: var(--hikma-color-danger);
-	--hikma-form-control-valid-border-color: var(--hikma-color-success);
-	--hikma-form-control-invalid-border-color: var(--hikma-color-danger);
-	--hikma-form-control-focus-border-color-valid: var(
-		--hikma-color-success-light
+	--byte-form-feedback-margin-top: 0.25rem;
+	--byte-form-feedback-font-size: 0.875em;
+	--byte-form-feedback-valid-color: var(--byte-color-success);
+	--byte-form-feedback-invalid-color: var(--byte-color-danger);
+	--byte-form-control-valid-border-color: var(--byte-color-success);
+	--byte-form-control-invalid-border-color: var(--byte-color-danger);
+	--byte-form-control-focus-border-color-valid: var(--byte-color-success-light);
+	--byte-form-control-focus-box-shadow-valid: 0 0 0 0.25rem
+		rgba(var(--byte-color-success-rgb), 0.25);
+	--byte-form-control-focus-border-color-invalid: var(
+		--byte-color-danger-light
 	);
-	--hikma-form-control-focus-box-shadow-valid: 0 0 0 0.25rem
-		rgba(var(--hikma-color-success-rgb), 0.25);
-	--hikma-form-control-focus-border-color-invalid: var(
-		--hikma-color-danger-light
-	);
-	--hikma-form-control-focus-box-shadow-invalid: 0 0 0 0.25rem
-		rgba(var(--hikma-color-danger-rgb), 0.25);
-	--hikma-form-control-feedback-icon-size: 1.5rem;
-	--hikma-form-control-padding-right-icon: calc(
-		var(--hikma-form-control-padding-x) +
-			var(--hikma-form-control-feedback-icon-size) + var(--hikma-spacing-sm)
+	--byte-form-control-focus-box-shadow-invalid: 0 0 0 0.25rem
+		rgba(var(--byte-color-danger-rgb), 0.25);
+	--byte-form-control-feedback-icon-size: 1.5rem;
+	--byte-form-control-padding-right-icon: calc(
+		var(--byte-form-control-padding-x) +
+			var(--byte-form-control-feedback-icon-size) + var(--byte-spacing-sm)
 	);
 }
 
@@ -54,38 +52,37 @@
 .form-control {
 	display: block;
 	width: 100%;
-	height: var(--hikma-form-control-height);
-	padding: var(--hikma-form-control-padding-y)
-		var(--hikma-form-control-padding-x);
-	font-family: var(--hikma-font-family-base);
-	font-size: var(--hikma-form-control-font-size);
+	height: var(--byte-form-control-height);
+	padding: var(--byte-form-control-padding-y) var(--byte-form-control-padding-x);
+	font-family: var(--byte-font-family-base);
+	font-size: var(--byte-form-control-font-size);
 	font-weight: 400;
-	line-height: var(--hikma-form-control-line-height);
-	color: var(--hikma-form-control-color);
-	background-color: var(--hikma-form-control-bg);
+	line-height: var(--byte-form-control-line-height);
+	color: var(--byte-form-control-color);
+	background-color: var(--byte-form-control-bg);
 	background-clip: padding-box;
-	border: var(--hikma-form-control-border-width) solid
-		var(--hikma-form-control-border-color);
+	border: var(--byte-form-control-border-width) solid
+		var(--byte-form-control-border-color);
 	appearance: none;
-	border-radius: var(--hikma-form-control-border-radius);
+	border-radius: var(--byte-form-control-border-radius);
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
 	&:focus {
-		color: var(--hikma-form-control-color);
-		background-color: var(--hikma-form-control-bg);
-		border-color: var(--hikma-form-control-focus-border-color);
+		color: var(--byte-form-control-color);
+		background-color: var(--byte-form-control-bg);
+		border-color: var(--byte-form-control-focus-border-color);
 		outline: 0;
-		box-shadow: var(--hikma-form-control-focus-box-shadow);
+		box-shadow: var(--byte-form-control-focus-box-shadow);
 	}
 
 	&::placeholder {
-		color: var(--hikma-form-control-placeholder-color);
+		color: var(--byte-form-control-placeholder-color);
 		opacity: 1;
 	}
 
 	&:disabled,
 	&[readonly] {
-		background-color: var(--hikma-form-control-disabled-bg);
+		background-color: var(--byte-form-control-disabled-bg);
 		opacity: 1;
 	}
 }
@@ -94,7 +91,7 @@
 select.form-control {
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 	background-repeat: no-repeat;
-	background-position: right var(--hikma-form-control-padding-x) center;
+	background-position: right var(--byte-form-control-padding-x) center;
 	background-size: 1rem 0.75rem;
 }
 
@@ -103,42 +100,42 @@ select.form-control {
    ======================== */
 .form-check {
 	display: block;
-	min-height: var(--hikma-form-check-input-width);
+	min-height: var(--byte-form-check-input-width);
 	padding-left: calc(
-		var(--hikma-form-check-input-width) +
-			var(--hikma-form-check-input-margin-start)
+		var(--byte-form-check-input-width) +
+			var(--byte-form-check-input-margin-start)
 	);
 	margin-bottom: 0.125rem;
 }
 
 .form-check-input {
-	width: var(--hikma-form-check-input-width);
-	height: var(--hikma-form-check-input-width);
+	width: var(--byte-form-check-input-width);
+	height: var(--byte-form-check-input-width);
 	margin-top: calc(
-		(var(--hikma-form-control-line-height) * 0.5) -
-			(var(--hikma-form-check-input-width) * 0.5)
+		(var(--byte-form-control-line-height) * 0.5) -
+			(var(--byte-form-check-input-width) * 0.5)
 	);
 	margin-left: calc(
-		var(--hikma-form-check-input-width) * -1 -
-			var(--hikma-form-check-input-margin-start)
+		var(--byte-form-check-input-width) * -1 -
+			var(--byte-form-check-input-margin-start)
 	);
 	vertical-align: top;
-	background-color: var(--hikma-form-control-bg);
-	border: var(--hikma-form-control-border-width) solid
-		var(--hikma-form-control-border-color);
+	background-color: var(--byte-form-control-bg);
+	border: var(--byte-form-control-border-width) solid
+		var(--byte-form-control-border-color);
 	appearance: none;
 	-webkit-print-color-adjust: exact;
 	print-color-adjust: exact;
 
 	&:checked {
-		background-color: var(--hikma-color-primary);
-		border-color: var(--hikma-color-primary);
+		background-color: var(--byte-color-primary);
+		border-color: var(--byte-color-primary);
 	}
 
 	&:focus {
-		border-color: var(--hikma-form-control-focus-border-color);
+		border-color: var(--byte-form-control-focus-border-color);
 		outline: 0;
-		box-shadow: var(--hikma-form-control-focus-box-shadow);
+		box-shadow: var(--byte-form-control-focus-box-shadow);
 	}
 
 	&:disabled {
@@ -149,7 +146,7 @@ select.form-control {
 
 .form-check-label {
 	margin-bottom: 0;
-	margin-left: var(--hikma-form-check-label-margin-start);
+	margin-left: var(--byte-form-check-label-margin-start);
 }
 
 /* Radio Specific */
@@ -178,23 +175,23 @@ select.form-control {
 /* Validation States */
 .is-valid,
 .was-validated :valid {
-	border-color: var(--hikma-form-control-valid-border-color);
-	padding-right: var(--hikma-form-control-padding-right-icon);
+	border-color: var(--byte-form-control-valid-border-color);
+	padding-right: var(--byte-form-control-padding-right-icon);
 
 	&:focus {
-		border-color: var(--hikma-form-control-focus-border-color-valid);
-		box-shadow: var(--hikma-form-control-focus-box-shadow-valid);
+		border-color: var(--byte-form-control-focus-border-color-valid);
+		box-shadow: var(--byte-form-control-focus-box-shadow-valid);
 	}
 }
 
 .is-invalid,
 .was-validated :invalid {
-	border-color: var(--hikma-form-control-invalid-border-color);
-	padding-right: var(--hikma-form-control-padding-right-icon);
+	border-color: var(--byte-form-control-invalid-border-color);
+	padding-right: var(--byte-form-control-padding-right-icon);
 
 	&:focus {
-		border-color: var(--hikma-form-control-focus-border-color-invalid);
-		box-shadow: var(--hikma-form-control-focus-box-shadow-invalid);
+		border-color: var(--byte-form-control-focus-border-color-invalid);
+		box-shadow: var(--byte-form-control-focus-box-shadow-invalid);
 	}
 }
 
@@ -203,16 +200,16 @@ select.form-control {
 .invalid-feedback {
 	display: none;
 	width: 100%;
-	margin-top: var(--hikma-form-feedback-margin-top);
-	font-size: var(--hikma-form-feedback-font-size);
+	margin-top: var(--byte-form-feedback-margin-top);
+	font-size: var(--byte-form-feedback-font-size);
 }
 
 .valid-feedback {
-	color: var(--hikma-form-feedback-valid-color);
+	color: var(--byte-form-feedback-valid-color);
 }
 
 .invalid-feedback {
-	color: var(--hikma-form-feedback-invalid-color);
+	color: var(--byte-form-feedback-invalid-color);
 }
 
 .was-validated .form-control:valid ~ .valid-feedback,
@@ -230,18 +227,18 @@ select.form-control {
 .was-validated .form-control:valid {
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.48L5.73.69c.6-.6 1.6-.2 1.2.73L2.3 6.73z'/%3e%3c/svg%3e");
 	background-repeat: no-repeat;
-	background-position: right calc(var(--hikma-form-control-padding-x) * 0.75)
+	background-position: right calc(var(--byte-form-control-padding-x) * 0.75)
 		center;
-	background-size: var(--hikma-form-control-feedback-icon-size);
+	background-size: var(--byte-form-control-feedback-icon-size);
 }
 
 .form-control.is-invalid,
 .was-validated .form-control:invalid {
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3e%3cpath fill='%23dc3545' d='M9.7 2.3c-.4-.4-1-.4-1.4 0L6 4.59 3.7 2.3c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4L4.59 6 2.3 8.3c-.4.4-.4 1 0 1.4s1 .4 1.4 0L6 7.41l2.3 2.3c.4.4 1 .4 1.4 0s.4-1 0-1.4L7.41 6l2.3-2.3c.4-.4.4-1 0-1.4z'/%3e%3c/svg%3e");
 	background-repeat: no-repeat;
-	background-position: right calc(var(--hikma-form-control-padding-x) * 0.75)
+	background-position: right calc(var(--byte-form-control-padding-x) * 0.75)
 		center;
-	background-size: var(--hikma-form-control-feedback-icon-size);
+	background-size: var(--byte-form-control-feedback-icon-size);
 }
 
 /* Checkbox/Radio Validation */
@@ -249,20 +246,20 @@ select.form-control {
 	&.is-valid,
 	&.was-validated:valid {
 		.form-check-input {
-			border-color: var(--hikma-form-control-valid-border-color);
+			border-color: var(--byte-form-control-valid-border-color);
 		}
 		.form-check-label {
-			color: var(--hikma-form-feedback-valid-color);
+			color: var(--byte-form-feedback-valid-color);
 		}
 	}
 
 	&.is-invalid,
 	&.was-validated:invalid {
 		.form-check-input {
-			border-color: var(--hikma-form-control-invalid-border-color);
+			border-color: var(--byte-form-control-invalid-border-color);
 		}
 		.form-check-label {
-			color: var(--hikma-form-feedback-invalid-color);
+			color: var(--byte-form-feedback-invalid-color);
 		}
 	}
 }
@@ -270,6 +267,6 @@ select.form-control {
 /* Form Text */
 .form-text {
 	font-size: 0.875em;
-	color: var(--hikma-text-color-muted);
+	color: var(--byte-text-color-muted);
 	margin-top: 0.25rem;
 }

@@ -2,32 +2,74 @@
 // This file defines utility classes for borders and border-radius.
 
 // Base border
-.border { border: var(--hikma-border-width) solid var(--hikma-border-color-base) !important; }
-.border-0 { border: 0 !important; }
+.border {
+	border: var(--byte-border-width) solid var(--byte-border-color-base) !important;
+}
+.border-0 {
+	border: 0 !important;
+}
 
 // Individual borders
-.border-top { border-top: var(--hikma-border-width) solid var(--hikma-border-color-base) !important; }
-.border-bottom { border-bottom: var(--hikma-border-width) solid var(--hikma-border-color-base) !important; }
-.border-start { border-left: var(--hikma-border-width) solid var(--hikma-border-color-base) !important; } // Using start/end for RTL compatibility
-.border-end { border-right: var(--hikma-border-width) solid var(--hikma-border-color-base) !important; }
+.border-top {
+	border-top: var(--byte-border-width) solid var(--byte-border-color-base) !important;
+}
+.border-bottom {
+	border-bottom: var(--byte-border-width) solid var(--byte-border-color-base) !important;
+}
+.border-start {
+	border-left: var(--byte-border-width) solid var(--byte-border-color-base) !important;
+} // Using start/end for RTL compatibility
+.border-end {
+	border-right: var(--byte-border-width) solid var(--byte-border-color-base) !important;
+}
 
 // Border colors (using your color variables)
-.border-primary { border-color: var(--hikma-color-primary) !important; }
-.border-secondary { border-color: var(--hikma-color-secondary) !important; }
-.border-success { border-color: var(--hikma-color-success) !important; }
-.border-info { border-color: var(--hikma-color-info) !important; }
-.border-warning { border-color: var(--hikma-color-warning) !important; }
-.border-danger { border-color: var(--hikma-color-danger) !important; }
-.border-dark { border-color: var(--hikma-color-dark) !important; }
-.border-light { border-color: var(--hikma-color-light) !important; }
-.border-white { border-color: var(--hikma-color-white) !important; }
+.border-primary {
+	border-color: var(--byte-color-primary) !important;
+}
+.border-secondary {
+	border-color: var(--byte-color-secondary) !important;
+}
+.border-success {
+	border-color: var(--byte-color-success) !important;
+}
+.border-info {
+	border-color: var(--byte-color-info) !important;
+}
+.border-warning {
+	border-color: var(--byte-color-warning) !important;
+}
+.border-danger {
+	border-color: var(--byte-color-danger) !important;
+}
+.border-dark {
+	border-color: var(--byte-color-dark) !important;
+}
+.border-light {
+	border-color: var(--byte-color-light) !important;
+}
+.border-white {
+	border-color: var(--byte-color-white) !important;
+}
 
 // Border radius
-.rounded { border-radius: var(--hikma-border-radius) !important; }
-.rounded-sm { border-radius: var(--hikma-border-radius-sm) !important; }
-.rounded-lg { border-radius: var(--hikma-border-radius-lg) !important; }
-.rounded-circle { border-radius: 50% !important; }
-.rounded-pill { border-radius: 9999px !important; } // For pill shape
-.rounded-0 { border-radius: 0 !important; }
+.rounded {
+	border-radius: var(--byte-border-radius) !important;
+}
+.rounded-sm {
+	border-radius: var(--byte-border-radius-sm) !important;
+}
+.rounded-lg {
+	border-radius: var(--byte-border-radius-lg) !important;
+}
+.rounded-circle {
+	border-radius: 50% !important;
+}
+.rounded-pill {
+	border-radius: 9999px !important;
+} // For pill shape
+.rounded-0 {
+	border-radius: 0 !important;
+}
 // Individual corners (if needed, expand later)
-// .rounded-top { border-top-left-radius: var(--hikma-border-radius) !important; border-top-right-radius: var(--hikma-border-radius) !important; }
+// .rounded-top { border-top-left-radius: var(--byte-border-radius) !important; border-top-right-radius: var(--byte-border-radius) !important; }

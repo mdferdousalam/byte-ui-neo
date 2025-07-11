@@ -1,56 +1,56 @@
 :root {
-  --hikma-tooltip-bg: #343a40;
-  --hikma-tooltip-color: #ffffff;
-  --hikma-tooltip-border-radius: 0.375rem;
-  --hikma-popover-bg: #ffffff;
-  --hikma-popover-border-color: #ced4da;
-  --hikma-popover-border-radius: 0.5rem;
-  --hikma-popover-header-bg: #f8f9fa;
-  --hikma-popover-header-color: #212529;
-  --hikma-popover-body-color: #212529;
-  --hikma-popover-arrow-color: #ffffff;
-  --hikma-popover-arrow-outer-color: #ced4da;
-  --hikma-offcanvas-bg: #ffffff;
-  --hikma-offcanvas-border-color: #ced4da;
+	--byte-tooltip-bg: #343a40;
+	--byte-tooltip-color: #ffffff;
+	--byte-tooltip-border-radius: 0.375rem;
+	--byte-popover-bg: #ffffff;
+	--byte-popover-border-color: #ced4da;
+	--byte-popover-border-radius: 0.5rem;
+	--byte-popover-header-bg: #f8f9fa;
+	--byte-popover-header-color: #212529;
+	--byte-popover-body-color: #212529;
+	--byte-popover-arrow-color: #ffffff;
+	--byte-popover-arrow-outer-color: #ced4da;
+	--byte-offcanvas-bg: #ffffff;
+	--byte-offcanvas-border-color: #ced4da;
 }
 
 // Dark mode
-[data-theme="dark"] {
-  --hikma-tooltip-bg: #495057;
-  --hikma-tooltip-color: #ffffff;
-  --hikma-popover-bg: #343a40;
-  --hikma-popover-border-color: #495057;
-  --hikma-popover-header-bg: #495057;
-  --hikma-popover-header-color: #ffffff;
-  --hikma-popover-body-color: #dee2e6;
-  --hikma-popover-arrow-color: #343a40;
-  --hikma-popover-arrow-outer-color: #495057;
-  --hikma-offcanvas-bg: #212529;
-  --hikma-offcanvas-border-color: #495057;
+[data-theme='dark'] {
+	--byte-tooltip-bg: #495057;
+	--byte-tooltip-color: #ffffff;
+	--byte-popover-bg: #343a40;
+	--byte-popover-border-color: #495057;
+	--byte-popover-header-bg: #495057;
+	--byte-popover-header-color: #ffffff;
+	--byte-popover-body-color: #dee2e6;
+	--byte-popover-arrow-color: #343a40;
+	--byte-popover-arrow-outer-color: #495057;
+	--byte-offcanvas-bg: #212529;
+	--byte-offcanvas-border-color: #495057;
 }
 
 // Responsive
 @media (max-width: 768px) {
-  .offcanvas {
-    &--start,
-    &--end {
-      width: 100%;
-    }
-  }
-  
-  .image-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-  
-  .lightbox {
-    &__nav {
-      &--prev {
-        left: 1rem;
-      }
-      
-      &--next {
-        right: 1rem;
-      }
-    }
-  }
+	.offcanvas {
+		&--start,
+		&--end {
+			width: 100%;
+		}
+	}
+
+	.image-gallery {
+		grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	}
+
+	.lightbox {
+		&__nav {
+			&--prev {
+				left: 1rem;
+			}
+
+			&--next {
+				right: 1rem;
+			}
+		}
+	}
 }

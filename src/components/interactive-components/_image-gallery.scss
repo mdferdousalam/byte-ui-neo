@@ -1,55 +1,55 @@
 // Image Gallery
 .image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  
-  &__item {
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--hikma-border-radius);
-    cursor: pointer;
-    
-    &::before {
-      content: '';
-      display: block;
-      padding-bottom: 75%;
-    }
-    
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    
-    &:hover img {
-      transform: scale(1.1);
-    }
-    
-    &:hover .image-gallery__overlay {
-      opacity: 1;
-    }
-  }
-  
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    
-    .btn {
-      margin: 0 0.5rem;
-    }
-  }
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1rem;
+
+	&__item {
+		position: relative;
+		overflow: hidden;
+		border-radius: var(--byte-border-radius);
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			display: block;
+			padding-bottom: 75%;
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s ease;
+		}
+
+		&:hover img {
+			transform: scale(1.1);
+		}
+
+		&:hover .image-gallery__overlay {
+			opacity: 1;
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.7);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+
+		.btn {
+			margin: 0 0.5rem;
+		}
+	}
 }

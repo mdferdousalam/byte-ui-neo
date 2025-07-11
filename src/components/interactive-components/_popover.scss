@@ -1,153 +1,153 @@
 // Popover
 .popover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1060;
-  display: block;
-  max-width: 276px;
-  font-family: var(--hikma-font-family-base);
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-  text-decoration: none;
-  text-shadow: none;
-  text-transform: none;
-  letter-spacing: normal;
-  word-break: normal;
-  word-spacing: normal;
-  white-space: normal;
-  line-break: auto;
-  font-size: 0.875rem;
-  word-wrap: break-word;
-  background-color: var(--hikma-popover-bg);
-  background-clip: padding-box;
-  border: 1px solid var(--hikma-popover-border-color);
-  border-radius: var(--hikma-popover-border-radius);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  
-  &__arrow {
-    position: absolute;
-    display: block;
-    width: 1rem;
-    height: 0.5rem;
-    margin: 0 var(--hikma-popover-border-radius);
-    
-    &::before,
-    &::after {
-      position: absolute;
-      display: block;
-      content: "";
-      border-color: transparent;
-      border-style: solid;
-    }
-  }
-  
-  &__header {
-    padding: 0.5rem 0.75rem;
-    margin-bottom: 0;
-    font-size: 1rem;
-    color: var(--hikma-popover-header-color);
-    background-color: var(--hikma-popover-header-bg);
-    border-bottom: 1px solid var(--hikma-popover-border-color);
-    border-top-left-radius: calc(var(--hikma-popover-border-radius) - 1px);
-    border-top-right-radius: calc(var(--hikma-popover-border-radius) - 1px);
-    
-    &:empty {
-      display: none;
-    }
-  }
-  
-  &__body {
-    padding: 0.5rem 0.75rem;
-    color: var(--hikma-popover-body-color);
-  }
-  
-  // Placement variants
-  &--top {
-    margin-bottom: 0.5rem;
-    
-    .popover__arrow {
-      bottom: calc(-0.5rem - 1px);
-      
-      &::before {
-        bottom: 0;
-        border-width: 0.5rem 0.5rem 0;
-        border-top-color: var(--hikma-popover-arrow-outer-color);
-      }
-      
-      &::after {
-        bottom: 1px;
-        border-width: 0.5rem 0.5rem 0;
-        border-top-color: var(--hikma-popover-arrow-color);
-      }
-    }
-  }
-  
-  &--right {
-    margin-left: 0.5rem;
-    
-    .popover__arrow {
-      left: calc(-0.5rem - 1px);
-      width: 0.5rem;
-      height: 1rem;
-      margin: var(--hikma-popover-border-radius) 0;
-      
-      &::before {
-        left: 0;
-        border-width: 0.5rem 0.5rem 0.5rem 0;
-        border-right-color: var(--hikma-popover-arrow-outer-color);
-      }
-      
-      &::after {
-        left: 1px;
-        border-width: 0.5rem 0.5rem 0.5rem 0;
-        border-right-color: var(--hikma-popover-arrow-color);
-      }
-    }
-  }
-  
-  &--bottom {
-    margin-top: 0.5rem;
-    
-    .popover__arrow {
-      top: calc(-0.5rem - 1px);
-      
-      &::before {
-        top: 0;
-        border-width: 0 0.5rem 0.5rem;
-        border-bottom-color: var(--hikma-popover-arrow-outer-color);
-      }
-      
-      &::after {
-        top: 1px;
-        border-width: 0 0.5rem 0.5rem;
-        border-bottom-color: var(--hikma-popover-arrow-color);
-      }
-    }
-  }
-  
-  &--left {
-    margin-right: 0.5rem;
-    
-    .popover__arrow {
-      right: calc(-0.5rem - 1px);
-      width: 0.5rem;
-      height: 1rem;
-      margin: var(--hikma-popover-border-radius) 0;
-      
-      &::before {
-        right: 0;
-        border-width: 0.5rem 0 0.5rem 0.5rem;
-        border-left-color: var(--hikma-popover-arrow-outer-color);
-      }
-      
-      &::after {
-        right: 1px;
-        border-width: 0.5rem 0 0.5rem 0.5rem;
-        border-left-color: var(--hikma-popover-arrow-color);
-      }
-    }
-  }
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1060;
+	display: block;
+	max-width: 276px;
+	font-family: var(--byte-font-family-base);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: left;
+	text-decoration: none;
+	text-shadow: none;
+	text-transform: none;
+	letter-spacing: normal;
+	word-break: normal;
+	word-spacing: normal;
+	white-space: normal;
+	line-break: auto;
+	font-size: 0.875rem;
+	word-wrap: break-word;
+	background-color: var(--byte-popover-bg);
+	background-clip: padding-box;
+	border: 1px solid var(--byte-popover-border-color);
+	border-radius: var(--byte-popover-border-radius);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+
+	&__arrow {
+		position: absolute;
+		display: block;
+		width: 1rem;
+		height: 0.5rem;
+		margin: 0 var(--byte-popover-border-radius);
+
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			content: '';
+			border-color: transparent;
+			border-style: solid;
+		}
+	}
+
+	&__header {
+		padding: 0.5rem 0.75rem;
+		margin-bottom: 0;
+		font-size: 1rem;
+		color: var(--byte-popover-header-color);
+		background-color: var(--byte-popover-header-bg);
+		border-bottom: 1px solid var(--byte-popover-border-color);
+		border-top-left-radius: calc(var(--byte-popover-border-radius) - 1px);
+		border-top-right-radius: calc(var(--byte-popover-border-radius) - 1px);
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	&__body {
+		padding: 0.5rem 0.75rem;
+		color: var(--byte-popover-body-color);
+	}
+
+	// Placement variants
+	&--top {
+		margin-bottom: 0.5rem;
+
+		.popover__arrow {
+			bottom: calc(-0.5rem - 1px);
+
+			&::before {
+				bottom: 0;
+				border-width: 0.5rem 0.5rem 0;
+				border-top-color: var(--byte-popover-arrow-outer-color);
+			}
+
+			&::after {
+				bottom: 1px;
+				border-width: 0.5rem 0.5rem 0;
+				border-top-color: var(--byte-popover-arrow-color);
+			}
+		}
+	}
+
+	&--right {
+		margin-left: 0.5rem;
+
+		.popover__arrow {
+			left: calc(-0.5rem - 1px);
+			width: 0.5rem;
+			height: 1rem;
+			margin: var(--byte-popover-border-radius) 0;
+
+			&::before {
+				left: 0;
+				border-width: 0.5rem 0.5rem 0.5rem 0;
+				border-right-color: var(--byte-popover-arrow-outer-color);
+			}
+
+			&::after {
+				left: 1px;
+				border-width: 0.5rem 0.5rem 0.5rem 0;
+				border-right-color: var(--byte-popover-arrow-color);
+			}
+		}
+	}
+
+	&--bottom {
+		margin-top: 0.5rem;
+
+		.popover__arrow {
+			top: calc(-0.5rem - 1px);
+
+			&::before {
+				top: 0;
+				border-width: 0 0.5rem 0.5rem;
+				border-bottom-color: var(--byte-popover-arrow-outer-color);
+			}
+
+			&::after {
+				top: 1px;
+				border-width: 0 0.5rem 0.5rem;
+				border-bottom-color: var(--byte-popover-arrow-color);
+			}
+		}
+	}
+
+	&--left {
+		margin-right: 0.5rem;
+
+		.popover__arrow {
+			right: calc(-0.5rem - 1px);
+			width: 0.5rem;
+			height: 1rem;
+			margin: var(--byte-popover-border-radius) 0;
+
+			&::before {
+				right: 0;
+				border-width: 0.5rem 0 0.5rem 0.5rem;
+				border-left-color: var(--byte-popover-arrow-outer-color);
+			}
+
+			&::after {
+				right: 1px;
+				border-width: 0.5rem 0 0.5rem 0.5rem;
+				border-left-color: var(--byte-popover-arrow-color);
+			}
+		}
+	}
 }

@@ -1,6 +1,6 @@
-# 📚 Hikma UI Documentation
+# 📚 Byte UI Documentation
 
-Welcome to the comprehensive documentation for Hikma UI - a modern, lightweight CSS framework built with Sass and vanilla JavaScript.
+Welcome to the comprehensive documentation for Byte UI - a modern, lightweight CSS framework built with Sass and vanilla JavaScript.
 
 ## 📖 Table of Contents
 
@@ -64,7 +64,7 @@ Welcome to the comprehensive documentation for Hikma UI - a modern, lightweight 
 
 ### File Structure
 ```
-hikma-ui/
+byte-ui/
 ├── src/
 │   ├── main.scss              # Main entry point
 │   ├── base/                  # Base styles and variables
@@ -171,7 +171,7 @@ hikma-ui/
 
 #### From Bootstrap
 ```scss
-// Bootstrap to Hikma UI class mappings
+// Bootstrap to Byte UI class mappings
 .btn-primary     → .btn.btn--primary
 .card-body       → .card-body (same)
 .form-control    → .form-control (same)
@@ -181,7 +181,7 @@ hikma-ui/
 
 #### From Tailwind CSS
 ```scss
-// Tailwind to Hikma UI class mappings
+// Tailwind to Byte UI class mappings
 .bg-blue-500     → .bg-primary
 .text-white      → .text-white
 .p-4             → .p-md
@@ -202,8 +202,8 @@ We welcome contributions! Here's how you can help:
 ### Development Setup
 ```bash
 # Clone the repository
-git clone https://github.com/mdferdousalam/hikma-ui.git
-cd hikma-ui
+git clone https://github.com/mdferdousalam/byte-ui.git
+cd byte-ui
 
 # Install dependencies
 npm install
@@ -220,7 +220,7 @@ npm test
 
 ## 📄 License
 
-Hikma UI is released under the MIT License. See [LICENSE](../LICENSE) for details.
+Byte UI is released under the MIT License. See [LICENSE](../LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
@@ -235,14 +235,14 @@ Hikma UI is released under the MIT License. See [LICENSE](../LICENSE) for detail
 Need help? We're here for you:
 
 - 📧 **Email**: mdferdousalam@example.com
-- 💬 **GitHub Discussions**: [Ask questions](https://github.com/mdferdousalam/hikma-ui/discussions)
-- 🐛 **Bug Reports**: [Create an issue](https://github.com/mdferdousalam/hikma-ui/issues)
+- 💬 **GitHub Discussions**: [Ask questions](https://github.com/mdferdousalam/byte-ui/discussions)
+- 🐛 **Bug Reports**: [Create an issue](https://github.com/mdferdousalam/byte-ui/issues)
 - 📚 **Documentation**: You're reading it!
-- 🌟 **Show Support**: [Star us on GitHub](https://github.com/mdferdousalam/hikma-ui)
+- 🌟 **Show Support**: [Star us on GitHub](https://github.com/mdferdousalam/byte-ui)
 
 ---
 
 <div align="center">
   <p><strong>Made with ❤️ in Bangladesh</strong></p>
-  <p>If you find Hikma UI helpful, please consider giving it a ⭐ on GitHub!</p>
+  <p>If you find Byte UI helpful, please consider giving it a ⭐ on GitHub!</p>
 </div>

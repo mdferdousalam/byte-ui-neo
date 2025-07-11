@@ -1,72 +1,72 @@
 // 7. Advanced CSS Animation Component
 .morphing-button {
-    --morph-duration: 0.3s;
-    --morph-easing: cubic-bezier(0.4, 0, 0.2, 1);
-    --morph-bg: var(--hikma-color-primary);
-    --morph-text: white;
-    --morph-hover-bg: var(--hikma-color-primary-hover);
-    --morph-radius: var(--hikma-border-radius);
-    
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--hikma-spacing-sm);
-    background: var(--morph-bg);
-    color: var(--morph-text);
-    border: none;
-    border-radius: var(--morph-radius);
-    padding: var(--hikma-spacing-sm) var(--hikma-spacing-md);
-    font-size: var(--hikma-font-size-base);
-    font-weight: var(--hikma-font-weight-medium);
-    cursor: pointer;
-    transition: all var(--morph-duration) var(--morph-easing);
-    transform-origin: center;
-    
-    &:hover {
-        --morph-bg: var(--morph-hover-bg);
-        --morph-radius: calc(var(--hikma-border-radius) + 4px);
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: var(--hikma-shadow-lg);
-    }
-    
-    &:active {
-        transform: translateY(0) scale(0.98);
-        transition-duration: 0.1s;
-    }
-    
-    .button-icon {
-        transition: transform var(--morph-duration) var(--morph-easing);
-    }
-    
-    &:hover .button-icon {
-        transform: rotate(360deg);
-    }
-    
-    .button-text {
-        position: relative;
-        overflow: hidden;
-        
-        &::after {
-            content: attr(data-hover-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: inherit;
-            transform: translateY(100%);
-            transition: transform var(--morph-duration) var(--morph-easing);
-        }
-    }
-    
-    &:hover .button-text::after {
-        transform: translateY(0);
-    }
-    
-    &:hover .button-text {
-        transform: translateY(-100%);
-    }
+	--morph-duration: 0.3s;
+	--morph-easing: cubic-bezier(0.4, 0, 0.2, 1);
+	--morph-bg: var(--byte-color-primary);
+	--morph-text: white;
+	--morph-hover-bg: var(--byte-color-primary-hover);
+	--morph-radius: var(--byte-border-radius);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--byte-spacing-sm);
+	background: var(--morph-bg);
+	color: var(--morph-text);
+	border: none;
+	border-radius: var(--morph-radius);
+	padding: var(--byte-spacing-sm) var(--byte-spacing-md);
+	font-size: var(--byte-font-size-base);
+	font-weight: var(--byte-font-weight-medium);
+	cursor: pointer;
+	transition: all var(--morph-duration) var(--morph-easing);
+	transform-origin: center;
+
+	&:hover {
+		--morph-bg: var(--morph-hover-bg);
+		--morph-radius: calc(var(--byte-border-radius) + 4px);
+		transform: translateY(-2px) scale(1.05);
+		box-shadow: var(--byte-shadow-lg);
+	}
+
+	&:active {
+		transform: translateY(0) scale(0.98);
+		transition-duration: 0.1s;
+	}
+
+	.button-icon {
+		transition: transform var(--morph-duration) var(--morph-easing);
+	}
+
+	&:hover .button-icon {
+		transform: rotate(360deg);
+	}
+
+	.button-text {
+		position: relative;
+		overflow: hidden;
+
+		&::after {
+			content: attr(data-hover-text);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: inherit;
+			transform: translateY(100%);
+			transition: transform var(--morph-duration) var(--morph-easing);
+		}
+	}
+
+	&:hover .button-text::after {
+		transform: translateY(0);
+	}
+
+	&:hover .button-text {
+		transform: translateY(-100%);
+	}
 }

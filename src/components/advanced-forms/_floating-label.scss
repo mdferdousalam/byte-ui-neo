@@ -1,39 +1,39 @@
 // Floating Labels
 .floating-label {
-  position: relative;
-  
-  &__input {
-    width: 100%;
-    padding: 1rem 0.75rem 0.5rem;
-    font-size: 1rem;
-    border: 1px solid var(--hikma-input-border-color);
-    border-radius: var(--hikma-input-border-radius);
-    outline: none;
-    background: transparent;
-    transition: border-color 0.2s;
-    
-    &:focus {
-      border-color: var(--hikma-color-primary);
-      box-shadow: 0 0 0 0.2rem rgba(var(--hikma-color-primary-rgb), 0.25);
-    }
-    
-    &:focus + .floating-label__label,
-    &:not(:placeholder-shown) + .floating-label__label {
-      transform: translateY(-0.5rem) scale(0.8);
-      color: var(--hikma-color-primary);
-    }
-  }
-  
-  &__label {
-    position: absolute;
-    top: 1rem;
-    left: 0.75rem;
-    font-size: 1rem;
-    color: var(--hikma-text-muted);
-    pointer-events: none;
-    transition: all 0.2s;
-    transform-origin: left top;
-    background: var(--hikma-body-bg);
-    padding: 0 0.25rem;
-  }
+	position: relative;
+
+	&__input {
+		width: 100%;
+		padding: 1rem 0.75rem 0.5rem;
+		font-size: 1rem;
+		border: 1px solid var(--byte-input-border-color);
+		border-radius: var(--byte-input-border-radius);
+		outline: none;
+		background: transparent;
+		transition: border-color 0.2s;
+
+		&:focus {
+			border-color: var(--byte-color-primary);
+			box-shadow: 0 0 0 0.2rem rgba(var(--byte-color-primary-rgb), 0.25);
+		}
+
+		&:focus + .floating-label__label,
+		&:not(:placeholder-shown) + .floating-label__label {
+			transform: translateY(-0.5rem) scale(0.8);
+			color: var(--byte-color-primary);
+		}
+	}
+
+	&__label {
+		position: absolute;
+		top: 1rem;
+		left: 0.75rem;
+		font-size: 1rem;
+		color: var(--byte-text-muted);
+		pointer-events: none;
+		transition: all 0.2s;
+		transform-origin: left top;
+		background: var(--byte-body-bg);
+		padding: 0 0.25rem;
+	}
 }

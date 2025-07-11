@@ -2,26 +2,26 @@
 // This file defines styles for dismissible, non-interactive popover messages.
 
 :root {
-	--hikma-toast-zindex: 1090;
-	--hikma-toast-width: 350px;
-	--hikma-toast-padding-x: 0.75rem;
-	--hikma-toast-padding-y: 0.75rem;
-	--hikma-toast-border-radius: var(--hikma-border-radius);
-	--hikma-toast-border-color: rgba(0, 0, 0, 0.1);
-	--hikma-toast-box-shadow: var(--hikma-box-shadow);
-	--hikma-toast-background-color: rgba(
-		var(--hikma-background-color-base-rgb),
+	--byte-toast-zindex: 1090;
+	--byte-toast-width: 350px;
+	--byte-toast-padding-x: 0.75rem;
+	--byte-toast-padding-y: 0.75rem;
+	--byte-toast-border-radius: var(--byte-border-radius);
+	--byte-toast-border-color: rgba(0, 0, 0, 0.1);
+	--byte-toast-box-shadow: var(--byte-box-shadow);
+	--byte-toast-background-color: rgba(
+		var(--byte-background-color-base-rgb),
 		0.85
 	);
-	--hikma-toast-header-color: var(--hikma-text-color-muted);
-	--hikma-toast-header-background-color: rgba(
-		var(--hikma-background-color-base-rgb),
+	--byte-toast-header-color: var(--byte-text-color-muted);
+	--byte-toast-header-background-color: rgba(
+		var(--byte-background-color-base-rgb),
 		0.7
 	);
-	--hikma-toast-header-border-color: rgba(0, 0, 0, 0.05);
-	--hikma-toast-transition-duration: 0.3s;
-	--hikma-toast-fade-transform: translate(
-		calc(var(--hikma-toast-width) + 1.5rem),
+	--byte-toast-header-border-color: rgba(0, 0, 0, 0.05);
+	--byte-toast-transition-duration: 0.3s;
+	--byte-toast-fade-transform: translate(
+		calc(var(--byte-toast-width) + 1.5rem),
 		0
 	);
 }
@@ -31,8 +31,8 @@
 	position: fixed;
 	top: 1rem;
 	right: 1rem;
-	z-index: var(--hikma-toast-zindex);
-	width: var(--hikma-toast-width);
+	z-index: var(--byte-toast-zindex);
+	width: var(--byte-toast-width);
 	max-width: calc(100% - 2rem); // Prevent overflow on mobile
 
 	// Positioning variants
@@ -56,15 +56,15 @@
 .toast {
 	width: 100%;
 	font-size: 0.875rem;
-	color: var(--hikma-text-color-base);
-	background-color: var(--hikma-toast-background-color);
+	color: var(--byte-text-color-base);
+	background-color: var(--byte-toast-background-color);
 	background-clip: padding-box;
-	border: 1px solid var(--hikma-toast-border-color);
-	box-shadow: var(--hikma-toast-box-shadow);
-	border-radius: var(--hikma-toast-border-radius);
+	border: 1px solid var(--byte-toast-border-color);
+	box-shadow: var(--byte-toast-box-shadow);
+	border-radius: var(--byte-toast-border-radius);
 	opacity: 0;
-	transition: opacity var(--hikma-toast-transition-duration) ease-in-out,
-		transform var(--hikma-toast-transition-duration) ease-in-out;
+	transition: opacity var(--byte-toast-transition-duration) ease-in-out,
+		transform var(--byte-toast-transition-duration) ease-in-out;
 
 	// Cross-browser backdrop filter
 	-webkit-backdrop-filter: blur(10px);
@@ -77,7 +77,7 @@
 
 	&.showing {
 		opacity: 0;
-		transform: var(--hikma-toast-fade-transform);
+		transform: var(--byte-toast-fade-transform);
 	}
 
 	&.show {
@@ -98,30 +98,30 @@
 .toast-header {
 	display: flex;
 	align-items: center;
-	padding: var(--hikma-toast-padding-y) var(--hikma-toast-padding-x);
-	color: var(--hikma-toast-header-color);
-	background-color: var(--hikma-toast-header-background-color);
+	padding: var(--byte-toast-padding-y) var(--byte-toast-padding-x);
+	color: var(--byte-toast-header-color);
+	background-color: var(--byte-toast-header-background-color);
 	background-clip: padding-box;
-	border-bottom: 1px solid var(--hikma-toast-header-border-color);
-	border-radius: calc(var(--hikma-toast-border-radius) - 1px)
-		calc(var(--hikma-toast-border-radius) - 1px) 0 0;
+	border-bottom: 1px solid var(--byte-toast-header-border-color);
+	border-radius: calc(var(--byte-toast-border-radius) - 1px)
+		calc(var(--byte-toast-border-radius) - 1px) 0 0;
 
 	.me-auto {
 		margin-right: auto !important;
 	}
 
 	.btn-close {
-		padding: calc(var(--hikma-toast-padding-y) * 0.5)
-			calc(var(--hikma-toast-padding-x) * 0.5);
-		margin-right: calc(var(--hikma-toast-padding-x) * -0.5);
-		margin-left: var(--hikma-toast-padding-x);
+		padding: calc(var(--byte-toast-padding-y) * 0.5)
+			calc(var(--byte-toast-padding-x) * 0.5);
+		margin-right: calc(var(--byte-toast-padding-x) * -0.5);
+		margin-left: var(--byte-toast-padding-x);
 	}
 }
 
 .toast-body {
-	padding: var(--hikma-toast-padding-y) var(--hikma-toast-padding-x);
+	padding: var(--byte-toast-padding-y) var(--byte-toast-padding-x);
 	word-wrap: break-word;
-	color: var(--hikma-text-color-base);
+	color: var(--byte-text-color-base);
 
 	// Ensure proper spacing when body contains multiple elements
 	> :last-child {
@@ -145,6 +145,6 @@
 
 	.toast {
 		width: 100%;
-		--hikma-toast-fade-transform: translateY(20px);
+		--byte-toast-fade-transform: translateY(20px);
 	}
 }

@@ -2,93 +2,98 @@
 // This file defines styles for pagination components.
 
 :root {
-    --hikma-pagination-padding-x: 0.75rem;
-    --hikma-pagination-padding-y: 0.375rem;
-    --hikma-pagination-font-size: var(--hikma-font-size-base);
-    --hikma-pagination-color: var(--hikma-link-color);
-    --hikma-pagination-bg: var(--hikma-background-color-base);
-    --hikma-pagination-border-width: var(--hikma-border-width);
-    --hikma-pagination-border-color: var(--hikma-border-color-base);
-    --hikma-pagination-border-radius: var(--hikma-border-radius);
+	--byte-pagination-padding-x: 0.75rem;
+	--byte-pagination-padding-y: 0.375rem;
+	--byte-pagination-font-size: var(--byte-font-size-base);
+	--byte-pagination-color: var(--byte-link-color);
+	--byte-pagination-bg: var(--byte-background-color-base);
+	--byte-pagination-border-width: var(--byte-border-width);
+	--byte-pagination-border-color: var(--byte-border-color-base);
+	--byte-pagination-border-radius: var(--byte-border-radius);
 
-    --hikma-pagination-hover-color: var(--hikma-link-hover-color);
-    --hikma-pagination-hover-bg: var(--hikma-background-color-light);
-    --hikma-pagination-hover-border-color: var(--hikma-border-color-hover);
+	--byte-pagination-hover-color: var(--byte-link-hover-color);
+	--byte-pagination-hover-bg: var(--byte-background-color-light);
+	--byte-pagination-hover-border-color: var(--byte-border-color-hover);
 
-    --hikma-pagination-focus-box-shadow: 0 0 0 0.25rem var(--hikma-color-primary-lighter); // Focus ring
-    --hikma-pagination-active-color: var(--hikma-color-white);
-    --hikma-pagination-active-bg: var(--hikma-color-primary);
-    --hikma-pagination-active-border-color: var(--hikma-color-primary);
+	--byte-pagination-focus-box-shadow: 0 0 0 0.25rem
+		var(--byte-color-primary-lighter); // Focus ring
+	--byte-pagination-active-color: var(--byte-color-white);
+	--byte-pagination-active-bg: var(--byte-color-primary);
+	--byte-pagination-active-border-color: var(--byte-color-primary);
 
-    --hikma-pagination-disabled-color: var(--hikma-text-color-muted);
-    --hikma-pagination-disabled-bg: var(--hikma-background-color-muted);
-    --hikma-pagination-disabled-border-color: var(--hikma-border-color-base);
+	--byte-pagination-disabled-color: var(--byte-text-color-muted);
+	--byte-pagination-disabled-bg: var(--byte-background-color-muted);
+	--byte-pagination-disabled-border-color: var(--byte-border-color-base);
 }
 
 .pagination {
-    display: flex;
-    padding-left: 0;
-    list-style: none;
-    border-radius: var(--hikma-pagination-border-radius);
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+	border-radius: var(--byte-pagination-border-radius);
 }
 
 .page-item {
-    &:not(:first-child) .page-link {
-        margin-left: calc(var(--hikma-pagination-border-width) * -1); // Overlap borders
-    }
+	&:not(:first-child) .page-link {
+		margin-left: calc(
+			var(--byte-pagination-border-width) * -1
+		); // Overlap borders
+	}
 
-    &:first-child {
-        .page-link {
-            border-top-left-radius: var(--hikma-pagination-border-radius);
-            border-bottom-left-radius: var(--hikma-pagination-border-radius);
-        }
-    }
+	&:first-child {
+		.page-link {
+			border-top-left-radius: var(--byte-pagination-border-radius);
+			border-bottom-left-radius: var(--byte-pagination-border-radius);
+		}
+	}
 
-    &:last-child {
-        .page-link {
-            border-top-right-radius: var(--hikma-pagination-border-radius);
-            border-bottom-right-radius: var(--hikma-pagination-border-radius);
-        }
-    }
+	&:last-child {
+		.page-link {
+			border-top-right-radius: var(--byte-pagination-border-radius);
+			border-bottom-right-radius: var(--byte-pagination-border-radius);
+		}
+	}
 
-    &.active .page-link {
-        z-index: 1; // Ensure active item is on top
-        color: var(--hikma-pagination-active-color);
-        background-color: var(--hikma-pagination-active-bg);
-        border-color: var(--hikma-pagination-active-border-color);
-    }
+	&.active .page-link {
+		z-index: 1; // Ensure active item is on top
+		color: var(--byte-pagination-active-color);
+		background-color: var(--byte-pagination-active-bg);
+		border-color: var(--byte-pagination-active-border-color);
+	}
 
-    &.disabled .page-link {
-        color: var(--hikma-pagination-disabled-color);
-        pointer-events: none;
-        background-color: var(--hikma-pagination-disabled-bg);
-        border-color: var(--hikma-pagination-disabled-border-color);
-    }
+	&.disabled .page-link {
+		color: var(--byte-pagination-disabled-color);
+		pointer-events: none;
+		background-color: var(--byte-pagination-disabled-bg);
+		border-color: var(--byte-pagination-disabled-border-color);
+	}
 }
 
 .page-link {
-    position: relative;
-    display: block;
-    padding: var(--hikma-pagination-padding-y) var(--hikma-pagination-padding-x);
-    font-size: var(--hikma-pagination-font-size);
-    color: var(--hikma-pagination-color);
-    text-decoration: none;
-    background-color: var(--hikma-pagination-bg);
-    border: var(--hikma-pagination-border-width) solid var(--hikma-pagination-border-color);
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	position: relative;
+	display: block;
+	padding: var(--byte-pagination-padding-y) var(--byte-pagination-padding-x);
+	font-size: var(--byte-pagination-font-size);
+	color: var(--byte-pagination-color);
+	text-decoration: none;
+	background-color: var(--byte-pagination-bg);
+	border: var(--byte-pagination-border-width) solid
+		var(--byte-pagination-border-color);
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+		border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
-    &:hover {
-        z-index: 2; // Ensure hover is above normal
-        color: var(--hikma-pagination-hover-color);
-        background-color: var(--hikma-pagination-hover-bg);
-        border-color: var(--hikma-pagination-hover-border-color);
-    }
+	&:hover {
+		z-index: 2; // Ensure hover is above normal
+		color: var(--byte-pagination-hover-color);
+		background-color: var(--byte-pagination-hover-bg);
+		border-color: var(--byte-pagination-hover-border-color);
+	}
 
-    &:focus {
-        z-index: 3; // Ensure focus is on top
-        color: var(--hikma-pagination-hover-color);
-        background-color: var(--hikma-pagination-hover-bg);
-        outline: 0;
-        box-shadow: var(--hikma-pagination-focus-box-shadow);
-    }
+	&:focus {
+		z-index: 3; // Ensure focus is on top
+		color: var(--byte-pagination-hover-color);
+		background-color: var(--byte-pagination-hover-bg);
+		outline: 0;
+		box-shadow: var(--byte-pagination-focus-box-shadow);
+	}
 }
