@@ -1,4 +1,4 @@
-# 🌟 Byte UI Framework
+# 🌟 Byte UI Neo Framework
 
 <div align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version">
@@ -9,7 +9,7 @@
 
 ## 📖 Overview
 
-**Byte UI** is a modern, lightweight, and highly customizable CSS framework built with **Sass (SCSS)** and **vanilla JavaScript**. It provides a comprehensive set of UI components, utility classes, and responsive design patterns to help you build beautiful, accessible, and performant web applications.
+**Byte UI Neo** is a modern, lightweight, and highly customizable CSS framework built with **Sass (SCSS)** and **vanilla JavaScript**. It provides a comprehensive set of UI components, utility classes, and responsive design patterns to help you build beautiful, accessible, and performant web applications.
 
 ### ✨ Key Features
 
@@ -32,25 +32,25 @@
 
 #### Option 1: NPM (Recommended)
 ```bash
-npm install @mdferdousalam1989/byte-ui
+npm install byte-ui-neo
 ```
 
 #### Option 2: Yarn
 ```bash
-yarn add @mdferdousalam1989/byte-ui
+yarn add byte-ui-neo
 ```
 
 #### Option 3: CDN
 ```html
 <!-- CSS -->
-<link rel="stylesheet" href="https://unpkg.com/@mdferdousalam1989/byte-ui@1.1.1/dist/byte-ui.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@mdferdousalam1989/byte-ui-neo@1.1.1/dist/byte-ui-neo.min.css">
 
 <!-- JavaScript -->
-<script src="https://unpkg.com/@mdferdousalam1989/byte-ui@1.1.1/dist/byte-ui-js.min.js"></script>
+<script src="https://unpkg.com/@mdferdousalam1989/byte-ui-neo@1.1.1/dist/byte-ui-neo-js.min.js"></script>
 ```
 
 #### Option 4: Download
-Download the latest release from [GitHub Releases](https://github.com/mdferdousalam/byte-ui/releases)
+Download the latest release from [GitHub Releases](https://github.com/mdferdousalam/byte-ui-neo/releases)
 
 ### 🛠️ Usage
 
@@ -61,16 +61,16 @@ Download the latest release from [GitHub Releases](https://github.com/mdferdousa
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Byte UI App</title>
-    <link rel="stylesheet" href="path/to/byte-ui.min.css">
+    <title>My Byte UI Neo App</title>
+    <link rel="stylesheet" href="path/to/byte-ui-neo.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Byte UI!</h1>
+        <h1>Welcome to Byte UI Neo!</h1>
         <button class="btn btn--primary">Get Started</button>
     </div>
     
-    <script src="path/to/byte-ui-js.min.js"></script>
+    <script src="path/to/byte-ui-neo-js.min.js"></script>
 </body>
 </html>
 ```
@@ -78,11 +78,11 @@ Download the latest release from [GitHub Releases](https://github.com/mdferdousa
 #### Using with Build Tools
 ```scss
 // Import the entire framework
-@import '~@mdferdousalam1989/byte-ui/src/main.scss';
+@import '~@mdferdousalam1989/byte-ui-neo/src/main.scss';
 
 // Or import specific components
-@import '~@mdferdousalam1989/byte-ui/src/components/button';
-@import '~@mdferdousalam1989/byte-ui/src/components/card';
+@import '~@mdferdousalam1989/byte-ui-neo/src/components/button';
+@import '~@mdferdousalam1989/byte-ui-neo/src/components/card';
 ```
 
 ## 🎨 Components Overview
@@ -410,8 +410,8 @@ const perfObserver = new PerformanceObserver((list) => {
 
 ```bash
 # Clone the repository
-git clone https://github.com/mdferdousalam/byte-ui.git
-cd byte-ui
+git clone https://github.com/mdferdousalam/byte-ui-neo.git
+cd byte-ui-neo
 
 # Install dependencies
 npm install
@@ -449,8 +449,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 - 📧 Email: mdferdousalam@example.com
-- 💬 GitHub Discussions: [Ask questions](https://github.com/mdferdousalam/byte-ui/discussions)
-- 🐛 Bug Reports: [Create an issue](https://github.com/mdferdousalam/byte-ui/issues)
+- 💬 GitHub Discussions: [Ask questions](https://github.com/mdferdousalam/byte-ui-neo/discussions)
+- 🐛 Bug Reports: [Create an issue](https://github.com/mdferdousalam/byte-ui-neo/issues)
 
 ## 🙏 Acknowledgments
 

@@ -1,8 +1,8 @@
-# Contributing to Byte UI
+# Contributing to Byte UI Neo
 
-First off, thank you for considering contributing to Byte UI! 🎉
+First off, thank you for considering contributing to Byte UI Neo! 🎉
 
-The following is a set of guidelines for contributing to Byte UI. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to Byte UI Neo. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## Table of Contents
 
@@ -53,7 +53,7 @@ The process described here has several goals:
 
 - Maintain code quality
 - Fix problems that are important to users
-- Engage the community in working toward the best possible Byte UI
+- Engage the community in working toward the best possible Byte UI Neo
 - Enable a sustainable system for maintainers to review contributions
 
 ## Development Setup
@@ -70,8 +70,8 @@ The process described here has several goals:
 2. **Clone your fork** locally:
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/byte-ui.git
-   cd byte-ui
+   git clone https://github.com/YOUR-USERNAME/byte-ui-neo.git
+   cd byte-ui-neo
    ```
 
 3. **Install dependencies**:
@@ -102,7 +102,7 @@ The process described here has several goals:
 ### Project Structure
 
 ```
-byte-ui/
+byte-ui-neo/
 ├── src/
 │   ├── components/        # SCSS component files
 │   ├── utilities/         # Utility classes
@@ -290,8 +290,8 @@ If you need help, you can:
 
 ## License
 
-By contributing to Byte UI, you agree that your contributions will be licensed under the MIT License.
+By contributing to Byte UI Neo, you agree that your contributions will be licensed under the MIT License.
 
 ---
 
-Thank you for contributing to Byte UI! 🚀
+Thank you for contributing to Byte UI Neo! 🚀

@@ -1,9 +1,9 @@
 {
 	"name": "byte-ui-neo",
-	"version": "1.1.2",
+	"version": "1.1.3",
 	"description": "A modern, lightweight CSS framework built with Sass and vanilla JavaScript",
-	"main": "dist/byte-ui.min.js",
-	"style": "dist/byte-ui.min.css",
+	"main": "dist/byte-ui-neo.min.js",
+	"style": "dist/byte-ui-neo.min.css",
 	"types": "types/index.d.ts",
 	"files": [
 		"dist/**/*",
@@ -15,11 +15,11 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/mdferdousalam/byte-ui.git"
+		"url": "https://github.com/mdferdousalam/byte-ui-neo.git"
 	},
-	"homepage": "https://github.com/mdferdousalam/byte-ui#readme",
+	"homepage": "https://github.com/mdferdousalam/byte-ui-neo#readme",
 	"bugs": {
-		"url": "https://github.com/mdferdousalam/byte-ui/issues"
+		"url": "https://github.com/mdferdousalam/byte-ui-neo/issues"
 	},
 	"scripts": {
 		"dev": "webpack serve --mode development",

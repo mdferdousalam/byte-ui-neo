@@ -1,8 +1,8 @@
-# 🚀 Byte UI Advanced Features
+# 🚀 Byte UI Neo Advanced Features
 
 ## Overview
 
-Byte UI has been enhanced with cutting-edge features that make it competitive with modern CSS frameworks like Tailwind CSS and Bootstrap. The framework now includes advanced design systems, modern CSS features, comprehensive accessibility, and performance optimizations.
+Byte UI Neo has been enhanced with cutting-edge features that make it competitive with modern CSS frameworks like Tailwind CSS and Bootstrap. The framework now includes advanced design systems, modern CSS features, comprehensive accessibility, and performance optimizations.
 
 ## 🎨 Design System & Tokens
 
@@ -344,7 +344,7 @@ $breakpoint-2xl: 1536px;
 
 ### Installation
 ```bash
-npm install byte-ui@latest
+npm install byte-ui-neo@latest
 ```
 
 ### Basic Usage
@@ -355,15 +355,15 @@ npm install byte-ui@latest
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Byte UI Advanced</title>
-  <link rel="stylesheet" href="node_modules/byte-ui/dist/byte-ui.min.css">
+  <link rel="stylesheet" href="node_modules/byte-ui-neo/dist/byte-ui-neo.min.css">
 </head>
 <body>
   <div class="container">
-    <h1 class="text-3xl font-bold text-primary">Welcome to Byte UI</h1>
+    <h1 class="text-3xl font-bold text-primary">Welcome to Byte UI Neo</h1>
     <button class="btn btn--solid btn--primary btn--lg">Get Started</button>
   </div>
   
-  <script src="node_modules/byte-ui/dist/byte-ui-js.min.js"></script>
+  <script src="node_modules/byte-ui-neo/dist/byte-ui-neo-js.min.js"></script>
 </body>
 </html>
 ```
@@ -371,7 +371,7 @@ npm install byte-ui@latest
 ### Advanced Configuration
 ```javascript
 // Initialize with custom options
-new ByteAdvancedFeatures({
+new ByteUINeoAdvancedFeatures({
   enableViewTransitions: true,
   enablePerformanceMonitoring: true,
   enableAccessibilityEnhancements: true
@@ -395,4 +395,4 @@ new ByteAdvancedFeatures({
 
 ---
 
-**Byte UI** is now a cutting-edge CSS framework that rivals the best in the industry. With its combination of modern CSS features, comprehensive accessibility, and performance optimizations, it's ready for production use in any modern web application.
+**Byte UI Neo** is now a cutting-edge CSS framework that rivals the best in the industry. With its combination of modern CSS features, comprehensive accessibility, and performance optimizations, it's ready for production use in any modern web application.

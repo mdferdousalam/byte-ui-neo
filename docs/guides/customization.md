@@ -1,10 +1,10 @@
 # 🎨 Customization Guide
 
-Byte UI is built with customization in mind. This guide shows you how to customize colors, spacing, typography, and create your own themes.
+Byte UI Neo is built with customization in mind. This guide shows you how to customize colors, spacing, typography, and create your own themes.
 
 ## CSS Custom Properties
 
-Byte UI uses CSS custom properties (CSS variables) for easy customization. You can override these variables to match your brand and design requirements.
+Byte UI Neo uses CSS custom properties (CSS variables) for easy customization. You can override these variables to match your brand and design requirements.
 
 ### Color System
 
@@ -417,8 +417,8 @@ $byte-font-family-base: 'Poppins', sans-serif;
 $byte-border-radius: 0.5rem;
 $byte-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
-// Import Byte UI
-@import '~byte-ui/src/main.scss';
+// Import Byte UI Neo
+@import '~byte-ui-neo/src/main.scss';
 
 // Custom additions
 .btn {
@@ -527,19 +527,19 @@ module.exports = {
 
 ```scss
 // custom-build.scss - Include only what you need
-@import '~byte-ui/src/core/variables';
-@import '~byte-ui/src/core/mixins';
-@import '~byte-ui/src/core/base';
+@import '~byte-ui-neo/src/core/variables';
+@import '~byte-ui-neo/src/core/mixins';
+@import '~byte-ui-neo/src/core/base';
 
 // Only include components you use
-@import '~byte-ui/src/components/button';
-@import '~byte-ui/src/components/card';
-@import '~byte-ui/src/components/form';
+@import '~byte-ui-neo/src/components/button';
+@import '~byte-ui-neo/src/components/card';
+@import '~byte-ui-neo/src/components/form';
 
 // Only include utilities you use
-@import '~byte-ui/src/utilities/spacing';
-@import '~byte-ui/src/utilities/flex';
-@import '~byte-ui/src/utilities/text';
+@import '~byte-ui-neo/src/utilities/spacing';
+@import '~byte-ui-neo/src/utilities/flex';
+@import '~byte-ui-neo/src/utilities/text';
 ```
 
 ## Best Practices
@@ -552,4 +552,4 @@ module.exports = {
 6. **Accessibility**: Ensure your customizations don't break accessibility features
 7. **Version Control**: Keep your custom theme files in version control
 
-This comprehensive customization guide should help you create unique designs while maintaining the robust foundation that Byte UI provides!
+This comprehensive customization guide should help you create unique designs while maintaining the robust foundation that Byte UI Neo provides!

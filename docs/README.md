@@ -1,6 +1,6 @@
-# 📚 Byte UI Documentation
+# 📚 Byte UI Neo Documentation
 
-Welcome to the comprehensive documentation for Byte UI - a modern, lightweight CSS framework built with Sass and vanilla JavaScript.
+Welcome to the comprehensive documentation for Byte UI Neo - a modern, lightweight CSS framework built with Sass and vanilla JavaScript.
 
 ## 📖 Table of Contents
 
@@ -64,7 +64,7 @@ Welcome to the comprehensive documentation for Byte UI - a modern, lightweight C
 
 ### File Structure
 ```
-byte-ui/
+byte-ui-neo/
 ├── src/
 │   ├── main.scss              # Main entry point
 │   ├── base/                  # Base styles and variables
@@ -202,8 +202,8 @@ We welcome contributions! Here's how you can help:
 ### Development Setup
 ```bash
 # Clone the repository
-git clone https://github.com/mdferdousalam/byte-ui.git
-cd byte-ui
+git clone https://github.com/mdferdousalam/byte-ui-neo.git
+cd byte-ui-neo
 
 # Install dependencies
 npm install
@@ -235,10 +235,10 @@ Byte UI is released under the MIT License. See [LICENSE](../LICENSE) for details
 Need help? We're here for you:
 
 - 📧 **Email**: mdferdousalam@example.com
-- 💬 **GitHub Discussions**: [Ask questions](https://github.com/mdferdousalam/byte-ui/discussions)
-- 🐛 **Bug Reports**: [Create an issue](https://github.com/mdferdousalam/byte-ui/issues)
+- 💬 **GitHub Discussions**: [Ask questions](https://github.com/mdferdousalam/byte-ui-neo/discussions)
+- 🐛 **Bug Reports**: [Create an issue](https://github.com/mdferdousalam/byte-ui-neo/issues)
 - 📚 **Documentation**: You're reading it!
-- 🌟 **Show Support**: [Star us on GitHub](https://github.com/mdferdousalam/byte-ui)
+- 🌟 **Show Support**: [Star us on GitHub](https://github.com/mdferdousalam/byte-ui-neo)
 
 ---
 

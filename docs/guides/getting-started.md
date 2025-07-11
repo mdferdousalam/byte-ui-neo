@@ -1,10 +1,10 @@
-# 🚀 Getting Started with Byte UI
+# 🚀 Getting Started with Byte UI Neo
 
-Welcome to Byte UI! This guide will help you get up and running with our modern CSS framework in just a few minutes.
+Welcome to Byte UI Neo! This guide will help you get up and running with our modern CSS framework in just a few minutes.
 
-## What is Byte UI?
+## What is Byte UI Neo?
 
-Byte UI is a lightweight, modern CSS framework built with Sass and vanilla JavaScript. It provides:
+Byte UI Neo is a lightweight, modern CSS framework built with Sass and vanilla JavaScript. It provides:
 
 - **16+ Ready-to-use Components** - Buttons, forms, modals, navigation, and more
 - **Comprehensive Utility Classes** - Spacing, flexbox, typography, and responsive utilities
@@ -25,19 +25,19 @@ Add these lines to your HTML `<head>` section:
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Byte UI App</title>
+		<title>My Byte UI Neo App</title>
 
-		<!-- Byte UI CSS -->
+		<!-- Byte UI Neo CSS -->
 		<link
 			rel="stylesheet"
-			href="https://unpkg.com/byte-ui@1.0.0/dist/byte-ui.min.css"
+			href="https://unpkg.com/byte-ui-neo@1.0.0/dist/byte-ui-neo.min.css"
 		/>
 	</head>
 	<body>
 		<!-- Your content here -->
 
-		<!-- Byte UI JavaScript -->
-		<script src="https://unpkg.com/byte-ui@1.0.0/dist/byte-ui-js.min.js"></script>
+		<!-- Byte UI Neo JavaScript -->
+		<script src="https://unpkg.com/byte-ui-neo@1.0.0/dist/byte-ui-neo-js.min.js"></script>
 	</body>
 </html>
 ```
@@ -45,30 +45,30 @@ Add these lines to your HTML `<head>` section:
 ### Option 2: NPM (Recommended for Projects)
 
 ```bash
-npm install byte-ui
+npm install byte-ui-neo
 ```
 
 Then import in your CSS/SCSS:
 
 ```scss
 // Import entire framework
-@import '~byte-ui/src/main.scss';
+@import '~byte-ui-neo/src/main.scss';
 
 // Or import specific components
-@import '~byte-ui/src/components/button';
-@import '~byte-ui/src/components/card';
-@import '~byte-ui/src/utilities/spacing';
+@import '~byte-ui-neo/src/components/button';
+@import '~byte-ui-neo/src/components/card';
+@import '~byte-ui-neo/src/utilities/spacing';
 ```
 
 ### Option 3: Download
 
-1. Download the latest release from [GitHub](https://github.com/mdferdousalam/byte-ui/releases)
+1. Download the latest release from [GitHub](https://github.com/mdferdousalam/byte-ui-neo/releases)
 2. Extract the files
 3. Include the CSS and JavaScript files in your project
 
 ```html
-<link rel="stylesheet" href="path/to/byte-ui.min.css" />
-<script src="path/to/byte-ui-js.min.js"></script>
+<link rel="stylesheet" href="path/to/byte-ui-neo.min.css" />
+<script src="path/to/byte-ui-neo-js.min.js"></script>
 ```
 
 ## Your First Page
@@ -81,10 +81,10 @@ Let's create a simple page to see Byte UI in action:
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My First Byte UI Page</title>
+		<title>My First Byte UI Neo Page</title>
 		<link
 			rel="stylesheet"
-			href="https://unpkg.com/byte-ui@1.0.0/dist/byte-ui.min.css"
+			href="https://unpkg.com/byte-ui-neo@1.0.0/dist/byte-ui-neo.min.css"
 		/>
 	</head>
 	<body>
@@ -122,7 +122,7 @@ Let's create a simple page to see Byte UI in action:
 				<div class="col-md-8">
 					<!-- Hero Section -->
 					<div class="section section-primary text-center p-xl mb-lg">
-						<h1>Welcome to Byte UI</h1>
+						<h1>Welcome to Byte UI Neo</h1>
 						<p class="lead">
 							Build beautiful, responsive websites with our modern CSS
 							framework.
@@ -206,17 +206,17 @@ Let's create a simple page to see Byte UI in action:
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<h6>Byte UI</h6>
+						<h6>Byte UI Neo</h6>
 						<p>Modern CSS framework for beautiful web applications.</p>
 					</div>
 					<div class="col-md-6 text-md-end">
-						<p>&copy; 2024 Byte UI. All rights reserved.</p>
+						<p>&copy; 2024 Byte UI Neo. All rights reserved.</p>
 					</div>
 				</div>
 			</div>
 		</footer>
 
-		<script src="https://unpkg.com/byte-ui@1.0.0/dist/byte-ui-js.min.js"></script>
+		<script src="https://unpkg.com/byte-ui-neo@1.0.0/dist/byte-ui-neo-js.min.js"></script>
 	</body>
 </html>
 ```
@@ -375,8 +375,8 @@ Now that you have Byte UI set up, here's what you can do next:
 If you need help:
 
 - 📚 Check our [documentation](../README.md)
-- 🐛 Report bugs on [GitHub Issues](https://github.com/mdferdousalam/byte-ui/issues)
-- 💬 Ask questions in [GitHub Discussions](https://github.com/mdferdousalam/byte-ui/discussions)
+- 🐛 Report bugs on [GitHub Issues](https://github.com/mdferdousalam/byte-ui-neo/issues)
+- 💬 Ask questions in [GitHub Discussions](https://github.com/mdferdousalam/byte-ui-neo/discussions)
 - 📧 Email us at mdferdousalam@example.com
 
 ## Common Patterns
@@ -425,4 +425,4 @@ If you need help:
 </div>
 ```
 
-Happy coding with Byte UI! 🎉
+Happy coding with Byte UI Neo! 🎉

@@ -16,8 +16,8 @@ module.exports = (env, argv) => {
 	return {
 		mode: isProduction ? 'production' : 'development',
 		entry: {
-			'byte-ui': './src/main.scss',
-			'byte-ui-js': './src/js/contrast-checker.js',
+			'byte-ui-neo': './src/main.scss',
+			'byte-ui-neo-js': './src/js/contrast-checker.js',
 		},
 		output: {
 			filename: isProduction ? '[name].min.js' : '[name].js',
@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
 			publicPath: '/dist/',
 			library: {
 				type: 'window',
-				name: 'ByteUI',
+				name: 'ByteUINeo',
 			},
 			iife: true,
 		},
