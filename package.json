@@ -21,7 +21,12 @@
 	},
 	"scripts": {
 		"dev": "webpack serve --mode development",
+		"dev:auto": "node dev-server.js",
+		"dev:safe": "./start-dev.sh",
+		"start": "npm run dev:auto",
 		"build": "webpack --mode production",
+		"build:watch": "webpack --mode production --watch",
+		"serve": "npm run build && serve -s dist -l 3000",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [
