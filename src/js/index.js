@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// 7. Carousel
 	handleCarousel();
+
+	// 8. Form Validation
+	handleFormValidation();
 });
 
 // --- Component-specific JavaScript Functions ---

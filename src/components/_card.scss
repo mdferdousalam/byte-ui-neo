@@ -38,13 +38,13 @@
         border-bottom: inherit;
 
         &:first-child {
-            border-top-left-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
-            border-top-right-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
+            border-top-left-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+            border-top-right-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
         }
 
         &:last-child {
-            border-bottom-left-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
-            border-bottom-right-radius: subtract(var(--hikma-card-border-radius), var(--hikma-card-border-width));
+            border-bottom-left-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
+            border-bottom-right-radius: calc(var(--hikma-card-border-radius) - var(--hikma-card-border-width));
         }
     }
 }
