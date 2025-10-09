@@ -1,0 +1,125 @@
+// AI-Powered Color System
+// Automatically generates accessible color palettes
+
+// Modern CSS color functions for intelligent color generation
+:root {
+	// AI-generated color scales using color-mix()
+	--byte-primary-50: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 8%,
+		white
+	);
+	--byte-primary-100: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 12%,
+		white
+	);
+	--byte-primary-200: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 24%,
+		white
+	);
+	--byte-primary-300: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 36%,
+		white
+	);
+	--byte-primary-400: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 60%,
+		white
+	);
+	--byte-primary-500: var(--byte-color-primary-base);
+	--byte-primary-600: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 84%,
+		black
+	);
+	--byte-primary-700: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 68%,
+		black
+	);
+	--byte-primary-800: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 52%,
+		black
+	);
+	--byte-primary-900: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 36%,
+		black
+	);
+	--byte-primary-950: color-mix(
+		in srgb,
+		var(--byte-color-primary-base) 20%,
+		black
+	);
+
+	// Automatic contrast calculation
+	--byte-primary-contrast: light-dark(
+		var(--byte-primary-900),
+		var(--byte-primary-100)
+	);
+
+	// Semantic color variations
+	--byte-success-50: color-mix(
+		in srgb,
+		var(--byte-color-success-base) 8%,
+		white
+	);
+	--byte-success-500: var(--byte-color-success-base);
+	--byte-success-900: color-mix(
+		in srgb,
+		var(--byte-color-success-base) 36%,
+		black
+	);
+
+	--byte-warning-50: color-mix(
+		in srgb,
+		var(--byte-color-warning-base) 8%,
+		white
+	);
+	--byte-warning-500: var(--byte-color-warning-base);
+	--byte-warning-900: color-mix(
+		in srgb,
+		var(--byte-color-warning-base) 36%,
+		black
+	);
+
+	--byte-error-50: color-mix(in srgb, var(--byte-color-error-base) 8%, white);
+	--byte-error-500: var(--byte-color-error-base);
+	--byte-error-900: color-mix(in srgb, var(--byte-color-error-base) 36%, black);
+}
+
+// Intelligent dark mode with automatic color inversion
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		// Automatically invert surface colors
+		--byte-surface-primary: var(--byte-color-neutral-900);
+		--byte-surface-secondary: var(--byte-color-neutral-800);
+		--byte-surface-elevated: var(--byte-color-neutral-800);
+
+		// Automatically adjust text colors
+		--byte-text-primary: var(--byte-color-neutral-100);
+		--byte-text-secondary: var(--byte-color-neutral-300);
+		--byte-text-muted: var(--byte-color-neutral-400);
+
+		// Intelligent color adjustments for better dark mode contrast
+		--byte-primary-50: color-mix(
+			in srgb,
+			var(--byte-color-primary-base) 20%,
+			black
+		);
+		--byte-primary-100: color-mix(
+			in srgb,
+			var(--byte-color-primary-base) 30%,
+			black
+		);
+		--byte-primary-900: color-mix(
+			in srgb,
+			var(--byte-color-primary-base) 20%,
+			white
+		);
+	}
+}

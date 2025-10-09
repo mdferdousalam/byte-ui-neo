@@ -1,0 +1,153 @@
+// Smart Grid System - Revolutionary responsive grid without breakpoints
+// Automatically adapts to content and container size
+
+.smart-grid {
+	display: grid;
+	gap: var(--grid-gap, clamp(1rem, 2vw, 2rem));
+
+	// Intelligent column sizing
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(min(var(--min-column-width, 250px), 100%), 1fr)
+	);
+
+	// Container queries for adaptive behavior
+	container-type: inline-size;
+
+	// Automatic responsive adjustments
+	@container (max-width: 400px) {
+		--min-column-width: 100%;
+		--grid-gap: 1rem;
+	}
+
+	@container (min-width: 800px) {
+		--min-column-width: 300px;
+		--grid-gap: 2rem;
+	}
+
+	@container (min-width: 1200px) {
+		--min-column-width: 350px;
+		--grid-gap: 2.5rem;
+	}
+
+	// Fallback for browsers without container queries
+	@supports not (container-type: inline-size) {
+		@media (max-width: 400px) {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		@media (min-width: 800px) {
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 2rem;
+		}
+
+		@media (min-width: 1200px) {
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			gap: 2.5rem;
+		}
+	}
+}
+
+// Grid variants for different use cases
+.smart-grid--dense {
+	grid-auto-flow: dense;
+	--min-column-width: 200px;
+}
+
+.smart-grid--cards {
+	--min-column-width: 280px;
+
+	> * {
+		container-type: inline-size;
+		background: var(--byte-surface-elevated);
+		border-radius: var(--byte-border-radius-lg);
+		padding: var(--byte-spacing-6);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+		@container (max-width: 250px) {
+			padding: var(--byte-spacing-4);
+			font-size: 0.875rem;
+		}
+	}
+}
+
+.smart-grid--masonry {
+	// Masonry-like layout using CSS Grid
+	grid-template-rows: masonry;
+
+	// Fallback for browsers without masonry support
+	@supports not (grid-template-rows: masonry) {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		max-height: 100vh; // Adjust as needed
+	}
+}
+
+// Adaptive grid items
+.grid-item {
+	container-type: inline-size;
+
+	// Automatic content adaptation
+	@container (max-width: 200px) {
+		.grid-item__title {
+			font-size: var(--byte-font-size-sm);
+		}
+
+		.grid-item__content {
+			font-size: var(--byte-font-size-xs);
+		}
+
+		.grid-item__image {
+			aspect-ratio: 1;
+			object-fit: cover;
+		}
+	}
+
+	@container (min-width: 400px) {
+		.grid-item__title {
+			font-size: var(--byte-font-size-xl);
+		}
+
+		.grid-item__image {
+			aspect-ratio: 16/9;
+		}
+	}
+}
+
+// Performance optimizations
+.smart-grid {
+	// Use CSS containment for better performance
+	contain: layout style paint;
+
+	// Optimize for large grids
+	&[data-large] {
+		content-visibility: auto;
+		contain-intrinsic-size: 300px;
+	}
+}
+
+// Accessibility enhancements
+.smart-grid {
+	// Ensure proper focus management
+	&:focus-within {
+		outline: 2px solid var(--byte-primary-500);
+		outline-offset: 2px;
+	}
+
+	// High contrast mode support
+	@media (prefers-contrast: high) {
+		> * {
+			border: 1px solid currentColor;
+		}
+	}
+
+	// Reduced motion support
+	@media (prefers-reduced-motion: reduce) {
+		> * {
+			transition: none;
+		}
+	}
+}

@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
 		mode: isProduction ? 'production' : 'development',
 		entry: {
 			'byte-ui-neo': './src/main.scss',
-			'byte-ui-neo-js': './src/js/contrast-checker.js',
+			'byte-ui-neo-js': './src/js/byte-ui.js',
 		},
 		output: {
 			filename: isProduction ? '[name].min.js' : '[name].js',
