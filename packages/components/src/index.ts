@@ -1,9 +1,9 @@
 /**
- * @hikmaui/components v0.7.0
+ * @hikmaui/components v0.8.0
  * React components for HikmaUI - zero external dependencies except React
  *
- * Version: 0.7.0 (Week 5 Complete)
- * Progress: 14/20 components complete (70%)
+ * Version: 0.8.0 (COMPLETE - 100%)
+ * Progress: 20/20 components complete (100%) 🎉
  * License: MIT
  *
  * @packageDocumentation
@@ -45,10 +45,10 @@ export {
   type DropdownMenuItemType,
 } from './components/DropdownMenu';
 
-// TODO: Week 6 (6 components)
-// export { Tabs, type TabsProps } from './components/Tabs';
-// export { Accordion, type AccordionProps } from './components/Accordion';
-// export { Breadcrumb, type BreadcrumbProps } from './components/Breadcrumb';
-// export { Pagination, type PaginationProps } from './components/Pagination';
-// export { Progress, type ProgressProps } from './components/Progress';
-// export { Skeleton, type SkeletonProps } from './components/Skeleton';
+// Navigation Components (Week 6) - ✅ 6/6 COMPLETE (100%)
+export { Tabs, type TabsProps, type TabItem } from './components/Tabs';
+export { Accordion, type AccordionProps, type AccordionItem } from './components/Accordion';
+export { Breadcrumb, type BreadcrumbProps, type BreadcrumbItem } from './components/Breadcrumb';
+export { Pagination, type PaginationProps } from './components/Pagination';
+export { Progress, type ProgressProps, type ProgressVariant, type ProgressSize } from './components/Progress';
+export { Skeleton, type SkeletonProps, type SkeletonVariant, type SkeletonAnimation } from './components/Skeleton';

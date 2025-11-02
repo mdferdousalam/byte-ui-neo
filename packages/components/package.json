@@ -1,7 +1,7 @@
 {
   "name": "@hikmaui/components",
-  "version": "0.7.0",
-  "description": "React components for HikmaUI - zero external dependencies except React. 14 production-ready components with complete Week 5 (Modal, Alert, Toast, Avatar, Tooltip, DropdownMenu) - 70% Complete",
+  "version": "0.8.0",
+  "description": "React components for HikmaUI - zero external dependencies except React. 20 production-ready components - COMPLETE (100%) 🎉 - Button, Input, Card, Badge, Checkbox, Radio, Switch, Select, Modal, Alert, Toast, Avatar, Tooltip, DropdownMenu, Tabs, Accordion, Breadcrumb, Pagination, Progress, Skeleton",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
