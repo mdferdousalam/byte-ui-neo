@@ -1,42 +1,59 @@
 // Theme - Advanced Dark Mode with CSS light-dark() Function
-// Modern CSS color scheme using light-dark() function for automatic theme switching
+// KlikkFlow color schema with automatic theme switching
 
 // Color scheme preference detection
 :root {
 	// Enable automatic color scheme detection
 	color-scheme: light dark;
 
-	// Modern CSS light-dark() function for automatic theme switching
-	--byte-color-primary: light-dark(#007bff, #0d6efd);
-	--byte-color-secondary: light-dark(#6c757d, #6c7293);
-	--byte-color-success: light-dark(#28a745, #198754);
-	--byte-color-danger: light-dark(#dc3545, #e74c3c);
-	--byte-color-warning: light-dark(#ffc107, #f39c12);
-	--byte-color-info: light-dark(#17a2b8, #3498db);
-	--byte-color-light: light-dark(#f8f9fa, #343a40);
-	--byte-color-dark: light-dark(#343a40, #f8f9fa);
+	// ==========================================
+	// KlikkFlow Brand Colors with light-dark()
+	// ==========================================
+	// Primary (Sky-Cyan: light) → (Brighter Blue: dark)
+	--byte-color-primary: light-dark(#0ea5e9, #40a9ff);
+	--byte-color-primary-hover: light-dark(#0284c7, #69c0ff);
 
-	// Base colors
-	--byte-text-color-base: light-dark(#212529, #f8f9fa);
-	--byte-text-color-muted: light-dark(#6c757d, #adb5bd);
-	--byte-background-color-base: light-dark(#ffffff, #212529);
-	--byte-background-color-secondary: light-dark(#f8f9fa, #343a40);
-	--byte-border-color-base: light-dark(#dee2e6, #495057);
-	--byte-border-color-light: light-dark(#e9ecef, #6c757d);
+	// Secondary (Purple)
+	--byte-color-secondary: light-dark(#8b5cf6, #9254de);
+	--byte-color-secondary-hover: light-dark(#7c3aed, #b37feb);
 
-	// Surface colors
-	--byte-surface-color: light-dark(#ffffff, #343a40);
-	--byte-surface-color-hover: light-dark(#f8f9fa, #495057);
-	--byte-surface-color-active: light-dark(#e9ecef, #6c757d);
+	// Success (Green)
+	--byte-color-success: light-dark(#22c55e, #73d13d);
+
+	// Danger (Red)
+	--byte-color-danger: light-dark(#ef4444, #ff7875);
+
+	// Warning (Amber)
+	--byte-color-warning: light-dark(#f59e0b, #ffc53d);
+
+	// Info (Cyan)
+	--byte-color-info: light-dark(#06b6d4, #36cfc9);
+
+	// Light/Dark
+	--byte-color-light: light-dark(#f9fafb, #1f1f1f);
+	--byte-color-dark: light-dark(#111827, #ffffff);
+
+	// Base colors (KlikkFlow grays)
+	--byte-text-color-base: light-dark(#111827, #ffffff);
+	--byte-text-color-muted: light-dark(#6b7280, #9ca3af);
+	--byte-background-color-base: light-dark(#ffffff, #1f2937);
+	--byte-background-color-secondary: light-dark(#f9fafb, #374151);
+	--byte-border-color-base: light-dark(#e5e7eb, #4b5563);
+	--byte-border-color-light: light-dark(#f3f4f6, #6b7280);
+
+	// Surface colors (KlikkFlow grays)
+	--byte-surface-color: light-dark(#ffffff, #374151);
+	--byte-surface-color-hover: light-dark(#f9fafb, #4b5563);
+	--byte-surface-color-active: light-dark(#f3f4f6, #6b7280);
 
 	// Shadow colors
-	--byte-shadow-color: light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.5));
-	--byte-shadow-color-lg: light-dark(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+	--byte-shadow-color: light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+	--byte-shadow-color-lg: light-dark(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.75));
 
-	// Focus colors
+	// Focus colors (KlikkFlow primary)
 	--byte-focus-color: light-dark(
-		rgba(0, 123, 255, 0.25),
-		rgba(13, 110, 253, 0.5)
+		rgba(14, 165, 233, 0.25),
+		rgba(64, 169, 255, 0.5)
 	);
 
 	// Component specific colors
@@ -45,143 +62,150 @@
 	--byte-btn-secondary-bg: var(--byte-color-secondary);
 	--byte-btn-secondary-text: light-dark(#ffffff, #ffffff);
 
-	// Form colors
-	--byte-input-bg: light-dark(#ffffff, #495057);
-	--byte-input-border: light-dark(#ced4da, #6c757d);
-	--byte-input-focus-border: light-dark(#86b7fe, #0d6efd);
+	// Form colors (KlikkFlow)
+	--byte-input-bg: light-dark(#ffffff, #4b5563);
+	--byte-input-border: light-dark(#d1d5db, #6b7280);
+	--byte-input-focus-border: light-dark(#0ea5e9, #40a9ff);
 	--byte-input-focus-shadow: light-dark(
-		rgba(0, 123, 255, 0.25),
-		rgba(13, 110, 253, 0.5)
+		rgba(14, 165, 233, 0.25),
+		rgba(64, 169, 255, 0.5)
 	);
 
-	// Card colors
-	--byte-card-bg: light-dark(#ffffff, #343a40);
+	// Card colors (KlikkFlow)
+	--byte-card-bg: light-dark(#ffffff, #374151);
 	--byte-card-border: light-dark(
-		rgba(0, 0, 0, 0.125),
-		rgba(255, 255, 255, 0.125)
+		rgba(0, 0, 0, 0.1),
+		rgba(255, 255, 255, 0.1)
 	);
 
-	// Modal colors
-	--byte-modal-bg: light-dark(#ffffff, #343a40);
-	--byte-modal-backdrop: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+	// Modal colors (KlikkFlow)
+	--byte-modal-bg: light-dark(#ffffff, #374151);
+	--byte-modal-backdrop: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
 
-	// Navigation colors
-	--byte-navbar-bg: light-dark(#f8f9fa, #343a40);
-	--byte-navbar-text: light-dark(#212529, #f8f9fa);
-	--byte-navbar-hover: light-dark(#e9ecef, #495057);
+	// Navigation colors (KlikkFlow)
+	--byte-navbar-bg: light-dark(#f9fafb, #374151);
+	--byte-navbar-text: light-dark(#111827, #ffffff);
+	--byte-navbar-hover: light-dark(#f3f4f6, #4b5563);
 }
 
 // Fallback for browsers that don't support light-dark()
 @supports not (color: light-dark(white, black)) {
 	:root {
-		--byte-color-primary: #007bff;
-		--byte-color-secondary: #6c757d;
-		--byte-color-success: #28a745;
-		--byte-color-danger: #dc3545;
-		--byte-color-warning: #ffc107;
-		--byte-color-info: #17a2b8;
-		--byte-color-light: #f8f9fa;
-		--byte-color-dark: #343a40;
-		--byte-text-color-base: #212529;
-		--byte-text-color-muted: #6c757d;
+		// KlikkFlow Light Mode (default)
+		--byte-color-primary: #0ea5e9;
+		--byte-color-primary-hover: #0284c7;
+		--byte-color-secondary: #8b5cf6;
+		--byte-color-secondary-hover: #7c3aed;
+		--byte-color-success: #22c55e;
+		--byte-color-danger: #ef4444;
+		--byte-color-warning: #f59e0b;
+		--byte-color-info: #06b6d4;
+		--byte-color-light: #f9fafb;
+		--byte-color-dark: #111827;
+		--byte-text-color-base: #111827;
+		--byte-text-color-muted: #6b7280;
 		--byte-background-color-base: #ffffff;
-		--byte-background-color-secondary: #f8f9fa;
-		--byte-border-color-base: #dee2e6;
-		--byte-border-color-light: #e9ecef;
+		--byte-background-color-secondary: #f9fafb;
+		--byte-border-color-base: #e5e7eb;
+		--byte-border-color-light: #f3f4f6;
 		--byte-surface-color: #ffffff;
-		--byte-surface-color-hover: #f8f9fa;
-		--byte-surface-color-active: #e9ecef;
-		--byte-shadow-color: rgba(0, 0, 0, 0.15);
-		--byte-shadow-color-lg: rgba(0, 0, 0, 0.25);
-		--byte-focus-color: rgba(0, 123, 255, 0.25);
+		--byte-surface-color-hover: #f9fafb;
+		--byte-surface-color-active: #f3f4f6;
+		--byte-shadow-color: rgba(0, 0, 0, 0.1);
+		--byte-shadow-color-lg: rgba(0, 0, 0, 0.15);
+		--byte-focus-color: rgba(14, 165, 233, 0.25);
 		--byte-btn-primary-text: #ffffff;
 		--byte-btn-secondary-text: #ffffff;
 		--byte-input-bg: #ffffff;
-		--byte-input-border: #ced4da;
-		--byte-input-focus-border: #86b7fe;
-		--byte-input-focus-shadow: rgba(0, 123, 255, 0.25);
+		--byte-input-border: #d1d5db;
+		--byte-input-focus-border: #0ea5e9;
+		--byte-input-focus-shadow: rgba(14, 165, 233, 0.25);
 		--byte-card-bg: #ffffff;
-		--byte-card-border: rgba(0, 0, 0, 0.125);
+		--byte-card-border: rgba(0, 0, 0, 0.1);
 		--byte-modal-bg: #ffffff;
 		--byte-modal-backdrop: rgba(0, 0, 0, 0.5);
-		--byte-navbar-bg: #f8f9fa;
-		--byte-navbar-text: #212529;
-		--byte-navbar-hover: #e9ecef;
+		--byte-navbar-bg: #f9fafb;
+		--byte-navbar-text: #111827;
+		--byte-navbar-hover: #f3f4f6;
 	}
 
-	// Manual dark mode class for fallback
+	// Manual dark mode class for fallback (KlikkFlow Dark Theme)
 	.dark-mode {
-		--byte-color-primary: #0d6efd;
-		--byte-color-secondary: #6c7293;
-		--byte-color-success: #198754;
-		--byte-color-danger: #e74c3c;
-		--byte-color-warning: #f39c12;
-		--byte-color-info: #3498db;
-		--byte-color-light: #343a40;
-		--byte-color-dark: #f8f9fa;
-		--byte-text-color-base: #f8f9fa;
-		--byte-text-color-muted: #adb5bd;
-		--byte-background-color-base: #212529;
-		--byte-background-color-secondary: #343a40;
-		--byte-border-color-base: #495057;
-		--byte-border-color-light: #6c757d;
-		--byte-surface-color: #343a40;
-		--byte-surface-color-hover: #495057;
-		--byte-surface-color-active: #6c757d;
+		--byte-color-primary: #40a9ff;
+		--byte-color-primary-hover: #69c0ff;
+		--byte-color-secondary: #9254de;
+		--byte-color-secondary-hover: #b37feb;
+		--byte-color-success: #73d13d;
+		--byte-color-danger: #ff7875;
+		--byte-color-warning: #ffc53d;
+		--byte-color-info: #36cfc9;
+		--byte-color-light: #1f1f1f;
+		--byte-color-dark: #ffffff;
+		--byte-text-color-base: #ffffff;
+		--byte-text-color-muted: #9ca3af;
+		--byte-background-color-base: #1f2937;
+		--byte-background-color-secondary: #374151;
+		--byte-border-color-base: #4b5563;
+		--byte-border-color-light: #6b7280;
+		--byte-surface-color: #374151;
+		--byte-surface-color-hover: #4b5563;
+		--byte-surface-color-active: #6b7280;
 		--byte-shadow-color: rgba(0, 0, 0, 0.5);
 		--byte-shadow-color-lg: rgba(0, 0, 0, 0.75);
-		--byte-focus-color: rgba(13, 110, 253, 0.5);
+		--byte-focus-color: rgba(64, 169, 255, 0.5);
 		--byte-btn-primary-text: #ffffff;
 		--byte-btn-secondary-text: #ffffff;
-		--byte-input-bg: #495057;
-		--byte-input-border: #6c757d;
-		--byte-input-focus-border: #0d6efd;
-		--byte-input-focus-shadow: rgba(13, 110, 253, 0.5);
-		--byte-card-bg: #343a40;
-		--byte-card-border: rgba(255, 255, 255, 0.125);
-		--byte-modal-bg: #343a40;
-		--byte-modal-backdrop: rgba(0, 0, 0, 0.75);
-		--byte-navbar-bg: #343a40;
-		--byte-navbar-text: #f8f9fa;
-		--byte-navbar-hover: #495057;
+		--byte-input-bg: #4b5563;
+		--byte-input-border: #6b7280;
+		--byte-input-focus-border: #40a9ff;
+		--byte-input-focus-shadow: rgba(64, 169, 255, 0.5);
+		--byte-card-bg: #374151;
+		--byte-card-border: rgba(255, 255, 255, 0.1);
+		--byte-modal-bg: #374151;
+		--byte-modal-backdrop: rgba(0, 0, 0, 0.8);
+		--byte-navbar-bg: #374151;
+		--byte-navbar-text: #ffffff;
+		--byte-navbar-hover: #4b5563;
 	}
 
-	// Forced dark mode preference
+	// Forced dark mode preference (KlikkFlow Dark Theme)
 	@media (prefers-color-scheme: dark) {
 		:root:not(.light-mode) {
-			--byte-color-primary: #0d6efd;
-			--byte-color-secondary: #6c7293;
-			--byte-color-success: #198754;
-			--byte-color-danger: #e74c3c;
-			--byte-color-warning: #f39c12;
-			--byte-color-info: #3498db;
-			--byte-color-light: #343a40;
-			--byte-color-dark: #f8f9fa;
-			--byte-text-color-base: #f8f9fa;
-			--byte-text-color-muted: #adb5bd;
-			--byte-background-color-base: #212529;
-			--byte-background-color-secondary: #343a40;
-			--byte-border-color-base: #495057;
-			--byte-border-color-light: #6c757d;
-			--byte-surface-color: #343a40;
-			--byte-surface-color-hover: #495057;
-			--byte-surface-color-active: #6c757d;
+			--byte-color-primary: #40a9ff;
+			--byte-color-primary-hover: #69c0ff;
+			--byte-color-secondary: #9254de;
+			--byte-color-secondary-hover: #b37feb;
+			--byte-color-success: #73d13d;
+			--byte-color-danger: #ff7875;
+			--byte-color-warning: #ffc53d;
+			--byte-color-info: #36cfc9;
+			--byte-color-light: #1f1f1f;
+			--byte-color-dark: #ffffff;
+			--byte-text-color-base: #ffffff;
+			--byte-text-color-muted: #9ca3af;
+			--byte-background-color-base: #1f2937;
+			--byte-background-color-secondary: #374151;
+			--byte-border-color-base: #4b5563;
+			--byte-border-color-light: #6b7280;
+			--byte-surface-color: #374151;
+			--byte-surface-color-hover: #4b5563;
+			--byte-surface-color-active: #6b7280;
 			--byte-shadow-color: rgba(0, 0, 0, 0.5);
 			--byte-shadow-color-lg: rgba(0, 0, 0, 0.75);
-			--byte-focus-color: rgba(13, 110, 253, 0.5);
+			--byte-focus-color: rgba(64, 169, 255, 0.5);
 			--byte-btn-primary-text: #ffffff;
 			--byte-btn-secondary-text: #ffffff;
-			--byte-input-bg: #495057;
-			--byte-input-border: #6c757d;
-			--byte-input-focus-border: #0d6efd;
-			--byte-input-focus-shadow: rgba(13, 110, 253, 0.5);
-			--byte-card-bg: #343a40;
-			--byte-card-border: rgba(255, 255, 255, 0.125);
-			--byte-modal-bg: #343a40;
-			--byte-modal-backdrop: rgba(0, 0, 0, 0.75);
-			--byte-navbar-bg: #343a40;
-			--byte-navbar-text: #f8f9fa;
-			--byte-navbar-hover: #495057;
+			--byte-input-bg: #4b5563;
+			--byte-input-border: #6b7280;
+			--byte-input-focus-border: #40a9ff;
+			--byte-input-focus-shadow: rgba(64, 169, 255, 0.5);
+			--byte-card-bg: #374151;
+			--byte-card-border: rgba(255, 255, 255, 0.1);
+			--byte-modal-bg: #374151;
+			--byte-modal-backdrop: rgba(0, 0, 0, 0.8);
+			--byte-navbar-bg: #374151;
+			--byte-navbar-text: #ffffff;
+			--byte-navbar-hover: #4b5563;
 		}
 	}
 }

@@ -1,0 +1,217 @@
+// Accessibility - High Contrast Mode (KlikkFlow WCAG AA)
+// WCAG 2.1 AA compliant high-contrast color scheme
+
+// ==========================================
+// High Contrast Mode
+// ==========================================
+.high-contrast-mode {
+	// KlikkFlow WCAG AA Compliant Colors
+	--byte-color-primary: #0066cc;
+	--byte-color-primary-hover: #0052a3;
+	--byte-color-secondary: #7c3aed;
+	--byte-color-secondary-hover: #6d28d9;
+	--byte-color-success: #00aa00;
+	--byte-color-danger: #cc0000;
+	--byte-color-warning: #ff8800;
+	--byte-color-info: #0066cc;
+
+	// High contrast backgrounds
+	--byte-background-color-base: #000000;
+	--byte-background-color-secondary: #1a1a1a;
+	--byte-surface-color: #1a1a1a;
+	--byte-surface-color-hover: #2a2a2a;
+	--byte-surface-color-active: #3a3a3a;
+
+	// High contrast text
+	--byte-text-color-base: #ffffff;
+	--byte-text-color-muted: #e0e0e0;
+	--byte-color-light: #ffffff;
+	--byte-color-dark: #000000;
+
+	// High contrast borders
+	--byte-border-color-base: #ffffff;
+	--byte-border-color-light: #cccccc;
+
+	// Enhanced shadows for depth
+	--byte-shadow-color: rgba(255, 255, 255, 0.3);
+	--byte-shadow-color-lg: rgba(255, 255, 255, 0.5);
+
+	// Focus indicators (extra prominent)
+	--byte-focus-color: rgba(0, 102, 204, 0.8);
+	--byte-focus-ring-width: 3px;
+	--byte-focus-ring-offset: 2px;
+
+	// Form elements
+	--byte-input-bg: #000000;
+	--byte-input-border: #ffffff;
+	--byte-input-focus-border: #0066cc;
+	--byte-input-focus-shadow: 0 0 0 3px rgba(0, 102, 204, 0.5);
+
+	// Cards and modals
+	--byte-card-bg: #000000;
+	--byte-card-border: rgba(255, 255, 255, 0.3);
+	--byte-modal-bg: #000000;
+	--byte-modal-backdrop: rgba(0, 0, 0, 0.9);
+
+	// Navigation
+	--byte-navbar-bg: #000000;
+	--byte-navbar-text: #ffffff;
+	--byte-navbar-hover: #2a2a2a;
+
+	// Buttons
+	--byte-btn-primary-bg: #0066cc;
+	--byte-btn-primary-text: #ffffff;
+	--byte-btn-secondary-bg: #7c3aed;
+	--byte-btn-secondary-text: #ffffff;
+}
+
+// ==========================================
+// Enhanced Focus Indicators
+// ==========================================
+.high-contrast-mode {
+	// All interactive elements get enhanced focus
+	button,
+	a,
+	input,
+	textarea,
+	select,
+	[tabindex]:not([tabindex="-1"]) {
+		&:focus,
+		&:focus-visible {
+			outline: var(--byte-focus-ring-width, 3px) solid var(--byte-focus-color);
+			outline-offset: var(--byte-focus-ring-offset, 2px);
+			box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.3);
+		}
+	}
+
+	// Enhanced button contrast
+	.btn {
+		font-weight: 700;
+		border-width: 2px;
+
+		&:hover,
+		&:active {
+			transform: scale(1.02);
+			box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+		}
+	}
+
+	// Enhanced link visibility
+	a {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
+
+		&:hover {
+			text-decoration-thickness: 3px;
+		}
+	}
+
+	// Enhanced form controls
+	input,
+	textarea,
+	select {
+		border-width: 2px;
+		font-weight: 600;
+	}
+}
+
+// ==========================================
+// Reduced Motion Support
+// ==========================================
+@media (prefers-reduced-motion: reduce) {
+	.high-contrast-mode {
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			scroll-behavior: auto !important;
+		}
+	}
+}
+
+// ==========================================
+// High Contrast + Forced Colors (Windows High Contrast)
+// ==========================================
+@media (forced-colors: active) {
+	.high-contrast-mode {
+		// Let OS handle colors in forced colors mode
+		* {
+			forced-color-adjust: auto;
+		}
+
+		// But ensure focus is always visible
+		button:focus,
+		a:focus,
+		input:focus,
+		textarea:focus,
+		select:focus {
+			outline: 3px solid;
+			outline-offset: 2px;
+		}
+	}
+}
+
+// ==========================================
+// Utility Classes for Accessibility
+// ==========================================
+
+// Skip to main content link
+.skip-link {
+	position: absolute;
+	top: -40px;
+	left: 0;
+	background: var(--byte-color-primary);
+	color: #ffffff;
+	padding: 8px 16px;
+	text-decoration: none;
+	z-index: 100;
+	font-weight: 700;
+
+	&:focus {
+		top: 0;
+		outline: 3px solid #ffffff;
+		outline-offset: 2px;
+	}
+}
+
+// Screen reader only text
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.sr-only-focusable:focus {
+	position: static;
+	width: auto;
+	height: auto;
+	padding: inherit;
+	margin: inherit;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+}
+
+// Focus visible polyfill
+.focus-visible {
+	outline: 3px solid var(--byte-focus-color);
+	outline-offset: 2px;
+}
+
+// Enhanced contrast utilities
+.contrast-high {
+	filter: contrast(1.5);
+}
+
+.contrast-higher {
+	filter: contrast(2);
+}

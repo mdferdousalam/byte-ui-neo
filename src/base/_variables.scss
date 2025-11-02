@@ -8,28 +8,92 @@ $byte-base-font-size: 1rem; // এটি একটি Sass ভেরিয়ে
 	--byte-font-size-lg: #{$byte-base-font-size * 1.25}; // এখানে গণনা করা হয়েছে
 	--byte-font-size-xl: #{$byte-base-font-size * 1.5}; // উদাহরণ বড় ফন্ট
 
-	// Colors
-	--byte-color-primary: #007bff;
-	--byte-color-primary-hover: #0056b3;
-	--byte-color-secondary: #6c757d;
-	--byte-color-secondary-hover: #545b62;
-	--byte-color-success: #28a745;
-	--byte-color-danger: #dc3545;
-	--byte-color-warning: #ffc107;
-	--byte-color-info: #17a2b8;
-	--byte-color-light: #f8f9fa;
-	--byte-color-dark: #343a40;
+	// ==========================================
+	// KlikkFlow Brand Colors - Primary (Sky-Cyan)
+	// ==========================================
+	--byte-color-primary-50: #f0f9ff;
+	--byte-color-primary-100: #e0f2fe;
+	--byte-color-primary-400: #60a5fa;
+	--byte-color-primary-500: #0ea5e9;
+	--byte-color-primary-600: #0284c7;
+	--byte-color-primary-900: #0c4a6e;
+
+	// ==========================================
+	// KlikkFlow Secondary Colors (Purple)
+	// ==========================================
+	--byte-color-secondary-400: #c084fc;
+	--byte-color-secondary-500: #8b5cf6;
+	--byte-color-secondary-600: #9333ea;
+
+	// ==========================================
+	// KlikkFlow Semantic Colors
+	// ==========================================
+	// Success (Green)
+	--byte-color-success-50: #f0fdf4;
+	--byte-color-success-500: #22c55e;
+	--byte-color-success-600: #16a34a;
+
+	// Error/Danger (Red)
+	--byte-color-danger-50: #fef2f2;
+	--byte-color-danger-500: #ef4444;
+	--byte-color-danger-600: #dc2626;
+
+	// Warning (Amber)
+	--byte-color-warning-50: #fffbeb;
+	--byte-color-warning-500: #f59e0b;
+	--byte-color-warning-600: #d97706;
+
+	// Info (Cyan - matches primary)
+	--byte-color-info-500: #06b6d4;
+	--byte-color-info-600: #0891b2;
+
+	// ==========================================
+	// KlikkFlow Neutral/Gray Scale
+	// ==========================================
+	--byte-color-gray-50: #f9fafb;
+	--byte-color-gray-100: #f3f4f6;
+	--byte-color-gray-200: #e5e7eb;
+	--byte-color-gray-300: #d1d5db;
+	--byte-color-gray-400: #9ca3af;
+	--byte-color-gray-500: #6b7280;
+	--byte-color-gray-600: #4b5563;
+	--byte-color-gray-700: #374151;
+	--byte-color-gray-800: #1f2937;
+	--byte-color-gray-900: #111827;
+
+	// ==========================================
+	// KlikkFlow Gradients
+	// ==========================================
+	--byte-gradient-landing: linear-gradient(to bottom right, #0f172a, #1e3a8a, #312e81);
+	--byte-gradient-blue-purple: linear-gradient(to right, #60a5fa, #c084fc);
+	--byte-gradient-orange-red: linear-gradient(to right, #fb923c, #f87171);
+	--byte-gradient-button: linear-gradient(to right, #2563eb, #9333ea);
+	--byte-gradient-card: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+
+	// ==========================================
+	// Simplified Color Variables (Default Scale)
+	// ==========================================
+	--byte-color-primary: var(--byte-color-primary-500);
+	--byte-color-primary-hover: var(--byte-color-primary-600);
+	--byte-color-secondary: var(--byte-color-secondary-500);
+	--byte-color-secondary-hover: var(--byte-color-secondary-600);
+	--byte-color-success: var(--byte-color-success-500);
+	--byte-color-danger: var(--byte-color-danger-500);
+	--byte-color-warning: var(--byte-color-warning-500);
+	--byte-color-info: var(--byte-color-info-500);
+	--byte-color-light: var(--byte-color-gray-50);
+	--byte-color-dark: var(--byte-color-gray-900);
 
 	// Text Colors
-	--byte-text-color-base: #212529;
-	--byte-text-color-light: #6c757d;
-	--byte-text-color-muted: #6c757d;
+	--byte-text-color-base: var(--byte-color-gray-900);
+	--byte-text-color-light: var(--byte-color-gray-600);
+	--byte-text-color-muted: var(--byte-color-gray-500);
 	--byte-text-color-white: #ffffff;
 
 	// Background Colors
 	--byte-bg-color-body: #ffffff;
-	--byte-bg-color-dark: #343a40;
-	--byte-bg-color-light: #f8f9fa;
+	--byte-bg-color-dark: var(--byte-color-gray-900);
+	--byte-bg-color-light: var(--byte-color-gray-50);
 
 	// Spacing (using a consistent scale)
 	--byte-spacing-unit: 0.25rem; // Base unit

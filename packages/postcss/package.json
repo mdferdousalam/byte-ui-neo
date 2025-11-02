@@ -1,0 +1,42 @@
+{
+  "name": "@hikmaui/postcss",
+  "version": "0.1.0",
+  "description": "PostCSS plugin for HikmaUI JIT compilation",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+  },
+  "keywords": [
+    "postcss",
+    "postcss-plugin",
+    "hikmaui",
+    "jit"
+  ],
+  "author": "HikmaUI Team",
+  "license": "MIT",
+  "dependencies": {
+    "@hikmaui/core": "workspace:*",
+    "postcss": "^8.4.35"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.0"
+  }
+}
