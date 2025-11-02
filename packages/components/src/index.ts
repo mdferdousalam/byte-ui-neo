@@ -1,9 +1,9 @@
 /**
- * @hikmaui/components v0.5.0
+ * @hikmaui/components v0.6.0
  * React components for HikmaUI - zero external dependencies except React
  *
- * Version: 0.5.0 (Week 3-4 COMPLETE!)
- * Progress: 8/20 components complete (40%)
+ * Version: 0.6.0 (Week 5 Partial)
+ * Progress: 10/20 components complete (50%)
  * License: MIT
  *
  * @packageDocumentation
@@ -30,9 +30,17 @@ export { Radio, type RadioProps } from './components/Radio';
 export { Switch, type SwitchProps } from './components/Switch';
 export { Select, type SelectProps, type SelectOption } from './components/Select';
 
-// TODO: Advanced Components (Week 5-8) - ⏳ 0/12 PENDING
-// export { Modal, type ModalProps } from './components/Modal';
-// export { Alert, type AlertProps } from './components/Alert';
+// Advanced Components (Week 5-6) - ⏳ 2/12 COMPLETE (16.7%)
+export { Modal, type ModalProps } from './components/Modal';
+export { Alert, type AlertProps, type AlertAction } from './components/Alert';
+
+// TODO: Week 5 Remaining (4 components)
+// export { Toast, type ToastProps } from './components/Toast';
+// export { Avatar, type AvatarProps } from './components/Avatar';
+// export { Tooltip, type TooltipProps } from './components/Tooltip';
+// export { DropdownMenu, type DropdownMenuProps } from './components/DropdownMenu';
+
+// TODO: Week 6 (6 components)
 // export { Toast, type ToastProps } from './components/Toast';
 // export { Avatar, type AvatarProps } from './components/Avatar';
 // export { Tooltip, type TooltipProps } from './components/Tooltip';

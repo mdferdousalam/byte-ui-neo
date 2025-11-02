@@ -1,7 +1,7 @@
 {
   "name": "@hikmaui/components",
-  "version": "0.5.0",
-  "description": "React components for HikmaUI - zero external dependencies except React. 8 production-ready components: Button, Input, Card, Badge, Checkbox, Radio, Switch, Select (Week 3-4 Complete!)",
+  "version": "0.6.0",
+  "description": "React components for HikmaUI - zero external dependencies except React. 10 production-ready components including Modal & Alert (Week 5 Partial - 50% Complete)",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
