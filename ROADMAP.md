@@ -70,37 +70,8 @@
 
 ## 📅 3-Month Sprint Plan
 
-### Month 1: Core Foundation (Weeks 1-4)
 
-#### Week 1: Build System & JIT
-- [ ] Design JIT compiler architecture
-- [ ] Implement on-demand class generation
-- [ ] Build PostCSS plugin
-- [ ] Create Vite plugin
-- [ ] Performance benchmarks (<10KB base)
 
-#### Week 2: Configuration System
-- [ ] Create `hikma.config.js` schema
-- [ ] Theme customization API
-- [ ] Plugin system architecture
-- [ ] Preset system (minimal, default, complete)
-- [ ] Documentation for config
-
-#### Week 3: Utility Expansion (Part 1)
-- [ ] Complete spacing scale (0-96 + arbitrary)
-- [ ] Typography utilities (20+ sizes)
-- [ ] Color utilities (all KlikkFlow scales)
-- [ ] Layout utilities (grid, flex, container)
-- [ ] Responsive variants (7 breakpoints)
-
-#### Week 4: Utility Expansion (Part 2)
-- [ ] State variants (hover, focus, active, disabled)
-- [ ] Dark mode variants (`dark:` prefix)
-- [ ] Arbitrary value support (`[...]` syntax)
-- [ ] Group/peer utilities
-- [ ] **Goal**: 1000+ utility classes
-
----
 
 ### Month 2: Component Library (Weeks 5-8)
 

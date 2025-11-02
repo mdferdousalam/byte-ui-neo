@@ -1,0 +1,404 @@
+HikmaUI Component Library - Month 2 Implementation Plan
+
+ 🎯 Strategic Decisions (Based on Your Preferences)
+
+ 1. Hybrid Architecture: Both npm package AND CLI copy-paste approach
+ 2. In-House Accessibility: Build all a11y patterns ourselves (smallest bundle, full control)
+ 3. Animation System: Custom animation utilities using HikmaUI raw CSS (no Framer Motion dependency)
+ 4. Theming: CSS variables-based theming system with dark mode
+ 5. Forms: Build own form and validation system (no react-hook-form/zod dependencies)
+ 6. Migration: Complete replacement of existing SCSS components (clean break)
+
+ ---
+ 📦 Package Structure
+
+ packages/
+ ├── components/                    # NEW: @hikmaui/components npm package
+ │   ├── src/
+ │   │   ├── button/
+ │   │   ├── input/
+ │   │   ├── ... (20 components)
+ │   │   ├── lib/
+ │   │   │   ├── utils.ts           # cn() className merger
+ │   │   │   ├── accessibility.ts   # Custom a11y hooks
+ │   │   │   ├── animations.ts      # Animation utilities
+ │   │   │   └── form.ts            # Custom form system
+ │   │   └── index.ts
+ │   └── package.json
+ │
+ ├── cli/                           # ENHANCED: CLI with copy-paste support
+ │   ├── src/
+ │   │   ├── commands/
+ │   │   │   ├── add.ts             # Copy components to user project
+ │   │   │   ├── init.ts            # Setup project
+ │   │   │   └── list.ts            # List available components
+ │   │   └── registry/
+ │   │       ├── schema.ts
+ │   │       └── loader.ts
+ │   └── templates/
+ │       ├── registry.json          # Component metadata
+ │       ├── utils/                 # Shared utilities
+ │       └── components/            # Component templates (20 components)
+ │
+ ├── core/                          # EXISTING: JIT compiler (keep as-is)
+ ├── postcss/                       # EXISTING: PostCSS plugin
+ └── vite/                          # EXISTING: Vite plugin
+
+ ---
+ 🗓️ 4-Week Implementation Timelin
+
+ Week 5: Foundation (Days 1-7)
+
+ Days 1-2: Infrastructure Setup
+
+ - Create @hikmaui/components package
+ - Install minimal dependencies: class-variance-authority, clsx, tailwind-merge
+ - Create utility system:
+   - lib/utils.ts - cn() function
+   - lib/accessibility.ts - Custom a11y hooks (useFocusTrap, useKeyboardNav, useAriaAnnounce)
+   - lib/animations.ts - Animation utilities (transitions, spring physics)
+   - lib/form.ts - Form state management and validation
+ - Create theming system with CSS variables
+ - Setup component registry schema
+ - Delete existing SCSS components from src/components/
+
+ Days 3-5: Core Components (Part 1)
+
+ - Button (10 variants: default, outline, ghost, link, destructive, primary, secondary, success, warning, danger)
+   - All states: hover, active, focus, disabled, loading
+   - Icon support (left, right, icon-only)
+   - Size variants: xs, sm, md, lg, xl
+ - Input (text, email, password, search, number, tel, url)
+   - With icons (left, right)
+   - Validation states (error, success, warning)
+   - Disabled and readonly states
+ - Card (5 variants)
+   - Default, elevated, glass, interactive (hover effect), bordered
+   - With header, body, footer slots
+
+ Days 6-7: Core Components (Part 2)
+
+ - Select (custom dropdown with search)
+   - Keyboard navigation (arrow keys, type-ahead)
+   - Single and multi-select
+   - Custom option rendering
+ - Checkbox (styled with indeterminate state)
+ - Radio (radio groups with horizontal/vertical layouts)
+ - Switch (toggle with labels and descriptions)
+
+ ---
+ Week 6: Feedback Components (Days 8-14)
+
+ Days 8-9: Modals & Alerts
+
+ - Modal/Dialog
+   - Sizes: sm, md, lg, xl, full
+   - Scrollable content with sticky header/footer
+   - Focus trap implementation
+   - Portal-based rendering
+   - Backdrop blur options
+ - Alert (4 types: info, success, warning, error)
+   - With icons
+   - Dismissible
+   - Action buttons
+
+ Days 10-11: Notifications & Badges
+
+ - Toast (notification system)
+   - Queue management (max 5 visible)
+   - Positions: top-left, top-center, top-right, bottom-left, bottom-center, bottom-right
+   - Auto-dismiss with custom duration
+   - Action buttons and close button
+   - Promise-based API
+ - Badge
+   - Color variants (8 colors)
+   - Sizes: sm, md, lg
+   - With dot indicator
+   - Removable with close icon
+   - Numeric badges
+
+ Days 12-14: Avatars & Tooltips
+
+ - Avatar
+   - Sizes: xs, sm, md, lg, xl, 2xl
+   - Fallback to initials
+   - Group stacking with overlap
+   - Status indicator (online, offline, busy, away)
+ - Tooltip
+   - 12 positions (top, bottom, left, right + start/center/end)
+   - Arrow positioning
+   - Delay options
+   - Keyboard accessible (focus trigger)
+
+ ---
+ Week 7: Navigation Components (Days 15-21)
+
+ Days 15-16: Dropdowns & Tabs
+
+ - Dropdown Menu
+   - Nested submenus (3 levels deep)
+   - With icons and shortcuts
+   - Keyboard navigation (arrow keys, home/end, escape)
+   - Separators and labels
+   - Checkable items
+ - Tabs
+   - Horizontal and vertical orientations
+   - Controlled and uncontrolled modes
+   - With icons
+   - Animated indicator
+   - Keyboard navigation (arrow keys)
+
+ Days 17-18: Accordions & Breadcrumbs
+
+ - Accordion
+   - Single expand mode
+   - Multiple expand mode
+   - Controlled state
+   - Animated collapse/expand
+   - Keyboard navigation
+ - Breadcrumb
+   - With custom separators
+   - Truncation for long paths (show first 2 and last 2)
+   - With icons
+   - Current page highlighting
+
+ Days 19-21: Pagination & Command Palette
+
+ - Pagination
+   - Simple (prev/next)
+   - With page numbers (show 7 pages max)
+   - Jump to page input
+   - Page size selector
+   - Total items display
+ - Command Palette (⌘K)
+   - Fuzzy search
+   - Grouped commands
+   - Keyboard shortcuts display
+   - Recent commands
+   - Nested command groups
+   - Custom rendering
+
+ ---
+ Week 8: Advanced Components (Days 22-28)
+
+ Days 22-23: Data Table
+
+ - Data Table
+   - Sortable columns
+   - Filterable columns
+   - Pagination
+   - Row selection (single, multiple)
+   - Expandable rows
+   - Custom cell rendering
+   - Sticky header
+   - Loading and empty states
+   - Built-in (no TanStack Table dependency)
+
+ Days 24-25: Date Components
+
+ - Calendar
+   - Month view and year view
+   - Date range selection
+   - Disabled dates
+   - Events/markers
+   - Min/max date constraints
+   - Multiple month display
+ - Date Picker
+   - Single date selection
+   - Date range selection
+   - With presets (Today, Yesterday, Last 7 days, Last 30 days, This month, Last month)
+   - Input with calendar popup
+   - Keyboard navigation
+
+ Days 26-27: Combobox & Form
+
+ - Combobox
+   - Autocomplete
+   - Multi-select with tags
+   - Async data loading
+   - Custom option rendering
+   - Keyboard navigation
+   - Clear button
+ - Form (custom built-in system)
+   - Field component with label, error, hint
+   - Form context for state management
+   - Built-in validation (required, email, min, max, pattern, custom)
+   - Error handling and display
+   - Submit handling with loading states
+   - Reset functionality
+
+ Day 28: Polish & Testing
+
+ - Bug fixes for all 20 components
+ - Accessibility audit (keyboard nav, screen readers, ARIA)
+ - Documentation for each component
+ - Create showcase examples
+
+ ---
+ 🎨 Key Technical Implementations
+
+ 1. Animation System (HikmaUI Raw CSS)
+
+ // lib/animations.ts
+ export const animations = {
+   // Transitions
+   'transition-colors': 'transition-colors duration-200 ease-in-out',
+   'transition-all': 'transition-all duration-200 ease-in-out',
+   'transition-opacity': 'transition-opacity duration-150 ease-in-out',
+
+   // Spring animations (CSS custom properties)
+   'spring-bounce': 'transition-all duration-300 cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+   'spring-smooth': 'transition-all duration-200 cubic-bezier(0.4, 0, 0.2, 1)',
+
+   // Keyframe animations
+   'animate-spin': 'animate-spin',
+   'animate-pulse': 'animate-pulse',
+   'animate-bounce': 'animate-bounce',
+
+   // Custom animations
+   'animate-slide-up': 'animate-slideUp',
+   'animate-slide-down': 'animate-slideDown',
+   'animate-fade-in': 'animate-fadeIn',
+   'animate-scale-in': 'animate-scaleIn',
+ };
+
+ // Add to core utilities generator
+
+ 2. Theming System (CSS Variables)
+
+ // lib/theming.ts
+ export const themeConfig = {
+   light: {
+     '--color-background': '0 0% 100%',
+     '--color-foreground': '222 47% 11%',
+     '--color-primary': '221 83% 53%',
+     '--color-primary-foreground': '210 40% 98%',
+     // ... all color tokens
+   },
+   dark: {
+     '--color-background': '222 47% 11%',
+     '--color-foreground': '210 40% 98%',
+     // ... dark mode overrides
+   }
+ };
+
+ // Usage in components: bg-background, text-foreground, bg-primary
+
+ 3. Custom Form & Validation System
+
+ // lib/form.ts
+ export interface FieldValidator<T = any> {
+   validate: (value: T) => string | null;
+   message?: string;
+ }
+
+ export const validators = {
+   required: (message = 'This field is required'): FieldValidator => ({
+     validate: (value) => !value ? message : null,
+   }),
+   email: (message = 'Invalid email'): FieldValidator => ({
+     validate: (value) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? message : null,
+   }),
+   min: (min: number, message?: string): FieldValidator => ({
+     validate: (value) => value < min ? message || `Minimum value is ${min}` : null,
+   }),
+   // ... more validators
+ };
+
+ export function useForm<T extends Record<string, any>>(config: FormConfig<T>) {
+   // Form state management
+   // Validation logic
+   // Submit handling
+ }
+
+ 4. Accessibility Hooks (In-House)
+
+ // lib/accessibility.ts
+ export function useFocusTrap(enabled: boolean, elementRef: RefObject<HTMLElement>) {
+   // Trap focus within modal/dialog
+ }
+
+ export function useKeyboardNav(options: {
+   orientation: 'horizontal' | 'vertical';
+   loop?: boolean;
+   onNavigate?: (index: number) => void;
+ }) {
+   // Arrow key navigation for tabs, menus
+ }
+
+ export function useAriaAnnounce(message: string, priority: 'polite' | 'assertive' = 'polite') {
+   // Screen reader announcements
+ }
+
+ export function useClickOutside(ref: RefObject<HTMLElement>, handler: () => void) {
+   // Close dropdown/modal on outside click
+ }
+
+ ---
+ 📋 CLI Enhancement Details
+
+ New Commands
+
+ # Install component to project (copy-paste)
+ hikma add button
+ hikma add button card modal
+ hikma add --all
+
+ # Or use npm package
+ npm install @hikmaui/components
+
+ # List available components
+ hikma list
+ hikma list --category foundation
+
+ # Initialize project
+ hikma init
+ hikma init --typescript
+
+ # Validate setup
+ hikma doctor
+
+ Registry System
+
+ // cli/templates/registry.json
+ {
+   "components": [
+     {
+       "name": "button",
+       "category": "foundation",
+       "files": ["components/ui/button.tsx"],
+       "dependencies": ["class-variance-authority", "clsx"],
+       "type": "component"
+     }
+   ]
+ }
+
+ ---
+ ✅ Deliverables (End of Month 2)
+
+ 1. 20 Production-Ready Components
+ 2. @hikmaui/components npm package (optional install)
+ 3. Enhanced CLI with copy-paste support
+ 4. Component Registry with metadata
+ 5. Theming System with CSS variables + dark mode
+ 6. Animation Utilities (HikmaUI raw CSS)
+ 7. Custom Form & Validation System
+ 8. In-House Accessibility (no external deps)
+ 9. Component Showcase (examples/components-showcase)
+ 10. Documentation for each component
+
+ ---
+ 🚀 Post-Month 2 Roadmap
+
+ - Week 9-10: Documentation site with live playground
+ - Week 11-12: Vue 3 and Svelte adapters
+ - Month 4+: VS Code extension, Figma plugin, enterprise features
+
+ ---
+ This plan delivers a production-ready component library with:
+ - ✅ Hybrid approach (npm + CLI)
+ - ✅ Zero external UI dependencies (smallest bundle)
+ - ✅ Custom animations (no Framer Motion)
+ - ✅ Built-in theming system
+ - ✅ Custom form/validation
+ - ✅ Complete SCSS replacement

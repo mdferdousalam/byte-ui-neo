@@ -1,0 +1,140 @@
+{
+  "$schema": "https://hikmaui.dev/schema/registry.json",
+  "version": "0.2.0",
+  "lastUpdated": "2025-11-03T00:00:00.000Z",
+  "components": [
+    {
+      "name": "button",
+      "description": "Displays a button with multiple variants, sizes, and states",
+      "category": "foundation",
+      "type": "component",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "template": "components/button/button.tsx",
+          "type": "tsx",
+          "isMain": true
+        }
+      ],
+      "tags": ["button", "interactive", "form"],
+      "complexity": 1
+    },
+    {
+      "name": "input",
+      "description": "Text input field with validation states and icon support",
+      "category": "foundation",
+      "type": "component",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "template": "components/input/input.tsx",
+          "type": "tsx",
+          "isMain": true
+        }
+      ],
+      "tags": ["input", "form", "text"],
+      "complexity": 1
+    },
+    {
+      "name": "card",
+      "description": "Container component with multiple visual variants",
+      "category": "layout",
+      "type": "component",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "template": "components/card/card.tsx",
+          "type": "tsx",
+          "isMain": true
+        }
+      ],
+      "tags": ["card", "container", "layout"],
+      "complexity": 1
+    },
+    {
+      "name": "select",
+      "description": "Custom dropdown select with search functionality",
+      "category": "foundation",
+      "type": "component",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "template": "components/select/select.tsx",
+          "type": "tsx",
+          "isMain": true
+        }
+      ],
+      "tags": ["select", "dropdown", "form", "search"],
+      "complexity": 3
+    },
+    {
+      "name": "checkbox",
+      "description": "Checkbox with indeterminate state support",
+      "category": "foundation",
+      "type": "component",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "template": "components/checkbox/checkbox.tsx",
+          "type": "tsx",
+          "isMain": true
+        }
+      ],
+      "tags": ["checkbox", "form", "input"],
+      "complexity": 2
+    },
+    {
+      "name": "radio",
+      "description": "Radio button with group support",
+      "category": "foundation",
+      "type": "component",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/radio.tsx",
+          "template": "components/radio/radio.tsx",
+          "type": "tsx",
+          "isMain": true
+        }
+      ],
+      "tags": ["radio", "form", "input"],
+      "complexity": 2
+    },
+    {
+      "name": "switch",
+      "description": "Toggle switch with labels and descriptions",
+      "category": "foundation",
+      "type": "component",
+      "dependencies": ["class-variance-authority", "clsx", "tailwind-merge"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "template": "components/switch/switch.tsx",
+          "type": "tsx",
+          "isMain": true
+        }
+      ],
+      "tags": ["switch", "toggle", "form"],
+      "complexity": 2
+    }
+  ]
+}

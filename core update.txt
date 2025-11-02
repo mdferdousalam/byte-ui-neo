@@ -1,0 +1,281 @@
+ HikmaUI v0.2.1: Zero-Dependency Component Foundation
+
+ Strategic Goal
+
+ Enhance @hikmaui/core with 3 lightweight utilities (~400 lines, <2 KB) to eliminate ALL external dependencies from the component library. After this update, @hikmaui/components will depend ONLY on @hikmaui/core + React.
+
+ ---
+ Phase 1: Enhance @hikmaui/core (v0.2.1)
+
+ Enhancement 1: Conditional Class Names Utility
+
+ File: packages/core/src/utilities/class-names.ts
+
+ Purpose: Replace clsx (0.6 KB external) with native implementation
+
+ Implementation:
+ // 15 lines, supports:
+ // cx('base', 'hover:bg-blue') → 'base hover:bg-blue'
+ // cx('base', { 'active': true, 'disabled': false }) → 'base active'
+ // cx('base', ['p-4', null, 'text-sm']) → 'base p-4 text-sm'
+
+ Features:
+ - String, boolean, array, object support
+ - Nested arrays
+ - Null/undefined filtering
+ - TypeScript typed
+
+ ---
+ Enhancement 2: Smart Class Merger
+
+ File: packages/core/src/utilities/class-merge.ts
+
+ Purpose: Replace tailwind-merge (8.2 KB external) with HikmaUI-native solution
+
+ Implementation:
+ // 150 lines, integrates with existing VariantHandler
+ export class ClassMerger {
+   merge(...classes: string[]): string
+   // px-4 py-2, px-6 → py-2 px-6 (removes conflicting px-4)
+ }
+
+ // Utility types map (uses existing JIT knowledge):
+ // 'px-4' → 'padding-x'
+ // 'text-lg' → 'font-size'
+ // 'bg-red-500' → 'background-color'
+
+ Smart Features:
+ - Detects utility conflicts (px-4 vs px-6)
+ - Later classes win
+ - Preserves non-utility classes
+ - Uses existing VariantHandler parsing logic
+ - Caches utility type mappings
+
+ ---
+ Enhancement 3: Component Variant System
+
+ File: packages/core/src/utilities/variants.ts
+
+ Purpose: Replace class-variance-authority (2.1 KB external) with HikmaUI-native API
+
+ Implementation:
+ // 200 lines
+ export function createVariants<V>(config: {
+   base: string;
+   variants: Record<string, Record<string, string>>;
+   compoundVariants?: Array<{...}>;
+   defaultVariants?: Partial<V>;
+ }): (props?: V) => string
+
+ // Usage:
+ const button = createVariants({
+   base: 'inline-flex items-center rounded-md',
+   variants: {
+     variant: {
+       primary: 'bg-blue-500 text-white',
+       secondary: 'bg-gray-500 text-white',
+     },
+     size: {
+       sm: 'px-3 py-1 text-sm',
+       md: 'px-4 py-2',
+       lg: 'px-6 py-3 text-lg',
+     },
+   },
+   defaultVariants: {
+     variant: 'primary',
+     size: 'md',
+   },
+ });
+
+ button({ variant: 'secondary', size: 'lg' })
+ // → 'inline-flex items-center rounded-md bg-gray-500 text-white px-6 py-3 text-lg'
+
+ Features:
+ - Type-safe variant props with TypeScript inference
+ - Default variants
+ - Compound variants (combinations)
+ - ClassName prop merging
+ - Responsive variant support (future)
+
+ ---
+ Enhancement 4: Unified Export
+
+ File: packages/core/src/index.ts
+
+ // Add exports:
+ export { cx } from './utilities/class-names';
+ export { ClassMerger, merge } from './utilities/class-merge';
+ export { createVariants, type VariantProps } from './utilities/variants';
+
+ ---
+ Implementation Plan
+
+ Week 1: Days 1-2 (Class Names Utility)
+
+ 1. Create packages/core/src/utilities/class-names.ts
+   - Implement cx() function (15 lines)
+   - Support: strings, booleans, arrays, objects, nested
+ 2. Write tests packages/core/src/utilities/__tests__/class-names.test.ts
+   - 15+ test cases covering all input types
+   - Edge cases (null, undefined, empty arrays)
+ 3. Add to exports in packages/core/src/index.ts
+
+ Week 1: Days 3-5 (Class Merger)
+
+ 1. Create packages/core/src/utilities/class-merge.ts
+   - Implement ClassMerger class (150 lines)
+   - Integrate with existing VariantHandler.parse()
+   - Build utility type detection (px-4 → padding-x)
+   - Implement conflict resolution algorithm
+ 2. Write tests packages/core/src/utilities/__tests__/class-merge.test.ts
+   - 25+ test cases
+   - Test all utility categories (spacing, sizing, colors, etc.)
+   - Conflict resolution scenarios
+   - Performance benchmarks (<1ms for typical usage)
+ 3. Export helper merge(...classes) shorthand function
+
+ Week 1: Days 6-7 (Variant System - Part 1)
+
+ 1. Create packages/core/src/utilities/variants.ts
+   - Define TypeScript interfaces (VariantConfig, VariantProps)
+   - Implement basic createVariants() (100 lines)
+   - Base class application
+   - Simple variant resolution
+ 2. Start tests packages/core/src/utilities/__tests__/variants.test.ts
+   - Basic variant tests (10+ cases)
+
+ Week 2: Days 1-2 (Variant System - Part 2)
+
+ 1. Enhance packages/core/src/utilities/variants.ts
+   - Add compound variants support (50 lines)
+   - Default variant handling
+   - ClassName prop merging with ClassMerger
+   - Type inference improvements
+ 2. Complete tests
+   - Compound variant tests
+   - Default variant tests
+   - Type safety tests (tsd)
+   - Total: 30+ test cases
+
+ Week 2: Days 3-4 (Integration & Documentation)
+
+ 1. Update packages/core/src/index.ts
+   - Export all new utilities
+   - Add JSDoc comments
+ 2. Create documentation
+   - API reference for each utility
+   - Usage examples
+   - Migration guide from external deps
+ 3. Update packages/core/package.json
+   - Bump version to 0.2.1
+ 4. Update FOUNDATION_COMPLETE.md
+   - Document new utilities
+   - Add to utility count (+3 utilities)
+
+ Week 2: Day 5 (Build, Test, Publish)
+
+ 1. Build all packages
+ turbo run build
+ 2. Run full test suite
+ pnpm run test
+ 3. Version bump commit
+ git commit -m "feat: add zero-dependency component utilities (v0.2.1)"
+ 4. Publish to npm
+ cd packages/core && npm publish --access public
+ cd packages/postcss && npm publish --access public
+ cd packages/vite && npm publish --access public
+ cd packages/cli && npm publish --access public
+ 5. Git tag
+ git tag -a v0.2.1 -m "Release v0.2.1: Zero-dependency component utilities"
+ git push origin v0.2.1
+
+ ---
+ Phase 2: Update @hikmaui/components (v0.3.0)
+
+ After v0.2.1 is published:
+
+ 1. Remove external dependencies
+ // packages/components/package.json - DELETE:
+ "class-variance-authority": "^0.7.0",
+ "clsx": "^2.1.0",
+ "tailwind-merge": "^2.2.0"
+ 2. Update utility files
+   - DELETE packages/components/src/lib/utils.ts (uses clsx + twMerge)
+   - REPLACE with:
+   // packages/components/src/lib/utils.ts
+ export { cx, merge, createVariants } from '@hikmaui/core';
+ export type { VariantProps } from '@hikmaui/core';
+
+ // Keep component-specific utilities:
+ export { composeRefs, generateId, debounce, throttle } from './component-utils';
+ 3. Update component implementations
+   - All components use createVariants() from @hikmaui/core
+   - All use cx() from @hikmaui/core
+   - No external dependencies!
+ 4. Rebuild and test
+ cd packages/components
+ pnpm install  # Will remove unused deps
+ pnpm build
+ 5. Update version to 0.3.0
+   - Breaking change: removed external deps
+   - Now requires @hikmaui/core@^0.2.1
+
+ ---
+ Deliverables
+
+ @hikmaui/core v0.2.1
+
+ - ✅ 3 new utilities (~400 lines, <2 KB)
+ - ✅ 70+ tests with 100% coverage
+ - ✅ API documentation
+ - ✅ Zero breaking changes (only additions)
+ - ✅ Published to npm
+
+ @hikmaui/components v0.3.0 (Updated)
+
+ - ✅ Zero external dependencies (except React peer dep)
+ - ✅ Only depends on @hikmaui/core@^0.2.1
+ - ✅ Bundle size reduced by ~11 KB
+ - ✅ All existing utilities (accessibility, animations, form, theming) unchanged
+ - ✅ Ready for Week 5 component implementation (Button, Input, etc.)
+
+ ---
+ Success Metrics
+
+ | Metric                | Before                 | After             | Improvement         |
+ |-----------------------|------------------------|-------------------|---------------------|
+ | External Dependencies | 3 (CVA, clsx, twMerge) | 0                 | ✅ 100% reduction    |
+ | Dependency Size       | 10.9 KB                | 0 KB              | ✅ Eliminated        |
+ | @hikmaui/core Size    | 106.07 KB              | ~108 KB           | +2 KB (utilities)   |
+ | Bundle Impact         | 117 KB                 | 108 KB            | ✅ -9 KB per project |
+ | Maintenance           | 4 packages to watch    | 1 package         | ✅ 75% reduction     |
+ | Type Safety           | External type defs     | Native TypeScript | ✅ Better DX         |
+
+ ---
+ Timeline Summary
+
+ - Week 1-2: HikmaUI core enhancement (v0.2.1)
+ - Week 2 Day 5: Publish v0.2.1 to npm
+ - Week 3+: Component library development (Button, Input, Card, etc.)
+
+ Total delay: 2 weeks to add foundation, but gains:
+ - Zero-dependency architecture ✅
+ - Better performance ✅
+ - Full control ✅
+ - Smaller bundles ✅
+ - Better branding ("zero external deps") ✅
+
+ ---
+ Alternative Considered: Skip Enhancement
+
+ Could build components now without updating core?
+ - ❌ Would need manual string concatenation in every component
+ - ❌ No class conflict resolution (px-4 px-8 both apply)
+ - ❌ Verbose, error-prone boilerplate
+ - ❌ No type-safe variants
+ - ❌ Poor maintainability
+ - NOT RECOMMENDED
+
+ ---
+ Recommendation: Proceed with Phase 1 (HikmaUI v0.2.1 enhancement) to build proper foundation, then Phase 2 (component library with zero external deps)
+
