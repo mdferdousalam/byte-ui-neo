@@ -1,48 +1,47 @@
 /**
- * @hikmaui/components
+ * @hikmaui/components v0.4.0
+ * React components for HikmaUI - zero external dependencies except React
  *
- * React component library for HikmaUI.
- * Can be installed via npm or copied via CLI (`hikma add`).
+ * Version: 0.4.0 (In Development - Week 3-4)
+ * Progress: 4/20 components complete (20%)
+ * License: MIT
  *
  * @packageDocumentation
  */
 
-// Utility exports
-export * from "./lib/utils";
-export * from "./lib/accessibility";
-export * from "./lib/animations";
-export * from "./lib/form";
-export * from "./lib/theming";
+// Core utilities (re-exported from @hikmaui/core)
+export { cx, cn, merge, cva, type ClassValue, type VariantProps } from '@hikmaui/core';
 
-// Component exports (will be added as components are implemented)
-// Week 5 components
-// export * from "./button";
-// export * from "./input";
-// export * from "./card";
-// export * from "./select";
-// export * from "./checkbox";
-// export * from "./radio";
-// export * from "./switch";
+// Component utilities
+export { composeRefs, generateId, debounce, throttle } from './lib/utils';
 
-// Week 6 components
-// export * from "./modal";
-// export * from "./alert";
-// export * from "./toast";
-// export * from "./badge";
-// export * from "./avatar";
-// export * from "./tooltip";
+// Core infrastructure
+export { BaseComponent, type BaseComponentProps } from './core/base-component';
+export * from './core/accessibility';
+export * from './core/component-variants';
 
-// Week 7 components
-// export * from "./dropdown-menu";
-// export * from "./tabs";
-// export * from "./accordion";
-// export * from "./breadcrumb";
-// export * from "./pagination";
-// export * from "./command-palette";
+// Components (Essential - Week 3-4) - ✅ 5/8 COMPLETE (62.5%)
+export { Button, type ButtonProps } from './components/Button';
+export { Input, type InputProps } from './components/Input';
+export { Card, type CardProps } from './components/Card';
+export { Badge, type BadgeProps } from './components/Badge';
+export { Checkbox, type CheckboxProps } from './components/Checkbox';
 
-// Week 8 components
-// export * from "./data-table";
-// export * from "./calendar";
-// export * from "./date-picker";
-// export * from "./combobox";
-// export * from "./form";
+// TODO: Complete Week 3-4 (Next 3 components - ~6 hours)
+// export { Radio, type RadioProps } from './components/Radio';
+// export { Switch, type SwitchProps } from './components/Switch';
+// export { Select, type SelectProps } from './components/Select';
+
+// TODO: Advanced Components (Week 5-8) - ⏳ 0/12 PENDING
+// export { Modal, type ModalProps } from './components/Modal';
+// export { Alert, type AlertProps } from './components/Alert';
+// export { Toast, type ToastProps } from './components/Toast';
+// export { Avatar, type AvatarProps } from './components/Avatar';
+// export { Tooltip, type TooltipProps } from './components/Tooltip';
+// export { Dropdown, type DropdownProps } from './components/Dropdown';
+// export { Tabs, type TabsProps } from './components/Tabs';
+// export { Accordion, type AccordionProps } from './components/Accordion';
+// export { Breadcrumb, type BreadcrumbProps } from './components/Breadcrumb';
+// export { Pagination, type PaginationProps } from './components/Pagination';
+// export { Progress, type ProgressProps } from './components/Progress';
+// export { Skeleton, type SkeletonProps } from './components/Skeleton';
