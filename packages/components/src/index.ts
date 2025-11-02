@@ -1,9 +1,9 @@
 /**
- * @hikmaui/components v0.4.0
+ * @hikmaui/components v0.5.0
  * React components for HikmaUI - zero external dependencies except React
  *
- * Version: 0.4.0 (In Development - Week 3-4)
- * Progress: 4/20 components complete (20%)
+ * Version: 0.5.0 (Week 3-4 COMPLETE!)
+ * Progress: 8/20 components complete (40%)
  * License: MIT
  *
  * @packageDocumentation
@@ -20,17 +20,15 @@ export { BaseComponent, type BaseComponentProps } from './core/base-component';
 export * from './core/accessibility';
 export * from './core/component-variants';
 
-// Components (Essential - Week 3-4) - ✅ 5/8 COMPLETE (62.5%)
+// Components (Essential - Week 3-4) - ✅ 8/8 COMPLETE (100%)
 export { Button, type ButtonProps } from './components/Button';
 export { Input, type InputProps } from './components/Input';
 export { Card, type CardProps } from './components/Card';
 export { Badge, type BadgeProps } from './components/Badge';
 export { Checkbox, type CheckboxProps } from './components/Checkbox';
-
-// TODO: Complete Week 3-4 (Next 3 components - ~6 hours)
-// export { Radio, type RadioProps } from './components/Radio';
-// export { Switch, type SwitchProps } from './components/Switch';
-// export { Select, type SelectProps } from './components/Select';
+export { Radio, type RadioProps } from './components/Radio';
+export { Switch, type SwitchProps } from './components/Switch';
+export { Select, type SelectProps, type SelectOption } from './components/Select';
 
 // TODO: Advanced Components (Week 5-8) - ⏳ 0/12 PENDING
 // export { Modal, type ModalProps } from './components/Modal';
