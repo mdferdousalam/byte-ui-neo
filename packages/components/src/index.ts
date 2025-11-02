@@ -1,9 +1,9 @@
 /**
- * @hikmaui/components v0.6.0
+ * @hikmaui/components v0.7.0
  * React components for HikmaUI - zero external dependencies except React
  *
- * Version: 0.6.0 (Week 5 Partial)
- * Progress: 10/20 components complete (50%)
+ * Version: 0.7.0 (Week 5 Complete)
+ * Progress: 14/20 components complete (70%)
  * License: MIT
  *
  * @packageDocumentation
@@ -30,21 +30,22 @@ export { Radio, type RadioProps } from './components/Radio';
 export { Switch, type SwitchProps } from './components/Switch';
 export { Select, type SelectProps, type SelectOption } from './components/Select';
 
-// Advanced Components (Week 5-6) - ⏳ 2/12 COMPLETE (16.7%)
+// Advanced Components (Week 5) - ✅ 6/6 COMPLETE (100%)
 export { Modal, type ModalProps } from './components/Modal';
 export { Alert, type AlertProps, type AlertAction } from './components/Alert';
-
-// TODO: Week 5 Remaining (4 components)
-// export { Toast, type ToastProps } from './components/Toast';
-// export { Avatar, type AvatarProps } from './components/Avatar';
-// export { Tooltip, type TooltipProps } from './components/Tooltip';
-// export { DropdownMenu, type DropdownMenuProps } from './components/DropdownMenu';
+export { Toast, toast, createToast, type ToastProps, type ToastOptions } from './components/Toast';
+export { Avatar, type AvatarProps, type AvatarSize, type AvatarStatus, type AvatarShape } from './components/Avatar';
+export { Tooltip, type TooltipProps, type TooltipPosition } from './components/Tooltip';
+export {
+  DropdownMenu,
+  type DropdownMenuProps,
+  type DropdownMenuItem,
+  type DropdownMenuSeparator,
+  type DropdownMenuLabel,
+  type DropdownMenuItemType,
+} from './components/DropdownMenu';
 
 // TODO: Week 6 (6 components)
-// export { Toast, type ToastProps } from './components/Toast';
-// export { Avatar, type AvatarProps } from './components/Avatar';
-// export { Tooltip, type TooltipProps } from './components/Tooltip';
-// export { Dropdown, type DropdownProps } from './components/Dropdown';
 // export { Tabs, type TabsProps } from './components/Tabs';
 // export { Accordion, type AccordionProps } from './components/Accordion';
 // export { Breadcrumb, type BreadcrumbProps } from './components/Breadcrumb';

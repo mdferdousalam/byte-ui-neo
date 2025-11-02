@@ -1,7 +1,7 @@
 {
   "name": "@hikmaui/components",
-  "version": "0.6.0",
-  "description": "React components for HikmaUI - zero external dependencies except React. 10 production-ready components including Modal & Alert (Week 5 Partial - 50% Complete)",
+  "version": "0.7.0",
+  "description": "React components for HikmaUI - zero external dependencies except React. 14 production-ready components with complete Week 5 (Modal, Alert, Toast, Avatar, Tooltip, DropdownMenu) - 70% Complete",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
