@@ -1,7 +1,7 @@
 {
   "name": "@hikmaui/core",
-  "version": "0.2.2",
-  "description": "HikmaUI core utilities, JIT compiler, and zero-dependency component utilities. Minimal deps: only 2 build-time dependencies (150KB), heading towards full zero-dependency in 0.3.0",
+  "version": "0.3.0",
+  "description": "HikmaUI core utilities, JIT compiler, and zero-dependency component utilities. True zero dependencies with optional performance enhancements (fast-glob, chokidar).",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -30,9 +30,9 @@
   ],
   "author": "HikmaUI Team",
   "license": "MIT",
-  "dependencies": {
-    "chokidar": "^3.6.0",
-    "fast-glob": "^3.3.2"
+  "optionalDependencies": {
+    "fast-glob": "^3.3.2",
+    "chokidar": "^3.6.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.16",

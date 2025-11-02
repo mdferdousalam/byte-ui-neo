@@ -1,16 +1,25 @@
 /**
  * JIT Compiler for HikmaUI
  * Inspired by Tailwind CSS JIT engine
+ *
+ * Optional Dependencies (enhanced performance):
+ * - fast-glob: 3x faster file scanning (fallback: native Node.js)
+ * - chokidar: Better cross-platform file watching (fallback: fs.watch)
  */
 
 import { readFile } from 'fs/promises';
-import { watch } from 'chokidar';
-import glob from 'fast-glob';
 import { ConfigLoader } from '../config/loader';
 import { UtilityGenerator } from '../utilities/generator';
 import { VariantHandler } from '../variants/handler';
+import { tryImport } from '../utils/optional-deps';
+import { nativeGlob } from '../utils/native-glob';
+import { nativeWatch, type NativeWatcher } from '../utils/native-watch';
 import type { HikmaConfig } from '../types/config';
 import type { CompiledUtility } from '../types/utility';
+
+// Type definitions for optional dependencies
+type FastGlob = (patterns: string | string[], options?: any) => Promise<string[]>;
+type ChokidarWatch = (patterns: string | string[], options?: any) => any;
 
 export interface JITCompilerOptions {
   config: HikmaConfig;
@@ -25,6 +34,8 @@ export class JITCompiler {
   private variantHandler: VariantHandler;
   private classCache: Map<string, CompiledUtility>;
   private contentFiles: Set<string>;
+  private fastGlob: FastGlob | null = null;
+  private chokidarWatch: ChokidarWatch | null = null;
 
   constructor(options: JITCompilerOptions) {
     this.config = options.config;
@@ -34,8 +45,34 @@ export class JITCompiler {
     this.classCache = new Map();
     this.contentFiles = new Set();
 
-    if (options.watch) {
-      this.setupFileWatcher();
+    // Initialize optional dependencies
+    this.initOptionalDeps().then(() => {
+      if (options.watch) {
+        this.setupFileWatcher();
+      }
+    });
+  }
+
+  /**
+   * Initialize optional dependencies (fast-glob and chokidar)
+   * Falls back to native implementations if not available
+   */
+  private async initOptionalDeps(): Promise<void> {
+    // Try to import fast-glob
+    this.fastGlob = await tryImport<FastGlob>('fast-glob');
+    if (this.fastGlob) {
+      console.log('[HikmaUI] Using fast-glob for enhanced performance');
+    } else {
+      console.log('[HikmaUI] Using native glob (fast-glob not installed)');
+    }
+
+    // Try to import chokidar
+    const chokidar = await tryImport<{ watch: ChokidarWatch }>('chokidar');
+    if (chokidar) {
+      this.chokidarWatch = chokidar.watch;
+      console.log('[HikmaUI] Using chokidar for enhanced file watching');
+    } else {
+      console.log('[HikmaUI] Using native fs.watch (chokidar not installed)');
     }
   }
 
@@ -44,7 +81,10 @@ export class JITCompiler {
    */
   async scanContent(): Promise<Set<string>> {
     const classNames = new Set<string>();
-    const files = await glob(this.config.content || []);
+
+    // Use fast-glob if available, otherwise use native implementation
+    const globFn = this.fastGlob || nativeGlob;
+    const files = await globFn(this.config.content || []);
 
     for (const file of files) {
       this.contentFiles.add(file);
@@ -289,18 +329,20 @@ button, [role="button"] {
    * Setup file watcher for development mode
    */
   private setupFileWatcher(): void {
-    const watcher = watch(this.config.content || [], {
+    // Use chokidar if available, otherwise use native watcher
+    const watchFn = this.chokidarWatch || nativeWatch;
+    const watcher = watchFn(this.config.content || [], {
       ignoreInitial: true,
     });
 
-    watcher.on('change', async (path) => {
+    watcher.on('change', async (path: string) => {
       console.log(`[HikmaUI] File changed: ${path}`);
       // Re-scan and recompile
       const classes = await this.scanContent();
       await this.compile(classes);
     });
 
-    watcher.on('add', async (path) => {
+    watcher.on('add', async (path: string) => {
       console.log(`[HikmaUI] File added: ${path}`);
       this.contentFiles.add(path);
       const classes = await this.scanContent();
